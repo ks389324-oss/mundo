@@ -150,6 +150,11 @@ table.gl td:first-child{white-space:nowrap;width:1%;padding-right:14px}
 .vp-x{font-size:16px}
 .vp video[hidden]{display:none}
 .vp video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vp-desc{background:var(--surface,#fff);color:var(--ink,#111);max-height:34vh;overflow-y:auto;padding:10px 12px;font-size:14px;line-height:1.7}
+.vp-desc[hidden]{display:none}
+.vp-desc p{margin:0 0 8px}
+.vp-desc p:last-child{margin-bottom:0}
+@media (max-width:900px){.vp-desc{max-height:30vh}}
 .vp-err{margin:0;padding:10px 12px;font-size:13px;line-height:1.6}
 .vp-err a{color:#6ee7b7}
 @media (max-width:900px){.vp{right:8px;left:8px;bottom:8px;width:auto;max-width:560px;margin:0 auto}}
@@ -311,13 +316,18 @@ const VP_INLINE = /(^|\.)github\.io$/.test(location.hostname);
 const vp = (() => {
   const box = document.createElement('div');
   box.className = 'vp'; box.hidden = true; box.setAttribute('role','dialog'); box.setAttribute('aria-label','スキル動画');
-  box.innerHTML = '<div class="vp-bar"><span class="vp-t"></span><span class="vp-keys"></span><button class="vp-x" type="button" aria-label="動画を閉じる">×</button></div><video muted loop playsinline controls preload="auto"></video><p class="vp-err" hidden>この環境では動画を埋め込み再生できませんでした。<a target="_blank" rel="noopener">新しいタブで開く ↗</a></p>';
+  box.innerHTML = '<div class="vp-bar"><span class="vp-t"></span><span class="vp-keys"></span><button class="vp-x" type="button" aria-label="動画を閉じる">×</button></div><video muted loop playsinline controls preload="auto"></video><p class="vp-err" hidden>この環境では動画を埋め込み再生できませんでした。<a target="_blank" rel="noopener">新しいタブで開く ↗</a></p><div class="vp-desc"></div>';
   document.body.appendChild(box);
+  const desc = box.querySelector('.vp-desc');
   const v = box.querySelector('video'), err = box.querySelector('.vp-err'), keys = box.querySelector('.vp-keys'), t = box.querySelector('.vp-t');
   let group = [];
   v.addEventListener('error', () => { err.hidden = false; v.hidden = true; });
   function play(a){
     t.textContent = a.dataset.t || 'スキル動画';
+    desc.innerHTML = '';
+    const row = a.closest('.sk, .skill');
+    if (row) row.querySelectorAll('p').forEach(p => { if (!p.closest('.variant, figure, .vp')) desc.appendChild(p.cloneNode(true)); });
+    desc.hidden = !desc.childNodes.length; desc.scrollTop = 0;
     err.hidden = true; v.hidden = false; err.querySelector('a').href = a.href;
     v.src = a.href; const p = v.play(); if (p && p.catch) p.catch(() => {});
     keys.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.href === a.href));
