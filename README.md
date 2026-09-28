@@ -5,6 +5,7 @@
 公開ページ：
 - ムンドTOP対面帳：https://ks389324-oss.github.io/mundo/
 - LoL対面図鑑（全173体の汎用版）：https://ks389324-oss.github.io/mundo/all/
+- ジャックスTOP対面帳：https://ks389324-oss.github.io/mundo/jax/
 
 - 勝率・試合数：LoLalytics（エメラルド以上）
 - スキルのCD・射程：League of Legends Wiki（2026年9月28日照合）
