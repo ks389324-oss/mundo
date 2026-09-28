@@ -2,7 +2,9 @@
 
 ドクター・ムンドでTOPレーンに立った時の、対面チャンピオン55体の攻略帳です（パッチ26.19、2026年9月時点）。
 
-公開ページ：https://ks389324-oss.github.io/mundo/
+公開ページ：
+- ムンドTOP対面帳：https://ks389324-oss.github.io/mundo/
+- LoL対面図鑑（全173体の汎用版）：https://ks389324-oss.github.io/mundo/all/
 
 - 勝率・試合数：LoLalytics（エメラルド以上）
 - スキルのCD・射程：League of Legends Wiki（2026年9月28日照合）
