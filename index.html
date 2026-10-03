@@ -132,6 +132,7 @@ select.sort{border:1px solid var(--line);background:var(--surface);border-radius
 .card h3{margin:0 0 4px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
 .card p{margin:0;font-size:14px}
 .card.wide{grid-column:1/-1}
+.cards.one{grid-template-columns:1fr}
 .card.trap{border-color:var(--def);background:var(--def-soft)}
 .card.trap h3{color:var(--def)}
 .card.go{border-color:var(--atk);background:var(--atk-soft)}
@@ -230,6 +231,26 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
 .csw li{font-size:14px;line-height:1.55;font-weight:600}
 .csw li i{font-style:normal;display:inline-block;min-width:18px;text-align:center;font-size:11px;font-weight:700;color:#fff;background:#b45309;border-radius:4px;padding:0 4px;margin-right:6px;vertical-align:1px}
 .csw li small{font-weight:500;color:var(--muted,#6b7280);margin-left:6px;white-space:nowrap}
+.fv{display:grid;gap:14px}
+.fv-col{display:grid;gap:14px;align-content:start;min-width:0}
+.fv .sec-label,.fv .lab{margin-bottom:6px}
+.strip{display:flex;gap:6px;flex-wrap:wrap}
+.strip button{display:flex;align-items:center;gap:6px;font:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 8px 4px 4px;cursor:pointer;color:var(--ink)}
+.strip button:hover{border-color:var(--accent)}
+.strip img{width:28px;height:28px;border-radius:5px;display:block}
+.strip b{font-size:12px}
+.strip small{font-size:11px;color:var(--ink-3,#6b7280);white-space:nowrap}
+.dhead{display:flex;align-items:center;gap:10px;margin:6px 0 -4px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--ink-3,#6b7280)}
+.dhead::before,.dhead::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (min-width:1200px){
+  .sheet{width:min(1360px,96vw)}
+  .fv{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);align-items:start;gap:16px}
+  .fv .hero h2{font-size:24px}
+  .fv .play{padding:6px 10px}
+  .fv .play .then{font-size:14px}
+  .fv .card{padding:10px 12px}
+  .fv .vs li{padding-top:7px;padding-bottom:7px}
+}
 </style>
 
 <div class="wrap">
@@ -296,6 +317,12 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); return 'CD ' + (a.length > 1 && a[0] !== a[a.length-1] ? a[0] + '→' + a[a.length-1] : a[0]) + '秒'; };
 const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
+function stripHTML(c, iconFn, ids){
+  return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
+    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','')}</small>` : ''}</button>`; }).join('')}</div>`;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (!b) return;
+  const rows = document.querySelectorAll('#sheet .skills > .skill, #sheet .skills > .sk'); const r = rows[+b.dataset.jump]; if (r) r.scrollIntoView({behavior:'smooth', block:'start'}); });
 const state = {q:'', f:'all', sort:'group'};
 try { const s = JSON.parse(localStorage.getItem('mundo-codex') || '{}'); if (s.f) state.f = s.f; if (s.sort) state.sort = s.sort; } catch(e) {}
 function save(){ try { localStorage.setItem('mundo-codex', JSON.stringify({f:state.f, sort:state.sort})); } catch(e) {} }
@@ -548,6 +575,8 @@ function openChamp(slug, push){
   const html = `
   <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${esc(c.jp)}（${esc(c.en)}）</span></div>
   <div class="sheet-body">
+  <div class="fv">
+   <div class="fv-col">
     <div class="hero st-${st}">
       <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
       <div>
@@ -556,22 +585,29 @@ function openChamp(slug, push){
         <div class="stats"><span>ムンド勝率</span><span class="wr">${c.wr.toFixed(1)}%</span><span>${c.games.toLocaleString()}試合</span><span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
       </div>
     </div>
-    ${csHTML(c)}
     <section><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
     <section><p class="sec-label">ムンドの勝ち筋</p>
       <p class="win">${esc(c.win||'')}</p>
     </section>
+   </div>
+   <div class="fv-col">
+    ${csHTML(c)}
+    <div class="cards one"><div class="card trap"><h3>分からん殺し注意</h3><p>${esc(c.trap)}</p></div><div class="card go"><h3>攻めて良い瞬間</h3><p>${esc(c.go)}</p></div></div>
+    <section><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
+   </div>
+   <div class="fv-col">
     <section><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
       <div class="goals">${(c.goal||[]).map(x=>`<span>狙い：${esc(x)}</span>`).join('')}</div>
       <ol class="plays">${(c.plays||[]).map(([a,b,k])=>`<li class="play ${k}"><span class="if">こうなったら：<b>${esc(a)}</b></span><span class="then"><span class="tg">${PLAY_TAG[k]}</span><span>${esc(b)}</span></span></li>`).join('')}</ol>
-      <p class="note" style="margin-top:6px">「AA→E」は、通常攻撃の直後にEを押して即座にもう一撃入れる、ムンドの基本の短いトレードです（「ムンドの基本・用語」参照）。</p>
     </section>
-    <section><p class="sec-label">対面したらまずこれ</p>
+   </div>
+  </div>
+    <p class="dhead">ここから詳細</p>
+    <p class="note">「AA→E」は、通常攻撃の直後にEを押して即座にもう一撃入れる、ムンドの基本の短いトレードです（「ムンドの基本・用語」参照）。</p>
+    <section><p class="sec-label">対面の構図</p>
       <div class="cards">
         <div class="card"><h3>主力</h3><p>${esc(c.core)}</p></div>
         <div class="card"><h3>相手の狙い</h3>${chainHTML(c.plan)}</div>
-        <div class="card trap"><h3>分からん殺し注意</h3><p>${esc(c.trap)}</p></div>
-        <div class="card go"><h3>攻めて良い瞬間</h3><p>${esc(c.go)}</p></div>
       </div>
     </section>
     <section><p class="sec-label">スキル別の特徴・CD・対策</p>

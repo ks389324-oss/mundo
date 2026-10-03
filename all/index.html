@@ -89,6 +89,7 @@ button{cursor:pointer}
 .sum{margin:0;font-size:15px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:620px){.two{grid-template-columns:1fr}}
+.two.one{grid-template-columns:1fr}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .card h3{margin:0 0 6px;font-size:13px;font-weight:700}
 .card ul{margin:0;padding-left:1.2em}
@@ -166,6 +167,26 @@ table.gl td:first-child{white-space:nowrap;width:1%;padding-right:14px}
 .csw li{font-size:14px;line-height:1.55;font-weight:600}
 .csw li i{font-style:normal;display:inline-block;min-width:18px;text-align:center;font-size:11px;font-weight:700;color:#fff;background:#b45309;border-radius:4px;padding:0 4px;margin-right:6px;vertical-align:1px}
 .csw li small{font-weight:500;color:var(--muted,#6b7280);margin-left:6px;white-space:nowrap}
+.fv{display:grid;gap:14px}
+.fv-col{display:grid;gap:14px;align-content:start;min-width:0}
+.fv .sec-label,.fv .lab{margin-bottom:6px}
+.strip{display:flex;gap:6px;flex-wrap:wrap}
+.strip button{display:flex;align-items:center;gap:6px;font:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 8px 4px 4px;cursor:pointer;color:var(--ink)}
+.strip button:hover{border-color:var(--accent)}
+.strip img{width:28px;height:28px;border-radius:5px;display:block}
+.strip b{font-size:12px}
+.strip small{font-size:11px;color:var(--ink-3,#6b7280);white-space:nowrap}
+.dhead{display:flex;align-items:center;gap:10px;margin:6px 0 -4px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--ink-3,#6b7280)}
+.dhead::before,.dhead::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (min-width:1200px){
+  .sheet{width:min(1360px,96vw)}
+  .fv{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);align-items:start;gap:16px}
+  .fv .hero h2{font-size:24px}
+  .fv .play{padding:6px 10px}
+  .fv .play .then{font-size:14px}
+  .fv .card{padding:10px 12px}
+  .fv .vs li{padding-top:7px;padding-bottom:7px}
+}
 </style>
 
 <div class="wrap">
@@ -208,6 +229,12 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); return 'CD ' + (a.length > 1 && a[0] !== a[a.length-1] ? a[0] + '→' + a[a.length-1] : a[0]) + '秒'; };
 const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
+function stripHTML(c, iconFn, ids){
+  return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
+    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','')}</small>` : ''}</button>`; }).join('')}</div>`;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (!b) return;
+  const rows = document.querySelectorAll('#sheet .skills > .skill, #sheet .skills > .sk'); const r = rows[+b.dataset.jump]; if (r) r.scrollIntoView({behavior:'smooth', block:'start'}); });
 const norm = s => String(s).normalize('NFKC').toLowerCase()
   .replace(/[ぁ-ゖ]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60))
   .replace(/[\s・ー=＝\-'’.&＆]/g, '');
@@ -254,21 +281,31 @@ function openChamp(id){
       <p>${esc(s.what)}</p>${s.means ? `<p class="means"><b>つまり</b>${esc(s.means)}</p>` : ''}${s.tip ? `<p class="tip"><b>対応</b>${esc(s.tip)}</p>` : ''}</div></div>`; }).join('');
   open(`<div class="bar">${X}<span class="t" id="sheetTitle">${esc(c.name)}</span></div>
   <div class="body">
+  <div class="fv">
+   <div class="fv-col">
     <div class="hero"><img src="${img(c.id,'c')}" alt=""><div><h2>${esc(c.name)}</h2><div class="ttl">${esc(c.title)}</div>
       <div class="pills">${c.lanes.map(l => `<span class="pill l">${l}</span>`).join('')}<span class="pill">${esc(c.type)}</span></div></div></div>
-    ${csHTML(c)}
     <section class="key-card"><b>これだけ覚える</b><p>${esc(c.key)}</p></section>
+    <section><p class="lab">スキルとCD（押すと詳細へ）</p>${stripHTML(c, k => img(c.id,k))}</section>
+   </div>
+   <div class="fv-col">
+    ${csHTML(c)}
+    <section class="two one">
+      <div class="card aim"><h3>狙いたい瞬間</h3><ul>${c.aim.map(x => `<li><b>${esc(x.when)}</b><span>${esc(x.do)}</span></li>`).join('')}</ul></div>
+      <div class="card trap"><h3>分からん殺し注意</h3><p style="margin:0">${esc(c.trap)}</p></div>
+    </section>
+   </div>
+   <div class="fv-col">
+    <section><p class="lab">基本の対応方針</p><ol class="vs">${c.vs.map(x => `<li><b>${esc(x.do)}</b><span>${esc(x.why)}</span></li>`).join('')}</ol></section>
+   </div>
+  </div>
+    <p class="dhead">ここから詳細</p>
     <section><p class="lab">どんなキャラか</p><p class="sum">${esc(c.summary)}</p></section>
     <section class="two">
       <div class="card s"><h3>強み</h3><ul>${c.strengths.map(x => `<li><b>${esc(x.t)}</b><span>${esc(x.d)}</span></li>`).join('')}</ul></div>
       <div class="card w"><h3>弱み</h3><ul>${c.weaknesses.map(x => `<li><b>${esc(x.t)}</b><span>${esc(x.d)}</span></li>`).join('')}</ul></div>
     </section>
     <section class="card spike"><b>強い時間帯</b><span>${esc(c.spike)}</span></section>
-    <section><p class="lab">基本の対応方針</p><ol class="vs">${c.vs.map(x => `<li><b>${esc(x.do)}</b><span>${esc(x.why)}</span></li>`).join('')}</ol></section>
-    <section class="two">
-      <div class="card aim"><h3>狙いたい瞬間</h3><ul>${c.aim.map(x => `<li><b>${esc(x.when)}</b><span>${esc(x.do)}</span></li>`).join('')}</ul></div>
-      <div class="card trap"><h3>分からん殺し注意</h3><p style="margin:0">${esc(c.trap)}</p></div>
-    </section>
     <section><p class="lab">相手の狙い（よくある流れ）</p><div class="card">${chain(c.plan)}</div></section>
     <section><p class="lab">スキル別の特徴と対応</p><div class="skills">${skills}</div>
       <p class="note" style="margin-top:8px">各スキルは「どういう技か」→「つまり（あなたにとって何が起きるか）」→「対応（どうするか）」の順です。赤い印は動けなくなる妨害、黄色い印はそれ以外の妨害です。CDはスキルヘイストなしの値です。</p></section>
