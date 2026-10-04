@@ -317,6 +317,14 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
   .fv .card p,.fv .card li span{font-size:13px}
   .fv .gw,.fv .buy{font-size:12px;padding:5px 8px}
 }
+.vp{display:flex;flex-direction:column;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px - env(safe-area-inset-bottom,0px))}
+.vp-bar,.vp video,.vp-err{flex:none}
+.vp .vp-desc{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+@media (max-width:900px){
+  .vp{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+  .vp video{max-height:32vh;max-height:32dvh;object-fit:contain}
+  .vp .vp-desc{min-height:96px}
+}
 </style>
 
 <div class="wrap">
