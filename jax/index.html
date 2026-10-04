@@ -276,6 +276,47 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
 .gw b{flex:none;color:#fff;background:#c62828;border-radius:4px;padding:1px 7px;font-size:12px}
 .gw small{color:#555}
 .tag.gwt{background:#c62828;color:#fff}
+@media (max-width:700px){
+  .sheet-body,.body{grid-template-columns:minmax(0,1fr)}
+  .fv{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .fv-col > *{min-width:0;max-width:100%}
+  .fv-col{display:contents}
+  .fv .hero{order:1;gap:10px}
+  .fv .gw{order:2}
+  .fv .o-flow{order:3}
+  .fv .memo{order:4}
+  .fv .o-win,.fv .key-card{order:5}
+  .fv .o-strip{order:6}
+  .fv .csw{order:7}
+  .fv .cards.one,.fv .two.one{order:8}
+  .fv .o-plays,.fv .o-vs{order:9}
+  .fv .buy{order:10}
+  .fv .o-kz{order:11}
+  .fv .hero .badge,.fv .hero img{width:52px;height:52px}
+  .fv .hero h2{font-size:20px}
+  .fv .hero .en,.fv .hero .ttl{font-size:11px}
+  .fv .hero .stats .wr{font-size:16px}
+  .fv .sec-label,.fv .lab{display:none}
+  .fv .o-plays .sec-label,.fv .o-vs .lab{display:block}
+  .fv .flow .step{padding:4px 10px}
+  .fv .flow .step strong{font-size:14px}
+  .fv .win{font-size:14px;padding:8px 12px;line-height:1.6}
+  .fv .key-card{padding:10px 12px}
+  .fv .key-card b{margin-bottom:2px}
+  .fv .key-card p{font-size:14px;line-height:1.6}
+  .fv .memo{padding:8px 12px}
+  .fv .memo p{font-size:14px;line-height:1.6}
+  .fv .strip{flex-wrap:nowrap;overflow-x:auto;gap:4px;padding-bottom:2px}
+  .fv .strip button{flex:none;padding:3px 6px 3px 3px;gap:4px}
+  .fv .strip img{width:22px;height:22px}
+  .fv .strip small{font-size:10px}
+  .fv .strip b{font-size:11px}
+  .fv .csw{padding:6px 10px}
+  .fv .csw li,.fv .csw .t1{font-size:13px}
+  .fv .card{padding:8px 12px}
+  .fv .card p,.fv .card li span{font-size:13px}
+  .fv .gw,.fv .buy{font-size:12px;padding:5px 8px}
+}
 </style>
 
 <div class="wrap">
@@ -342,13 +383,13 @@ const WRT = c => c.wr == null ? '—' : c.wr.toFixed(1) + '%';
 const WRV = c => c.wr == null ? 50 : c.wr;
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); return 'CD ' + (a.length > 1 && a[0] !== a[a.length-1] ? a[0] + '→' + a[a.length-1] : a[0]) + '秒'; };
+const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); const last = a[a.length-1]; if (a.length > 1 && +last === 0) return 'CD ' + a[0] + '秒→最大で常時ON'; return 'CD ' + (a.length > 1 && a[0] !== last ? a[0] + '→' + last : a[0]) + '秒'; };
 const buyHTML = c => c.buy ? `<div class="buy"><b>対策アイテム</b><span>${esc(c.buy)}</span></div>` : '';
 const gwHTML = c => c.gw ? `<div class="gw"><b>重傷${c.gw.lv === '必須級' ? '必須級' : '推奨'}</b><span>${esc(c.gw.why)}</span><small>（重傷＝回復量を減らす効果。ジャックスならエクスキューショナー コーリングなどで付けられます）</small></div>` : '';
 const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
 function stripHTML(c, iconFn, ids){
   return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
-    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','')}</small>` : ''}</button>`; }).join('')}</div>`;
+    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','').replace('秒→最大で常時ON','→常時').replace('秒','')}</small>` : ''}</button>`; }).join('')}</div>`;
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (!b) return;
   const rows = document.querySelectorAll('#sheet .skills > .skill, #sheet .skills > .sk'); const r = rows[+b.dataset.jump]; if (r) r.scrollIntoView({behavior:'smooth', block:'start'}); });
@@ -614,19 +655,19 @@ function openChamp(slug, push){
       </div>
     </div>
     ${gwHTML(c)}${buyHTML(c)}
-    <section><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
+    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
     <section class="memo"><b>一口メモ</b><p>${esc(c.memo||'')}</p></section>
-    <section><p class="sec-label">ジャックスの勝ち筋</p>
+    <section class="o-win"><p class="sec-label">ジャックスの勝ち筋</p>
       <p class="win">${esc(c.win||'')}</p>
     </section>
    </div>
    <div class="fv-col">
     ${csHTML(c)}
     <div class="cards one"><div class="card trap"><h3>分からん殺し注意</h3><p>${esc(c.trap)}</p></div><div class="card go"><h3>攻めて良い瞬間</h3><p>${esc(c.go)}</p></div></div>
-    <section><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
+    <section class="o-strip"><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
    </div>
    <div class="fv-col">
-    <section><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
+    <section class="o-plays"><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
       <div class="goals">${(c.goal||[]).map(x=>`<span>狙い：${esc(x)}</span>`).join('')}</div>
       <ol class="plays">${(c.plays||[]).map(([a,b,k])=>`<li class="play ${k}"><span class="if">こうなったら：<b>${esc(a)}</b></span><span class="then"><span class="tg">${PLAY_TAG[k]}</span><span>${esc(b)}</span></span></li>`).join('')}</ol>
     </section>
