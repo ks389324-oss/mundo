@@ -1,0 +1,452 @@
+<title>LoL対面図鑑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --surface-2:#E3E8EE; --line:#CFD7E0;
+  --ink:#141A22; --ink-2:#435063; --ink-3:#6E7B8E;
+  --accent:#1F5FA8; --accent-soft:#DCE8F6; --on-accent:#FFFFFF;
+  --good:#1E7F63; --good-soft:#D9EFE7;
+  --warn:#A86A12; --warn-soft:#F5E7CF;
+  --bad:#B8352B; --bad-soft:#F6DDDA;
+  --shadow:0 1px 2px rgba(20,26,34,.06),0 8px 24px rgba(20,26,34,.10);
+  --f-display:"Dela Gothic One","Hiragino Kaku Gothic StdN","Yu Gothic",sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#0F1319; --surface:#18202A; --surface-2:#222C38; --line:#2F3B49;
+  --ink:#EAF0F6; --ink-2:#B5C1CF; --ink-3:#8494A7;
+  --accent:#79AEEA; --accent-soft:#1B2C40; --on-accent:#0C1520;
+  --good:#4CC39C; --good-soft:#15302A; --warn:#E0A74A; --warn-soft:#352A17; --bad:#EE7A6E; --bad-soft:#3A1E1C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.4);}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0F1319; --surface:#18202A; --surface-2:#222C38; --line:#2F3B49;
+  --ink:#EAF0F6; --ink-2:#B5C1CF; --ink-3:#8494A7;
+  --accent:#79AEEA; --accent-soft:#1B2C40; --on-accent:#0C1520;
+  --good:#4CC39C; --good-soft:#15302A; --warn:#E0A74A; --warn-soft:#352A17; --bad:#EE7A6E; --bad-soft:#3A1E1C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.4);}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7;padding-inline:16px;padding-block:0 48px}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-weight:400;font-size:22px;margin:0;line-height:1.2;letter-spacing:.02em}
+.brand .meta{font-size:12px;color:var(--ink-3)}
+.brand .sp{flex:1}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:500;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px 8px 34px;font-size:16px}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);flex-wrap:wrap}
+.seg button{border:0;background:transparent;padding:6px 11px;font-size:13px;font-weight:600;color:var(--ink-2);border-right:1px solid var(--line);font-family:var(--f-mono)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.count{font-size:12px;color:var(--ink-3);margin:16px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.tile{display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--accent);transform:translateY(-1px)}
+.tile img{grid-row:span 2;width:44px;height:44px;border-radius:8px;display:block}
+.tile .nm{font-weight:700;font-size:14px;line-height:1.3;min-width:0;overflow-wrap:anywhere}
+.tile .ln{font-family:var(--f-mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+.empty{padding:40px 0;text-align:center;color:var(--ink-3)}
+.scrim{position:fixed;inset:0;background:rgba(15,19,25,.5);z-index:20}
+.sheet{position:fixed;z-index:21;top:0;right:0;bottom:0;width:min(780px,100%);background:var(--bg);box-shadow:var(--shadow);overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 32px)}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:sl .22s ease-out}@keyframes sl{from{transform:translateX(24px);opacity:.6}to{transform:none;opacity:1}}}
+.bar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px}
+.bar .t{flex:1;font-weight:700;font-size:14px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.x{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;flex:none}
+.body{padding:18px 16px 0;display:grid;gap:20px}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.hero img{width:72px;height:72px;border-radius:12px;display:block}
+.hero h2{font-family:var(--f-display);font-weight:400;font-size:26px;margin:0;line-height:1.2;text-wrap:balance}
+.hero .ttl{font-size:13px;color:var(--ink-3)}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.pill{font-size:12px;font-weight:700;border-radius:999px;padding:1px 10px;background:var(--surface-2);color:var(--ink-2)}
+.pill.l{font-family:var(--f-mono);background:var(--accent-soft);color:var(--accent)}
+.lab{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin:0 0 8px}
+.sum{margin:0;font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:620px){.two{grid-template-columns:1fr}}
+.two.one{grid-template-columns:1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.card h3{margin:0 0 6px;font-size:13px;font-weight:700}
+.card ul{margin:0;padding-left:1.2em}
+.card li+li{margin-top:4px}
+.card.s{border-top:3px solid var(--good)} .card.s h3{color:var(--good)}
+.card.w{border-top:3px solid var(--bad)} .card.w h3{color:var(--bad)}
+.card.trap{border-color:var(--bad);background:var(--bad-soft)} .card.trap h3{color:var(--bad)}
+.card.aim{border-color:var(--good);background:var(--good-soft)} .card.aim h3{color:var(--good)}
+.key-card{background:var(--accent);color:var(--on-accent);border-radius:12px;padding:14px 16px}
+.key-card b{display:block;font-size:12px;letter-spacing:.12em;opacity:.85;margin-bottom:4px}
+.key-card p{margin:0;font-size:16px;font-weight:700;line-height:1.7}
+.card li b{display:block}
+.card li span{display:block;font-size:14px;color:var(--ink-2)}
+.vs li b{display:block;font-weight:700}
+.vs li span{display:block;font-weight:400;font-size:14px;color:var(--ink-2);margin-top:2px}
+.vs li span::before{content:"理由：";font-weight:700;color:var(--accent)}
+.means{margin-top:8px !important;padding:8px 10px;border-radius:8px;background:var(--warn-soft)}
+.means b{color:var(--warn);font-size:12px;letter-spacing:.06em;margin-right:6px}
+.spike{display:flex;gap:10px;align-items:baseline}
+.spike b{flex:none;font-size:12px;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 8px}
+.chain{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.chain span{background:var(--surface-2);border-radius:6px;padding:2px 8px;font-size:14px}
+.chain em{font-style:normal;color:var(--ink-3);font-size:12px}
+.vs{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:v}
+.vs li{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:9px 12px 9px 40px;position:relative;font-weight:500}
+.vs li::before{counter-increment:v;content:counter(v);position:absolute;left:12px;top:9px;font-family:var(--f-mono);font-weight:600;color:var(--accent)}
+.skills{display:grid;gap:8px}
+.sk{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.key{position:relative;width:44px;height:44px}
+.key img{width:44px;height:44px;border-radius:8px;display:block}
+.key i{position:absolute;right:-5px;bottom:-5px;font-style:normal;font-family:var(--f-mono);font-size:11px;line-height:1;background:var(--ink);color:var(--bg);border:2px solid var(--surface);border-radius:5px;padding:2px 4px}
+.skh{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px}
+.sn{font-weight:700;font-size:14px}
+.cd{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:12px;font-weight:600;background:var(--surface-2);border-radius:6px;padding:1px 8px}
+.cd small{font-family:var(--f-body);font-weight:500;color:var(--ink-3);margin-right:4px}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none}
+.links a:hover{border-color:var(--accent)}
+.vid{font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent);border-radius:6px;padding:1px 9px;text-decoration:none;white-space:nowrap}
+.cc{font-size:11px;font-weight:700;border-radius:4px;padding:0 7px}
+.cc.h{background:var(--bad-soft);color:var(--bad);box-shadow:inset 0 0 0 1px var(--bad)}
+.cc.s{background:var(--warn-soft);color:var(--warn);box-shadow:inset 0 0 0 1px var(--warn)}
+.sk p{margin:0}
+.tip{margin-top:8px !important;padding:8px 10px;border-radius:8px;background:var(--accent-soft)}
+.tip b{color:var(--accent);font-size:12px;letter-spacing:.06em;margin-right:6px}
+.nav{display:flex;justify-content:space-between;gap:8px}
+.nav .btn{max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note{font-size:12px;color:var(--ink-3);margin:0}
+table.gl{width:100%;border-collapse:collapse;font-size:14px}
+table.gl td{border-top:1px solid var(--line);padding:8px 6px;vertical-align:top}
+table.gl td:first-child{white-space:nowrap;width:1%;padding-right:14px}
+.vp{position:fixed;z-index:1000;left:16px;bottom:16px;width:min(520px,calc(100vw - 32px));background:#0b1220;color:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}
+.vp[hidden]{display:none}
+.vp-bar{display:flex;align-items:center;gap:6px;padding:6px 8px 6px 12px;font-size:13px}
+.vp-t{flex:1;min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vp-keys{display:flex;gap:4px}
+.vp-keys button,.vp-x{font:inherit;font-size:12px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:0;border-radius:6px;min-width:28px;height:28px;cursor:pointer}
+.vp-keys button[aria-pressed="true"]{background:#10b981;color:#062b1f}
+.vp-x{font-size:16px}
+.vp video[hidden]{display:none}
+.vp video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vp-desc{background:var(--surface,#fff);color:var(--ink,#111);max-height:34vh;overflow-y:auto;padding:10px 12px;font-size:14px;line-height:1.7}
+.vp-desc[hidden]{display:none}
+.vp-desc p{margin:0 0 8px}
+.vp-desc p:last-child{margin-bottom:0}
+@media (max-width:900px){.vp-desc{max-height:30vh}}
+.vp-err{margin:0;padding:10px 12px;font-size:13px;line-height:1.6}
+.vp-err a{color:#6ee7b7}
+@media (max-width:900px){.vp{right:8px;left:8px;bottom:8px;width:auto;max-width:560px;margin:0 auto}}
+.csw{border:1px solid var(--line);border-left:4px solid #d97706;border-radius:8px;padding:6px 10px;background:var(--surface)}
+.csw b{font-size:12px;color:#b45309;margin-right:4px}
+.csw .t1{margin:0 0 4px;font-size:14px;line-height:1.6;font-weight:600;padding-bottom:4px;border-bottom:1px dashed var(--line)}
+.csw .t1 b{display:inline-block;margin-right:6px}
+.csw ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px}
+.csw li{font-size:14px;line-height:1.55;font-weight:600}
+.csw li i{font-style:normal;display:inline-block;min-width:18px;text-align:center;font-size:11px;font-weight:700;color:#fff;background:#b45309;border-radius:4px;padding:0 4px;margin-right:6px;vertical-align:1px}
+.csw li small{font-weight:500;color:var(--muted,#6b7280);margin-left:6px;white-space:nowrap}
+.fv{display:grid;gap:14px}
+.fv-col{display:grid;gap:14px;align-content:start;min-width:0}
+.fv .sec-label,.fv .lab{margin-bottom:6px}
+.strip{display:flex;gap:6px;flex-wrap:wrap}
+.strip button{display:flex;align-items:center;gap:6px;font:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 8px 4px 4px;cursor:pointer;color:var(--ink)}
+.strip button:hover{border-color:var(--accent)}
+.strip img{width:28px;height:28px;border-radius:5px;display:block}
+.strip b{font-size:12px}
+.strip small{font-size:11px;color:var(--ink-3,#6b7280);white-space:nowrap}
+.dhead{display:flex;align-items:center;gap:10px;margin:6px 0 -4px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--ink-3,#6b7280)}
+.dhead::before,.dhead::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (min-width:1200px){
+  .sheet{width:min(1360px,96vw)}
+  .fv{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);align-items:start;gap:16px}
+  .fv .hero h2{font-size:24px}
+  .fv .play{padding:6px 10px}
+  .fv .play .then{font-size:14px}
+  .fv .card{padding:10px 12px}
+  .fv .vs li{padding-top:7px;padding-bottom:7px}
+}
+@media (min-width:1200px){
+  .fv{display:block;columns:3;column-gap:16px}
+  .fv-col{display:contents}
+  .fv-col > *{break-inside:avoid;margin:0 0 14px;display:block}
+  .fv-col > .hero{display:grid}
+  .fv-col > .cards.one{display:grid}
+}
+.gwm{font-size:10px;font-weight:700;color:#fff;background:#c62828;border-radius:3px;padding:0 4px;vertical-align:2px}
+.buy{display:flex;gap:8px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-left:4px solid #2563eb;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.55}
+.buy b{flex:none;color:#fff;background:#2563eb;border-radius:4px;padding:1px 7px;font-size:12px}
+.gw{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;background:#fdecec;border:1px solid #d33;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.5;color:#111}
+.gw b{flex:none;color:#fff;background:#c62828;border-radius:4px;padding:1px 7px;font-size:12px}
+.gw small{color:#555}
+.tag.gwt{background:#c62828;color:#fff}
+@media (max-width:700px){
+  .sheet-body,.body{grid-template-columns:minmax(0,1fr)}
+  .fv{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .fv-col > *{min-width:0;max-width:100%}
+  .fv-col{display:contents}
+  .fv .hero{order:1;gap:10px}
+  .fv .gw{order:2}
+  .fv .o-flow{order:3}
+  .fv .memo{order:4}
+  .fv .o-win,.fv .key-card{order:5}
+  .fv .o-strip{order:6}
+  .fv .csw{order:7}
+  .fv .cards.one,.fv .two.one{order:8}
+  .fv .o-plays,.fv .o-vs{order:9}
+  .fv .buy{order:10}
+  .fv .o-kz{order:11}
+  .fv .hero .badge,.fv .hero img{width:52px;height:52px}
+  .fv .hero h2{font-size:20px}
+  .fv .hero .en,.fv .hero .ttl{font-size:11px}
+  .fv .hero .stats .wr{font-size:16px}
+  .fv .sec-label,.fv .lab{display:none}
+  .fv .o-plays .sec-label,.fv .o-vs .lab{display:block}
+  .fv .flow .step{padding:4px 10px}
+  .fv .flow .step strong{font-size:14px}
+  .fv .win{font-size:14px;padding:8px 12px;line-height:1.6}
+  .fv .key-card{padding:10px 12px}
+  .fv .key-card b{margin-bottom:2px}
+  .fv .key-card p{font-size:14px;line-height:1.6}
+  .fv .memo{padding:8px 12px}
+  .fv .memo p{font-size:14px;line-height:1.6}
+  .fv .strip{flex-wrap:nowrap;overflow-x:auto;gap:4px;padding-bottom:2px}
+  .fv .strip button{flex:none;padding:3px 6px 3px 3px;gap:4px}
+  .fv .strip img{width:22px;height:22px}
+  .fv .strip small{font-size:10px}
+  .fv .strip b{font-size:11px}
+  .fv .csw{padding:6px 10px}
+  .fv .csw li,.fv .csw .t1{font-size:13px}
+  .fv .card{padding:8px 12px}
+  .fv .card p,.fv .card li span{font-size:13px}
+  .fv .gw,.fv .buy{font-size:12px;padding:5px 8px}
+}
+.vp{display:flex;flex-direction:column;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px - env(safe-area-inset-bottom,0px))}
+.vp-bar,.vp video,.vp-err{flex:none}
+.vp .vp-desc{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+@media (max-width:900px){
+  .vp{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+  .vp video{max-height:32vh;max-height:32dvh;object-fit:contain}
+  .vp .vp-desc{min-height:96px}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>LoL対面図鑑</h1>
+      <span class="meta">パッチ26.19 · 全173体</span>
+      <span class="sp"></span>
+      <a class="btn" href="https://ks389324-oss.github.io/mundo/" target="_blank" rel="noopener">ムンド対面帳</a><a class="btn" href="https://ks389324-oss.github.io/mundo/jax/" target="_blank" rel="noopener">ジャックス対面帳</a><a class="btn" href="https://ks389324-oss.github.io/mundo/cho/" target="_blank" rel="noopener">チョ＝ガス対面帳</a><a class="btn" href="https://ks389324-oss.github.io/mundo/items/" target="_blank" rel="noopener">アイテム図鑑</a>
+      <button class="btn" id="helpBtn" type="button">見方・用語</button>
+    </div>
+    <div class="controls">
+      <label class="search" for="q">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="名前で検索（ひらがな・カタカナ・英語）" autocomplete="off">
+      </label>
+      <div class="seg" role="group" aria-label="レーンで絞り込み" id="seg">
+        <button type="button" data-f="all" aria-pressed="true">ALL</button>
+        <button type="button" data-f="TOP" aria-pressed="false">TOP</button>
+        <button type="button" data-f="JG" aria-pressed="false">JG</button>
+        <button type="button" data-f="MID" aria-pressed="false">MID</button>
+        <button type="button" data-f="ADC" aria-pressed="false">ADC</button>
+        <button type="button" data-f="SUP" aria-pressed="false">SUP</button>
+      </div>
+    </div>
+  </header>
+  <p class="count" id="count"></p>
+  <main id="list" class="grid"></main>
+</div>
+<div id="scrim" class="scrim" hidden></div>
+<aside id="sheet" class="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></aside>
+
+<script id="data" type="application/json">__DATA__</script>
+<script id="img" type="application/json">__IMG__</script>
+<script>
+(function(){
+const C = JSON.parse(document.getElementById('data').textContent);
+const IMG = JSON.parse(document.getElementById('img').textContent);
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); const last = a[a.length-1]; if (a.length > 1 && +last === 0) return 'CD ' + a[0] + '秒→最大で常時ON'; return 'CD ' + (a.length > 1 && a[0] !== last ? a[0] + '→' + last : a[0]) + '秒'; };
+const buyHTML = c => c.buy ? `<div class="buy"><b>対策アイテム</b><span>${esc(c.buy)}</span></div>` : '';
+const gwHTML = c => c.gw ? `<div class="gw"><b>重傷${c.gw.lv === '必須級' ? '必須級' : '推奨'}</b><span>${esc(c.gw.why)}</span><small>（重傷＝回復量を減らす効果。物理ならエクスキューショナー コーリング、タンクならブランブル ベスト、魔法なら忘却のオーブなどで付けられます）</small></div>` : '';
+const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
+function stripHTML(c, iconFn, ids){
+  return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
+    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','').replace('秒→最大で常時ON','→常時').replace('秒','')}</small>` : ''}</button>`; }).join('')}</div>`;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (!b) return;
+  const rows = document.querySelectorAll('#sheet .skills > .skill, #sheet .skills > .sk'); const r = rows[+b.dataset.jump]; if (r) r.scrollIntoView({behavior:'smooth', block:'start'}); });
+const norm = s => String(s).normalize('NFKC').toLowerCase()
+  .replace(/[ぁ-ゖ]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60))
+  .replace(/[\s・ー=＝\-'’.&＆]/g, '');
+const ALIAS = {MonkeyKing:'Wukong', KSante:"K'Sante", Chogath:"Cho'Gath", Belveth:"Bel'Veth", Kaisa:"Kai'Sa", Khazix:"Kha'Zix", KogMaw:"Kog'Maw", RekSai:"Rek'Sai", Velkoz:"Vel'Koz", Leblanc:'LeBlanc', Nunu:'Nunu Willump', Renata:'Renata Glasc'};
+C.forEach(c => { c._k = norm([c.name, c.title, c.id, ALIAS[c.id] || ''].join('|')); });
+C.sort((a,b) => a.name.localeCompare(b.name, 'ja'));
+const HARD = new Set(['スタン','ノックアップ','ノックバック','引き寄せ','スネア','恐怖','挑発','魅了','睡眠','サプレッション','バーサーク']);
+const LANE_JA = {TOP:'トップ',JG:'ジャングル',MID:'ミッド',ADC:'ボット（ADC）',SUP:'サポート'};
+const state = {q:'', f:'all'};
+try { const s = JSON.parse(localStorage.getItem('lol-codex') || '{}'); if (s.f) state.f = s.f; } catch(e) {}
+const img = (id,k) => (IMG[id] && IMG[id][k]) || '';
+const video = (c,k) => `https://lol.dyn.riotcdn.net/x/videos/champion-abilities/${c.key4}/ability_${c.key4}_${k}1.mp4`;
+const list = () => C.filter(c => (state.f === 'all' || c.lanes.includes(state.f)) && (!norm(state.q) || c._k.includes(norm(state.q))));
+
+function render(){
+  const rows = list();
+  $('#count').textContent = `${rows.length}体` + (state.f === 'all' ? '' : `（${LANE_JA[state.f]}でよく使われるキャラ）`);
+  $('#list').innerHTML = rows.length ? rows.map(c => `<button class="tile" type="button" data-id="${c.id}" aria-label="${esc(c.name)}">
+      <img src="${img(c.id,'c')}" alt="" loading="lazy"><span class="nm">${esc(c.name)}${c.gw ? ' <span class="gwm" title="重傷推奨">重傷</span>' : ''}</span><span class="ln">${c.lanes.join(' / ')}</span></button>`).join('')
+    : '<p class="empty">該当するチャンピオンがいません。検索語か絞り込みを変えてください。</p>';
+}
+function chain(t){
+  const out = []; let rest = [];
+  t.split('。').map(s => s.trim()).filter(Boolean).forEach(s => {
+    if (s.includes('→')) out.push(`<div class="chain">${s.replace(/、?という[^、]*$/,'').split(/\s*→\s*/).map((x,i)=>`${i?'<em>→</em>':''}<span>${esc(x)}</span>`).join('')}</div>`);
+    else rest.push(s + '。');
+  });
+  return out.join('') + (rest.length ? `<p class="note" style="margin-top:6px">${esc(rest.join(''))}</p>` : '');
+}
+const cdText = cd => cd ? (/^[\d.\/]+$/.test(cd) ? cd.split('/').join(' / ') + '秒' : cd) : '';
+let last = null;
+function open(html){ last = document.activeElement; const s = $('#sheet'); s.innerHTML = html; s.hidden = false; $('#scrim').hidden = false; s.scrollTop = 0; document.body.style.overflow = 'hidden'; const x = s.querySelector('[data-close]'); if (x) x.focus(); }
+function close(){ $('#sheet').hidden = true; $('#scrim').hidden = true; document.body.style.overflow = ''; try { if (location.hash) history.replaceState(null,'',location.pathname + location.search); } catch(e) {} if (last && last.focus) last.focus(); }
+const X = `<button class="x" type="button" data-close aria-label="閉じる"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>`;
+
+function openChamp(id){
+  const c = C.find(x => x.id === id); if (!c) return;
+  const L = list().length ? list() : C; const i = Math.max(0, L.indexOf(c));
+  const prev = L[(i - 1 + L.length) % L.length], next = L[(i + 1) % L.length];
+  const skills = ['P','Q','W','E','R'].map(k => { const s = c.skills[k];
+    const cc = s.cc.map(t => `<span class="cc ${HARD.has(t) ? 'h' : 's'}">${esc(t)}</span>`).join('');
+    return `<div class="sk"><span class="key">${img(c.id,k) ? `<img src="${img(c.id,k)}" alt="">` : ''}<i>${k}</i></span><div>
+      <div class="skh"><span class="sn">${esc(s.n)}</span>${s.cd ? `<span class="cd"><small>CD</small>${esc(cdText(s.cd))}</span>` : ''}<a class="vid" href="${video(c,k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${k}" data-t="${esc(c.name)} ${k}：${esc(s.n)}">▶ 実際の動画</a>${cc}</div>
+      <p>${esc(s.what)}</p>${s.means ? `<p class="means"><b>つまり</b>${esc(s.means)}</p>` : ''}${s.tip ? `<p class="tip"><b>対応</b>${esc(s.tip)}</p>` : ''}</div></div>`; }).join('');
+  open(`<div class="bar">${X}<span class="t" id="sheetTitle">${esc(c.name)}</span></div>
+  <div class="body">
+  <div class="fv">
+   <div class="fv-col">
+    <div class="hero"><img src="${img(c.id,'c')}" alt=""><div><h2>${esc(c.name)}</h2><div class="ttl">${esc(c.title)}</div>
+      <div class="pills">${c.lanes.map(l => `<span class="pill l">${l}</span>`).join('')}<span class="pill">${esc(c.type)}</span></div></div></div>
+    ${gwHTML(c)}${buyHTML(c)}
+    <section class="key-card"><b>これだけ覚える</b><p>${esc(c.key)}</p></section>
+    <section class="o-strip"><p class="lab">スキルとCD（押すと詳細へ）</p>${stripHTML(c, k => img(c.id,k))}</section>
+   </div>
+   <div class="fv-col">
+    ${csHTML(c)}
+    <section class="two one">
+      <div class="card aim"><h3>狙いたい瞬間</h3><ul>${c.aim.map(x => `<li><b>${esc(x.when)}</b><span>${esc(x.do)}</span></li>`).join('')}</ul></div>
+      <div class="card trap"><h3>分からん殺し注意</h3><p style="margin:0">${esc(c.trap)}</p></div>
+    </section>
+   </div>
+   <div class="fv-col">
+    <section class="o-vs"><p class="lab">基本の対応方針</p><ol class="vs">${c.vs.map(x => `<li><b>${esc(x.do)}</b><span>${esc(x.why)}</span></li>`).join('')}</ol></section>
+   </div>
+  </div>
+    <p class="dhead">ここから詳細</p>
+    <section><p class="lab">どんなキャラか</p><p class="sum">${esc(c.summary)}</p></section>
+    <section class="two">
+      <div class="card s"><h3>強み</h3><ul>${c.strengths.map(x => `<li><b>${esc(x.t)}</b><span>${esc(x.d)}</span></li>`).join('')}</ul></div>
+      <div class="card w"><h3>弱み</h3><ul>${c.weaknesses.map(x => `<li><b>${esc(x.t)}</b><span>${esc(x.d)}</span></li>`).join('')}</ul></div>
+    </section>
+    <section class="card spike"><b>強い時間帯</b><span>${esc(c.spike)}</span></section>
+    <section><p class="lab">相手の狙い（よくある流れ）</p><div class="card">${chain(c.plan)}</div></section>
+    <section><p class="lab">スキル別の特徴と対応</p><div class="skills">${skills}</div>
+      <p class="note" style="margin-top:8px">各スキルは「どういう技か」→「つまり（あなたにとって何が起きるか）」→「対応（どうするか）」の順です。赤い印は動けなくなる妨害、黄色い印はそれ以外の妨害です。CDはスキルヘイストなしの値です。</p></section>
+    <section><p class="lab">外部サイトで詳しく見る</p><div class="links">
+      <a href="https://lolalytics.com/ja/lol/${c.lz}/build/" target="_blank" rel="noopener">LoLalytics（勝率・ビルド） ↗</a>
+      <a href="https://op.gg/ja/lol/champions/${c.op}/build" target="_blank" rel="noopener">OP.GG（ビルド・カウンター） ↗</a>
+      <a href="https://www.loljp-wiki.jp/wiki/?cmd=read&amp;page=${c.wk}" target="_blank" rel="noopener">LoLJPWiki（日本語攻略wiki） ↗</a>
+    </div><p class="note" style="margin-top:6px">LoLJPWikiは更新が止まっている可能性があり、新しいチャンピオンのページが無い場合や内容が古い場合があります。数値は最新パッチのLoLalytics・OP.GGを優先してください。</p></section>
+    <div class="nav"><button class="btn" type="button" data-go="${prev.id}">← ${esc(prev.name)}</button><button class="btn" type="button" data-go="${next.id}">${esc(next.name)} →</button></div>
+  </div>`);
+  try { history.replaceState(null,'','#' + c.id); } catch(e) {}
+}
+function openHelp(){
+  open(`<div class="bar">${X}<span class="t" id="sheetTitle">見方・用語</span></div>
+  <div class="body">
+    <section><p class="lab">この図鑑について</p><div class="card"><p style="margin:0">どのチャンピオンを使っている時でも役立つように、相手として出てきた時の「強み・弱み・基本の対応・スキルごとの注意点」をまとめています。スキル名・CD・アイコンはRiot公式データ（Data Dragon 16.19.1）、仕様は公式Wiki（2026年9月28日時点）で確認し、別の担当が全173体を独立に照合して誤りを修正しています。そのうえで初心者向けに書き直し、書き直した文も再度独立に照合しています。レーンは現在のソロランクでよく使われる位置の目安です。</p></div></section>
+    <section><p class="lab">妨害（CC）の種類</p><div style="overflow-x:auto"><table class="gl"><tbody>
+      <tr><td><span class="cc h">スタン</span></td><td>移動も攻撃もスキルもできなくなります。</td></tr>
+      <tr><td><span class="cc h">ノックアップ</span></td><td>空中に打ち上げられ、その間は何もできません。</td></tr>
+      <tr><td><span class="cc h">ノックバック</span></td><td>後ろや横へ吹き飛ばされ、その間は何もできません。</td></tr>
+      <tr><td><span class="cc h">引き寄せ</span></td><td>相手の方へ引っ張られます。</td></tr>
+      <tr><td><span class="cc h">スネア</span></td><td>その場から動けなくなります。攻撃やスキルは使えます。</td></tr>
+      <tr><td><span class="cc h">恐怖・魅了・挑発</span></td><td>自分で操作できず、勝手に逃げる・近づく・相手を殴る状態になります。</td></tr>
+      <tr><td><span class="cc h">睡眠・サプレッション</span></td><td>完全に行動できなくなります。サプレッションはサモナースペルの「クレンズ」では解除できません。</td></tr>
+      <tr><td><span class="cc s">スロウ</span></td><td>移動速度が下がります。</td></tr>
+      <tr><td><span class="cc s">サイレンス</span></td><td>スキルが使えなくなります。移動と通常攻撃はできます。</td></tr>
+      <tr><td><span class="cc s">グラウンド</span></td><td>ダッシュやフラッシュなどの移動スキルが使えなくなります。</td></tr>
+      <tr><td><span class="cc s">盲目</span></td><td>通常攻撃が外れるようになります。</td></tr>
+    </tbody></table></div></section>
+    <section><p class="lab">よく出る用語</p><div style="overflow-x:auto"><table class="gl"><tbody>
+      <tr><td><b>ミニオンの後ろ</b></td><td>「最初に当たった敵で止まる」スキルは、自分と相手の間にミニオンを置くと防げます。各スキルの説明で、止まるか貫通するかを書いています。</td></tr>
+      <tr><td><b>重傷</b></td><td>回復量を減らす効果です。回復の多い相手には、重傷が付くアイテムが有効です。</td></tr>
+      <tr><td><b>トレード</b></td><td>短時間だけ殴り合い、与えたダメージが多い方が得をするやり取りです。</td></tr>
+      <tr><td><b>オールイン</b></td><td>どちらかが倒れるまで続ける全力の戦闘です。</td></tr>
+      <tr><td><b>確定ダメージ</b></td><td>物理防御・魔法防御で減らせないダメージです。</td></tr>
+    </tbody></table></div></section>
+    <p class="note">League of Legends © Riot Games, Inc. 本ページはRiot Gamesの公認を受けたものではありません。</p>
+  </div>`);
+}
+$('#q').addEventListener('input', e => { state.q = e.target.value; render(); });
+$('#seg').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.f = b.dataset.f;
+  try { localStorage.setItem('lol-codex', JSON.stringify({f:state.f})); } catch(err) {}
+  document.querySelectorAll('#seg button').forEach(x => x.setAttribute('aria-pressed', x === b)); render(); });
+$('#list').addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) openChamp(t.dataset.id); });
+$('#helpBtn').addEventListener('click', openHelp);
+$('#scrim').addEventListener('click', close);
+$('#sheet').addEventListener('click', e => { if (e.target.closest('[data-close]')) return close(); const g = e.target.closest('[data-go]'); if (g) openChamp(g.dataset.go); });
+document.addEventListener('keydown', e => { if (!$('#sheet').hidden){ if (e.key === 'Escape') close();
+  const g = document.querySelectorAll('#sheet [data-go]'); if (g.length){ if (e.key === 'ArrowLeft') openChamp(g[0].dataset.go); if (e.key === 'ArrowRight') openChamp(g[1].dataset.go); } } });
+document.querySelectorAll('#seg button').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === state.f));
+render();
+const h = location.hash.slice(1); if (h === 'help') openHelp(); else if (h) openChamp(h);
+})();
+/* ページ内動画プレイヤー（GitHub Pages版のみ。Claudeの成果物ページは外部動画を読み込めないため従来どおり別タブ） */
+const VP_INLINE = /(^|\.)github\.io$/.test(location.hostname);
+const vp = (() => {
+  const box = document.createElement('div');
+  box.className = 'vp'; box.hidden = true; box.setAttribute('role','dialog'); box.setAttribute('aria-label','スキル動画');
+  box.innerHTML = '<div class="vp-bar"><span class="vp-t"></span><span class="vp-keys"></span><button class="vp-x" type="button" aria-label="動画を閉じる">×</button></div><video muted loop playsinline controls preload="auto"></video><p class="vp-err" hidden>この環境では動画を埋め込み再生できませんでした。<a target="_blank" rel="noopener">新しいタブで開く ↗</a></p><div class="vp-desc"></div>';
+  document.body.appendChild(box);
+  const desc = box.querySelector('.vp-desc');
+  const v = box.querySelector('video'), err = box.querySelector('.vp-err'), keys = box.querySelector('.vp-keys'), t = box.querySelector('.vp-t');
+  let group = [];
+  v.addEventListener('error', () => { err.hidden = false; v.hidden = true; });
+  function play(a){
+    t.textContent = a.dataset.t || 'スキル動画';
+    desc.innerHTML = '';
+    const row = a.closest('.sk, .skill');
+    if (row) row.querySelectorAll('p').forEach(p => { if (!p.closest('.variant, figure, .vp')) desc.appendChild(p.cloneNode(true)); });
+    desc.hidden = !desc.childNodes.length; desc.scrollTop = 0;
+    err.hidden = true; v.hidden = false; err.querySelector('a').href = a.href;
+    v.src = a.href; const p = v.play(); if (p && p.catch) p.catch(() => {});
+    keys.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.href === a.href));
+  }
+  function show(a){
+    const g = a.dataset.g;
+    group = g ? [...document.querySelectorAll(`a.vid[data-g="${g}"]`)] : [a];
+    const seen = new Set();
+    keys.innerHTML = group.filter(x => !seen.has(x.href) && seen.add(x.href)).map(x => `<button type="button" data-href="${x.href}" aria-label="${x.dataset.t || ''}">${x.dataset.k || '▶'}</button>`).join('');
+    box.hidden = false; play(a);
+  }
+  function hide(){ v.pause(); v.removeAttribute('src'); v.load(); box.hidden = true; }
+  keys.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const a = group.find(x => x.href === b.dataset.href); if (a) play(a); });
+  box.querySelector('.vp-x').addEventListener('click', hide);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden){ hide(); e.stopImmediatePropagation(); } }, true);
+  return {show, hide};
+})();
+document.addEventListener('click', e => {
+  if (!VP_INLINE) return;
+  const a = e.target.closest('a.vid'); if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  e.preventDefault(); e.stopImmediatePropagation(); vp.show(a);
+}, true);
+</script>

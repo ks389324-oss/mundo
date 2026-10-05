@@ -1,0 +1,167 @@
+{
+ "Aatrox": {
+  "lv": "必須級",
+  "why": "P・E（影進撃）の回復とR（ワールドエンダー）中の回復量アップ",
+  "evidence": "Riot Data Dragon ja_JP Aatrox.json (P/E/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Aatrox"
+ },
+ "Vladimir": {
+  "lv": "必須級",
+  "why": "Q（吸血）・W（紅血の沼）・R（呪血の渦）で体力を吸収",
+  "evidence": "Riot Data Dragon ja_JP Vladimir.json (Q/W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Vladimir"
+ },
+ "DrMundo": {
+  "lv": "必須級",
+  "why": "W（心臓ビリビリ）とR（マキシマム投与）の大回復",
+  "evidence": "Riot Data Dragon ja_JP DrMundo.json (P/W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+ },
+ "Warwick": {
+  "lv": "必須級",
+  "why": "P（永遠の渇き）とQ（野獣の牙）の吸血、低体力ほど回復増",
+  "evidence": "Riot Data Dragon ja_JP Warwick.json (P/Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Warwick"
+ },
+ "Soraka": {
+  "lv": "必須級",
+  "why": "W（星霊の癒し）で味方を回復、R（星に願いを）で全体回復",
+  "evidence": "Riot Data Dragon ja_JP Soraka.json (Q/W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Soraka"
+ },
+ "Swain": {
+  "lv": "必須級",
+  "why": "R（魔帝戴冠）で周囲から体力を吸収、Pでも回復",
+  "evidence": "Riot Data Dragon ja_JP Swain.json (P/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Swain"
+ },
+ "Briar": {
+  "lv": "必須級",
+  "why": "P（真紅の呪い）の吸血とW・Eの回復、減少体力で増加",
+  "evidence": "Riot Data Dragon ja_JP Briar.json (P/W/E/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Briar"
+ },
+ "Yuumi": {
+  "lv": "必須級",
+  "why": "P・W（ユー＆ミー！）・Rで味方を回復し続ける",
+  "evidence": "Riot Data Dragon ja_JP Yuumi.json (P/W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Yuumi"
+ },
+ "Illaoi": {
+  "lv": "必須級",
+  "why": "P（旧神の預言者）の触手が敵チャンピオンに当たると回復",
+  "evidence": "Riot Data Dragon ja_JP Illaoi.json (P description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Illaoi"
+ },
+ "Sylas": {
+  "lv": "推奨",
+  "why": "W（王殺し）で回復、減少体力が多いほど回復量増加",
+  "evidence": "Riot Data Dragon ja_JP Sylas.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Sylas"
+ },
+ "Olaf": {
+  "lv": "推奨",
+  "why": "P（狂戦士の怒り）で減少体力に応じてライフスティール増加",
+  "evidence": "Riot Data Dragon ja_JP Olaf.json (P/E description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Olaf"
+ },
+ "Fiora": {
+  "lv": "推奨",
+  "why": "P（デュエリスト・ダンス）の急所攻撃とRの回復フィールド",
+  "evidence": "Riot Data Dragon ja_JP Fiora.json (P/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Fiora"
+ },
+ "Sona": {
+  "lv": "推奨",
+  "why": "W（パーセヴァランス）で自身と周囲の味方を回復",
+  "evidence": "Riot Data Dragon ja_JP Sona.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Sona"
+ },
+ "Nami": {
+  "lv": "推奨",
+  "why": "W（潮の流れ）が味方に跳ねて体力を回復",
+  "evidence": "Riot Data Dragon ja_JP Nami.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Nami"
+ },
+ "Milio": {
+  "lv": "推奨",
+  "why": "W（癒しの焚き火）とR（生命の息吹）で味方を回復",
+  "evidence": "Riot Data Dragon ja_JP Milio.json (W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Milio"
+ },
+ "Taric": {
+  "lv": "推奨",
+  "why": "Q（スターライトタッチ）で自身と周囲の味方を回復",
+  "evidence": "Riot Data Dragon ja_JP Taric.json (Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Taric"
+ },
+ "Fiddlesticks": {
+  "lv": "推奨",
+  "why": "W（豊かな収穫）で周囲の敵から体力を吸収",
+  "evidence": "Riot Data Dragon ja_JP Fiddlesticks.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Fiddlesticks"
+ },
+ "Hecarim": {
+  "lv": "推奨",
+  "why": "W（ソウルドレイン）中、周囲の敵が受けたダメージで回復",
+  "evidence": "Riot Data Dragon ja_JP Hecarim.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Hecarim"
+ },
+ "Nasus": {
+  "lv": "推奨",
+  "why": "P（ソウルイーター）で高いライフスティールを持つ",
+  "evidence": "Riot Data Dragon ja_JP Nasus.json (P description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Nasus"
+ },
+ "Darius": {
+  "lv": "推奨",
+  "why": "Q（皆殺しの斧）の刃を当てた数に応じて回復",
+  "evidence": "Riot Data Dragon ja_JP Darius.json (Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Darius"
+ },
+ "Renekton": {
+  "lv": "推奨",
+  "why": "Q（ミートカット）で与ダメージに応じて回復、強化で増加",
+  "evidence": "Riot Data Dragon ja_JP Renekton.json (Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Renekton"
+ },
+ "Trundle": {
+  "lv": "推奨",
+  "why": "R（暴虐なる搾取）で体力を吸収、W（凍てつく大地）で回復増",
+  "evidence": "Riot Data Dragon ja_JP Trundle.json (P/W/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Trundle"
+ },
+ "Gwen": {
+  "lv": "推奨",
+  "why": "P（裁断）でチャンピオンへの与ダメージの一部を回復",
+  "evidence": "Riot Data Dragon ja_JP Gwen.json (P description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Gwen"
+ },
+ "Irelia": {
+  "lv": "推奨",
+  "why": "Q（瞬刃）の命中ごとに体力を回復",
+  "evidence": "Riot Data Dragon ja_JP Irelia.json (Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Irelia"
+ },
+ "Kayn": {
+  "lv": "推奨",
+  "why": "ダーキン形態（赤ケイン）時、スキルの与ダメージで回復",
+  "evidence": "Riot Data Dragon ja_JP Kayn.json (P description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Kayn"
+ },
+ "Belveth": {
+  "lv": "推奨",
+  "why": "E（ロイヤルストーム）中にライフスティールを獲得",
+  "evidence": "Riot Data Dragon ja_JP Belveth.json (E description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Bel'Veth"
+ },
+ "Volibear": {
+  "lv": "推奨",
+  "why": "W（激昂の斬撃）の2回目命中で大きく回復",
+  "evidence": "Riot Data Dragon ja_JP Volibear.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Volibear"
+ },
+ "Zac": {
+  "lv": "推奨",
+  "why": "P（はぐれスライム）のスライム回収で回復",
+  "evidence": "Riot Data Dragon ja_JP Zac.json (P description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Zac"
+ },
+ "TahmKench": {
+  "lv": "推奨",
+  "why": "Q（味見）の回復とE（ゆるゆる皮膜）の蓄積ダメージ回復",
+  "evidence": "Riot Data Dragon ja_JP TahmKench.json (Q/E description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Tahm_Kench"
+ },
+ "Tryndamere": {
+  "lv": "推奨",
+  "why": "Q（血の欲望）でフューリーを消費して大きく回復",
+  "evidence": "Riot Data Dragon ja_JP Tryndamere.json (Q description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Tryndamere"
+ },
+ "MasterYi": {
+  "lv": "推奨",
+  "why": "W（明鏡止水）で詠唱中に体力を大きく回復",
+  "evidence": "Riot Data Dragon ja_JP MasterYi.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Master_Yi"
+ },
+ "Mordekaiser": {
+  "lv": "推奨",
+  "why": "W（不滅の鎧）のシールドを消費して体力を回復",
+  "evidence": "Riot Data Dragon ja_JP Mordekaiser.json (W description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Mordekaiser"
+ },
+ "Zaahen": {
+  "lv": "推奨",
+  "why": "Q（ダーキングレイヴ）の最大体力割合回復とRの回復",
+  "evidence": "Riot Data Dragon ja_JP Zaahen.json (Q/R description explicitly states healing); https://wiki.leagueoflegends.com/en-us/Zaahen (verified: Q heals 5-9% max HP vs champions; R heals per champion struck)"
+ }
+}

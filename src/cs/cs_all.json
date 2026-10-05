@@ -1,0 +1,1829 @@
+{
+ "Galio": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（竜巻を作る風）が来たら、竜巻の外で待ってから取る",
+    "src": "skills.Q.what + skills.Q.tip"
+   },
+   {
+    "k": "E",
+    "t": "E（突進ノックアップ）の後ろに下がる動きを見たら横へ動く",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Leblanc": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（スネアの鎖）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "MasterYi": {
+  "cs": [
+   {
+    "k": "P",
+    "t": "P（数回ごとの2回攻撃）があるので、長く殴り合いながら取らない",
+    "src": "skills.P.what + skills.P.tip + vs[1]"
+   }
+  ]
+ },
+ "Sivir": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（往復ブーメラン）はミニオンの後ろで受け、外した後に取る",
+    "src": "skills.Q.what + skills.Q.tip + aim[1]"
+   }
+  ]
+ },
+ "Warwick": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "HPが半分を切るとW（血の追跡）で狙われる。CSより先に下がる",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   }
+  ]
+ },
+ "Tryndamere": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（回転突進）があるうちは近づきすぎず、使った後に取る",
+    "src": "skills.E.what + skills.E.tip + aim[1]"
+   }
+  ]
+ },
+ "Singed": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（投げ飛ばし）は射程が短い。近づきすぎずに取る",
+    "src": "skills.E.what + skills.E.tip + vs[1]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（毒の跡）の上を歩いてCSを取りに行かない",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Chogath": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（地割れノックアップ）の予兆が出たら、CSより先に横へ避ける",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Shaco": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（見えない箱）がありそうな場所に近づいて取らない",
+    "src": "skills.W.what + skills.W.tip"
+   }
+  ]
+ },
+ "Irelia": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（ダッシュ斬り）で飛ばれるので、体力の低いミニオンの近くに立たない",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "E",
+    "t": "E（2本の刃でスタン）は刃を結ぶ線から横へ動いて避ける",
+    "src": "skills.E.what + skills.E.tip + vs[2] + aim[0]"
+   }
+  ]
+ },
+ "Karma": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（炎の弾）が来そうな時はミニオンの後ろで取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[1]"
+   },
+   {
+    "k": "W",
+    "t": "W（スネアの鎖）でつながれたら、CSより先に離れて切る",
+    "src": "skills.W.what + skills.W.tip + vs[1]"
+   }
+  ]
+ },
+ "Swain": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（戻ってくるスネア）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "W",
+    "t": "W（遅れて爆発する目玉）が出たら、CSより先に範囲から出る",
+    "src": "skills.W.what + skills.W.tip + vs[1]"
+   }
+  ]
+ },
+ "Katarina": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（跳ねる短剣）が地面に落ちたら、その近くのCSは取らない",
+    "src": "skills.Q.what + skills.Q.tip + skills.P.tip + vs[0]"
+   }
+  ]
+ },
+ "JarvanIV": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "旗が見えたら、Q（旗へ飛ぶ突きでノックアップ）の線上に立たない",
+    "src": "skills.Q.what + skills.E.tip + vs[0]"
+   }
+  ]
+ },
+ "Brand": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（燃えていればスタンの火の玉）はミニオンの後ろで防ぎ、外した後に取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Cassiopeia": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（遅れて出る毒の爆発）があるので、立ち止まってCSを取らない",
+    "src": "skills.Q.what + skills.Q.tip + vs[0]"
+   },
+   {
+    "k": "E",
+    "t": "毒が付いたらE（毒の相手に連打）が痛い。一度下がる",
+    "src": "skills.E.what + skills.E.tip + vs[1]"
+   }
+  ]
+ },
+ "Nidalee": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（遠いほど痛い槍）はミニオンの後ろで受け、外した後に取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Pantheon": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（跳びかかりスタン）が届く距離に入ってCSを取らない",
+    "src": "skills.W.what + skills.W.tip"
+   },
+   {
+    "k": "P",
+    "t": "パッシブ強化状態の時は近づかない。使い切った後に取る",
+    "src": "skills.P.what + skills.P.tip + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Akali": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（扇状のクナイ）の射程の端に立ち続けない",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "E",
+    "t": "E（飛びつける手裏剣）はミニオンの後ろで防ぎ、外した後に取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Malzahar": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（伝染する呪い）が付いたミニオンが倒れる時は近づかない",
+    "src": "skills.E.what + skills.E.tip + vs[1]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（サイレンスのゲート）が開いたら、間から出てから取る",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Shen": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（挑発の突進）があるうちは、直線上に立ってCSを取らない",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Ahri": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（魅了の投げキッス）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Rengar": {
+  "cs": [
+   {
+    "k": "P",
+    "t": "茂みの近くでCSを取らない（茂みから飛びかかってくる）",
+    "src": "skills.P.what + skills.P.tip + vs[0]"
+   },
+   {
+    "k": "E",
+    "t": "E（投げ縄）はミニオンの後ろで防ぐ",
+    "src": "skills.E.what + skills.E.tip + vs[2]"
+   }
+  ]
+ },
+ "Sejuani": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（ノックアップの突進）はミニオンで止まらない。方向を見て横へ",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Draven": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "序盤はQ（強化斧）と殴り合わず、CSを優先する",
+    "src": "skills.Q.what + vs[0]"
+   },
+   {
+    "k": "E",
+    "t": "E（直線の斧で弾き飛ばし）は横に動いて避け、使った後に取る",
+    "src": "skills.E.what + skills.E.tip + aim[1]"
+   }
+  ]
+ },
+ "Jayce": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（電撃弾）はミニオンの後ろで防ぎ、外した後に取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Syndra": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（球体を押し出してスタン）があるうちは、球体との直線に入らない",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Zyra": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（直線のスネアのツタ）は横に動いて避け、外した後に取る",
+    "src": "skills.E.what + skills.E.tip + vs[2] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（遅れて出るトゲ）があるので、立ち止まってCSを取らない",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Zac": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（遠くから跳ぶスタン）の溜めが見えたら、着地点から離れる",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（腕を伸ばして掴む）が来たら、味方から少し離れる",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Camille": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（壁に張り付くフック）があるので、壁の近くでCSを取らない",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（2段目が強い攻撃）の1回目を受けたら、2回目の前に離れる",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Jhin": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "攻撃を受けた後はW（ミニオン貫通のスネア）の直線に立たない",
+    "src": "skills.W.what + skills.W.tip + vs[1]"
+   },
+   {
+    "k": "P",
+    "t": "4発目の前は下がり、リロード中に取る",
+    "src": "skills.P.what + skills.P.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "TahmKench": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（舌、印3つでスタン）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   }
+  ]
+ },
+ "Lucian": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（ミニオン越しの光線）の直線上に立ってCSを取らない",
+    "src": "skills.Q.what + skills.Q.tip + vs[0]"
+   },
+   {
+    "k": "P",
+    "t": "スキルの後の2連射を受けないよう、使われたら一度離れる",
+    "src": "skills.P.what + skills.P.tip + vs[2]"
+   }
+  ]
+ },
+ "Qiyana": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "川の色の時はQ（スネア）が来る。武器の色を見て近づかない",
+    "src": "skills.Q.what + skills.Q.tip + skills.W.tip + vs[1]"
+   },
+   {
+    "k": "E",
+    "t": "E（ミニオンにも使えるダッシュ）があるので、急な接近に注意",
+    "src": "skills.E.what + vs[2]"
+   }
+  ]
+ },
+ "Azir": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（直線を突く兵士）の近くに長く立ってCSを取らない",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（兵士の移動）の後は、兵士の真正面を避けて取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   }
+  ]
+ },
+ "Illaoi": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（魂を引き抜く手）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（溜めのある触手の叩きつけ）は溜めを見て横に避ける",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Bard": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（壁や味方で止まるとスタン）があるので、壁際や一列に並ばない",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + vs[1] + aim[1]"
+   }
+  ]
+ },
+ "Sylas": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（2段目の鎖でスタン）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.E.what + skills.E.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Pyke": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（引き寄せのフック）が上がっている間は、ミニオンの後ろで取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "W",
+    "t": "足元にサメが回ったら近くにいる。前に出てCSを取らない",
+    "src": "skills.W.what + skills.W.tip + vs[1]"
+   }
+  ]
+ },
+ "Mel": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（スネアの光の球）は横に動いて避け、外した後に取る",
+    "src": "skills.E.what + skills.E.tip + vs[2] + aim[1]"
+   },
+   {
+    "k": "P",
+    "t": "体力が減ったら数秒離れ、「圧倒」を消してから取る",
+    "src": "skills.P.what + skills.P.tip + vs[1]"
+   }
+  ]
+ },
+ "Lillia": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（転がる種）の進路から横に外れてから取る",
+    "src": "skills.E.what + skills.E.tip + aim[1]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（縁が痛い振り回し）の縁に立ってCSを取らない",
+    "src": "skills.Q.what + skills.Q.tip + vs[0]"
+   }
+  ]
+ },
+ "Nilah": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（ミニオンを足場にするダッシュ）があるので、近くでも油断しない",
+    "src": "skills.E.what + skills.E.tip"
+   }
+  ]
+ },
+ "Zaahen": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（先端でスタン＋引き寄せ）の溜めを見たら、横にずれる",
+    "src": "skills.W.what + skills.W.tip + vs[1] + aim[1]"
+   }
+  ]
+ },
+ "TwistedFate": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "頭上に金カード（W・スタン）が光る間は近づかず、使わせた後に取る",
+    "src": "skills.W.what + vs[2] + vs[3] + aim[0]"
+   }
+  ]
+ },
+ "Vladimir": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（吸血）のゲージが赤い間は近づかない。強化Qを使った後に取る",
+    "src": "skills.Q.what + aim[1]"
+   }
+  ]
+ },
+ "Alistar": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（突進して吹き飛ばす）の射程内で取らない。W・Qを使った後に前へ",
+    "src": "skills.W.what + vs[0] + vs[3] + aim[0]"
+   }
+  ]
+ },
+ "Soraka": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（沈黙の渦）の中でCSを取らず、何より先に外へ出る",
+    "src": "skills.E.what + vs[2] + trap"
+   }
+  ]
+ },
+ "Nunu": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（転がる雪玉・打ち上げ）が近づいたら、CSより先に方向転換で避ける",
+    "src": "skills.W.what + vs[0]"
+   }
+  ]
+ },
+ "Jax": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "体力が少ない時はQ（跳びかかり）の届く距離で取らない",
+    "src": "skills.Q.what + vs[3]"
+   },
+   {
+    "k": "E",
+    "t": "E（回避＋最後にスタン）が始まったら殴らず離れる",
+    "src": "skills.E.what + vs[0] + trap"
+   }
+  ]
+ },
+ "Evelynn": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（呪い→魅了）を付けられたらCSを諦め、味方・タワー側へ下がる",
+    "src": "skills.W.what + vs[1]"
+   },
+   {
+    "k": "R",
+    "t": "Lv6以降、体力3割未満で前に出ない。R（低体力に大ダメージ）で倒される",
+    "src": "skills.R.what + trap"
+   }
+  ]
+ },
+ "Amumu": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（包帯・スタン）が上がっている間はミニオンの後ろで取る。2回外させたら前へ",
+    "src": "skills.Q.what + vs[0] + vs[2] + trap"
+   }
+  ]
+ },
+ "DrMundo": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（投げノコギリ・スロウ）は最初の敵に当たる。ミニオンの後ろで取る",
+    "src": "skills.Q.what + vs[1]"
+   }
+  ]
+ },
+ "Janna": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（竜巻・打ち上げ）を溜めている間は直線上に立たない。撃った後に取る",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Taric": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（構えてからのスタン光線）の構えを見たら横に動き、外した後に取る",
+    "src": "skills.E.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Caitlyn": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（トラップ）の近くで取らない。Q（貫通弾）は溜めを見て横へ",
+    "src": "skills.W.what + skills.Q.what + skills.Q.tip + vs[0] + vs[2]"
+   }
+  ]
+ },
+ "Nocturne": {
+  "cs": [
+   {
+    "k": "R",
+    "t": "Lv6以降、R（視界を狭める）中は1人で前に出てCSを取らない",
+    "src": "skills.R.what + vs[0] + trap"
+   }
+  ]
+ },
+ "Elise": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（繭・スタン）に備えミニオンの後ろで取る。外した後は反撃どき",
+    "src": "skills.E.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "LeeSin": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（音波→跳びつき）に備えミニオンの後ろで取る。外した後は攻めどき",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Skarner": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（掴んで運ぶ突撃）がある間は壁際で取らない。使った後は攻めどき",
+    "src": "skills.E.what + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Udyr": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（加速＋最初のAAでスタン）に備え距離を取り、スタンを受けたらすぐ離れる",
+    "src": "skills.E.what + vs[0] + vs[2]"
+   }
+  ]
+ },
+ "Ezreal": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（直線弾）に備えミニオンを挟んで取る。E（瞬間移動）を使った後に攻める",
+    "src": "skills.Q.what + vs[0] + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Kennen": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（手裏剣・刻印）に備えミニオンの後ろで取る。刻印2つなら離れる",
+    "src": "skills.Q.what + skills.P.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Talon": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（扇状の刃）は戻りにも当たる。戻り道から外れて取る",
+    "src": "skills.W.what + vs[2]"
+   }
+  ]
+ },
+ "Lux": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（光の拘束）はミニオン1体を貫通する。2体以上の後ろか外した後に取る",
+    "src": "skills.Q.what + vs[0] + trap + aim[0]"
+   }
+  ]
+ },
+ "Graves": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（爆薬弾）は壁際ですぐ爆発する。壁の近くで取るなら線から早めに離れる",
+    "src": "skills.Q.what + trap"
+   }
+  ]
+ },
+ "Varus": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（溜め矢・貫通）はミニオンの後ろでも当たる。溜めを見たら横に動く",
+    "src": "skills.Q.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Fiora": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（突進突き）で急所を突かれないよう、急所の方向をフィオラに向けずに取る",
+    "src": "skills.Q.what + skills.P.what + vs[0]"
+   }
+  ]
+ },
+ "Hecarim": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（加速→押し出し）で急に速く走ってきたら、CSを捨てて味方側へ下がる",
+    "src": "skills.E.what + vs[0] + trap"
+   }
+  ]
+ },
+ "Lissandra": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（氷の槍）はミニオンに当たっても後ろへ砕ける。横にずれて取る",
+    "src": "skills.Q.what + vs[2]"
+   },
+   {
+    "k": "W",
+    "t": "W（周りをスネア）があるうちは近づきすぎない。使った後に攻める",
+    "src": "skills.W.what + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "AurelionSol": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（ブラックホール・引き寄せ）が置かれたらCSより先に外へ歩いて出る",
+    "src": "skills.E.what + vs[1]"
+   }
+  ]
+ },
+ "Kaisa": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（長距離ミサイル・印）に備えミニオンを挟んで取る。外した後は攻めどき",
+    "src": "skills.W.what + vs[1] + aim[1]"
+   }
+  ]
+ },
+ "Yasuo": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（突き）2回で竜巻が出る。風が巻いている時は直線上で取らない",
+    "src": "skills.Q.what + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Akshan": {
+  "cs": [
+   {
+    "k": "R",
+    "t": "Lv6以降、R（溜め撃ち）の構えを見たらミニオンを間に挟む",
+    "src": "skills.R.what + vs[2]"
+   }
+  ]
+ },
+ "Kindred": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（狼が自動攻撃）の範囲の中でCSを取らない",
+    "src": "skills.W.what + vs[3]"
+   }
+  ]
+ },
+ "Briar": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（跳びかかりスタン）の直後は反撃どき。体力が少ない時は近寄らない",
+    "src": "skills.Q.what + skills.Q.tip + aim[0]"
+   }
+  ]
+ },
+ "Zed": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（貫通手裏剣）は影からも飛ぶ。影の正面の直線上で取らない",
+    "src": "skills.Q.what + vs[1]"
+   }
+  ]
+ },
+ "Vi": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（溜めて突進）の溜めを見たら、CSより先に突進の方向から横へ外れる",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Yuumi": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（曲がるミサイル・スロウ）は最初の敵に当たる。ミニオンを挟んで取る",
+    "src": "skills.Q.what"
+   }
+  ]
+ },
+ "RekSai": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "フューリー満タン時は近づかない。見えない時はW（地中から打ち上げ）を警戒",
+    "src": "skills.W.what + vs[2] + vs[3]"
+   }
+  ]
+ },
+ "Rakan": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（飛び込み→打ち上げ）の着地点に立たない。着地したらすぐ離れる",
+    "src": "skills.W.what + vs[0]"
+   }
+  ]
+ },
+ "Neeko": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（スネアの輪）は敵に当たると大きくなる。ミニオンの真後ろで取らない",
+    "src": "skills.E.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Vex": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（霧の波）はミニオンを貫通する。早めに横へ動いて避ける",
+    "src": "skills.Q.what + vs[1]"
+   },
+   {
+    "k": "P",
+    "t": "P（恐怖）が溜まっている間は近づきすぎず、使わせた後に取る",
+    "src": "skills.P.what + vs[2] + aim[0]"
+   }
+  ]
+ },
+ "Yunara": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（珠・強いスロウ）が飛んできたらCSより先に横へ避ける",
+    "src": "skills.W.what + vs[1] + trap"
+   }
+  ]
+ },
+ "Gwen": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（連続切り）が溜まる前に短く殴って下がる。長居して取らない",
+    "src": "skills.Q.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "KSante": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（叩き）を2回受けたら、3回目（引き寄せ＋スタン）は横へ避ける",
+    "src": "skills.Q.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Hwei": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（目玉など足止め）に備えミニオンの後ろで取る。使った後に詰める",
+    "src": "skills.E.what + vs[0] + vs[2] + aim[0]"
+   }
+  ]
+ },
+ "Olaf": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（斧投げ・スロウ）の直線上でCSしない。外して斧が遠くに落ちたら取る",
+    "src": "skills.Q.what + skills.Q.tip + aim[1]"
+   }
+  ]
+ },
+ "Urgot": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（突進スタン）の溜めが見えたら横へずれる。外した後にCSを取る",
+    "src": "skills.E.what + skills.E.tip + aim[0]"
+   }
+  ]
+ },
+ "Kayle": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（剣）はミニオン越しにも当たる。隠れず、剣の直線から横にずれて取る",
+    "src": "skills.Q.tip + vs[3]"
+   }
+  ]
+ },
+ "Sion": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "地面にQ（斧）の範囲が出たら、CSより先に範囲の外へ出る",
+    "src": "skills.Q.what + vs[0]"
+   },
+   {
+    "k": "E",
+    "t": "E（咆哮）で吹き飛ぶミニオンの通り道に立たない",
+    "src": "skills.E.what + skills.E.tip"
+   }
+  ]
+ },
+ "Tristana": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（爆弾）を付けられたら、CSより先に攻撃が届かない所へ下がる",
+    "src": "skills.E.tip + vs[0]"
+   },
+   {
+    "k": "E",
+    "t": "倒れかけのミニオンの近くに立たない（爆弾の破片が飛ぶ）",
+    "src": "vs[2] + skills.E.what"
+   }
+  ]
+ },
+ "Ashe": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（扇状の矢・スロウ）がある間は、ミニオンの後ろに立ってCSする",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   }
+  ]
+ },
+ "Zilean": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（時限爆弾）を付けられたら下がる。2つ目が付くとスタンする",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Karthus": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（遅れて爆発）は1体だけだと2倍。ミニオンの近くで動きながら取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   }
+  ]
+ },
+ "Anivia": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（氷の塊・スタン）が飛んできたら大きく横へ。外した後にCSを取る",
+    "src": "skills.Q.tip + aim[0]"
+   }
+  ]
+ },
+ "Kassadin": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（扇形のスロウ）が届く距離でCSしない。近づかれたら早めに下がる",
+    "src": "skills.E.what + skills.E.tip + vs[4]"
+   }
+  ]
+ },
+ "Corki": {
+  "cs": [
+   {
+    "k": "R",
+    "t": "R（ミサイル）はミニオンの後ろで直撃を避け、爆発範囲からも少し離れる",
+    "src": "skills.R.tip + vs[0]"
+   }
+  ]
+ },
+ "Trundle": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（凍った地面）の上ではCSしない。範囲の外で取る",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（噛みつき・スロウ）を受けたら、殴り合わずに距離を取る",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Malphite": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（岩の破片・3秒スロウ）を受けたら、CSより先に下がるか決める",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Renekton": {
+  "cs": [
+   {
+    "k": "P",
+    "t": "怒りゲージが半分以上の時は、ミニオンの群れに入ってCSしない",
+    "src": "vs[0] + vs[2] + skills.Q.tip"
+   }
+  ]
+ },
+ "MonkeyKing": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（対象への突進）が届く距離に、不用意にCSしに入らない",
+    "src": "skills.E.what + skills.E.tip"
+   },
+   {
+    "k": "Q",
+    "t": "Q（射程が伸びる強攻撃）に備え、通常攻撃の射程より広めに離れる",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Rumble": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（銛・スロウ）の直線上で止まらない。2発とも外したら取る",
+    "src": "skills.E.tip + aim[1]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（火炎放射）中はランブルの正面でCSしない",
+    "src": "skills.Q.what + vs[0]"
+   }
+  ]
+ },
+ "Nasus": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（長いスロウ）を受けたら、CSを捨ててすぐ離れる",
+    "src": "skills.W.what + skills.W.tip"
+   }
+  ]
+ },
+ "Gragas": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（体当たりスタン）に備えミニオンの後ろに立つ。外した後に取る",
+    "src": "skills.E.tip + vs[0] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（酒樽）を置かれたら、CSより先に範囲の外へ出る",
+    "src": "skills.Q.tip + vs[1]"
+   }
+  ]
+ },
+ "Yorick": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（霧・スロウ）は横に動いて避ける。当たるとグールに囲まれる",
+    "src": "skills.E.what + skills.E.tip + vs[2]"
+   },
+   {
+    "k": "P",
+    "t": "グール（手下）がいる時は近づかず、先に通常攻撃で倒す",
+    "src": "skills.P.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Leona": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（剣・ミニオン貫通）の直線上に立たない。外した後に取る",
+    "src": "skills.E.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "KogMaw": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（射程が伸びる）中は射程の外へ。切れた後に取る",
+    "src": "skills.W.what + skills.W.tip + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（粘液弾）はミニオンで止まる。ミニオンの後ろでCSする",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Shyvana": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（火球）に備えミニオンの後ろに立つ。竜の姿では貫通するので横へ",
+    "src": "vs[2] + skills.E.what + skills.E.tip"
+   }
+  ]
+ },
+ "Volibear": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（加速→スタン）で向かってきたら、CSを捨てて先に距離を取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "E",
+    "t": "E（雷）の予告が地面に出たら、すぐ範囲の外へ出る",
+    "src": "skills.E.tip + vs[2]"
+   }
+  ]
+ },
+ "Viktor": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（重力場）の範囲が見えたら、CSより先に外へ出る",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（弾）の後は強化攻撃が来る。その間は近づきすぎない",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Lulu": {
+  "cs": [
+   {
+    "k": "P",
+    "t": "P（妖精の追加攻撃）はミニオンの後ろで防ぐ。Q（ビーム）は横へ避ける",
+    "src": "skills.P.tip + vs[1] + skills.Q.tip"
+   }
+  ]
+ },
+ "Darius": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（引き寄せ）の届く中距離でCSしない。外した後に取る",
+    "src": "skills.E.tip + vs[2] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（振り回し）の溜めが見えたら、外側の刃の範囲から出る",
+    "src": "skills.Q.tip + vs[1]"
+   }
+  ]
+ },
+ "Quinn": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（鷹）はミニオンで止まる。間にミニオンを挟んでCSする",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "P",
+    "t": "鷹の印が付いたらCSを我慢して離れる",
+    "src": "skills.P.tip + vs[0]"
+   }
+  ]
+ },
+ "Zoe": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（眠りの泡）とQ（星）はミニオンで止まる。ミニオンの後ろで取る",
+    "src": "vs[0] + skills.Q.tip + skills.E.tip"
+   },
+   {
+    "k": "E",
+    "t": "外れたE（泡）は地面に罠として残る。CS中も踏まない",
+    "src": "skills.E.what + skills.E.tip"
+   }
+  ]
+ },
+ "Gnar": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（ブーメラン・スロウ）の軌道から横に避けて取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[3]"
+   },
+   {
+    "k": "P",
+    "t": "怒りゲージが黄色（60以上）なら近づかない。小さく戻った後に取る",
+    "src": "skills.P.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Taliyah": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（石の連射）はミニオンの後ろで防ぐか、横に動いて避ける",
+    "src": "skills.Q.what + skills.Q.tip + vs[2]"
+   },
+   {
+    "k": "W",
+    "t": "地面が光ったら（W）、CSより先にその範囲から出る",
+    "src": "skills.W.tip + vs[1]"
+   }
+  ]
+ },
+ "Braum": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（氷塊・スロウ）はミニオンで止まる。後ろに立ってCSする",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "P",
+    "t": "Qか通常攻撃を1回受けたら下がる（4回重なるとスタン）",
+    "src": "skills.P.what + skills.P.tip + vs[0]"
+   }
+  ]
+ },
+ "Jinx": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（レーザー）はミニオンで止まる。後ろに立ち、構えたら横へ",
+    "src": "skills.W.what + skills.W.tip + vs[1]"
+   },
+   {
+    "k": "E",
+    "t": "E（トラップ）が置かれた場所は踏まず、回り込んで取る",
+    "src": "skills.E.tip + vs[2]"
+   }
+  ]
+ },
+ "Senna": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（霧・スネア）はミニオンの後ろで防ぐ。外した後に取る",
+    "src": "skills.W.what + skills.W.tip + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（ビーム）はミニオン越しにも届く。ビームの線上から外れる",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Ekko": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（グレネード）が当たったら、エコーとの間の線から横へ抜ける",
+    "src": "skills.Q.what + skills.Q.tip + vs[1]"
+   },
+   {
+    "k": "W",
+    "t": "地面に円（W）が出たら、CSより先に円の外へ出る",
+    "src": "skills.W.what + skills.W.tip + vs[0]"
+   }
+  ]
+ },
+ "Nami": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（泡・スタン）が飛んできたらすぐ横へ。外した後に取る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Thresh": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（鎖・引き寄せ）に備えミニオンの後ろに立つ。外した後に前に出る",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Kalista": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（槍）は体力の多いミニオンの後ろで防ぐ",
+    "src": "skills.Q.what + skills.Q.tip"
+   },
+   {
+    "k": "E",
+    "t": "槍が多く刺さったら、CSより先に一度下がる（E）",
+    "src": "skills.E.what + skills.E.tip + vs[1]"
+   }
+  ]
+ },
+ "Ornn": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "Q（溶岩の柱）とオーンの間に立たない。E（突進）でスタンする",
+    "src": "skills.Q.what + skills.E.what + skills.E.tip"
+   }
+  ]
+ },
+ "Rell": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（直線の突き・スタン）があるうちは、レルの正面に立たない",
+    "src": "skills.Q.what + skills.Q.tip"
+   },
+   {
+    "k": "W",
+    "t": "E（加速）で寄ってきたら、W（飛び込み）の範囲外まで下がる",
+    "src": "skills.E.tip + skills.W.tip + vs[0]"
+   }
+  ]
+ },
+ "Ambessa": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q1段目（扇）の外側に立たない。当たったらすぐ横へ",
+    "src": "skills.Q.what + skills.Q.tip + vs[0] + vs[1]"
+   },
+   {
+    "k": "P",
+    "t": "スキルを1つ見たら一歩下がる（強化攻撃の射程から出る）",
+    "src": "skills.P.what + skills.P.tip"
+   }
+  ]
+ },
+ "Sett": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（溜めの拳）の構えが見えたら横へ。外した後に攻める",
+    "src": "skills.W.tip + vs[1] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（強化パンチ）で寄られたら、2発受けた後に距離を取り直す",
+    "src": "skills.Q.what + skills.Q.tip"
+   }
+  ]
+ },
+ "Aurora": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（弾）はミニオンを貫通する。横に避け、当たったら線上から外れる",
+    "src": "skills.Q.what + skills.Q.tip + vs[0]"
+   }
+  ]
+ },
+ "Milio": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（キック・スタン）はミニオンの後ろで受ける。真後ろは避ける",
+    "src": "skills.Q.what + skills.Q.tip + vs[3]"
+   }
+  ]
+ },
+ "Annie": {
+  "cs": [
+   {
+    "k": "P",
+    "t": "カウンターが光る間（次のスキルがスタン）は射程外で待ち、スタン後に取る",
+    "src": "skills.P.what + vs[0] + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "XinZhao": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "序盤はワードで位置を確認。E（突進）が来たらQの3回目の前に下がる",
+    "src": "vs[0] + vs[2] + skills.E.what + skills.Q.what"
+   }
+  ]
+ },
+ "Fiddlesticks": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "視界の無い茂みの近くでCSする時はワードを置く（Q：死角からの恐怖）",
+    "src": "vs[0] + skills.Q.what"
+   }
+  ]
+ },
+ "Ryze": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（直線の弾）はミニオンの後ろに立って防ぐ",
+    "src": "vs[0] + skills.Q.what"
+   },
+   {
+    "k": "E",
+    "t": "E（印）が付いたら一度下がる。印の間はW（スロウ）がスネアになる",
+    "src": "vs[1] + skills.E.what + skills.W.what"
+   }
+  ]
+ },
+ "Teemo": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（目つぶし）がある間は殴り合わず、Q使用後のCD中に取る・攻める",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "MissFortune": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（後ろへ跳ねる弾）があるうちは、弱ったミニオンの真後ろに立たない",
+    "src": "skills.Q.what + vs[0]"
+   }
+  ]
+ },
+ "Morgana": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（長いスネア）がある間はミニオンを挟んで立ち、外した後に前へ出る",
+    "src": "skills.Q.what + vs[0] + vs[3] + aim[0]"
+   }
+  ]
+ },
+ "Twitch": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "レーンから消えたらQ（透明化）中なので、前に出すぎず味方に知らせる",
+    "src": "skills.Q.what + vs[0]"
+   }
+  ]
+ },
+ "Rammus": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "レーンではミニオンの近くに立ち、Q（転がり突進）が見えたら早めに下がる",
+    "src": "vs[0] + vs[3] + skills.Q.what"
+   }
+  ]
+ },
+ "Sona": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（近くの敵に自動で当たる魔法）の射程に不用意に入ってCSしない",
+    "src": "skills.Q.what + vs[2]"
+   }
+  ]
+ },
+ "Gangplank": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（火薬樽）の近くでCSしない。近くに置かれた樽は通常攻撃で壊す",
+    "src": "skills.E.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Veigar": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（スタンの檻）がある間は深入りせず、外した後に前へ出る",
+    "src": "skills.E.what + aim[0]"
+   },
+   {
+    "k": "W",
+    "t": "地面にW（遅れて落ちる魔法）の表示が出たら、すぐ範囲外へ",
+    "src": "skills.W.what + vs[1]"
+   }
+  ]
+ },
+ "Blitzcrank": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（引き寄せのフック）がある間はミニオンの後ろ。外したら前に出て取る",
+    "src": "skills.Q.what + vs[0] + vs[2] + aim[0]"
+   }
+  ]
+ },
+ "Maokai": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（突進してスネア）の射程に入らない。W使用後は反撃のチャンス",
+    "src": "skills.W.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Orianna": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "ボールの近くでCSしない（Q・Wはボールの位置からダメージ）",
+    "src": "skills.Q.what + skills.W.what + vs[0]"
+   }
+  ]
+ },
+ "Vayne": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "壁を背にしてCSしない（E：押し出して壁に当たるとスタン）",
+    "src": "skills.E.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Heimerdinger": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（砲台）の射程内でCSしない。E（スタン弾）を外した後に近づく",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Poppy": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "壁の近くでCSしない（E：押し込んで壁スタン）。E空振り後は攻めどき",
+    "src": "skills.E.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Mordekaiser": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（引き寄せ）の予備動作を見たら横へ。外した直後は反撃どき",
+    "src": "skills.E.what + skills.E.tip + aim[0]"
+   }
+  ]
+ },
+ "Garen": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（加速＋サイレンス）がある間は近寄らず、Q使用後に取る",
+    "src": "skills.Q.what + vs[1] + aim[0]"
+   },
+   {
+    "k": "R",
+    "t": "Lv6以降、HPが減ったら近くに行かない（R：減ったHPで確定ダメージ）",
+    "src": "skills.R.what + vs[2]"
+   }
+  ]
+ },
+ "Riven": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（ダッシュ）とW（スタン）がある間は近寄らず、使った直後に取る",
+    "src": "skills.E.what + skills.W.what + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Xerath": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（最初に当たった敵をスタン）はミニオンの後ろで防ぐ。外した後は前へ",
+    "src": "skills.E.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Fizz": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（対象への突進）が届く距離に入らない。E（回避）の後が反撃どき",
+    "src": "skills.Q.what + skills.Q.tip + vs[1] + aim[0]"
+   },
+   {
+    "k": "R",
+    "t": "Lv6以降は体力が半分程度でも油断せず前に出すぎない（R：魚→サメ）",
+    "src": "skills.R.what + vs[2]"
+   }
+  ]
+ },
+ "Nautilus": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（引き寄せの錨）はミニオンの後ろで防ぐ。外したらすぐ反撃",
+    "src": "skills.Q.what + vs[0] + vs[2] + aim[0]"
+   }
+  ]
+ },
+ "Ziggs": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（地雷）がまかれた場所を通ってCSしない。W・E使用後に距離を詰める",
+    "src": "skills.E.what + vs[0] + vs[1] + aim[1]"
+   }
+  ]
+ },
+ "Khazix": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "ミニオンや味方から離れて一人でCSしない（Q：孤立した相手に大ダメージ）",
+    "src": "skills.Q.what + vs[0]"
+   }
+  ]
+ },
+ "Diana": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（弧を描く弾）は横に避ける。月光（印）が付いたらEの射程外へ",
+    "src": "skills.Q.what + skills.E.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Kayn": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "近くの壁に警告表示（E：壁の中を移動中）が出たら、CSを捨ててすぐ下がる",
+    "src": "skills.E.what + vs[0]"
+   }
+  ]
+ },
+ "Seraphine": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "E（直線の強スロウ）がある間は正面に立たない。外した直後は攻めどき",
+    "src": "skills.E.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Velkoz": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "地面に範囲表示（E：遅れて爆発しスタン）が出たらすぐ外へ。外した後に詰める",
+    "src": "skills.E.what + vs[1] + aim[0]"
+   },
+   {
+    "k": "Q",
+    "t": "Q（T字に分裂する弾）は、弾の真横にいても油断しない",
+    "src": "skills.Q.what + vs[0]"
+   }
+  ]
+ },
+ "Belveth": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（直線の打ち上げ）は横に動いて避ける。外した後は仕掛けどき",
+    "src": "skills.W.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Zeri": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（最初に当たる連射弾）とW（スロウ弾）はミニオンの後ろに立って防ぐ",
+    "src": "skills.Q.what + skills.W.what + vs[0]"
+   }
+  ]
+ },
+ "Viego": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（溜めてダッシュ＋スタン）を溜めている間は正面に立たない。外したら反撃",
+    "src": "skills.W.what + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Kled": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（縄）が付いたらすぐ反対へ走って切る。W（連続攻撃）がある時は殴り合わない",
+    "src": "skills.Q.what + skills.W.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Aatrox": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（3段の叩きつけ）は表示を見て先端・円の中心から外れる。3段目後に取る",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Samira": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "前に出すぎた位置でCSしない（E：突進で飛び込んでくる）",
+    "src": "skills.E.what + vs[1] + vs[0]"
+   }
+  ]
+ },
+ "Ivern": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（直線のスネア）はミニオンの後ろで防ぐ。アイバーンの茂みに近づかない",
+    "src": "skills.Q.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Xayah": {
+  "cs": [
+   {
+    "k": "E",
+    "t": "地面の羽根とザヤを結ぶ線上に立たない（E：羽根の呼び戻しでスネア）",
+    "src": "skills.E.what + vs[0] + vs[1]"
+   }
+  ]
+ },
+ "Aphelios": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "緑の武器の時はミニオンの後ろ、紫の武器（スネア）の時は深入りしない",
+    "src": "skills.Q.what + vs[3] + vs[0]"
+   }
+  ]
+ },
+ "Yone": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Qが2回当たった後（次は突進＋打ち上げ）は正面から外れる。外した後に取る",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Locke": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（直線の釘）の1本目から横に動く。当たったらすぐ下がり、外した後に取る",
+    "src": "skills.Q.what + vs[0] + vs[1] + aim[0]"
+   }
+  ]
+ },
+ "Renata": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（スネアのミサイル）の直線上に出ず、ミニオンの後ろに立つ。外したら前へ",
+    "src": "skills.Q.what + vs[0] + aim[0]"
+   }
+  ]
+ },
+ "Smolder": {
+  "cs": [
+   {
+    "k": "W",
+    "t": "W（スロウの炎）に注意しつつ、序盤は積極的に前へ出てCSと攻撃をする",
+    "src": "skills.W.what + vs[0] + aim[1]"
+   }
+  ]
+ },
+ "Naafiri": {
+  "cs": [
+   {
+    "k": "Q",
+    "t": "Q（短剣）で出血したら、2本目が来る前に距離を取る",
+    "src": "skills.Q.what + vs[2]"
+   }
+  ]
+ }
+}

@@ -1,0 +1,109 @@
+<title>LoLアイテム図鑑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --surface-2:#E3E8EE; --line:#CFD7E0;
+  --ink:#141A22; --ink-2:#435063; --ink-3:#6E7B8E;
+  --accent:#1F5FA8; --accent-soft:#DCE8F6; --on-accent:#FFFFFF;
+  --good:#1E7F63; --good-soft:#D9EFE7;
+  --warn:#A86A12; --warn-soft:#F5E7CF;
+  --bad:#B8352B; --bad-soft:#F6DDDA;
+  --shadow:0 1px 2px rgba(20,26,34,.06),0 8px 24px rgba(20,26,34,.10);
+  --f-display:"Dela Gothic One","Hiragino Kaku Gothic StdN","Yu Gothic",sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#0F1319; --surface:#18202A; --surface-2:#222C38; --line:#2F3B49;
+  --ink:#EAF0F6; --ink-2:#B5C1CF; --ink-3:#8494A7;
+  --accent:#79AEEA; --accent-soft:#1B2C40; --on-accent:#0C1520;
+  --good:#4CC39C; --good-soft:#15302A; --warn:#E0A74A; --warn-soft:#352A17; --bad:#EE7A6E; --bad-soft:#3A1E1C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.4);}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0F1319; --surface:#18202A; --surface-2:#222C38; --line:#2F3B49;
+  --ink:#EAF0F6; --ink-2:#B5C1CF; --ink-3:#8494A7;
+  --accent:#79AEEA; --accent-soft:#1B2C40; --on-accent:#0C1520;
+  --good:#4CC39C; --good-soft:#15302A; --warn:#E0A74A; --warn-soft:#352A17; --bad:#EE7A6E; --bad-soft:#3A1E1C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.4);}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+h1{font-family:var(--f-display);font-weight:400;font-size:26px;margin:0}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.meta{font-size:12px;color:var(--ink-3)}
+.sp{flex:1}
+.btn{display:inline-flex;align-items:center;font:inherit;font-size:13px;font-weight:700;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 12px;text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.lead{font-size:14px;color:var(--ink-2);margin:10px 0 14px}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.search input{flex:1;border:0;outline:0;background:transparent;font:inherit;color:var(--ink);font-size:16px;min-width:0}
+.cats{display:flex;gap:6px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:thin}
+.cats button{flex:none;font:inherit;font-size:13px;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:4px 12px;cursor:pointer}
+.cats button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+section.cat{margin-top:22px}
+.cat h2{font-size:17px;margin:0 0 2px}
+.cat .cd{font-size:13px;color:var(--ink-2);margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
+.it{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:6px;min-width:0}
+.ih{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center}
+.ih img{width:44px;height:44px;border-radius:8px;display:block}
+.ih b{font-size:15px;line-height:1.35}
+.ih small{display:block;font-family:var(--f-mono);font-size:12px;color:var(--warn)}
+.who{font-size:12px;font-weight:700;color:var(--accent)}
+.st{display:flex;flex-wrap:wrap;gap:4px}
+.st span{font-size:11.5px;background:var(--surface-2);border-radius:4px;padding:1px 6px;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chips span{font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--bad-soft);color:var(--bad)}
+.easy{margin:0;font-size:14px}
+details{font-size:13px;color:var(--ink-2)}
+summary{cursor:pointer;font-size:12px;color:var(--ink-3)}
+details p{margin:6px 0 0;white-space:pre-line}
+.note{font-size:12px;color:var(--ink-3);margin-top:28px}
+.empty{color:var(--ink-3);padding:20px 0}
+@media (max-width:520px){.grid{grid-template-columns:1fr}h1{font-size:22px}}
+</style>
+<div class="wrap">
+  <div class="top"><h1>LoLアイテム図鑑</h1><span class="meta">パッチ26.19 · 主要アイテム__N__個</span><span class="sp"></span>
+    <a class="btn" href="https://ks389324-oss.github.io/mundo/" target="_blank" rel="noopener">ムンド版</a>
+    <a class="btn" href="https://ks389324-oss.github.io/mundo/jax/" target="_blank" rel="noopener">ジャックス版</a>
+    <a class="btn" href="https://ks389324-oss.github.io/mundo/cho/" target="_blank" rel="noopener">チョ＝ガス版</a>
+    <a class="btn" href="https://ks389324-oss.github.io/mundo/all/" target="_blank" rel="noopener">汎用版</a></div>
+  <p class="lead">完成品（コアアイテム）・ブーツ・安く買える対策素材を、役割ごとに分けています。各カードは「誰向けか」「やさしい説明」「付く能力値」の順で、下の「公式の説明」を開くとRiot公式の効果文を確認できます。</p>
+  <label class="search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="アイテム名・効果で検索（例：負傷、シールド、魔法防御）" autocomplete="off"></label>
+  <div class="cats" id="cats" role="group" aria-label="カテゴリで絞り込み"></div>
+  <main id="list"></main>
+  <p class="note">効果・能力値・価格はRiot公式のData Dragon（16.19.1）の日本語データです。公式データで数値が「0」と欠けていた22個の効果は、公式Wiki（2026年10月）の値で補っています。「誰向けか」「やさしい説明」は公式の効果文を言い換えたものです。「負傷」はゲーム内の表記で、このサイトの対面帳で「重傷」と書いている回復量低下の効果と同じものです。League of Legends © Riot Games, Inc. 本ページはRiot Gamesの公認を受けたものではありません。</p>
+</div>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm = s => String(s).normalize('NFKC').toLowerCase().replace(/[\u3041-\u3096]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60)).replace(/[\s・ー]/g,'');
+D.items.forEach(x => x._k = norm([x.name, x.who, x.easy, x.body, x.stats.join(' '), x.chips.join(' '), x.cat].join('|')));
+const state = {q:'', c:'all'};
+$('#cats').innerHTML = ['all'].concat(D.order).map(c => `<button type="button" data-c="${c}" aria-pressed="${c==='all'}">${c==='all'?'すべて':esc(c)}</button>`).join('');
+function card(x){
+  return `<article class="it"><div class="ih"><img src="${x.ic}" alt="" loading="lazy"><div><b>${esc(x.name)}</b><small>${x.gold.toLocaleString()}G</small></div></div>
+  <div class="who">${esc(x.who)}</div>
+  ${x.chips.length ? `<div class="chips">${x.chips.map(c=>`<span>${esc(c)}</span>`).join('')}</div>` : ''}
+  <p class="easy">${esc(x.easy)}</p>
+  ${x.stats.length ? `<div class="st">${x.stats.map(s=>`<span>${esc(s)}</span>`).join('')}</div>` : ''}
+  <details><summary>公式の説明</summary><p>${esc(x.body)}</p></details></article>`;
+}
+function render(){
+  const q = norm(state.q);
+  const rows = D.items.filter(x => (state.c==='all' || x.cat===state.c) && (!q || x._k.includes(q)));
+  if (!rows.length){ $('#list').innerHTML = '<p class="empty">該当するアイテムがありません。</p>'; return; }
+  $('#list').innerHTML = D.order.map(c => { const r = rows.filter(x => x.cat===c); if (!r.length) return '';
+    return `<section class="cat"><h2>${esc(c)}（${r.length}）</h2><p class="cd">${esc(D.desc[c]||'')}</p><div class="grid">${r.map(card).join('')}</div></section>`; }).join('');
+}
+$('#q').addEventListener('input', e => { state.q = e.target.value; render(); });
+$('#cats').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state.c = b.dataset.c;
+  document.querySelectorAll('#cats button').forEach(x => x.setAttribute('aria-pressed', x===b)); render(); });
+render();
+})();
+</script>
