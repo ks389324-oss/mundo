@@ -1,7 +1,7 @@
 import json,sys
 sys.path.insert(0,'.')
 from links import links
-CS=json.load(open("cs/cs_all.json")); TIPS=json.load(open("tips/tips.json")); BUY=json.load(open("buy.json")); GW={k:{"lv":v["lv"],"why":v["why"]} for k,v in json.load(open("gw/gw.json")).items()}; EN=json.load(open("en_names.json")); IDS={k.lower():k for k in EN}
+CS=json.load(open("cs/cs_all.json")); TIPS=json.load(open("tips/tips.json")); BUY=json.load(open("buy.json")); SCALE=json.load(open("scale/scale.json")); GW={k:{"lv":v["lv"],"why":v["why"]} for k,v in json.load(open("gw/gw.json")).items()}; EN=json.load(open("en_names.json")); IDS={k.lower():k for k in EN}
 d=json.load(open('data2.json')); meta=json.load(open('ddmeta.json'))
 J=json.load(open('jax/jax_final.json')); WR=json.load(open('jax/wr.json'))
 G={c['id']:c for c in json.load(open('gen/champs_v2.json'))}
@@ -25,7 +25,7 @@ for c in src:
         if 'alt' in sk and isinstance(sk['alt'],dict): sk['alt']={x:v for x,v in sk['alt'].items() if x!='c'}
         e['skills'][k]=sk
     m=meta[s]; e['key4']=m['key'].zfill(4); e['official']=m['name']; e['snames']=dict(zip("PQWER",[m["pname"]]+m["snames"]))
-    e.update(links(IDS.get(s,"MonkeyKing"))); e['cs']=CS[IDS.get(s,'MonkeyKing')]['cs']; e['tip1']=TIPS.get(IDS.get(s,'MonkeyKing'),''); e['gw']=GW.get(IDS.get(s,'MonkeyKing')); e['buy']=BUY.get(IDS.get(s,'MonkeyKing'),{}).get('jax','')
+    e.update(links(IDS.get(s,"MonkeyKing"))); e['cs']=CS[IDS.get(s,'MonkeyKing')]['cs']; e['tip1']=TIPS.get(IDS.get(s,'MonkeyKing'),''); e['gw']=GW.get(IDS.get(s,'MonkeyKing')); e['buy']=BUY.get(IDS.get(s,'MonkeyKing'),{}).get('jax',''); e['sc']=SCALE.get(IDS.get(s,'MonkeyKing')); e['lg']=IDS.get(s,'MonkeyKing').lower()
     champs.append(e)
 basics=[
  ["P（パッシブ）","通常攻撃（AA）を当てるたびにスタックが溜まり（最大8、2.5秒で切れ始めます）、1スタックごとに攻撃速度が上がります。戦う前にミニオンを殴って溜めておくと、最初から速い攻撃で戦えます。"],

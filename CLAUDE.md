@@ -16,6 +16,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/tips/tips.json`：ひとこと
 - `src/gw/gw.json`：重傷が必要なキャラ
 - `src/buy.json`：対策アイテム
+- `src/scale/scale.json`：強い時間帯の目安（序盤・中盤・終盤の3段階。`src/gen/champs_v2.json` の解説から作図し、別担当が照合済み。実データではないため、図に「解説から作図」と明記し、League of Graphs の実データへのリンクを併記）
 - `src/links.py`：外部リンクのURL規則
 
 ## 更新のしかた

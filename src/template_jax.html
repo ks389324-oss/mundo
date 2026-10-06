@@ -244,6 +244,10 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
   .fv .hero h2{font-size:24px}
   .fv .play{padding:6px 10px}
   .fv .play .then{font-size:14px}
+  .fv .card p,.fv .card li span,.fv .csw li,.fv .csw .t1,.fv .buy,.fv .vs li span{font-size:13px;line-height:1.55}
+  .fv .play .if{font-size:12px}
+  .fv .memo p,.fv .win{font-size:14px;line-height:1.6}
+  .fv-col > *{margin-bottom:12px}
   .fv .card{padding:10px 12px}
   .fv .vs li{padding-top:7px;padding-bottom:7px}
 }
@@ -310,6 +314,17 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
   .vp video{max-height:32vh;max-height:32dvh;object-fit:contain}
   .vp .vp-desc{min-height:96px}
 }
+.scl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px 6px}
+.scl-h{display:flex;align-items:baseline;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.scl-h b{font-size:12px;letter-spacing:.06em;color:var(--ink-2,#435063)}
+.scl-h a{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none}
+.scl svg{display:block;width:100%;height:auto;max-height:78px}
+.scl-mid{stroke:var(--line);stroke-dasharray:3 4}
+.scl-ln{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.scl-pt{fill:var(--surface);stroke:var(--accent);stroke-width:2.5}
+.scl-ax{font-size:10px;fill:var(--ink-3,#6E7B8E)}
+.scl-x{font-size:11px;font-weight:700;fill:var(--ink-2,#435063)}
+.scl-n{margin:2px 0 0;font-size:11.5px;line-height:1.5;color:var(--ink-3,#6E7B8E)}
 </style>
 
 <div class="wrap">
@@ -379,6 +394,19 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':
 const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); const last = a[a.length-1]; if (a.length > 1 && +last === 0) return 'CD ' + a[0] + '秒→最大で常時ON'; return 'CD ' + (a.length > 1 && a[0] !== last ? a[0] + '→' + last : a[0]) + '秒'; };
 const buyHTML = c => c.buy ? `<div class="buy"><b>対策アイテム</b><span>${esc(c.buy)}</span></div>` : '';
 const gwHTML = c => c.gw ? `<div class="gw"><b>重傷${c.gw.lv === '必須級' ? '必須級' : '推奨'}</b><span>${esc(c.gw.why)}</span><small>（重傷＝回復量を減らす効果。ジャックスならエクスキューショナー コーリングなどで付けられます）</small></div>` : '';
+const scaleHTML = c => { const s = c.sc; if (!s) return '';
+  const W = 300, H = 70, xs = [40, 150, 260], yv = v => ({3:10, 2:30, 1:50})[v];
+  const p = [[xs[0], yv(s.e)], [xs[1], yv(s.m)], [xs[2], yv(s.l)]];
+  const d = `M8 ${p[0][1]} L${p[0][0]} ${p[0][1]} C${(p[0][0]+p[1][0])/2} ${p[0][1]} ${(p[0][0]+p[1][0])/2} ${p[1][1]} ${p[1][0]} ${p[1][1]} C${(p[1][0]+p[2][0])/2} ${p[1][1]} ${(p[1][0]+p[2][0])/2} ${p[2][1]} ${p[2][0]} ${p[2][1]} L${W-8} ${p[2][1]}`;
+  const lab = v => ({3:'強', 2:'普通', 1:'弱'})[v];
+  return `<section class="scl o-strip"><div class="scl-h"><b>強い時間帯の目安（解説から作図）</b><a href="https://www.leagueofgraphs.com/ja/champions/stats/${c.lg}" target="_blank" rel="noopener" title="League of Graphsの「勝率 / ゲーム時間」（実際の試合データ）">実データのグラフ ↗</a></div>
+  <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="序盤${lab(s.e)}・中盤${lab(s.m)}・終盤${lab(s.l)}">
+    <line x1="8" x2="${W-8}" y1="30" y2="30" class="scl-mid"/>
+    
+    <path d="${d}" class="scl-ln"/>
+    ${p.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="4.5" class="scl-pt"/>`).join('')}
+    ${['序盤','中盤','終盤'].map((t,i)=>`<text x="${xs[i]}" y="${H-2}" text-anchor="middle" class="scl-x">${t}・${lab([s.e,s.m,s.l][i])}</text>`).join('')}
+  </svg><p class="scl-n">${esc(s.why)}</p></section>`; };
 const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
 function stripHTML(c, iconFn, ids){
   return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
@@ -658,6 +686,7 @@ function openChamp(slug, push){
     ${csHTML(c)}
     <div class="cards one"><div class="card trap"><h3>分からん殺し注意</h3><p>${esc(c.trap)}</p></div><div class="card go"><h3>攻めて良い瞬間</h3><p>${esc(c.go)}</p></div></div>
     <section class="o-strip"><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
+    ${scaleHTML(c)}
    </div>
    <div class="fv-col">
     <section class="o-plays"><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
