@@ -1,0 +1,130 @@
+[
+ {
+  "slug": "renekton",
+  "field": "combos[0].steps[1]",
+  "severity": "unclear",
+  "old": "E2回目で離れたのを確認します",
+  "new": "E2回目で後ろへ跳ぼうとしているのを見ます",
+  "evidence": "Steps say 'confirm he left with E2' then 'before he leaves, cast W' — contradictory order. W range is 700, so casting right as/after E2 lands is the actionable instruction."
+ },
+ {
+  "slug": "renekton",
+  "field": "combos[0].steps[2]",
+  "severity": "unclear",
+  "old": "離れる前に、W（ウィザー）をかけます",
+  "new": "E2回目で離れた直後、W（ウィザー：射程700）が届くうちにすぐかけます",
+  "evidence": "Same contradiction as steps[1]; Nasus W range 700 (WRITER.md) lets him cast after the E2 dash ends."
+ },
+ {
+  "slug": "renekton",
+  "field": "plays[1]",
+  "severity": "unclear",
+  "old": [
+   "レネクトンがE1回目で入ってきた",
+   "下がってW（メッタ斬り）の射程から外れます（Eは当たった時だけ2回目が使えるため）",
+   "w"
+  ],
+  "new": [
+   "レネクトンがE1回目で入ってきた",
+   "下がってW（メッタ斬り）の射程から外れます（Wはスタンする強化AAで、近くにいると受けるため）",
+   "w"
+  ],
+  "evidence": "Reason given ('Eは当たった時だけ2回目が使える') does not explain the action of stepping out of W range. Wiki: 'Ruthless Predator ... stun 0.75 / 1.5 empowered'. https://wiki.leagueoflegends.com/en-us/Renekton"
+ },
+ {
+  "slug": "chogath",
+  "field": "win",
+  "severity": "wrong",
+  "old": "チョ＝ガスは突進スキルがなく足も遅いので、Wのスロウがよく効きます。Qを外したチョ＝ガスは接近戦の力が落ちるので、その時にWで捕まえて殴ります。チョ＝ガスのダメージは魔法ダメージと確定ダメージ（防御力で減らせないダメージ）なので、物理防御は役に立たず、R（アヌビスの怒り）の体力と魔法防御が頼りです。",
+  "new": "チョ＝ガスは突進スキルがなく足も遅いので、Wのスロウがよく効きます。Qを外したチョ＝ガスは接近戦の力が落ちるので、その時にWで捕まえて殴ります。チョ＝ガスのスキルのダメージは魔法ダメージと確定ダメージ（防御力で減らせないダメージ）なので、物理防御はAA（通常攻撃）にしか効きません。R（アヌビスの怒り）の体力と魔法防御が頼りです。",
+  "evidence": "Cho'Gath's normal basic attacks deal physical damage; only his abilities (Q/W/E magic, R true vs champions) bypass armor. Wiki: Rupture 'magic damage', Feast 'true damage'. https://wiki.leagueoflegends.com/en-us/Cho%27Gath"
+ },
+ {
+  "slug": "mordekaiser",
+  "field": "plays[5]",
+  "severity": "unsupported",
+  "old": [
+   "R（死の国）に連れ込まれた",
+   "Rを使って戦い、HPが少なければWで足を止めて逃げ回ります（7秒耐えれば元の場所に戻れるため）",
+   "w"
+  ],
+  "new": [
+   "R（死の国）に連れ込まれた",
+   "Rを使って戦い、HPが少なければWで足を止めて逃げ回ります（7秒たてば通常の世界に戻れるため）",
+   "w"
+  ],
+  "evidence": "Wiki only says 'When the Realm of Death ends, all affected champions are returned to the normal realm' — not to their original location. https://wiki.leagueoflegends.com/en-us/Template:Data_Mordekaiser/Realm_of_Death"
+ },
+ {
+  "slug": "varus",
+  "field": "plays[4]",
+  "severity": "unclear",
+  "old": [
+   "ヴァルスがR（穢れの連鎖）を使った",
+   "Rを使ってオールイン（全力で倒しにいくこと）します（RのCDが長く、止める手段が減るため）",
+   "go"
+  ],
+  "new": [
+   "ヴァルスのR（穢れの連鎖）を横に動いて避けた",
+   "Rを使ってオールイン（全力で倒しにいくこと）します（RのCDが100〜60秒と長く、止める手段が減るため）",
+   "go"
+  ],
+  "evidence": "As written, 'Rを使った' includes the case where R hit Nasus (2s root) — going all-in then is bad. Wiki: 'roots first champion for 2 seconds', CD 100-60. https://wiki.leagueoflegends.com/en-us/Varus"
+ },
+ {
+  "slug": "ambessa",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "aatrox",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "illaoi",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "irelia",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "gnar",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "wukong",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "pantheon",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ }
+]

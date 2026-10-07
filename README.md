@@ -7,6 +7,7 @@
 - LoL対面図鑑（全173体の汎用版）：https://ks389324-oss.github.io/mundo/all/
 - ジャックスTOP対面帳：https://ks389324-oss.github.io/mundo/jax/
 - チョ＝ガスTOP対面帳：https://ks389324-oss.github.io/mundo/cho/
+- ナサスTOP対面帳：https://ks389324-oss.github.io/mundo/nasus/
 - LoLアイテム図鑑：https://ks389324-oss.github.io/mundo/items/
 
 - 勝率・試合数：LoLalytics（エメラルド以上）

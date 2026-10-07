@@ -8,6 +8,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 | ムンドTOP対面帳（55体） | https://ks389324-oss.github.io/mundo/ | `index.html` | `src/data2.json`, `src/plays.json` |
 | ジャックスTOP対面帳（55体） | /mundo/jax/ | `jax/index.html` | `src/jax/jax_final.json`, `src/jax/wr.json` |
 | チョ＝ガスTOP対面帳（55体） | /mundo/cho/ | `cho/index.html` | `src/cho/cho_final.json`, `src/cho/wr.json` |
+| ナサスTOP対面帳（55体） | /mundo/nasus/ | `nasus/index.html` | `src/nasus/nasus_final.json`, `src/nasus/wr.json` |
 | LoL対面図鑑（汎用・全173体） | /mundo/all/ | `all/index.html` | `src/gen/champs_v2.json` |
 | LoLアイテム図鑑 | /mundo/items/ | `items/index.html` | `src/items/data.json` |
 
@@ -17,6 +18,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/gw/gw.json`：重傷が必要なキャラ
 - `src/buy.json`：対策アイテム
 - `src/scale/scale.json`：強い時間帯の目安（序盤・中盤・終盤の3段階。`src/gen/champs_v2.json` の解説から作図し、別担当が照合済み。実データではないため、図に「解説から作図」と明記し、League of Graphs の実データへのリンクを併記）
+- `src/dmg/dmg.json`：AD／AP／混合の表示（LoLalytics の実戦ダメージ構成。物理÷(物理＋魔法)が70%以上でAD、30%以下でAP、それ以外は混合。取得手順は `src/briefs/dmg_BRIEF.md`）
 - `src/links.py`：外部リンクのURL規則
 
 ## 更新のしかた
@@ -32,7 +34,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - 利用者がYouTube動画や他のAIの文章を持ってきた場合は、1つずつWikiで照合し、古い・誤っている部分を直してから入れます（`src/briefs/vid_BRIEF.md`）。
 - 文章は初心者向けで、です・ます調にします。専門用語には初出で（ ）の説明を付けます。
 - アイテム名・スキル名はRiot公式の日本語名を使います（`src/dd/latest/data/ja_JP/item.json`、Data Dragon）。
-- 勝率は出典とパッチを明記します。ムンド版はLoLalytics、ジャックス版・チョ＝ガス版はOP.GG（エメラルド以上）です。
+- 勝率は出典とパッチを明記します。ムンド版はLoLalytics、ジャックス版・チョ＝ガス版・ナサス版はOP.GG（エメラルド以上）です。
 
 ## 新しいキャラの対面帳を足す場合
 チョ＝ガス版がその見本です。次のファイルを複製して作ります。

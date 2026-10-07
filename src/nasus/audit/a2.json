@@ -1,0 +1,90 @@
+[
+ {
+  "slug": "trundle",
+  "field": "skills.Q.c",
+  "severity": "wrong",
+  "old": "噛みつかれると75%スロウされ、攻撃力も一時的に下がります。CDが3.5秒と短いので、使われた直後に短く殴ります。",
+  "new": "噛みつきのスロウ（75%）は0.1秒だけの一瞬で、増加攻撃力も5秒間下げられます。CDが3.5秒と短いので、使われた直後に短く殴ります。",
+  "evidence": "Chomp: 'slowing them by 75% for 0.1 seconds'; reduces target's bonus AD for 5 seconds — https://wiki.leagueoflegends.com/en-us/Trundle"
+ },
+ {
+  "slug": "teemo",
+  "field": "combos[1].why",
+  "severity": "unclear",
+  "old": "Eでウェーブを処理しながら相手も削れ、相手の足も遅くできるからです。",
+  "new": "Eでウェーブを処理しながら相手も削れ、ダメージで相手の受動の移動速度アップも消せるので、追いかけやすくなるからです。",
+  "evidence": "Move Quick passive bonus MS is lost on taking champion damage — it is not a slow; 'related wording 足も遅くできる' overstates. https://wiki.leagueoflegends.com/en-us/Teemo"
+ },
+ {
+  "slug": "vladimir",
+  "field": "combos[0].why",
+  "severity": "unclear",
+  "old": "沼を使った後は2秒間の逃げ手段が無く、沼で自分の体力も15%減っているからです。",
+  "new": "沼のCD（28〜16秒）の間は逃げ手段が無く、沼を使う時に自分の体力も現在値の15%減っているからです。",
+  "evidence": "Sanguine Pool: 2s duration, costs 15% current health, CD 28/25/22/19/16 — https://wiki.leagueoflegends.com/en-us/Vladimir ; '2秒間の逃げ手段が無く' reads as the opposite of the 2s untargetable window"
+ },
+ {
+  "slug": "tryndamere",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "gwen",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "zed",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "volibear",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "gangplank",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "malphite",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "darius",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "kennen",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ }
+]

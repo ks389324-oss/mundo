@@ -325,6 +325,10 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
 .scl-ax{font-size:10px;fill:var(--ink-3,#6E7B8E)}
 .scl-x{font-size:11px;font-weight:700;fill:var(--ink-2,#435063)}
 .scl-n{margin:2px 0 0;font-size:11.5px;line-height:1.5;color:var(--ink-3,#6E7B8E)}
+.dm{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.02em;border-radius:4px;padding:0 5px;line-height:16px;vertical-align:2px;color:#fff}
+.dm-AD{background:#c2410c}.dm-AP{background:#4f46e5}.dm-xAD,.dm-xAP{background:linear-gradient(90deg,#c2410c 50%,#4f46e5 50%)}
+.dml{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:12.5px;color:var(--ink-2,#435063)}
+.dml small{font-size:12px;color:var(--ink-3,#6E7B8E)}
 </style>
 
 <div class="wrap">
@@ -333,7 +337,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
       <h1>チョ＝ガスTOP対面帳</h1>
       <span class="meta">パッチ26.19 · エメラルド+ · 55体 · 勝率はOP.GG</span>
       <span class="spacer"></span>
-      <a class="btn" href="https://ks389324-oss.github.io/mundo/" target="_blank" rel="noopener">ムンド版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/jax/" target="_blank" rel="noopener">ジャックス版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/all/" target="_blank" rel="noopener">汎用版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/items/" target="_blank" rel="noopener">アイテム</a><button class="btn" id="basicsBtn" type="button">チョ＝ガスの基本・用語</button>
+      <a class="btn" href="https://ks389324-oss.github.io/mundo/" target="_blank" rel="noopener">ムンド版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/jax/" target="_blank" rel="noopener">ジャックス版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/all/" target="_blank" rel="noopener">汎用版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/nasus/" target="_blank" rel="noopener">ナサス版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/items/" target="_blank" rel="noopener">アイテム</a><button class="btn" id="basicsBtn" type="button">チョ＝ガスの基本・用語</button>
     </div>
     <div class="controls">
       <label class="search" for="q">
@@ -356,6 +360,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
   </header>
 
   <div class="legend" aria-label="凡例">
+    <span><span class="dm dm-AD">AD</span> 物理ダメージ中心→物理防御が効く ／ <span class="dm dm-AP">AP</span> 魔法中心→魔法防御 ／ <span class="dm dm-xAD">混合</span> 両方（LoLalyticsの実戦データ）</span>
     <span><i class="dot st-攻め"></i>攻め：自分から仕掛けて主導権を取る</span>
     <span><i class="dot st-五分"></i>五分：合図が来た時だけ殴る</span>
     <span><i class="dot st-守り"></i>守り：フリーズして最低限のCS</span>
@@ -407,6 +412,12 @@ const scaleHTML = c => { const s = c.sc; if (!s) return '';
     ${p.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="4.5" class="scl-pt"/>`).join('')}
     ${['序盤','中盤','終盤'].map((t,i)=>`<text x="${xs[i]}" y="${H-2}" text-anchor="middle" class="scl-x">${t}・${lab([s.e,s.m,s.l][i])}</text>`).join('')}
   </svg><p class="scl-n">${esc(s.why)}</p></section>`; };
+const DMG_L = {AD:'AD', AP:'AP', '混AD':'混合', '混AP':'混合'};
+const dmgTitle = d => `LoLalyticsの実戦データ：物理${d.p}%・魔法${d.m}%・確定${d.t}%`;
+const dmgTag = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_L[c.dmg.c]}</span>` : '';
+const dmgLine = c => { const d = c.dmg; if (!d) return '';
+  const tip = d.c === 'AD' ? '物理防御（アーマー）の装備が効きます' : d.c === 'AP' ? '魔法防御（MR）の装備が効きます' : `物理と魔法の両方。${d.c === '混AD' ? '物理がやや多め' : '魔法がやや多め'}なので、両方の防御を考えます`;
+  return `<div class="dml">${dmgTag(c)}<span><b>ダメージ</b> 物理${d.p}%・魔法${d.m}%・確定${d.t}%</span><small>→ ${tip}${d.t >= 20 ? '（確定ダメージは防御で減りません）' : ''}</small></div>`; };
 const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
 function stripHTML(c, iconFn, ids){
   return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
@@ -433,7 +444,7 @@ function tile(c){
   const st = first(c);
   return `<button class="tile st-${st}" type="button" data-slug="${c.slug}" aria-label="${esc(c.jp)} チョ＝ガス勝率${WRT(c)} 序盤${st}">
     <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
-    <span class="nm">${esc(c.jp)}${c.gw ? ' <span class="gwm" title="重傷推奨">重傷</span>' : ''}</span>
+    <span class="nm">${dmgTag(c)} ${esc(c.jp)}${c.gw ? ' <span class="gwm" title="重傷推奨">重傷</span>' : ''}</span>
     <span class="row2"><span class="wr">${WRT(c)}</span><span>${st}</span>${c.few ? '<span class="tag">少数</span>' : ''}</span>
     ${c.wr == null ? '' : meter(c.wr)}
   </button>`;
@@ -675,6 +686,7 @@ function openChamp(slug, push){
         <div class="stats"><span>チョ＝ガス勝率</span><span class="wr">${WRT(c)}</span>${c.games ? `<span>${c.games.toLocaleString()}試合</span>` : ''}<span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
       </div>
     </div>
+    ${dmgLine(c)}
     ${gwHTML(c)}${buyHTML(c)}
     <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
     <section class="memo"><b>一口メモ</b><p>${esc(c.memo||'')}</p></section>

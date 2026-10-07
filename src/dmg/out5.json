@@ -1,0 +1,254 @@
+{
+ "Urgot": {
+  "phys": 21756,
+  "magic": 147,
+  "true": 2606,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/urgot/build/"
+ },
+ "Alistar": {
+  "phys": 1211,
+  "magic": 6602,
+  "true": 637,
+  "lane": "support",
+  "patch": "16.18",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/alistar/build/"
+ },
+ "Tristana": {
+  "phys": 23407,
+  "magic": 2101,
+  "true": 463,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/tristana/build/"
+ },
+ "Jax": {
+  "phys": 11887,
+  "magic": 9783,
+  "true": 1005,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/jax/build/"
+ },
+ "Karthus": {
+  "phys": 221,
+  "magic": 31865,
+  "true": 2906,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/karthus/build/"
+ },
+ "DrMundo": {
+  "phys": 11732,
+  "magic": 14159,
+  "true": 338,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/drmundo/build/"
+ },
+ "Corki": {
+  "phys": 18778,
+  "magic": 5255,
+  "true": 4375,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/corki/build/"
+ },
+ "Caitlyn": {
+  "phys": 24981,
+  "magic": 742,
+  "true": 483,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/caitlyn/build/"
+ },
+ "Renekton": {
+  "phys": 18174,
+  "magic": 4125,
+  "true": 1248,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/renekton/build/"
+ },
+ "LeeSin": {
+  "phys": 15250,
+  "magic": 2592,
+  "true": 1588,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/leesin/build/"
+ },
+ "Nasus": {
+  "phys": 15773,
+  "magic": 4972,
+  "true": 291,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/nasus/build/"
+ },
+ "Ezreal": {
+  "phys": 19880,
+  "magic": 8233,
+  "true": 454,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ezreal/build/"
+ },
+ "Leona": {
+  "phys": 2807,
+  "magic": 6607,
+  "true": 746,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/leona/build/"
+ },
+ "Lux": {
+  "phys": 1167,
+  "magic": 17839,
+  "true": 998,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/lux/build/"
+ },
+ "Volibear": {
+  "phys": 11911,
+  "magic": 11201,
+  "true": 1094,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/volibear/build/"
+ },
+ "Fiora": {
+  "phys": 14604,
+  "magic": 1201,
+  "true": 8764,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/fiora/build/"
+ },
+ "Darius": {
+  "phys": 17257,
+  "magic": 63,
+  "true": 5010,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/darius/build/"
+ },
+ "AurelionSol": {
+  "phys": 267,
+  "magic": 25936,
+  "true": 668,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/aurelionsol/build/"
+ },
+ "Gnar": {
+  "phys": 19626,
+  "magic": 3977,
+  "true": 445,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/gnar/build/"
+ },
+ "Akshan": {
+  "phys": 23571,
+  "magic": 2309,
+  "true": 1551,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/akshan/build/"
+ },
+ "Jinx": {
+  "phys": 24668,
+  "magic": 792,
+  "true": 406,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/jinx/build/"
+ },
+ "Zed": {
+  "phys": 25639,
+  "magic": 1022,
+  "true": 2734,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/zed/build/"
+ },
+ "Nami": {
+  "phys": 1087,
+  "magic": 7963,
+  "true": 195,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/nami/build/"
+ },
+ "RekSai": {
+  "phys": 11418,
+  "magic": 2461,
+  "true": 4724,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/reksai/build/"
+ },
+ "Ornn": {
+  "phys": 6968,
+  "magic": 12989,
+  "true": 458,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ornn/build/"
+ },
+ "Vex": {
+  "phys": 1662,
+  "magic": 24947,
+  "true": 1005,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/vex/build/"
+ },
+ "Sett": {
+  "phys": 19454,
+  "magic": 110,
+  "true": 6660,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/sett/build/"
+ },
+ "KSante": {
+  "phys": 17855,
+  "magic": 1833,
+  "true": 1330,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ksante/build/"
+ }
+}

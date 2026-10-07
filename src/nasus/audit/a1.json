@@ -1,0 +1,106 @@
+[
+ {
+  "slug": "kled",
+  "field": "combos[2].why",
+  "severity": "wrong",
+  "old": "降りた直後は能力が下がり、スキルは銃撃（Q）しか使えません。ただし勇気が満タンになると、スカールのHPが一部戻った状態で乗り直してきます。",
+  "new": "降りた直後は能力が下がり、E（突進）とR（突撃）が使えません（Qは銃撃に変わります）。ただし勇気が満タンになると、スカールのHPが一部戻った状態で乗り直してきます。",
+  "evidence": "Kled innate: \"Bear Trap on a Rope is replaced with Pocket Pistol, while Jousting and Chaaaaaaaarge!!! become unusable.\" (W Violent Tendencies stays usable) https://wiki.leagueoflegends.com/en-us/Kled"
+ },
+ {
+  "slug": "kled",
+  "field": "plays[3]",
+  "severity": "wrong",
+  "old": [
+   "スカールのHPが0になり、クレッドが降りた",
+   "跳び終わったところにWを当てて攻めます（降りた直後は能力が下がり、銃撃しか使えないため）",
+   "go"
+  ],
+  "new": [
+   "スカールのHPが0になり、クレッドが降りた",
+   "跳び終わったところにWを当てて攻めます（降りた直後は能力が下がり、E（突進）とR（突撃）が使えないため。W（4連撃）は使えるので、ナサスのWで攻撃速度も落とします）",
+   "go"
+  ],
+  "evidence": "Same wiki quote: only Jousting (E) and Chaaaaaaaarge!!! (R) become unusable while dismounted; Q becomes Pocket Pistol. https://wiki.leagueoflegends.com/en-us/Kled"
+ },
+ {
+  "slug": "warwick",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "camille",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "rumble",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "vayne",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "akali",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "sett",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "ksante",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "urgot",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "riven",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "yasuo",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ }
+]

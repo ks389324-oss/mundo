@@ -1,0 +1,263 @@
+{
+ "Annie": {
+  "phys": 972,
+  "magic": 24474,
+  "true": 1357,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/annie/build/"
+ },
+ "Leblanc": {
+  "phys": 1375,
+  "magic": 23146,
+  "true": 2344,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/leblanc/build/"
+ },
+ "Ryze": {
+  "phys": 990,
+  "magic": 23016,
+  "true": 274,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ryze/build/"
+ },
+ "Warwick": {
+  "phys": 9611,
+  "magic": 8992,
+  "true": 905,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/warwick/build/"
+ },
+ "Morgana": {
+  "phys": 932,
+  "magic": 14389,
+  "true": 951,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/morgana/build/"
+ },
+ "Chogath": {
+  "phys": 4166,
+  "magic": 10252,
+  "true": 6003,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/chogath/build/"
+ },
+ "Sona": {
+  "phys": 2258,
+  "magic": 8267,
+  "true": 176,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/sona/build/"
+ },
+ "Karma": {
+  "phys": 913,
+  "magic": 9345,
+  "true": 290,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/karma/build/"
+ },
+ "Blitzcrank": {
+  "phys": 2902,
+  "magic": 5966,
+  "true": 812,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/blitzcrank/build/"
+ },
+ "JarvanIV": {
+  "phys": 15803,
+  "magic": 1248,
+  "true": 1519,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/jarvaniv/build/"
+ },
+ "Vayne": {
+  "phys": 18643,
+  "magic": 1205,
+  "true": 4934,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/vayne/build/"
+ },
+ "Nidalee": {
+  "phys": 1335,
+  "magic": 16740,
+  "true": 2424,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/nidalee/build/"
+ },
+ "Mordekaiser": {
+  "phys": 2985,
+  "magic": 21123,
+  "true": 1285,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/mordekaiser/build/"
+ },
+ "Malzahar": {
+  "phys": 571,
+  "magic": 24097,
+  "true": 419,
+  "lane": "middle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/malzahar/build/"
+ },
+ "Xerath": {
+  "phys": 690,
+  "magic": 29196,
+  "true": 489,
+  "lane": "middle",
+  "patch": "16.18",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/xerath/build/"
+ },
+ "Rengar": {
+  "phys": 19991,
+  "magic": 1094,
+  "true": 2359,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/rengar/build/"
+ },
+ "Ziggs": {
+  "phys": 947,
+  "magic": 28593,
+  "true": 404,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ziggs/build/"
+ },
+ "Jayce": {
+  "phys": 20118,
+  "magic": 5101,
+  "true": 840,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/jayce/build/"
+ },
+ "Kayn": {
+  "phys": 20704,
+  "magic": 1252,
+  "true": 1884,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/kayn/build/"
+ },
+ "Zac": {
+  "phys": 1077,
+  "magic": 15264,
+  "true": 1027,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/zac/build/"
+ },
+ "Belveth": {
+  "phys": 12357,
+  "magic": 1914,
+  "true": 4059,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/belveth/build/"
+ },
+ "TahmKench": {
+  "phys": 3388,
+  "magic": 11884,
+  "true": 796,
+  "lane": "support",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/tahmkench/build/"
+ },
+ "Kled": {
+  "phys": 21372,
+  "magic": 1556,
+  "true": 1303,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/kled/build/"
+ },
+ "Azir": {
+  "phys": 739,
+  "magic": 26063,
+  "true": 475,
+  "lane": "middle",
+  "patch": "16.18",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/azir/build/"
+ },
+ "Ivern": {
+  "phys": 2900,
+  "magic": 6641,
+  "true": 1166,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/ivern/build/"
+ },
+ "Sylas": {
+  "phys": 650,
+  "magic": 19089,
+  "true": 1664,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/sylas/build/"
+ },
+ "Yone": {
+  "phys": 19124,
+  "magic": 4107,
+  "true": 3350,
+  "lane": "top",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/yone/build/"
+ },
+ "Lillia": {
+  "phys": 854,
+  "magic": 17612,
+  "true": 4806,
+  "lane": "jungle",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/lillia/build/"
+ },
+ "Smolder": {
+  "phys": 20356,
+  "magic": 5836,
+  "true": 3135,
+  "lane": "bottom",
+  "patch": "16.19",
+  "rank": "Emerald+",
+  "url": "https://lolalytics.com/lol/smolder/build/"
+ }
+}

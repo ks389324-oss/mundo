@@ -1,0 +1,138 @@
+[
+ {
+  "slug": "shen",
+  "field": "plays[2]",
+  "severity": "wrong",
+  "old": [
+   "シェンがE（挑発）のダッシュをしてきた",
+   "挑発の1.5秒はシェンを殴り続けるので、結界がない時はそのままQも当てます",
+   "w"
+  ],
+  "new": [
+   "シェンがE（挑発）のダッシュをしてきた",
+   "挑発の1.5秒はスキルが使えず、シェンを殴るしかありません。挑発が解けたら、結界がないのを確かめてW → AA → Qで返します（挑発中は技を押せないため）",
+   "w"
+  ],
+  "evidence": "Types of Crowd Control table: Taunt — Abilities 'Disabled' (https://wiki.leagueoflegends.com/en-us/Types_of_Crowd_Control); Shadow Dash taunt 1.5 s (https://wiki.leagueoflegends.com/en-us/Shen). Nasus cannot cast Q while taunted."
+ },
+ {
+  "slug": "shen",
+  "field": "skills.E.c",
+  "severity": "wrong",
+  "old": "当たると1.5秒間シェンを攻撃させられます。シェンが結界を置いていない時なら、挑発中のAAとQはそのまま当たります。",
+  "new": "当たると1.5秒間シェンを攻撃させられ、その間はスキルも使えません。挑発が解けたら、結界がない時にW → AA → Qで返します。",
+  "evidence": "Taunt disables abilities (https://wiki.leagueoflegends.com/en-us/Types_of_Crowd_Control). Old text said Q can be used during taunt."
+ },
+ {
+  "slug": "gragas",
+  "field": "win",
+  "severity": "wrong",
+  "old": "グラガスのダメージはすべて魔法ダメージなので、マーキュリー ブーツ（魔法防御と行動妨害耐性が付く靴）が合います。グラガスのEを外させてから、W → AA（通常攻撃） → Q（サイフォンストライク：スタックが溜まる強化AA）で削ります。スタックが溜まった中盤以降は、殴り合いでナサスが勝ちやすくなります。",
+  "new": "グラガスのスキルのダメージは魔法ダメージなので、マーキュリー ブーツ（魔法防御と行動妨害耐性が付く靴）が合います。グラガスのEを外させてから、W → AA（通常攻撃） → Q（サイフォンストライク：スタックが溜まる強化AA）で削ります。スタックが溜まった中盤以降は、殴り合いでナサスが勝ちやすくなります。",
+  "evidence": "Gragas basic attacks deal physical damage; only abilities (incl. Drunken Rage bonus) deal magic damage (https://wiki.leagueoflegends.com/en-us/Gragas)."
+ },
+ {
+  "slug": "gragas",
+  "field": "core",
+  "severity": "wrong",
+  "old": "Q（酒樽）の削りと、E（体当たり）のスタンからの連続攻撃です。ダメージはすべて魔法なので、マーキュリー ブーツが効きます。",
+  "new": "Q（酒樽）の削りと、E（体当たり）のスタンからの連続攻撃です。スキルのダメージは魔法なので、マーキュリー ブーツが効きます。",
+  "evidence": "Same: Gragas AA is physical (https://wiki.leagueoflegends.com/en-us/Gragas)."
+ },
+ {
+  "slug": "heimerdinger",
+  "field": "win",
+  "severity": "unsupported",
+  "old": "ハイマーディンガーのダメージはすべて魔法ダメージなので、マーキュリー ブーツ（魔法防御と行動妨害耐性が付く靴）が合います。砲台をAAで1基ずつ壊しながらQ（サイフォンストライク：スタックが溜まる強化AA）でスタックを溜め、E（手榴弾）が外れた時にW（ウィザー：強力なスロウ）で本体に詰めます。ハイマーディンガーにはダッシュ（素早く移動する技）がないので、Wが当たれば逃げられません。",
+  "new": "ハイマーディンガーのスキルと砲台のダメージは魔法ダメージなので、マーキュリー ブーツ（魔法防御と行動妨害耐性が付く靴）が合います。砲台をAAで1基ずつ壊しながらQ（サイフォンストライク：スタックが溜まる強化AA）でスタックを溜め、E（手榴弾）が外れた時にW（ウィザー：強力なスロウ）で本体に詰めます。ハイマーディンガーにはダッシュ（素早く移動する技）がないので、Wが当たれば逃げられません。",
+  "evidence": "Wiki confirms turrets/abilities deal magic damage (https://wiki.leagueoflegends.com/en-us/Heimerdinger); 'all damage' incl. his own basic attacks not confirmed."
+ },
+ {
+  "slug": "yorick",
+  "field": "combos[1].steps[0]",
+  "severity": "bad_advice",
+  "old": "檻の中で、まずヨリックに近い側の壁を選びます",
+  "new": "檻の中で、まず自分のタワー側（逃げたい方向）の壁を選びます",
+  "evidence": "Combo is an escape; breaking the wall on Yorick's side walks Nasus toward Yorick/ghouls. Break toward safety."
+ },
+ {
+  "slug": "yorick",
+  "field": "combos[1].steps[1]",
+  "severity": "unclear",
+  "old": "壁にAAを当てます（レベルで2〜4回で壊れます）",
+  "new": "壁にAAを当てます（ヨリックのWのランクに応じて2〜4回で壊れます）",
+  "evidence": "Dark Procession wall health '2 / 2 / 3 / 3 / 4' by W rank, 1 damage per champion basic attack, turrets destroy instantly (https://wiki.leagueoflegends.com/en-us/Yorick). It is ability rank, not champion level."
+ },
+ {
+  "slug": "yorick",
+  "field": "skills.W.c",
+  "severity": "unclear",
+  "old": "檻はチャンピオンのAAとタワーでしか壊せず、レベルに応じて2〜4回のAAで壊れます。閉じ込められたら迷わず壁を殴ります。",
+  "new": "檻はチャンピオンのAAとタワーでしか壊せず、ヨリックのWのランクに応じて2〜4回のAAで壊れます。閉じ込められたら迷わず壁を殴ります。",
+  "evidence": "Wall health 2/2/3/3/4 by rank (https://wiki.leagueoflegends.com/en-us/Yorick)."
+ },
+ {
+  "slug": "yorick",
+  "field": "combos[2].why",
+  "severity": "unclear",
+  "old": "R中は範囲ダメージでグールも削れ、檻もないので逃げ道を塞がれずに戦えるからです。",
+  "new": "R中はQのCDが半分になり、檻もないので逃げ道を塞がれずにヨリック本体を殴り続けられるからです（グールは範囲技のダメージを減らすので、近くのグールはAAで倒します）。",
+  "evidence": "Mist Walkers 'Suffer 66% – 40% (level-based) damage from area abilities', take 200% from melee champion basic attacks (https://wiki.leagueoflegends.com/en-us/Yorick); old text implied R's AoE clears ghouls, contradicting skills.P."
+ },
+ {
+  "slug": "quinn",
+  "field": "skills.Q.c",
+  "severity": "unclear",
+  "old": "当たると1.75秒、周りが見えにくくなります。AAが外れる効果ではないので、Qは普通に当たります。見えない間は無理に前へ出ません。",
+  "new": "当たると1.75秒、視界が350まで狭くなります。AAが外れる効果ではありませんが、離れたクインが見えなくなって狙えないことがあるので、見えない間は無理に前へ出ません。",
+  "evidence": "Blinding Assault: champion is nearsighted 1.75 s, 'reducing their sight radius to 350 units' (https://wiki.leagueoflegends.com/en-us/Quinn); Quinn's range is 525, so she can be out of sight."
+ },
+ {
+  "slug": "anivia",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "olaf",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "garen",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "kayn",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "poppy",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ },
+ {
+  "slug": "drmundo",
+  "field": "none",
+  "severity": "ok",
+  "old": "",
+  "new": "",
+  "evidence": "checked"
+ }
+]

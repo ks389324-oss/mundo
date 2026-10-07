@@ -1,0 +1,226 @@
+[
+ {
+  "slug": "sylas",
+  "field": "goal[0]",
+  "severity": "wrong",
+  "old": "ミニオンの後ろに立ち、Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜める",
+  "new": "ミニオンの後ろに立ち、Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜める",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "zaahen",
+  "field": "goal[0]",
+  "severity": "wrong",
+  "old": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜める",
+  "new": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜める",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "yone",
+  "field": "goal[0]",
+  "severity": "wrong",
+  "old": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜める",
+  "new": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜める",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "fiora",
+  "field": "win",
+  "severity": "wrong",
+  "old": "フィオラは1対1が得意で、急所を突くと最大HPの割合の確定ダメージ（防御で減らないダメージ）と回復を得ます。ナサスは序盤は守ってスタック（Qでとどめを刺すと永久に増える攻撃力）を溜め、W（リポスト）を空振りさせた後にWで攻撃速度を下げて戦います。",
+  "new": "フィオラは1対1が得意で、急所を突くと最大HPの割合の確定ダメージ（防御で減らないダメージ）と回復を得ます。ナサスは序盤は守ってスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜め、W（リポスト）を空振りさせた後にWで攻撃速度を下げて戦います。",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "ornn",
+  "field": "win",
+  "severity": "wrong",
+  "old": "オーンはタンク（硬くて味方を守るキャラ）で、妨害で戦いのきっかけを作るのが得意です。ナサスはQ（サイフォンストライク：スタックが溜まる強化AA）でCS（ミニオンのとどめ）を取り、スタック（Qでとどめを刺すと永久に増える攻撃力）を溜めることを最優先します。硬い相手なので、E（スピリットファイア：物理防御を下げる炎の範囲）で物理防御を下げてからQを当てると削れます。",
+  "new": "オーンはタンク（硬くて味方を守るキャラ）で、妨害で戦いのきっかけを作るのが得意です。ナサスはQ（サイフォンストライク：スタックが溜まる強化AA）でCS（ミニオンのとどめ）を取り、スタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜めることを最優先します。硬い相手なので、E（スピリットファイア：物理防御を下げる炎の範囲）で物理防御を下げてからQを当てると削れます。",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "kayle",
+  "field": "goal[1]",
+  "severity": "wrong",
+  "old": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜め続ける",
+  "new": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜め続ける",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "sion",
+  "field": "goal[0]",
+  "severity": "wrong",
+  "old": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜める",
+  "new": "Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜める",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "jax",
+  "field": "win",
+  "severity": "wrong",
+  "old": "ジャックスはAA（通常攻撃）を当てるほど攻撃速度が上がる殴り合いのキャラです。ナサスのWは攻撃速度を大きく下げるので、E（回避）を使い終わった後にWをかけてトレード（短く殴り合うこと）します。序盤はQでCS（ミニオンのとどめ）を取り、スタック（Qでとどめを刺すと永久に増える攻撃力）を溜めることを優先します。",
+  "new": "ジャックスはAA（通常攻撃）を当てるほど攻撃速度が上がる殴り合いのキャラです。ナサスのWは攻撃速度を大きく下げるので、E（回避）を使い終わった後にWをかけてトレード（短く殴り合うこと）します。序盤はQでCS（ミニオンのとどめ）を取り、スタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜めることを優先します。",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "jayce",
+  "field": "win",
+  "severity": "wrong",
+  "old": "ジェイスはキャノン（遠距離）とハンマー（近接）を切り替えて戦います。ナサスは序盤は無理をせず、Qで取れるCSを確実に取ってスタック（Qでとどめを刺すと永久に増える攻撃力）を溜めます。Wの射程（700）はキャノンのAA（通常攻撃）射程（500）より長いので、近づいてきたジェイスにはWで足を止め、Q（サイフォンストライク：スタックが溜まる強化AA）を当てます。",
+  "new": "ジェイスはキャノン（遠距離）とハンマー（近接）を切り替えて戦います。ナサスは序盤は無理をせず、Qで取れるCSを確実に取ってスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜めます。Wの射程（700）はキャノンのAA（通常攻撃）射程（500）より長いので、近づいてきたジェイスにはWで足を止め、Q（サイフォンストライク：スタックが溜まる強化AA）を当てます。",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "singed",
+  "field": "win",
+  "severity": "wrong",
+  "old": "シンジドは走りながら毒を撒き、追ってきた相手を削るキャラです。ナサスは追いかけず、Q（サイフォンストライク：スタックが溜まる強化AA）でCSを取ってスタック（Qでとどめを刺すと永久に増える攻撃力）を溜めます。シンジドがE（すくい投げ）のために近づいてきた時は、W（ウィザー：強力なスロウ）をかけてAAとQを当てます。",
+  "new": "シンジドは走りながら毒を撒き、追ってきた相手を削るキャラです。ナサスは追いかけず、Q（サイフォンストライク：スタックが溜まる強化AA）でCSを取ってスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜めます。シンジドがE（すくい投げ）のために近づいてきた時は、W（ウィザー：強力なスロウ）をかけてAAとQを当てます。",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "tahmkench",
+  "field": "goal[0]",
+  "severity": "wrong",
+  "old": "ミニオンの後ろに立ち、Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増える攻撃力）を溜める",
+  "new": "ミニオンの後ろに立ち、Qでミニオンにとどめを刺してスタック（Qでとどめを刺すと永久に増えるQのダメージ）を溜める",
+  "evidence": "Nasus kit (WRITER.md): Siphoning Strike stacks add to Q's bonus damage ('30/50/70/90/110 + 100% of stacks'), not to attack damage."
+ },
+ {
+  "slug": "sylas",
+  "field": "combos[0].why",
+  "severity": "wrong",
+  "old": "E（鎖）を使い切ったサイラスには、近づく手段も逃げる手段も残っていません。Wのスロウは5秒かけて強くなるので、長く追うほど逃げられなくなります。",
+  "new": "E（鎖）を使い切ったサイラスには、逃げる手段が残っていません（W（王殺し）は相手に向かって飛びかかる技で、離れるためには使えません）。Wのスロウは5秒かけて強くなるので、長く追うほど逃げられなくなります。",
+  "evidence": "Sylas W: 'Sylas dashes to the front of the target enemy's location then strikes them' (range 400). https://wiki.leagueoflegends.com/en-us/Template:Data_Sylas/Kingslayer"
+ },
+ {
+  "slug": "sylas",
+  "field": "memo",
+  "severity": "wrong",
+  "old": "ミニオンの後ろに立ち、サイラスのE2段目の鎖をミニオンに当てさせます。鎖を使った後にW（ウィザー：強力なスロウ）を当てれば、逃げも飛び込みもできないサイラスを追えます。",
+  "new": "ミニオンの後ろに立ち、サイラスのE2段目の鎖をミニオンに当てさせます。鎖を使った後にW（ウィザー：強力なスロウ）を当てれば、逃げる手段のないサイラスを追えます。",
+  "evidence": "Sylas W: 'Sylas dashes to the front of the target enemy's location then strikes them' (range 400). https://wiki.leagueoflegends.com/en-us/Template:Data_Sylas/Kingslayer"
+ },
+ {
+  "slug": "sylas",
+  "field": "plays[1]",
+  "severity": "wrong",
+  "old": [
+   "E2段目の鎖がミニオンに当たった",
+   "W → AA → Qで反撃する（飛び込みも逃げもできないため）",
+   "go"
+  ],
+  "new": [
+   "E2段目の鎖がミニオンに当たった",
+   "W → AA → Qで反撃する（逃げる手段がないため）",
+   "go"
+  ],
+  "evidence": "Sylas W: 'Sylas dashes to the front of the target enemy's location then strikes them' (range 400). https://wiki.leagueoflegends.com/en-us/Template:Data_Sylas/Kingslayer"
+ },
+ {
+  "slug": "yone",
+  "field": "trap",
+  "severity": "wrong",
+  "old": "E中に受けたダメージの25〜35%が、ヨネが体に戻った瞬間に確定ダメージ（防御で減らないダメージ）でもう一度入ります。E中にHPが減ったら、戻る前に距離を取ります。",
+  "new": "E（魂の分離）中にヨネから受けたダメージの25〜35%が、ヨネが体に戻った瞬間に確定ダメージ（防御で減らないダメージ）でもう一度入ります。距離を取っても防げないので、E中に削られたら、追撃分も含めてHPが足りるかを考え、足りなければタワーへ下がります。",
+  "evidence": "Yone E recast: 'Yone dashes back to his body ... consuming the marks on each champion to deal true damage equal to the total amount of damage stored' — no range condition; distance does not prevent it. https://wiki.leagueoflegends.com/en-us/Template:Data_Yone/Soul_Unbound"
+ },
+ {
+  "slug": "yone",
+  "field": "plays[2]",
+  "severity": "wrong",
+  "old": [
+   "E中に削られている",
+   "戻る前に距離を取る（戻った瞬間にダメージの一部が確定ダメージでもう一度入るため）",
+   "no"
+  ],
+  "new": [
+   "E中に削られている",
+   "深追いせず下がる（戻った瞬間にダメージの一部が確定ダメージでもう一度入り、距離を取っても防げないため）",
+   "no"
+  ],
+  "evidence": "Yone E recast: 'Yone dashes back to his body ... consuming the marks on each champion to deal true damage equal to the total amount of damage stored' — no range condition; distance does not prevent it. https://wiki.leagueoflegends.com/en-us/Template:Data_Yone/Soul_Unbound"
+ },
+ {
+  "slug": "yone",
+  "field": "plan",
+  "severity": "wrong",
+  "old": "Qを2回当てて3回目を準備 → E（魂の分離）で飛び込み、Q3・W・AAで削る → 元の位置へ戻る時にダメージの一部を再び与える、という流れです。Q2回の後に正面から外れ、E中に削られたら戻る前に離れれば、戻りの追撃を受けずにこの流れは崩れます。",
+  "new": "Qを2回当てて3回目を準備 → E（魂の分離）で飛び込み、Q3・W・AAで削る → 元の位置へ戻る時にダメージの一部を再び与える、という流れです。Q2回の後に正面から外れてQ3を外させ、E中は戻りの追撃分も考えて早めに下がれば、この流れは崩れます。",
+  "evidence": "Yone E recast: 'Yone dashes back to his body ... consuming the marks on each champion to deal true damage equal to the total amount of damage stored' — no range condition; distance does not prevent it. https://wiki.leagueoflegends.com/en-us/Template:Data_Yone/Soul_Unbound"
+ },
+ {
+  "slug": "yone",
+  "field": "combos[1].steps[0]",
+  "severity": "wrong",
+  "old": "E中はヨネの体（置いてきた位置）を確認しておき、削られていたら距離を取ります",
+  "new": "E中はヨネの体（置いてきた位置）を確認しておきます。大きく削られていたら、戻りの追撃（距離に関係なく入ります）も考えて下がります",
+  "evidence": "Yone E recast: 'Yone dashes back to his body ... consuming the marks on each champion to deal true damage equal to the total amount of damage stored' — no range condition; distance does not prevent it. https://wiki.leagueoflegends.com/en-us/Template:Data_Yone/Soul_Unbound"
+ },
+ {
+  "slug": "yone",
+  "field": "combos[1].why",
+  "severity": "wrong",
+  "old": "体に戻った後のヨネはEがCD中で、近づく・逃げる手段がQ3しかありません。",
+  "new": "体に戻った後のヨネはEがCD中で、近づく・逃げる手段がQ3（Lv6以降はRも）しかありません。",
+  "evidence": "Yone R Fate Sealed is a blink/dash; combo is for Lv6+. https://wiki.leagueoflegends.com/en-us/Yone"
+ },
+ {
+  "slug": "yone",
+  "field": "skills.R.c",
+  "severity": "unclear",
+  "old": "直線上の敵を引き寄せます。ヨネと味方を結ぶ直線に並ばないようにします。",
+  "new": "直線上の敵を巻き込み、ヨネの着地点へ引き寄せます。ヨネの正面の直線上に、味方と固まって並ばないようにします。",
+  "evidence": "Original 'ヨネと味方を結ぶ直線' is ambiguous (whose ally). Fate Sealed hits enemies in a line and pulls them to the end point. https://wiki.leagueoflegends.com/en-us/Yone"
+ },
+ {
+  "slug": "zaahen",
+  "field": "plays[0]",
+  "severity": "wrong",
+  "old": [
+   "ザーヘンが薙刀を構えた（W）",
+   "突きの方向から横にずれる（最大射程で当たるとスタンして引き寄せられるため）",
+   "w"
+  ],
+  "new": [
+   "ザーヘンが薙刀を構えた（W）",
+   "突きの方向から横にずれる（突きに当たると、伸び切った時にスタンして引き寄せられるため）",
+   "w"
+  ],
+  "evidence": "Zaahen W: 'Upon reaching maximum range, all enemies hit are dealt physical damage, stunned for 0.25 seconds, and pulled 225 units' — any enemy hit by the glaive, not only at max range. https://wiki.leagueoflegends.com/en-us/Template:Data_Zaahen/Dreaded_Return"
+ },
+ {
+  "slug": "zaahen",
+  "field": "skills.P.c",
+  "severity": "unsupported",
+  "old": "ゲージは5秒攻撃しないと減り始めます。短く殴って離れ、最大まで溜めさせません。",
+  "new": "ゲージは5秒間続き、攻撃を当てるたびに延長されます。短く殴って5秒以上離れ、最大まで溜めさせません。",
+  "evidence": "Wiki: stacks 'lasting for 5 seconds, refreshing on subsequent triggers' — whether they 'start decreasing' is not stated. https://wiki.leagueoflegends.com/en-us/Zaahen"
+ },
+ {
+  "slug": "singed",
+  "field": "core",
+  "severity": "unclear",
+  "old": "走った跡に残る毒（Q）と、近くの相手を後ろへ投げるE（すくい投げ）です。毒は魔法ダメージなので、ナサスのR中は魔法防御が上がって受けやすくなります。",
+  "new": "走った跡に残る毒（Q）と、近くの相手を後ろへ投げるE（すくい投げ）です。毒は魔法ダメージなので、ナサスはR中に魔法防御が上がり、耐えやすくなります。",
+  "evidence": "'受けやすくなります' reads as 'takes more damage'; meaning is the opposite (R grants MR per WRITER.md kit)."
+ },
+ {
+  "slug": "tahmkench",
+  "field": "combos[1].name",
+  "severity": "unclear",
+  "old": "灰色HPを使わせてからの追撃",
+  "new": "シールドを使わせてからの追撃",
+  "evidence": "'灰色HP' is unexplained jargon in this entry."
+ },
+ {
+  "slug": "tahmkench",
+  "field": "combos[1].why",
+  "severity": "unclear",
+  "old": "Eは受けたダメージの一部を溜めてシールドにする技です。使わせた後は、溜めたダメージがもう返ってきません。",
+  "new": "E（ゆるゆる皮膜）は受けたダメージの一部を溜めてシールドに変える技で、シールドは2.5秒で消えます。消えた後に殴れば、削った分がそのまま残ります。",
+  "evidence": "Tahm E: stores 15-47% of damage as grey health; shield 'lasts for 2.5 seconds'. https://wiki.leagueoflegends.com/en-us/Tahm_Kench"
+ }
+]

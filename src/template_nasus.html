@@ -1,0 +1,865 @@
+<title>ナサスTOP対面帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#F2F0F5; --surface:#FFFFFF; --surface-2:#E9E5EF; --line:#D6D0DF;
+  --ink:#1D1826; --ink-2:#4E4660; --ink-3:#7C7390;
+  --accent:#6A3E9E; --accent-soft:#E6DCF3; --on-accent:#FFFFFF;
+  --atk:#1E7F63; --atk-soft:#D9EFE7;
+  --even:#A86A12; --even-soft:#F5E7CF;
+  --def:#B8352B; --def-soft:#F6DDDA;
+  --shadow:0 1px 2px rgba(29,24,38,.06),0 6px 20px rgba(29,24,38,.08);
+  --f-display:"Dela Gothic One","Hiragino Kaku Gothic StdN","Yu Gothic",sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#131019; --surface:#1D1826; --surface-2:#272131; --line:#352D42;
+    --ink:#EEEAF4; --ink-2:#BDB4CC; --ink-3:#8D839E;
+    --accent:#B592EA; --accent-soft:#2F2442; --on-accent:#17121F;
+    --atk:#4CC39C; --atk-soft:#163129;
+    --even:#E0A74A; --even-soft:#352A17;
+    --def:#EE7A6E; --def-soft:#3A1E1C;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#131019; --surface:#1D1826; --surface-2:#272131; --line:#352D42;
+  --ink:#EEEAF4; --ink-2:#BDB4CC; --ink-3:#8D839E;
+  --accent:#B592EA; --accent-soft:#2F2442; --on-accent:#17121F;
+  --atk:#4CC39C; --atk-soft:#163129;
+  --even:#E0A74A; --even-soft:#352A17;
+  --def:#EE7A6E; --def-soft:#3A1E1C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7;padding-inline:16px;padding-block:0 48px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 12px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-weight:400;font-size:22px;letter-spacing:.02em;margin:0;line-height:1.2}
+.brand .meta{font-size:12px;color:var(--ink-3);letter-spacing:.04em}
+.brand .spacer{flex:1}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:500}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px 8px 34px;font-size:15px}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--ink-3)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;padding:6px 12px;font-size:13px;font-weight:500;color:var(--ink-2);border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+select.sort{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;font-size:13px;font-family:var(--f-body);color:var(--ink)}
+
+/* groups & tiles */
+.group{margin-top:22px}
+.group-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.group-head h2{font-size:15px;font-weight:700;margin:0}
+.group-head span{font-size:12px;color:var(--ink-3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.tile{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--accent);transform:translateY(-1px)}
+.badge{grid-row:span 2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:18px;line-height:1}
+.st-攻め{--c:var(--atk);--cs:var(--atk-soft)}
+.st-五分{--c:var(--even);--cs:var(--even-soft)}
+.st-守り{--c:var(--def);--cs:var(--def-soft)}
+.badge{background:var(--cs);color:var(--c);box-shadow:0 0 0 2px var(--c);overflow:hidden}
+.badge img{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.08)}
+.tile .nm{font-weight:700;font-size:14px;line-height:1.3;min-width:0;overflow-wrap:anywhere}
+.tile .row2{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-3)}
+.wr{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.meter{grid-column:1/-1;height:4px;border-radius:2px;background:var(--surface-2);position:relative;margin-top:4px}
+.meter i{position:absolute;top:0;bottom:0;border-radius:2px}
+.meter b{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--ink-3)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block}
+.tag{font-size:11px;padding:0 6px;border-radius:4px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.empty{padding:40px 0;text-align:center;color:var(--ink-3)}
+
+/* legend */
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(19,16,25,.45);z-index:20}
+.sheet{position:fixed;z-index:21;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--bg);box-shadow:var(--shadow);overflow-y:auto;overscroll-behavior:contain;padding:calc(env(safe-area-inset-top,0px) + 0px) 0 calc(env(safe-area-inset-bottom,0px) + 32px)}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:slide .22s ease-out}@keyframes slide{from{transform:translateX(24px);opacity:.6}to{transform:none;opacity:1}}}
+.sheet-bar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:10px 16px}
+.sheet-bar .t{flex:1;font-weight:700;font-size:14px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;flex:none}
+.sheet-body{padding:18px 16px 0;display:grid;gap:18px}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.hero .badge{width:64px;height:64px;font-size:28px;grid-row:auto}
+.hero h2{font-family:var(--f-display);font-weight:400;font-size:26px;margin:0;line-height:1.2;text-wrap:balance}
+.hero .en{font-size:13px;color:var(--ink-3);letter-spacing:.04em}
+.hero .stats{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;font-size:13px;color:var(--ink-2);margin-top:4px}
+.hero .stats .wr{font-size:20px}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px}
+.flow .step{display:grid;gap:0;border-radius:8px;padding:6px 12px;background:var(--cs);border:1px solid var(--c);min-width:0}
+.flow .step strong{color:var(--c);font-size:15px}
+.flow .step small{font-size:12px;color:var(--ink-2);line-height:1.4}
+.flow .arr{align-self:center;color:var(--ink-3);font-size:14px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin:0 0 8px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.card h3{margin:0 0 4px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.card p{margin:0;font-size:14px}
+.card.wide{grid-column:1/-1}
+.cards.one{grid-template-columns:1fr}
+.card.trap{border-color:var(--def);background:var(--def-soft)}
+.card.trap h3{color:var(--def)}
+.card.go{border-color:var(--atk);background:var(--atk-soft)}
+.card.go h3{color:var(--atk)}
+.win{margin:0;font-size:15px;font-weight:700;line-height:1.7;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:10px 14px}
+.goals{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.goals span{font-size:13px;font-weight:700;border-radius:999px;padding:3px 12px;background:var(--accent-soft);color:var(--accent)}
+.plays{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.play{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pc);border-radius:8px;padding:9px 12px}
+.play .if{font-size:13px;color:var(--ink-2)}
+.play .if b{font-weight:500}
+.play .then{display:flex;gap:8px;align-items:baseline;font-size:15px;font-weight:700;line-height:1.5}
+.play .tg{flex:none;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px;background:var(--ps);color:var(--pc)}
+.play.go{--pc:var(--atk);--ps:var(--atk-soft)}
+.play.w{--pc:var(--even);--ps:var(--even-soft)}
+.play.no{--pc:var(--def);--ps:var(--def-soft)}
+.combo{display:grid;gap:6px}
+.combo div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:14px}
+.combo b{color:var(--accent);margin-right:6px}
+.chain{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;margin:2px 0}
+.chain span{background:var(--surface-2);border-radius:6px;padding:2px 8px;font-size:13px}
+.chain em{font-style:normal;color:var(--ink-3);font-size:12px}
+.chain-note{font-size:13px;color:var(--ink-2);margin-top:6px}
+.skills{display:grid;gap:8px}
+.skill{display:grid;grid-template-columns:36px 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.key{position:relative;width:44px;height:44px;border-radius:8px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;font-size:16px;flex:none}
+.key img{width:44px;height:44px;border-radius:8px;display:block}
+.key i{position:absolute;right:-5px;bottom:-5px;font-style:normal;font-size:11px;line-height:1;background:var(--ink);color:var(--bg);border:2px solid var(--surface);border-radius:5px;padding:2px 4px}
+.skill{grid-template-columns:44px minmax(0,1fr) !important}
+.sname{font-weight:700;font-size:14px;margin-right:2px}
+.vid{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent);border-radius:6px;padding:2px 9px;text-decoration:none;white-space:nowrap}
+.vid:hover{filter:brightness(1.08)}
+.skill .d{font-size:14px;margin:0}
+.skill .c{margin:8px 0 0;padding:8px 10px;border-radius:8px;background:var(--accent-soft);font-size:14px}
+.skill .c b{color:var(--accent);font-size:12px;letter-spacing:.06em;margin-right:6px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px}
+.chip.p{background:var(--atk-soft);color:var(--atk);box-shadow:inset 0 0 0 1px var(--atk)}
+.chip.q{background:var(--even-soft);color:var(--even);box-shadow:inset 0 0 0 1px var(--even)}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.links a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none}
+.links a:hover{border-color:var(--accent)}
+.navrow{display:flex;justify-content:space-between;gap:8px}
+.navrow .btn{max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note{font-size:12px;color:var(--ink-3)}
+.skill{grid-template-columns:36px minmax(0,1fr)}
+.skill-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px}
+.cd{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:12px;font-weight:600;background:var(--surface-2);color:var(--ink);border-radius:6px;padding:2px 8px}
+.cd small{font-family:var(--f-body);font-weight:500;color:var(--ink-3);margin-right:4px}
+.form{font-size:11px;color:var(--ink-3)}
+.skill-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:12px;align-items:start}
+@media (max-width:700px){.skill-grid{grid-template-columns:1fr}}
+.fig{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 6px 4px}
+.fig svg{display:block;width:100%;height:auto}
+.fig-cap{display:flex;justify-content:space-between;gap:6px;align-items:center;font-size:11px;color:var(--ink-3);padding:2px 4px 0;line-height:1.4}
+.alt-toggle{border:1px solid var(--line);background:var(--surface);border-radius:6px;font-size:11px;padding:1px 8px;color:var(--ink-2);white-space:nowrap}
+.alt-toggle[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.fig .ln{stroke:var(--ink-3)}
+.fig .area{fill:var(--def);fill-opacity:.14;stroke:var(--def);stroke-opacity:.55;stroke-dasharray:4 3}
+.fig .hit{fill:var(--def);fill-opacity:.55}
+.fig .me{fill:var(--accent)}
+.fig .foe{fill:var(--ink-2)}
+.fig .t{fill:var(--ink-2);font-family:var(--f-body);font-size:10px}
+.fig .tm{fill:var(--ink-3);font-family:var(--f-mono);font-size:8.5px}
+.fig .mq{fill:var(--accent);font-family:var(--f-body);font-size:8.5px}
+.fig .aura{fill:none;stroke:var(--even);stroke-width:2}
+.fig .trail{stroke:var(--def);stroke-width:2;stroke-dasharray:3 3;fill:none}
+@media (prefers-reduced-motion:reduce){.fig .anim{display:none}}
+table.gl{width:100%;border-collapse:collapse;font-size:14px}
+table.gl td{border-top:1px solid var(--line);padding:8px 6px;vertical-align:top}
+table.gl td:first-child{font-weight:700;white-space:nowrap;width:1%;padding-right:14px}
+.vp{position:fixed;z-index:1000;left:16px;bottom:16px;width:min(520px,calc(100vw - 32px));background:#0b1220;color:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}
+.vp[hidden]{display:none}
+.vp-bar{display:flex;align-items:center;gap:6px;padding:6px 8px 6px 12px;font-size:13px}
+.vp-t{flex:1;min-width:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vp-keys{display:flex;gap:4px}
+.vp-keys button,.vp-x{font:inherit;font-size:12px;font-weight:700;color:#fff;background:rgba(255,255,255,.12);border:0;border-radius:6px;min-width:28px;height:28px;cursor:pointer}
+.vp-keys button[aria-pressed="true"]{background:#10b981;color:#062b1f}
+.vp-x{font-size:16px}
+.vp video[hidden]{display:none}
+.vp video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vp-desc{background:var(--surface,#fff);color:var(--ink,#111);max-height:34vh;overflow-y:auto;padding:10px 12px;font-size:14px;line-height:1.7}
+.vp-desc[hidden]{display:none}
+.vp-desc p{margin:0 0 8px}
+.vp-desc p:last-child{margin-bottom:0}
+@media (max-width:900px){.vp-desc{max-height:30vh}}
+.vp-err{margin:0;padding:10px 12px;font-size:13px;line-height:1.6}
+.vp-err a{color:#6ee7b7}
+@media (max-width:900px){.vp{right:8px;left:8px;bottom:8px;width:auto;max-width:560px;margin:0 auto}}
+.memo{background:var(--accent-soft);border:1px solid var(--accent);border-radius:10px;padding:10px 14px}
+.memo b{display:block;font-size:12px;color:var(--accent);margin-bottom:2px}
+.memo p{margin:0;font-size:15px;font-weight:700;line-height:1.7}
+.combos{display:grid;gap:10px}
+.cmb{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.cmb h3{margin:0 0 4px;font-size:15px}
+.cmb .cw,.cmb .cy{margin:4px 0;font-size:13px;line-height:1.6}
+.cmb .cw b,.cmb .cy b{display:inline-block;font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 5px;margin-right:6px}
+.cmb ol{margin:6px 0;padding-left:1.4em;font-size:14px;line-height:1.7}
+.cmb ol li{padding:1px 0}
+.cmb ol li::marker{color:var(--accent);font-weight:700}
+a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--ink)}
+.csw{border:1px solid var(--line);border-left:4px solid #d97706;border-radius:8px;padding:6px 10px;background:var(--surface)}
+.csw b{font-size:12px;color:#b45309;margin-right:4px}
+.csw .t1{margin:0 0 4px;font-size:14px;line-height:1.6;font-weight:600;padding-bottom:4px;border-bottom:1px dashed var(--line)}
+.csw .t1 b{display:inline-block;margin-right:6px}
+.csw ul{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px}
+.csw li{font-size:14px;line-height:1.55;font-weight:600}
+.csw li i{font-style:normal;display:inline-block;min-width:18px;text-align:center;font-size:11px;font-weight:700;color:#fff;background:#b45309;border-radius:4px;padding:0 4px;margin-right:6px;vertical-align:1px}
+.csw li small{font-weight:500;color:var(--muted,#6b7280);margin-left:6px;white-space:nowrap}
+.fv{display:grid;gap:14px}
+.fv-col{display:grid;gap:14px;align-content:start;min-width:0}
+.fv .sec-label,.fv .lab{margin-bottom:6px}
+.strip{display:flex;gap:6px;flex-wrap:wrap}
+.strip button{display:flex;align-items:center;gap:6px;font:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 8px 4px 4px;cursor:pointer;color:var(--ink)}
+.strip button:hover{border-color:var(--accent)}
+.strip img{width:28px;height:28px;border-radius:5px;display:block}
+.strip b{font-size:12px}
+.strip small{font-size:11px;color:var(--ink-3,#6b7280);white-space:nowrap}
+.dhead{display:flex;align-items:center;gap:10px;margin:6px 0 -4px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--ink-3,#6b7280)}
+.dhead::before,.dhead::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (min-width:1200px){
+  .sheet{width:min(1360px,96vw)}
+  .fv{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);align-items:start;gap:16px}
+  .fv .hero h2{font-size:24px}
+  .fv .play{padding:6px 10px}
+  .fv .play .then{font-size:14px}
+  .fv .card p,.fv .card li span,.fv .csw li,.fv .csw .t1,.fv .buy,.fv .vs li span{font-size:13px;line-height:1.55}
+  .fv .play .if{font-size:12px}
+  .fv .memo p,.fv .win{font-size:14px;line-height:1.6}
+  .fv-col > *{margin-bottom:12px}
+  .fv .card{padding:10px 12px}
+  .fv .vs li{padding-top:7px;padding-bottom:7px}
+}
+@media (min-width:1200px){
+  .fv{display:block;columns:3;column-gap:16px}
+  .fv-col{display:contents}
+  .fv-col > *{break-inside:avoid;margin:0 0 14px;display:block}
+  .fv-col > .hero{display:grid}
+  .fv-col > .cards.one{display:grid}
+}
+.gwm{font-size:10px;font-weight:700;color:#fff;background:#c62828;border-radius:3px;padding:0 4px;vertical-align:2px}
+.buy{display:flex;gap:8px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-left:4px solid #2563eb;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.55}
+.buy b{flex:none;color:#fff;background:#2563eb;border-radius:4px;padding:1px 7px;font-size:12px}
+.gw{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;background:#fdecec;border:1px solid #d33;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.5;color:#111}
+.gw b{flex:none;color:#fff;background:#c62828;border-radius:4px;padding:1px 7px;font-size:12px}
+.gw small{color:#555}
+.tag.gwt{background:#c62828;color:#fff}
+@media (max-width:700px){
+  .sheet-body,.body{grid-template-columns:minmax(0,1fr)}
+  .fv{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .fv-col > *{min-width:0;max-width:100%}
+  .fv-col{display:contents}
+  .fv .hero{order:1;gap:10px}
+  .fv .gw{order:2}
+  .fv .o-flow{order:3}
+  .fv .memo{order:4}
+  .fv .o-win,.fv .key-card{order:5}
+  .fv .o-strip{order:6}
+  .fv .csw{order:7}
+  .fv .cards.one,.fv .two.one{order:8}
+  .fv .o-plays,.fv .o-vs{order:9}
+  .fv .buy{order:10}
+  .fv .o-kz{order:11}
+  .fv .hero .badge,.fv .hero img{width:52px;height:52px}
+  .fv .hero h2{font-size:20px}
+  .fv .hero .en,.fv .hero .ttl{font-size:11px}
+  .fv .hero .stats .wr{font-size:16px}
+  .fv .sec-label,.fv .lab{display:none}
+  .fv .o-plays .sec-label,.fv .o-vs .lab{display:block}
+  .fv .flow .step{padding:4px 10px}
+  .fv .flow .step strong{font-size:14px}
+  .fv .win{font-size:14px;padding:8px 12px;line-height:1.6}
+  .fv .key-card{padding:10px 12px}
+  .fv .key-card b{margin-bottom:2px}
+  .fv .key-card p{font-size:14px;line-height:1.6}
+  .fv .memo{padding:8px 12px}
+  .fv .memo p{font-size:14px;line-height:1.6}
+  .fv .strip{flex-wrap:nowrap;overflow-x:auto;gap:4px;padding-bottom:2px}
+  .fv .strip button{flex:none;padding:3px 6px 3px 3px;gap:4px}
+  .fv .strip img{width:22px;height:22px}
+  .fv .strip small{font-size:10px}
+  .fv .strip b{font-size:11px}
+  .fv .csw{padding:6px 10px}
+  .fv .csw li,.fv .csw .t1{font-size:13px}
+  .fv .card{padding:8px 12px}
+  .fv .card p,.fv .card li span{font-size:13px}
+  .fv .gw,.fv .buy{font-size:12px;padding:5px 8px}
+}
+.vp{display:flex;flex-direction:column;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px - env(safe-area-inset-bottom,0px))}
+.vp-bar,.vp video,.vp-err{flex:none}
+.vp .vp-desc{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+@media (max-width:900px){
+  .vp{bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+  .vp video{max-height:32vh;max-height:32dvh;object-fit:contain}
+  .vp .vp-desc{min-height:96px}
+}
+.scl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px 6px}
+.scl-h{display:flex;align-items:baseline;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.scl-h b{font-size:12px;letter-spacing:.06em;color:var(--ink-2,#435063)}
+.scl-h a{font-size:12px;font-weight:700;color:var(--accent);text-decoration:none}
+.scl svg{display:block;width:100%;height:auto;max-height:78px}
+.scl-mid{stroke:var(--line);stroke-dasharray:3 4}
+.scl-ln{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.scl-pt{fill:var(--surface);stroke:var(--accent);stroke-width:2.5}
+.scl-ax{font-size:10px;fill:var(--ink-3,#6E7B8E)}
+.scl-x{font-size:11px;font-weight:700;fill:var(--ink-2,#435063)}
+.scl-n{margin:2px 0 0;font-size:11.5px;line-height:1.5;color:var(--ink-3,#6E7B8E)}
+.dm{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.02em;border-radius:4px;padding:0 5px;line-height:16px;vertical-align:2px;color:#fff}
+.dm-AD{background:#c2410c}.dm-AP{background:#4f46e5}.dm-xAD,.dm-xAP{background:linear-gradient(90deg,#c2410c 50%,#4f46e5 50%)}
+.dml{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:12.5px;color:var(--ink-2,#435063)}
+.dml small{font-size:12px;color:var(--ink-3,#6E7B8E)}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>ナサスTOP対面帳</h1>
+      <span class="meta">パッチ26.19 · エメラルド+ · 55体 · 勝率はOP.GG</span>
+      <span class="spacer"></span>
+      <a class="btn" href="https://ks389324-oss.github.io/mundo/" target="_blank" rel="noopener">ムンド版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/jax/" target="_blank" rel="noopener">ジャックス版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/cho/" target="_blank" rel="noopener">チョ＝ガス版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/all/" target="_blank" rel="noopener">汎用版</a><a class="btn" href="https://ks389324-oss.github.io/mundo/items/" target="_blank" rel="noopener">アイテム</a><button class="btn" id="basicsBtn" type="button">ナサスの基本・用語</button>
+    </div>
+    <div class="controls">
+      <label class="search" for="q">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="名前で検索（カタカナ・英語）" autocomplete="off">
+      </label>
+      <div class="seg" role="group" aria-label="序盤の対応方針で絞り込み" id="seg">
+        <button type="button" data-f="all" aria-pressed="true">すべて</button>
+        <button type="button" data-f="攻め" aria-pressed="false">攻め</button>
+        <button type="button" data-f="五分" aria-pressed="false">五分</button>
+        <button type="button" data-f="守り" aria-pressed="false">守り</button>
+      </div>
+      <select class="sort" id="sort" aria-label="並び順">
+        <option value="group">勝率帯ごと</option>
+        <option value="wr-asc">勝率が低い順</option>
+        <option value="wr-desc">勝率が高い順</option>
+        <option value="kana">名前順</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="legend" aria-label="凡例">
+    <span><span class="dm dm-AD">AD</span> 物理ダメージ中心→物理防御が効く ／ <span class="dm dm-AP">AP</span> 魔法中心→魔法防御 ／ <span class="dm dm-xAD">混合</span> 両方（LoLalyticsの実戦データ）</span>
+    <span><i class="dot st-攻め"></i>攻め：自分から仕掛けて主導権を取る</span>
+    <span><i class="dot st-五分"></i>五分：合図が来た時だけ殴る</span>
+    <span><i class="dot st-守り"></i>守り：フリーズして最低限のCS</span>
+    <span>アイコンの色＝序盤の方針 ／ バー＝ナサス勝率（中央線が50%）</span>
+  </div>
+
+  <main id="list"></main>
+</div>
+
+<div id="scrim" class="scrim" hidden></div>
+<aside id="sheet" class="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></aside>
+
+<script id="data" type="application/json">__DATA__</script>
+<script id="img" type="application/json">__IMG__</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const C = D.champs;
+const IMG = JSON.parse(document.getElementById('img').textContent);
+const norm = s => String(s).normalize('NFKC').toLowerCase()
+  .replace(/[\u3041-\u3096]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60))
+  .replace(/[\s・ー=＝\-'’.]/g, '');
+C.forEach(c => { c._k = norm([c.jp, c.official || '', c.en, c.slug].join('|')); });
+function matches(c){
+  if (state.f !== 'all' && first(c) !== state.f) return false;
+  const q = norm(state.q); return !q || c._k.includes(q);
+}
+const icon = (slug, k) => (IMG[slug] && IMG[slug][k]) || '';
+const videoURL = (c, k) => `https://lol.dyn.riotcdn.net/x/videos/champion-abilities/${c.key4}/ability_${c.key4}_${k}1.mp4`;
+const TIERS = {hard:'苦手対面（勝率47%未満）',even:'互角対面（47〜51%）',fav:'有利対面①（51〜54%）',fav2:'有利対面②（54%以上）',nodata:'データ不足（試合数が少ない）'};
+const TIER_SHORT = {hard:'苦手',even:'互角',fav:'有利',fav2:'大きく有利',nodata:'データ不足'};
+const WRT = c => c.wr == null ? '—' : c.wr.toFixed(1) + '%';
+const WRV = c => c.wr == null ? 50 : c.wr;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); const last = a[a.length-1]; if (a.length > 1 && +last === 0) return 'CD ' + a[0] + '秒→最大で常時ON'; return 'CD ' + (a.length > 1 && a[0] !== last ? a[0] + '→' + last : a[0]) + '秒'; };
+const buyHTML = c => c.buy ? `<div class="buy"><b>対策アイテム</b><span>${esc(c.buy)}</span></div>` : '';
+const gwHTML = c => c.gw ? `<div class="gw"><b>重傷${c.gw.lv === '必須級' ? '必須級' : '推奨'}</b><span>${esc(c.gw.why)}</span><small>（重傷＝回復量を減らす効果。ナサスならエクスキューショナー コーリングなどで付けられます）</small></div>` : '';
+const scaleHTML = c => { const s = c.sc; if (!s) return '';
+  const W = 300, H = 70, xs = [40, 150, 260], yv = v => ({3:10, 2:30, 1:50})[v];
+  const p = [[xs[0], yv(s.e)], [xs[1], yv(s.m)], [xs[2], yv(s.l)]];
+  const d = `M8 ${p[0][1]} L${p[0][0]} ${p[0][1]} C${(p[0][0]+p[1][0])/2} ${p[0][1]} ${(p[0][0]+p[1][0])/2} ${p[1][1]} ${p[1][0]} ${p[1][1]} C${(p[1][0]+p[2][0])/2} ${p[1][1]} ${(p[1][0]+p[2][0])/2} ${p[2][1]} ${p[2][0]} ${p[2][1]} L${W-8} ${p[2][1]}`;
+  const lab = v => ({3:'強', 2:'普通', 1:'弱'})[v];
+  return `<section class="scl o-strip"><div class="scl-h"><b>強い時間帯の目安（解説から作図）</b><a href="https://www.leagueofgraphs.com/ja/champions/stats/${c.lg}" target="_blank" rel="noopener" title="League of Graphsの「勝率 / ゲーム時間」（実際の試合データ）">実データのグラフ ↗</a></div>
+  <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="序盤${lab(s.e)}・中盤${lab(s.m)}・終盤${lab(s.l)}">
+    <line x1="8" x2="${W-8}" y1="30" y2="30" class="scl-mid"/>
+    
+    <path d="${d}" class="scl-ln"/>
+    ${p.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="4.5" class="scl-pt"/>`).join('')}
+    ${['序盤','中盤','終盤'].map((t,i)=>`<text x="${xs[i]}" y="${H-2}" text-anchor="middle" class="scl-x">${t}・${lab([s.e,s.m,s.l][i])}</text>`).join('')}
+  </svg><p class="scl-n">${esc(s.why)}</p></section>`; };
+const DMG_L = {AD:'AD', AP:'AP', '混AD':'混合', '混AP':'混合'};
+const dmgTitle = d => `LoLalyticsの実戦データ：物理${d.p}%・魔法${d.m}%・確定${d.t}%`;
+const dmgTag = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_L[c.dmg.c]}</span>` : '';
+const dmgLine = c => { const d = c.dmg; if (!d) return '';
+  const tip = d.c === 'AD' ? '物理防御（アーマー）の装備が効きます' : d.c === 'AP' ? '魔法防御（MR）の装備が効きます' : `物理と魔法の両方。${d.c === '混AD' ? '物理がやや多め' : '魔法がやや多め'}なので、両方の防御を考えます`;
+  return `<div class="dml">${dmgTag(c)}<span><b>ダメージ</b> 物理${d.p}%・魔法${d.m}%・確定${d.t}%</span><small>→ ${tip}${d.t >= 20 ? '（確定ダメージは防御で減りません）' : ''}</small></div>`; };
+const csHTML = c => ((c.cs && c.cs.length) || c.tip1) ? `<section class="csw">${c.tip1 ? `<p class="t1"><b>ひとこと</b>${esc(c.tip1)}</p>` : ''}${c.cs && c.cs.length ? `<b>CSで近づく時の注意</b>` : ''}<ul>${(c.cs||[]).map(x => { const s = c.skills[x.k] || {}; const cd = csCD(s.cd); return `<li><i>${esc(x.k)}</i>${esc(x.t)}${cd ? `<small>${cd}</small>` : ''}</li>`; }).join('')}</ul></section>` : '';
+function stripHTML(c, iconFn, ids){
+  return `<div class="strip">${['P','Q','W','E','R'].map((k,i) => { const s = c.skills[k] || {}; const cd = csCD(s.cd); const im = iconFn(k);
+    return `<button type="button" data-jump="${i}" title="${k}の詳細へ">${im ? `<img src="${im}" alt="">` : ''}<b>${k}</b>${cd ? `<small>${cd.replace('CD ','').replace('秒→最大で常時ON','→常時').replace('秒','')}</small>` : ''}</button>`; }).join('')}</div>`;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (!b) return;
+  const rows = document.querySelectorAll('#sheet .skills > .skill, #sheet .skills > .sk'); const r = rows[+b.dataset.jump]; if (r) r.scrollIntoView({behavior:'smooth', block:'start'}); });
+const state = {q:'', f:'all', sort:'group'};
+try { const s = JSON.parse(localStorage.getItem('nasus-codex') || '{}'); if (s.f) state.f = s.f; if (s.sort) state.sort = s.sort; } catch(e) {}
+function save(){ try { localStorage.setItem('nasus-codex', JSON.stringify({f:state.f, sort:state.sort})); } catch(e) {} }
+
+const first = c => c.stance[0].s;
+const mono = c => c.jp.replace(/^[・ー＝]/,'').charAt(0);
+
+function meter(wr){
+  const lo = 38, hi = 68;
+  const pos = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
+  const a = pos(50), b = pos(wr);
+  const left = Math.min(a,b), w = Math.abs(b-a);
+  const col = wr >= 51 ? 'var(--atk)' : wr < 47 ? 'var(--def)' : 'var(--even)';
+  return `<span class="meter" aria-hidden="true"><i style="left:${left}%;width:${Math.max(w,1.5)}%;background:${col}"></i><b style="left:${a}%"></b></span>`;
+}
+function tile(c){
+  const st = first(c);
+  return `<button class="tile st-${st}" type="button" data-slug="${c.slug}" aria-label="${esc(c.jp)} ナサス勝率${WRT(c)} 序盤${st}">
+    <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
+    <span class="nm">${dmgTag(c)} ${esc(c.jp)}${c.gw ? ' <span class="gwm" title="重傷推奨">重傷</span>' : ''}</span>
+    <span class="row2"><span class="wr">${WRT(c)}</span><span>${st}</span>${c.few ? '<span class="tag">少数</span>' : ''}</span>
+    ${c.wr == null ? '' : meter(c.wr)}
+  </button>`;
+}
+function renderList(){
+  let rows = C.filter(matches);
+  const el = $('#list');
+  if (!rows.length){ el.innerHTML = '<p class="empty">該当するチャンピオンがいません。検索語か絞り込みを変えてください。</p>'; return; }
+  if (state.sort === 'group'){
+    el.innerHTML = Object.keys(TIERS).map(t => {
+      const r = rows.filter(c => c.tier === t);
+      if (!r.length) return '';
+      return `<section class="group"><div class="group-head"><h2>${TIERS[t]}</h2><span>${r.length}体</span></div><div class="grid">${r.map(tile).join('')}</div></section>`;
+    }).join('');
+  } else {
+    rows = rows.slice();
+    if (state.sort === 'wr-asc') rows.sort((a,b)=>WRV(a)-WRV(b));
+    if (state.sort === 'wr-desc') rows.sort((a,b)=>WRV(b)-WRV(a));
+    if (state.sort === 'kana') rows.sort((a,b)=>a.jp.localeCompare(b.jp,'ja'));
+    el.innerHTML = `<section class="group"><div class="group-head"><h2>${rows.length}体</h2></div><div class="grid">${rows.map(tile).join('')}</div></section>`;
+  }
+}
+
+function chainHTML(text){
+  const sentences = text.split('。').map(s=>s.trim()).filter(Boolean);
+  let out = '', notes = [];
+  sentences.forEach(s => {
+    if (s.includes(' → ')){
+      const body = s.replace(/、?という[^、]*$/,'');
+      const steps = body.split(' → ');
+      out += `<div class="chain">${steps.map((x,i)=>`${i?'<em>→</em>':''}<span>${esc(x)}</span>`).join('')}</div>`;
+    } else notes.push(s + '。');
+  });
+  if (notes.length) out += `<p class="chain-note">${esc(notes.join(''))}</p>`;
+  return out || `<p>${esc(text)}</p>`;
+}
+function skillChips(s){
+  const t = s.d + s.c; const out = [];
+  if (/未確認|推定/.test(t)) out.push('<span class="chip q">要検証</span>');
+  return out.length ? `<div class="chips">${out.join('')}</div>` : '';
+}
+const PLAY_TAG = {go:'打ち返す', w:'避ける・受ける', no:'付き合わない'};
+const SKILL_NAME = {P:'パッシブ',Q:'Q',W:'W',E:'E',R:'R（アルティメット）'};
+
+/* ---------- 模式アニメーション ---------- */
+const LOOP = 2.6;
+const SHAPE_JA = {line:'直線の飛び道具',cone:'前方の扇形',circle:'指定地点の範囲',self:'自分の周囲の範囲',dash:'移動（ダッシュ・跳躍）',unit:'対象指定',buff:'自己強化・次の通常攻撃',global:'マップ全域',passive:'常時効果'};
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+const f3 = v => clamp(v,0,1).toFixed(3);
+function anim(attr, vals, keys){
+  return `<animate attributeName="${attr}" values="${vals.join(';')}" keyTimes="${keys.map(f3).join(';')}" dur="${LOOP}s" repeatCount="indefinite"/>`;
+}
+function num(v){ return (typeof v === 'number' && isFinite(v) && v > 0) ? v : null; }
+function fig(g){
+  const W = 360, x0 = 22, L = 318;
+  const flags = [];
+  const shape = g.shape || 'buff';
+  let range = num(g.range), width = num(g.width), radius = num(g.radius), angle = num(g.angle), speed = num(g.speed);
+  const cast = num(g.cast) ? clamp(g.cast, 0, 0.9) : 0;
+  const c = cast || 0.12, k0 = c / LOOP;
+  const parts = [SHAPE_JA[shape] || ''];
+  if (num(g.range) && shape !== 'self') parts.push(`射程 ${Math.round(g.range)}`);
+  if (num(g.width)) parts.push(`幅 ${Math.round(g.width)}`);
+  if (num(g.radius)) parts.push(`半径 ${Math.round(g.radius)}`);
+  if (num(g.angle)) parts.push(`角度 ${g.angle}°`);
+  if (num(g.cast)) parts.push(`詠唱 ${+g.cast.toFixed(2)}秒`);
+
+  /* 範囲を持たないスキル：相手と効果の表示だけ */
+  if (shape === 'buff' || shape === 'passive' || shape === 'global'){
+    const H = 58, y = 29, r = 8;
+    const txt = {buff:'自分を強化する（当たり判定の範囲なし）', passive:'常に働く効果（当たり判定の範囲なし）', global:'マップのどこにでも届く'}[shape];
+    const ring = shape === 'global'
+      ? `<circle cx="${x0}" cy="${y}" class="aura">${anim('r',[r, r, 360, 360],[0,0.05,0.75,1])}${anim('opacity',[0,1,0,0],[0,0.05,0.75,1])}</circle>`
+      : `<circle cx="${x0}" cy="${y}" class="aura">${anim('r',[r+1, r+1, r+14, r+1],[0,k0,0.55,1])}${anim('opacity',[0,1,0,0],[0,k0,0.55,1])}</circle>`;
+    const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${SHAPE_JA[shape]}">
+      <circle cx="${x0}" cy="${y}" r="${r + 3}" class="aura" opacity=".45"/>
+      <circle cx="${x0}" cy="${y}" r="${r}" class="foe"/>
+      <text x="${x0 + r + 12}" y="${y + 4}" class="t">${txt}</text><g class="anim">${ring}</g></svg>`;
+    return {svg, cap: parts.join(' · ')};
+  }
+
+  let wall = false;
+  if (shape === 'line'){ if (!range){ range = 600; flags.push('射程'); } if (!width){ width = 80; flags.push('幅'); } }
+  if (shape === 'cone'){ if (!range){ range = 400; flags.push('射程'); } if (!angle){ angle = 60; flags.push('角度'); } }
+  if (shape === 'circle'){
+    if (!range){ range = 300; flags.push('射程'); }
+    if (!radius){ if (width){ wall = true; } else { radius = 150; flags.push('範囲'); } }
+  }
+  if (shape === 'self' && !radius){ if (range){ radius = range; } else { radius = 300; flags.push('範囲'); } }
+  if (shape === 'dash' && !range){ range = 400; flags.push('距離'); }
+  if (shape === 'unit' && !range){ range = 500; flags.push('射程'); }
+
+  const reach = {line:range, cone:range, circle:range + (radius || 0), self:radius, dash:range + (radius || 0), unit:range}[shape];
+  const clipped = reach > 2000;
+  const maxU = clamp(reach * 1.15, 700, 2000);
+  const halfU = {line:width / 2, cone:range * Math.sin(Math.min(angle, 180) * Math.PI / 360), circle:wall ? width / 2 : radius, self:radius, dash:radius || 0, unit:0}[shape] || 0;
+  const s = Math.min(L / maxU, halfU > 0 ? 72 / halfU : Infinity);
+  const shownU = L / s;
+  const half = Math.max(halfU * s, 20);
+  const y = 6 + half, ry = y + half + 8, H = ry + 17;
+  const X = u => x0 + Math.min(u, shownU) * s;
+  const foeR = 7, meR = 8;
+  let mx;
+  if (shape === 'line' || shape === 'cone' || shape === 'unit') mx = Math.min(range * 0.88, shownU * 0.9);
+  else if (shape === 'circle') mx = Math.min(range, shownU * 0.9);
+  else if (shape === 'self') mx = radius * 0.7;
+  else mx = Math.min(range + 90, shownU * 0.95);
+  const MX = X(mx);
+  let st = '', an = '';
+  if (cast) an += `<circle cx="${x0}" cy="${y}" class="aura">${anim('opacity',[1,1,0,0],[0,k0,k0+0.01,1])}${anim('r',[foeR+1,foeR+7,foeR+7,foeR+1],[0,k0,k0+0.01,1])}</circle>`;
+  const flash = (k, cx) => `<circle cx="${cx}" cy="${y}" r="${meR + 4}" class="hit">${anim('opacity',[0,0,0.9,0,0],[0,k,k+0.04,k+0.22,1])}</circle>`;
+
+  if (shape === 'line'){
+    const w = Math.max(3, width * s), xe = X(range);
+    st += `<rect x="${x0}" y="${y - w/2}" width="${xe - x0}" height="${w}" class="area"/>`;
+    const t = clamp(range / (speed || 1800), 0.25, 1.3), k1 = (c + t) / LOOP, pw = clamp(w, 5, 16);
+    an += `<rect y="${y - w/2}" width="${pw}" height="${w}" class="hit" rx="2">${anim('x',[x0, x0, xe - pw, xe - pw],[0,k0,k1,1])}${anim('opacity',[0,1,1,0,0],[0,k0,k1,k1+0.02,1])}</rect>`;
+    if (mx <= range) an += flash(k0 + (k1 - k0) * (mx / range), MX);
+  } else if (shape === 'cone'){
+    const R = range * s, a = Math.min(angle, 180) * Math.PI / 360;
+    const p = `M${x0} ${y} L${x0 + R*Math.cos(a)} ${y - R*Math.sin(a)} A${R} ${R} 0 0 1 ${x0 + R*Math.cos(a)} ${y + R*Math.sin(a)} Z`;
+    st += `<path d="${p}" class="area"/>`;
+    an += `<path d="${p}" class="hit">${anim('opacity',[0,0,0.7,0,0],[0,k0,k0+0.06,k0+0.3,1])}</path>`;
+  } else if (shape === 'circle'){
+    const cx = X(range);
+    st += `<line x1="${x0}" y1="${y}" x2="${cx}" y2="${y}" class="trail"/>`;
+    if (wall){
+      const h = width * s;
+      st += `<rect x="${cx - 3}" y="${y - h/2}" width="6" height="${h}" class="area"/>`;
+      an += `<rect x="${cx - 3}" y="${y - h/2}" width="6" height="${h}" class="hit">${anim('opacity',[0,0,0.8,0.8,0],[0,k0+0.08,k0+0.12,0.8,1])}</rect>`;
+    } else {
+      const r = radius * s;
+      st += `<circle cx="${cx}" cy="${y}" r="${r}" class="area"/>`;
+      an += `<circle cx="${cx}" cy="${y}" r="${r}" class="hit">${anim('opacity',[0,0,0.65,0,0],[0,k0+0.1,k0+0.16,k0+0.4,1])}</circle>`;
+    }
+  } else if (shape === 'self'){
+    const r = radius * s;
+    st += `<circle cx="${x0}" cy="${y}" r="${r}" class="area"/>`;
+    an += `<circle cx="${x0}" cy="${y}" class="hit">${anim('r',[0,0,r,r],[0,k0,k0+0.14,1])}${anim('opacity',[0,0.7,0.6,0,0],[0,k0,k0+0.14,k0+0.4,1])}</circle>`;
+  } else if (shape === 'dash'){
+    const xe = X(range);
+    st += `<line x1="${x0}" y1="${y}" x2="${xe}" y2="${y}" class="trail"/><path d="M${xe} ${y} l-6 -4 v8 z" class="foe" opacity=".6"/>`;
+    if (radius) st += `<circle cx="${xe}" cy="${y}" r="${radius * s}" class="area"/>`;
+    const k1 = k0 + 0.18;
+    an += `<circle cy="${y}" r="${foeR}" class="foe">${anim('cx',[x0, x0, xe, xe],[0,k0,k1,1])}${anim('opacity',[0,0.9,0.9,0.9,0],[0,k0,k1,0.85,1])}</circle>`;
+    if (radius) an += `<circle cx="${xe}" cy="${y}" r="${radius * s}" class="hit">${anim('opacity',[0,0,0.6,0,0],[0,k1,k1+0.04,k1+0.3,1])}</circle>`;
+  } else if (shape === 'unit'){
+    const xr = X(range);
+    st += `<line x1="${xr}" y1="${y - 18}" x2="${xr}" y2="${y + 18}" class="trail"/>`;
+    an += `<line x1="${x0}" y1="${y}" y2="${y}" class="trail" style="stroke-dasharray:none">${anim('x2',[x0, x0, MX, MX],[0,k0,k0+0.12,1])}${anim('opacity',[0,1,1,0,0],[0,k0,k0+0.3,k0+0.34,1])}</line>`;
+    an += flash(k0 + 0.12, MX);
+  }
+  let ruler = `<line x1="${x0}" y1="${ry}" x2="${x0 + L}" y2="${ry}" class="ln"/>`;
+  const step = shownU > 1600 ? 500 : 250;
+  for (let u = 0; u <= shownU; u += step){
+    const xx = X(u), big = u % (step * 2) === 0;
+    ruler += `<line x1="${xx}" y1="${ry}" x2="${xx}" y2="${ry + (big ? 5 : 3)}" class="ln"/>`;
+    if (big) ruler += `<text x="${xx}" y="${ry + 13}" text-anchor="middle" class="tm">${u}</text>`;
+  }
+  if (700 <= shownU){
+    const qx = X(700);
+    ruler += `<path d="M${qx} ${ry - 1} l-3.5 -6 h7 z" class="me"/>` + (Math.abs(qx - MX) > 34 ? `<text x="${qx}" y="${ry - 9}" text-anchor="middle" class="mq">ナサスW</text>` : '');
+  }
+  if (clipped) ruler += `<text x="${x0 + L}" y="${ry - 4}" text-anchor="end" class="tm">→ ${Math.round(reach)}まで届く</text>`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${SHAPE_JA[shape]}の模式図">
+    ${ruler}${st}
+    <circle cx="${MX}" cy="${y}" r="${meR}" class="me"/><text x="${MX}" y="${y + meR + 11}" text-anchor="middle" class="t">ナサス</text>
+    <circle cx="${x0}" cy="${y}" r="${foeR}" class="foe"/><text x="${x0}" y="${y + foeR + 11}" text-anchor="middle" class="t">相手</text>
+    <g class="anim">${an}</g></svg>`;
+  const cap = parts.join(' · ') + (flags.length ? `（${flags.join('・')}は公式表記なしのため目安）` : '');
+  return {svg, cap};
+}
+function cdText(cd){
+  if (!cd) return 'なし（常時効果）';
+  if (/常時/.test(cd)) return cd;
+  if (/チャージ/.test(cd)) return cd.replace(/(回復 [\d.\s\/]*[\d.])(\s*)(（|$)/, '$1秒$3');
+  const m = cd.match(/^(.*?[\d.])\s*(（.*）)?$/);
+  return m ? m[1] + '秒' + (m[2] || '') : cd;
+}
+function cdHTML(cd){ return `<span class="cd"><small>CD</small>${esc(cdText(cd))}</span>`; }
+function variantHTML(v, label, hidden, idx){
+  const f = fig(v.g || {});
+  return `<div class="variant" data-v="${idx}" ${hidden ? 'hidden' : ''}>
+    <div class="skill-head">${cdHTML(v.cd)}${label ? `<span class="form">${esc(label)}</span>` : ''}</div>
+    <figure class="fig" style="margin:0">${f.svg}<figcaption class="fig-cap"><span>${esc(f.cap)}</span></figcaption></figure>
+  </div>`;
+}
+function skillRow(k, s, c){
+  const hasAlt = !!s.alt;
+  const toggle = hasAlt ? `<div class="skill-head" style="margin:6px 0 0"><button type="button" class="alt-toggle" aria-pressed="false" data-alt>${esc(s.alt.label)}を表示</button></div>` : '';
+  const nm = c.snames ? c.snames[k] : '';
+  return `<div class="skill"><span class="key" aria-label="${SKILL_NAME[k]}">${icon(c.slug,k) ? `<img src="${icon(c.slug,k)}" alt="">` : ''}<i>${k}</i></span>
+    <div class="skill-grid">
+      <div><div class="skill-head">${nm ? `<span class="sname">${esc(nm)}</span>` : ''}<a class="vid" href="${videoURL(c,k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${k}" data-t="${esc(c.jp)} ${k}${nm ? '：' + esc(nm) : ''}">▶ 実際の動画</a></div><p class="d">${esc(s.d)}</p>${s.c ? `<p class="c"><b>対策</b>${esc(s.c)}</p>` : ''}${skillChips(s)}</div>
+      <div>${variantHTML(s, s.gl || (hasAlt ? '通常' : ''), false, 0)}${hasAlt ? variantHTML(s.alt, s.alt.label, true, 1) : ''}${toggle}</div>
+    </div></div>`;
+}
+
+let lastFocus = null;
+function openSheet(html, title){
+  lastFocus = document.activeElement;
+  const sh = $('#sheet');
+  sh.innerHTML = html; sh.hidden = false; $('#scrim').hidden = false;
+  sh.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+  const x = sh.querySelector('[data-close]'); if (x) x.focus();
+}
+function closeSheet(){
+  $('#sheet').hidden = true; $('#scrim').hidden = true; document.body.style.overflow = '';
+  try { if (location.hash) history.replaceState(null, '', location.pathname + location.search); } catch(e) {}
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+function currentList(){
+  let rows = C.filter(matches);
+  if (state.sort === 'wr-asc') rows.sort((a,b)=>WRV(a)-WRV(b));
+  else if (state.sort === 'wr-desc') rows.sort((a,b)=>WRV(b)-WRV(a));
+  else if (state.sort === 'kana') rows.sort((a,b)=>a.jp.localeCompare(b.jp,'ja'));
+  return rows.length ? rows : C;
+}
+const closeBtn = `<button class="iconbtn" type="button" data-close aria-label="閉じる"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>`;
+
+function openChamp(slug, push){
+  const c = C.find(x => x.slug === slug); if (!c) return;
+  const list = currentList(); const i = list.indexOf(c);
+  const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+  const st = first(c);
+  const flow = c.stance.map((s,k)=>`${k?'<span class="arr" aria-hidden="true">→</span>':''}<div class="step st-${s.s}"><strong>${s.s}</strong><small>${esc(s.when)}</small></div>`).join('');
+  const skills = ['P','Q','W','E','R'].map(k => skillRow(k, c.skills[k], c)).join('');
+  const html = `
+  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${esc(c.jp)}（${esc(c.en)}）</span></div>
+  <div class="sheet-body">
+  <div class="fv">
+   <div class="fv-col">
+    <div class="hero st-${st}">
+      <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
+      <div>
+        <h2>${esc(c.jp)}</h2>
+        <div class="en">${esc(c.en)}</div>
+        <div class="stats"><span>ナサス勝率</span><span class="wr">${WRT(c)}</span>${c.games ? `<span>${c.games.toLocaleString()}試合</span>` : ''}<span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
+      </div>
+    </div>
+    ${dmgLine(c)}
+    ${gwHTML(c)}${buyHTML(c)}
+    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
+    <section class="memo"><b>一口メモ</b><p>${esc(c.memo||'')}</p></section>
+    <section class="o-win"><p class="sec-label">ナサスの勝ち筋</p>
+      <p class="win">${esc(c.win||'')}</p>
+    </section>
+   </div>
+   <div class="fv-col">
+    ${csHTML(c)}
+    <div class="cards one"><div class="card trap"><h3>分からん殺し注意</h3><p>${esc(c.trap)}</p></div><div class="card go"><h3>攻めて良い瞬間</h3><p>${esc(c.go)}</p></div></div>
+    <section class="o-strip"><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
+    ${scaleHTML(c)}
+   </div>
+   <div class="fv-col">
+    <section class="o-plays"><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
+      <div class="goals">${(c.goal||[]).map(x=>`<span>狙い：${esc(x)}</span>`).join('')}</div>
+      <ol class="plays">${(c.plays||[]).map(([a,b,k])=>`<li class="play ${k}"><span class="if">こうなったら：<b>${esc(a)}</b></span><span class="then"><span class="tg">${PLAY_TAG[k]}</span><span>${esc(b)}</span></span></li>`).join('')}</ol>
+    </section>
+   </div>
+  </div>
+    <p class="dhead">ここから詳細</p>
+    <section><p class="sec-label">コンボ・トレード手順</p>
+      <div class="combos">${(c.combos||[]).map(x=>`<div class="cmb"><h3>${esc(x.name)}</h3><p class="cw"><b>使う瞬間</b>${esc(x.when)}</p><ol>${x.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p class="cy"><b>なぜ</b>${esc(x.why)}</p></div>`).join('')}</div>
+      <p class="note" style="margin-top:6px">W（ウィザー）は1体の相手に5秒間、だんだん強くなるスロウと攻撃速度低下を与えます（射程700）。Q（サイフォンストライク）は通常攻撃の強化なので、回避・ブロック・盲目で外れます。詳しくは「ナサスの基本・用語」を参照してください。</p>
+    </section>
+    <section><p class="sec-label">対面の構図</p>
+      <div class="cards">
+        <div class="card"><h3>主力</h3><p>${esc(c.core)}</p></div>
+        <div class="card"><h3>相手の狙い</h3>${chainHTML(c.plan)}</div>
+      </div>
+    </section>
+    <section><p class="sec-label">スキル別の特徴・CD・対策</p>
+      <p class="note" style="margin:0 0 8px">「▶ 実際の動画」を押すと、Riot公式のスキル動画が再生されます（共有用のGitHub版では画面右下の小窓でその場で再生し、P〜Rのボタンで切り替えられます）。右の図は上から見た模式図で、赤い範囲が当たり判定、下の目盛りが射程（ゲーム内の距離単位）、紫の三角はナサスのWの届く距離（700）です。CDは最大ランクまでの値で、スキルヘイスト（CD短縮）なしの場合です。</p>
+      <div class="skills">${skills}</div></section>
+    <section><p class="sec-label">ナサス対${esc(c.jp)}を外部サイトで見る</p>
+      <div class="links">
+        <a href="https://lolalytics.com/ja/lol/nasus/vs/${c.slug}/build/?lane=top&amp;vslane=top" target="_blank" rel="noopener">LoLalytics：ナサス対${esc(c.jp)} ↗</a>
+        <a href="https://op.gg/ja/lol/champions/nasus/counters/top?target_champion=${c.op}" target="_blank" rel="noopener">OP.GG：ナサス対${esc(c.jp)} ↗</a>
+        <a href="https://www.loljp-wiki.jp/wiki/?cmd=read&amp;page=${c.wk}" target="_blank" rel="noopener">LoLJPWiki：${esc(c.jp)}のページ ↗</a>
+        <a href="https://www.leagueoflegends.com/ja-jp/champions/${c.slug}/" target="_blank" rel="noopener">公式ページ ↗</a>
+      </div>
+      <p class="note" style="margin-top:6px">LoLJPWikiには対面別ページが無いため、相手チャンピオンのページにつないでいます。更新が止まっている可能性があり、内容が古い場合があります。</p>
+    </section>
+    <div class="navrow">
+      <button class="btn" type="button" data-go="${prev.slug}">← ${esc(prev.jp)}</button>
+      <button class="btn" type="button" data-go="${next.slug}">${esc(next.jp)} →</button>
+    </div>
+  </div>`;
+  openSheet(html);
+  if (push !== false) { try { history.replaceState(null, '', '#' + c.slug); } catch(e) {} }
+}
+
+function openBasics(){
+  const html = `
+  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">ナサスの基本・用語</span></div>
+  <div class="sheet-body">
+    <section><p class="sec-label">ナサスの基本性能（全対面共通）</p>
+      <div class="skills">${D.basics.map(([k,v])=>{ const key = k.replace(/（.*）/,''); const m = D.me[key];
+        return `<div class="skill"><span class="key">${m && icon(D.meInfo.slug,key) ? `<img src="${icon(D.meInfo.slug,key)}" alt=""><i>${esc(key)}</i>` : esc(key.replace('強み','強').replace('弱み','弱'))}</span><div>${m ? `<div class="skill-head">${m.name ? `<span class="sname">${esc(m.name)}</span>` : ''}${cdHTML(m.cd)}<a class="vid" href="${videoURL(D.meInfo,key)}" target="_blank" rel="noopener" data-g="${D.meInfo.key4}" data-k="${key}" data-t="ナサス ${key}${m.name ? '：' + esc(m.name) : ''}">▶ 実際の動画</a></div>` : ''}<p class="d">${esc(v)}</p></div></div>`; }).join('')}</div>
+    </section>
+    <section><p class="sec-label">ナサスの基本のトレード</p>
+      <div class="combo">
+        <div><b>スタック</b>Q（サイフォンストライク）でミニオンなどにとどめを刺すと、Qのダメージが永久に増えます（通常4、チャンピオン・大型ミニオン・大型モンスターは10）。レーンではQでのラストヒットを最優先にします。</div>
+        <div><b>短いトレード</b>W（ウィザー）で相手の足と攻撃速度を落とす → AA → Q（攻撃タイマーのリセット付きの強化AA）→ E（スピリットファイア）の範囲で物理防御を下げる → 相手のスキルが戻る前に下がる。</div>
+        <div><b>回復</b>P（ソウルイーター）で通常攻撃のダメージの一部（レベルで10〜20%）を回復します。CSを取りながら体力を戻せます。</div>
+        <div><b>R中のオールイン</b>R（アヌビスの怒り）は15秒間、体力・物理防御・魔法防御が増え、周りに割合ダメージを与え、Qの待ち時間が半分になります。R中にWで捕まえてQを連打するのが一番強い形です。</div>
+      </div>
+    </section>
+    <section><p class="sec-label">対応方針の意味</p>
+      <div class="cards">
+        <div class="card st-攻め" style="border-color:var(--atk)"><h3 style="color:var(--atk)">攻め</h3><p>相手の主力スキルが待ち時間の時に自分から仕掛け、ミニオンを押して相手をタワー下に追い込みます。</p></div>
+        <div class="card" style="border-color:var(--even)"><h3 style="color:var(--even)">五分</h3><p>「攻めて良い瞬間」が来た時だけトレードし、それ以外はCSを優先します。</p></div>
+        <div class="card wide" style="border-color:var(--def)"><h3 style="color:var(--def)">守り</h3><p>自陣タワー手前でフリーズし、Qでのラストヒット中心に最低限のCSを取ります。レベルと装備で差がつくまで待ちます。</p></div>
+      </div>
+    </section>
+    <section><p class="sec-label">用語集</p>
+      <div style="overflow-x:auto"><table class="gl"><tbody>${D.gloss.map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div>
+    </section>
+    <section><p class="sec-label">データについて</p>
+      <p class="note">勝率はOP.GG（パッチ26.19、エメラルド以上、トップ同士）の対面データから、ナサス側の勝率に換算したもので、2026年10月7日に取得しました。試合全体の結果であり、レーン戦の勝ち負けとは一致しません。ゼド・ケインは試合数不足のため表示していません。150試合未満は「少数」と表示しています。ナサスの性能とスキルの相互作用（Qが回避・ブロックされるか、Wのスロウが効くか等）は公式Wikiで確認し、書いた担当とは別の担当が全55体を独立に照合し、指摘46件（誤り・根拠不足・分かりにくい表現）を反映済みです。相手スキルの説明はムンド版で照合済みのものを使っています。スキルのCD・射程・幅は公式Wiki（2026年10月7日確認）の値で、アイコンとスキル名はRiot公式のData Dragon（16.19.1）、動画はRiot公式サイトのものです（権利はRiot Gamesに帰属します）。図の一部は公式に数値がないため目安で描いています。</p>
+      <div class="links" style="margin-top:8px"><a href="https://op.gg/ja/lol/champions/nasus/counters/top" target="_blank" rel="noopener">OP.GG：ナサスの対面一覧 ↗</a><a href="https://wiki.leagueoflegends.com/en-us/Nasus" target="_blank" rel="noopener">公式Wiki：ナサス ↗</a></div>
+    </section>
+  </div>`;
+  openSheet(html);
+  try { history.replaceState(null, '', '#basics'); } catch(e) {}
+}
+
+/* events */
+$('#q').addEventListener('input', e => { state.q = e.target.value; renderList(); });
+$('#seg').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  state.f = b.dataset.f; save();
+  document.querySelectorAll('#seg button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderList();
+});
+$('#sort').addEventListener('change', e => { state.sort = e.target.value; save(); renderList(); });
+$('#list').addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) openChamp(t.dataset.slug); });
+$('#basicsBtn').addEventListener('click', openBasics);
+$('#scrim').addEventListener('click', closeSheet);
+function openVideo(e, a){
+  const w = Math.min(720, Math.round(screen.availWidth * 0.9)), h = Math.round(w * 9 / 16) + 8;
+  const left = Math.max(0, Math.round((screen.availWidth - w) / 2)), top = Math.max(0, Math.round((screen.availHeight - h) / 2));
+  let win = null;
+  try { win = window.open(a.href, 'skillvideo', `popup=yes,width=${w},height=${h},left=${left},top=${top}`); } catch(err) { win = null; }
+  if (win){ e.preventDefault(); try { win.focus(); } catch(err) {} }
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('a.vid'); if (a) openVideo(e, a);
+});
+$('#sheet').addEventListener('click', e => {
+  if (e.target.closest('[data-close]')) return closeSheet();
+  const t = e.target.closest('[data-alt]');
+  if (t){
+    const box = t.closest('.skill-grid'), on = t.getAttribute('aria-pressed') !== 'true';
+    t.setAttribute('aria-pressed', on);
+    box.querySelector('.variant[data-v="0"]').hidden = on;
+    box.querySelector('.variant[data-v="1"]').hidden = !on;
+    return;
+  }
+  const g = e.target.closest('[data-go]'); if (g) openChamp(g.dataset.go);
+});
+document.addEventListener('keydown', e => {
+  if ($('#sheet').hidden) { if (e.key === '/' && document.activeElement !== $('#q')) { e.preventDefault(); $('#q').focus(); } return; }
+  if (e.key === 'Escape') closeSheet();
+  const g = document.querySelectorAll('#sheet [data-go]');
+  if (e.key === 'ArrowLeft' && g[0] && document.activeElement.tagName !== 'INPUT') openChamp(g[0].dataset.go);
+  if (e.key === 'ArrowRight' && g[1] && document.activeElement.tagName !== 'INPUT') openChamp(g[1].dataset.go);
+});
+
+/* init */
+document.querySelectorAll('#seg button').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === state.f));
+$('#sort').value = state.sort;
+renderList();
+const h = location.hash.slice(1);
+if (h === 'basics') openBasics(); else if (h) openChamp(h, false);
+})();
+/* ページ内動画プレイヤー（GitHub Pages版のみ。Claudeの成果物ページは外部動画を読み込めないため従来どおり別タブ） */
+const VP_INLINE = /(^|\.)github\.io$/.test(location.hostname);
+const vp = (() => {
+  const box = document.createElement('div');
+  box.className = 'vp'; box.hidden = true; box.setAttribute('role','dialog'); box.setAttribute('aria-label','スキル動画');
+  box.innerHTML = '<div class="vp-bar"><span class="vp-t"></span><span class="vp-keys"></span><button class="vp-x" type="button" aria-label="動画を閉じる">×</button></div><video muted loop playsinline controls preload="auto"></video><p class="vp-err" hidden>この環境では動画を埋め込み再生できませんでした。<a target="_blank" rel="noopener">新しいタブで開く ↗</a></p><div class="vp-desc"></div>';
+  document.body.appendChild(box);
+  const desc = box.querySelector('.vp-desc');
+  const v = box.querySelector('video'), err = box.querySelector('.vp-err'), keys = box.querySelector('.vp-keys'), t = box.querySelector('.vp-t');
+  let group = [];
+  v.addEventListener('error', () => { err.hidden = false; v.hidden = true; });
+  function play(a){
+    t.textContent = a.dataset.t || 'スキル動画';
+    desc.innerHTML = '';
+    const row = a.closest('.sk, .skill');
+    if (row) row.querySelectorAll('p').forEach(p => { if (!p.closest('.variant, figure, .vp')) desc.appendChild(p.cloneNode(true)); });
+    desc.hidden = !desc.childNodes.length; desc.scrollTop = 0;
+    err.hidden = true; v.hidden = false; err.querySelector('a').href = a.href;
+    v.src = a.href; const p = v.play(); if (p && p.catch) p.catch(() => {});
+    keys.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.href === a.href));
+  }
+  function show(a){
+    const g = a.dataset.g;
+    group = g ? [...document.querySelectorAll(`a.vid[data-g="${g}"]`)] : [a];
+    const seen = new Set();
+    keys.innerHTML = group.filter(x => !seen.has(x.href) && seen.add(x.href)).map(x => `<button type="button" data-href="${x.href}" aria-label="${x.dataset.t || ''}">${x.dataset.k || '▶'}</button>`).join('');
+    box.hidden = false; play(a);
+  }
+  function hide(){ v.pause(); v.removeAttribute('src'); v.load(); box.hidden = true; }
+  keys.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const a = group.find(x => x.href === b.dataset.href); if (a) play(a); });
+  box.querySelector('.vp-x').addEventListener('click', hide);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden){ hide(); e.stopImmediatePropagation(); } }, true);
+  return {show, hide};
+})();
+document.addEventListener('click', e => {
+  if (!VP_INLINE) return;
+  const a = e.target.closest('a.vid'); if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  e.preventDefault(); e.stopImmediatePropagation(); vp.show(a);
+}, true);
+</script>
