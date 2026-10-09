@@ -1,0 +1,142 @@
+{
+ "Ambessa": [
+  {
+   "t": "避ける",
+   "when": "序盤・スキル連続中",
+   "why": "スキル1つごとに強化攻撃が付くため、連続で使われている間に殴り合うほどアンベッサが得をします。Wで受けます。"
+  },
+  {
+   "t": "ショート",
+   "when": "QとE使用後",
+   "why": "QとEを使い終えた空白の時間だけ殴り、次のスキルが戻る前に離れます。Lv6以降はR効果の回復もあり長期戦は不利です。"
+  }
+ ],
+ "Aatrox": [
+  {
+   "t": "避ける",
+   "when": "Qが使える時",
+   "why": "Qの3連撃はスイートスポットに当たるとノックアップと大ダメージになり、回復もするため、長引くほど不利です。"
+  },
+  {
+   "t": "ショート",
+   "when": "Q3段目の後",
+   "why": "Qの待ち時間中は火力が大きく落ちるので、その間だけ殴り、Qが戻る前に下がります。"
+  }
+ ],
+ "Illaoi": [
+  {
+   "t": "避ける",
+   "when": "Eを当てられた時",
+   "why": "魂を抜かれたまま殴り合うと触手とイラオイの両方に攻撃されるため、長引くほどイラオイが得をします。すぐ下がります。"
+  },
+  {
+   "t": "ショート",
+   "when": "Eを外した後",
+   "why": "触手の攻撃でイラオイは回復するため、触手のない位置で短く殴り、Eが戻る前に離れます。"
+  }
+ ],
+ "Irelia": [
+  {
+   "t": "ショート",
+   "when": "序盤・E外した後",
+   "why": "スキルを当てるたびに攻撃速度が上がり、最大で通常攻撃に追加ダメージが付くため、長引くほどイレリアが得をします。"
+  },
+  {
+   "t": "ショート",
+   "when": "Lv9以降",
+   "why": "五分になりますが、Pが溜まるほどイレリアの火力が増える点は変わらないため、刃が消えている時に短く殴ります。"
+  }
+ ],
+ "Zed": [
+  {
+   "t": "ショート",
+   "when": "序盤・W使用後",
+   "why": "Wの待ち時間中のゼドは逃げ手段がないため、Qを当てて削ります。影からの手裏剣が届く位置には長居しません。"
+  },
+  {
+   "t": "ロング",
+   "when": "Lv6以降・R受けた後",
+   "why": "刻印の爆発をWで受けて回復に回せば、Rの瞬間火力を使い終えたゼドに対し、ムンドが殴り返す時間を作れます。"
+  }
+ ],
+ "Volibear": [
+  {
+   "t": "ショート",
+   "when": "Lv1〜6・Q待ち中",
+   "why": "攻撃するたびに攻撃速度が上がり、2回目のWで回復もするため、長引くほどボリベアが得をします。1回目のWで離れます。"
+  },
+  {
+   "t": "ショート",
+   "when": "コア1個以降・Q待ち中",
+   "why": "中盤以降はムンドの方が伸びるため積極的に殴れますが、Pで攻撃速度が上がり続けるので、Qの待ち時間中に殴って離れます。"
+  }
+ ],
+ "Gangplank": [
+  {
+   "t": "避ける",
+   "when": "樽が並んでいる時",
+   "why": "樽が連なっていると1つ撃たれるだけで遠くまで爆発するため、近づかずミニオンの後ろからQで削ります。"
+  },
+  {
+   "t": "ショート",
+   "when": "序盤・樽がない時",
+   "why": "近接戦闘が弱いので、近くに樽がない時は近づいてAA→Eで殴ります。樽を置かれたら近くに立たず離れます。"
+  }
+ ],
+ "Vladimir": [
+  {
+   "t": "ショート",
+   "when": "Lv1〜6・W使用後",
+   "why": "序盤は非常に弱いのでWの待ち時間中に殴りますが、Qが光っている時は回復が大きいため短く切り上げます。"
+  }
+ ],
+ "Malphite": [
+  {
+   "t": "ショート",
+   "when": "盾が剥がれた時",
+   "why": "盾がない時はQ→AA→Eで殴りますが、近接距離ではWで被ダメージが増えるため、殴ったらQの距離に戻ります。"
+  },
+  {
+   "t": "ショート",
+   "when": "Eを受けた時",
+   "why": "Eで攻撃速度を下げられると殴り合いの効率が落ちるため、一度離れて効果が切れてから仕掛け直します。"
+  }
+ ],
+ "Darius": [
+  {
+   "t": "避ける",
+   "when": "Lv1〜6",
+   "why": "序盤の殴り合いはTOPでも最強格で、出血が5回溜まると攻撃力が大きく上がるため、殴り合わずにQで削って耐えます。"
+  },
+  {
+   "t": "ショート",
+   "when": "コア1個以降",
+   "why": "Qを空振りした直後に短く殴ります。長引くと出血が5回溜まり、HPが十分あっても倒されるためすぐ離れます。"
+  }
+ ],
+ "Kennen": [
+  {
+   "t": "避ける",
+   "when": "Eが使える時",
+   "why": "Eは逃げにも接近にも使われ、通過時に印も付くため、Eがある間は近づかずミニオンの後ろからQで削り合います。"
+  },
+  {
+   "t": "ショート",
+   "when": "E使用後",
+   "why": "Eのないケネンは逃げ手段がないので殴れますが、殴り合い中に印が溜まり3つでスタンされるため、2つで離れます。"
+  }
+ ],
+ "_log": {
+  "Ambessa": "ok",
+  "Aatrox": "Phase1 why: Q3 sweet spot is the circle centre (data2), not the 'tip'; also 'closer = Aatrox gains' is wrong (being inside Q1/Q2 avoids sweet spot), reworded to 'longer fight favours Aatrox'.",
+  "Illaoi": "ok",
+  "Irelia": "ok",
+  "Zed": "ok",
+  "Volibear": "Phase2 ロング->ショート: data2 Volibear P says long fights make his attacks stronger and to trade short; stance 攻め/go only say 'trade actively', not long. Removed unsupported Mundo R heal claim.",
+  "Gangplank": "Phase2 ロング->ショート: data2 only says GP is weak in melee and to poke with Q / AA→E; nothing says long fights favour Mundo, and GP can place barrels mid-fight (E charges).",
+  "Vladimir": "ロング->ショート: data2 Q says empowered Q heals a lot and to keep trades short when Q glows; healing during the fight = ショート per decision rule. 'Very weak early' supports aggression, not long fights.",
+  "Malphite": "Phase1 ロング->ショート: data2 W counter says melee range increases damage taken and to keep Q-poke distance; win is 'keep stripping shield with Q'. Long melee fights are not supported.",
+  "Darius": "ok",
+  "Kennen": "Phase1 why reworded: avoidance reason now matches data2 (E used for both escape and engage, marks on pass; win = make him use E first)."
+ }
+}

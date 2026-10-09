@@ -19,6 +19,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/buy.json`：対策アイテム
 - `src/scale/scale.json`：強い時間帯の目安（序盤・中盤・終盤の3段階。`src/gen/champs_v2.json` の解説から作図し、別担当が照合済み。実データではないため、図に「解説から作図」と明記し、League of Graphs の実データへのリンクを併記）
 - `src/dmg/dmg.json`：AD／AP／混合の表示（LoLalytics の実戦ダメージ構成。物理÷(物理＋魔法)が70%以上でAD、30%以下でAP、それ以外は混合。取得手順は `src/briefs/dmg_BRIEF.md`）
+- `src/trade/trade.json`：ショート／ロング／避けるのトレード推奨（ムンド版のみ。`data2.json` の照合済み記述を基に執筆し、別担当が照合。手順は `src/briefs/trade_BRIEF.md` → `trade_AUDITOR.md`）
 - `src/links.py`：外部リンクのURL規則
 
 ## 更新のしかた

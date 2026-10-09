@@ -110,6 +110,13 @@ select.sort{border:1px solid var(--line);background:var(--surface);border-radius
 .flow .step strong{color:var(--c);font-size:15px}
 .flow .step small{font-size:12px;color:var(--ink-2);line-height:1.4}
 .flow .arr{align-self:center;color:var(--ink-3);font-size:14px}
+.trade{display:grid;gap:4px;margin-top:8px}
+.trade .tr{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;align-items:baseline;font-size:12.5px;line-height:1.45;color:var(--ink-2)}
+.trade .tt{font-weight:700;font-size:12px;padding:1px 7px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.trade .tt.t-ショート{color:var(--ink)}
+.trade .tt.t-ロング{color:var(--atk)}
+.trade .tt.t-避ける{color:var(--def)}
+.trade .tw{font-weight:700;color:var(--ink)}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin:0 0 8px}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 @media (max-width:620px){.cards{grid-template-columns:1fr}}
@@ -349,6 +356,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
 
   <div class="legend" aria-label="凡例">
     <span><span class="dm dm-AD">AD</span> 物理ダメージ中心→物理防御が効く ／ <span class="dm dm-AP">AP</span> 魔法中心→魔法防御 ／ <span class="dm dm-xAD">混合</span> 両方（LoLalyticsの実戦データ）</span>
+    <span>トレード：ショート＝スキル1〜2個と通常攻撃数発ですぐ下がる ／ ロング＝回復を活かして殴り合い続ける ／ 避ける＝殴り合わずQとCSだけ</span>
     <span><i class="dot st-攻め"></i>攻め：Qで削り主導権を取る</span>
     <span><i class="dot st-五分"></i>五分：合図が来た時だけ殴る</span>
     <span><i class="dot st-守り"></i>守り：フリーズして最低限のCS</span>
@@ -653,6 +661,7 @@ function currentList(){
 }
 const closeBtn = `<button class="iconbtn" type="button" data-close aria-label="閉じる"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>`;
 
+const tradeHTML = c => (c.trade&&c.trade.length) ? `<div class="trade" aria-label="トレードの長さ">${c.trade.map(x=>`<div class="tr"><span class="tt t-${esc(x.t)}">${esc(x.t)}</span><span><span class="tw">${esc(x.when)}：</span>${esc(x.why)}</span></div>`).join('')}</div>` : '';
 function openChamp(slug, push){
   const c = C.find(x => x.slug === slug); if (!c) return;
   const list = currentList(); const i = list.indexOf(c);
@@ -675,7 +684,7 @@ function openChamp(slug, push){
     </div>
     ${dmgLine(c)}
     ${gwHTML(c)}${buyHTML(c)}
-    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div></section>
+    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div>${tradeHTML(c)}</section>
     <section class="o-win"><p class="sec-label">ムンドの勝ち筋</p>
       <p class="win">${esc(c.win||'')}</p>
     </section>
