@@ -22,6 +22,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/trade/trade.json`：ショート／ロング／避けるのトレード推奨（ムンド版のみ。`data2.json` の照合済み記述を基に執筆し、別担当が照合。手順は `src/briefs/trade_BRIEF.md` → `trade_AUDITOR.md`）
 - `src/danger/danger.json`：警戒スキル（1〜2個）・避け方・避けた後のショート／ロング／下がる、立ち位置の一言（ムンド版のみ。手順は `src/briefs/danger_BRIEF.md` → `danger_AUDITOR.md`）。`src/danger/ar.json` は通常攻撃の射程（Data Dragon）で、射程比較の図に使います
 - `src/plan/plan.json`：「この対面の方針」カード（徹底する方針・立ち位置・パッシブ有無・入る／引く合図・Lv6/コア後。ムンド版のみ、対面画面の一番上に表示。手順は `src/briefs/plan_BRIEF.md` → `plan_AUDITOR.md`）。テンプレート側の項目名は `mplan`（data2 の `plan` と別物）
+- 上の `danger.json` と `plan.json` は2026年10月に「そのまま実行できるメモ」へ書き直し済み（書く役→初心者役→点検役の3段階。手順は `src/briefs/memo_BRIEF.md` と `memo_ROLES.md`、計算した着弾時間は `src/danger/react_calc.json`）。警戒スキルには react（見て避けられる／読みで避ける／避けられない）と hit（当たった時の対応）があります
 - `src/links.py`：外部リンクのURL規則
 
 ## 更新のしかた

@@ -1,0 +1,960 @@
+{
+ "Sylas": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.28,
+    "note": "cast 0 + range 400/speed 1450 (time to reach max range)"
+   },
+   "2段目（鎖投げ）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 950, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Warwick": {
+  "E": {
+   "main": {
+    "shape": "self",
+    "est": 0,
+    "note": "cast 0, speed None, range None, radius 375 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Tryndamere": {
+  "R": {
+   "main": {
+    "shape": "buff",
+    "est": 0,
+    "note": "cast 0, speed None, range None, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0,
+    "note": "cast 0, speed None, range 660, radius 225 (no travel time computed)"
+   }
+  }
+ },
+ "Ambessa": {
+  "Q": {
+   "main": {
+    "shape": "cone",
+    "est": 0,
+    "note": "cast 0, speed None, range 400, radius None (no travel time computed)"
+   },
+   "2段目（叩きつけ）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 650, radius None (no travel time computed)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "line",
+    "est": 0.7,
+    "note": "cast 0.7, speed None, range 1250, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Anivia": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 1.41,
+    "note": "cast 0.25 + range 1100/speed 950 (time to reach max range)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "circle",
+    "est": 0,
+    "note": "cast 0, speed None, range 750, radius 400 (no travel time computed)"
+   }
+  }
+ },
+ "Zaahen": {
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0.79,
+    "note": "cast 0.5 + range 850/speed 2900 (time to reach max range)"
+   }
+  },
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Kled": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.75,
+    "note": "cast 0.25 + range 800/speed 1600 (time to reach max range)"
+   },
+   "下馬時（銃撃）": {
+    "shape": "cone",
+    "est": null,
+    "note": "cast None, speed None, range 700, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "buff",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Gwen": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.5,
+    "note": "cast 0.5, speed None, range 465, radius 515 (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "self",
+    "est": 0,
+    "note": "cast 0, speed 2000, range None, radius 480 (no travel time computed)"
+   }
+  }
+ },
+ "Aatrox": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.6,
+    "note": "cast 0.6, speed None, range 625, radius None (no travel time computed)"
+   },
+   "3段目": {
+    "shape": "circle",
+    "est": null,
+    "note": "cast None, speed None, range 200, radius 300 (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0.71,
+    "note": "cast 0.25 + range 825/speed 1800 (time to reach max range)"
+   }
+  }
+ },
+ "Quinn": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.24,
+    "note": "cast 0 + range 600/speed 2500 (time to reach max range)"
+   }
+  },
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 525 (no travel time computed)"
+   }
+  }
+ },
+ "Yone": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.35,
+    "note": "cast 0.35, speed None, range 450, radius 100 (no travel time computed)"
+   },
+   "3回目（竜巻の突進）": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 450, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.25,
+    "note": "cast 0 + range 300/speed 1200 (time to reach max range)"
+   }
+  }
+ },
+ "Camille": {
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.57,
+    "note": "cast 0 + range 800/speed 1400 (time to reach max range)"
+   },
+   "2段目（壁から跳躍）": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 800, radius 130 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "buff",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Trundle": {
+  "R": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "circle",
+    "est": null,
+    "note": "cast None, speed None, range 750, radius 775 (no travel time computed)"
+   }
+  }
+ },
+ "Illaoi": {
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.75,
+    "note": "cast 0.25 + range 950/speed 1900 (time to reach max range)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "self",
+    "est": 0.5,
+    "note": "cast 0.5, speed None, range None, radius 500 (no travel time computed)"
+   }
+  }
+ },
+ "Shen": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 600, radius None (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed 2000, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Fiora": {
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0.28,
+    "note": "cast 0 + range 900/speed 3200 (time to reach max range)"
+   }
+  }
+ },
+ "Rumble": {
+  "Q": {
+   "main": {
+    "shape": "cone",
+    "est": null,
+    "note": "cast None, speed None, range 600, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.72,
+    "note": "cast 0.25 + range 950/speed 2000 (time to reach max range)"
+   }
+  }
+ },
+ "Teemo": {
+  "Q": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range 900, radius 450 (no travel time computed)"
+   }
+  }
+ },
+ "Irelia": {
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.39,
+    "note": "cast 0 + range 775/speed 2000 (time to reach max range)"
+   }
+  },
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Nasus": {
+  "W": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "buff",
+    "est": 0,
+    "note": "cast 0, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Yorick": {
+  "E": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed 1800, range 700, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "circle",
+    "est": 0,
+    "note": "cast 0, speed None, range 600, radius 225 (no travel time computed)"
+   }
+  }
+ },
+ "Ornn": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.85,
+    "note": "cast 0.35 + range 800/speed 1600 (time to reach max range)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0,
+    "note": "cast 0, speed None, range 500, radius 175 (no travel time computed)"
+   }
+  }
+ },
+ "Vayne": {
+  "E": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Zed": {
+  "R": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.79,
+    "note": "cast 0.25 + range 925/speed 1700 (time to reach max range)"
+   }
+  }
+ },
+ "Mordekaiser": {
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.48,
+    "note": "cast 0.25 + range 700/speed 3000 (time to reach max range)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Olaf": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.88,
+    "note": "cast 0.25 + range 1000/speed 1600 (time to reach max range)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "buff",
+    "est": 0,
+    "note": "cast 0, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Kayle": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.56,
+    "note": "cast 0 + range 900/speed 1600 (time to reach max range)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Akali": {
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.71,
+    "note": "cast 0.25 + range 825/speed 1800 (time to reach max range)"
+   },
+   "再発動（飛びつき）": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "dash",
+    "est": 0.7,
+    "note": "cast 0.25 + range 675/speed 1500 (time to reach max range)"
+   },
+   "2段目": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 800, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Volibear": {
+  "Q": {
+   "main": {
+    "shape": "buff",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Gnar": {
+  "R": {
+   "main": {
+    "shape": "self",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range None, radius 475 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.7,
+    "note": "cast 0.25 + range 1125/speed 2500 (time to reach max range)"
+   },
+   "メガナー時": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 1150, radius 250 (no travel time computed)"
+   }
+  }
+ },
+ "Garen": {
+  "Q": {
+   "main": {
+    "shape": "buff",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 325 (no travel time computed)"
+   }
+  }
+ },
+ "Sion": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 850, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.25,
+    "note": "cast 0.25, speed 1800, range None, radius 130 (no travel time computed)"
+   }
+  }
+ },
+ "Sett": {
+  "W": {
+   "main": {
+    "shape": "cone",
+    "est": 0.75,
+    "note": "cast 0.75, speed None, range 720, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "line",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range 450, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Gangplank": {
+  "E": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range 1000, radius 345 (no travel time computed)"
+   }
+  }
+ },
+ "Wukong": {
+  "R": {
+   "main": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 315 (no travel time computed)"
+   },
+   "2回目": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 315 (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 650, radius 187.5 (no travel time computed)"
+   }
+  }
+ },
+ "Kayn": {
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0.55,
+    "note": "cast 0.55, speed None, range 700, radius None (no travel time computed)"
+   },
+   "青ケイン（影の暗殺者）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 900, radius None (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 350, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Jax": {
+  "E": {
+   "main": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 375 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 700, radius None (no travel time computed)"
+   }
+  }
+ },
+ "K'Sante": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.45,
+    "note": "cast 0.45, speed None, range 465, radius None (no travel time computed)"
+   },
+   "3回目（衝撃波）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 930, radius None (no travel time computed)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Vladimir": {
+  "Q": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "circle",
+    "est": null,
+    "note": "cast None, speed None, range 625, radius 375 (no travel time computed)"
+   }
+  }
+ },
+ "Pantheon": {
+  "W": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 600, radius None (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.64,
+    "note": "cast 0.2 + range 1200/speed 2700 (time to reach max range)"
+   },
+   "短押し（突き）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 560, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Gragas": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.66,
+    "note": "cast 0 + range 600/speed 910 (time to reach max range)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed 1000, range 850, radius 250 (no travel time computed)"
+   }
+  }
+ },
+ "Jayce": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.94,
+    "note": "cast 0.2143 + range 1050/speed 1450 (time to reach max range)"
+   },
+   "ハンマー形態": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 600, radius 300 (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "circle",
+    "est": null,
+    "note": "cast None, speed None, range 650, radius None (no travel time computed)"
+   },
+   "ハンマー形態": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  }
+ },
+ "Urgot": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.82,
+    "note": "cast 0.45 + range 450/speed 1200 (time to reach max range)"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "line",
+    "est": 1.28,
+    "note": "cast 0.5 + range 2500/speed 3200 (time to reach max range)"
+   }
+  }
+ },
+ "Malphite": {
+  "Q": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "R": {
+   "main": {
+    "shape": "dash",
+    "est": 0.67,
+    "note": "cast 0 + range 1000/speed 1500 (time to reach max range)"
+   }
+  }
+ },
+ "Cho'Gath": {
+  "Q": {
+   "main": {
+    "shape": "circle",
+    "est": 0.5,
+    "note": "cast 0.5, speed None, range 950, radius 125 (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "cone",
+    "est": 0.5,
+    "note": "cast 0.5, speed None, range 650, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Poppy": {
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": 0.26,
+    "note": "cast 0 + range 475/speed 1800 (time to reach max range)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.33,
+    "note": "cast 0.3325, speed None, range 460, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Singed": {
+  "E": {
+   "main": {
+    "shape": "unit",
+    "est": null,
+    "note": "unit-targeted"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 180 (no travel time computed)"
+   }
+  }
+ },
+ "Riven": {
+  "Q": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 225, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "self",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range None, radius 300 (no travel time computed)"
+   }
+  }
+ },
+ "Darius": {
+  "E": {
+   "main": {
+    "shape": "cone",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range 535, radius None (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "self",
+    "est": null,
+    "note": "cast None, speed None, range None, radius 460 (no travel time computed)"
+   }
+  }
+ },
+ "Renekton": {
+  "W": {
+   "main": {
+    "shape": "buff",
+    "est": null,
+    "note": "cast None, speed None, range 175, radius None (no travel time computed)"
+   }
+  },
+  "E": {
+   "main": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 450, radius None (no travel time computed)"
+   },
+   "2回目（ダイス）": {
+    "shape": "dash",
+    "est": null,
+    "note": "cast None, speed None, range 450, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Heimerdinger": {
+  "E": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed 1200, range 925, radius 250 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "circle",
+    "est": 0.25,
+    "note": "cast 0.25, speed None, range 350, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Tahm Kench": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.57,
+    "note": "cast 0.25 + range 900/speed 2800 (time to reach max range)"
+   }
+  },
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Yasuo": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.35,
+    "note": "cast 0.35, speed None, range 450, radius None (no travel time computed)"
+   },
+   "3回目（竜巻）": {
+    "shape": "line",
+    "est": null,
+    "note": "cast None, speed None, range 1150, radius None (no travel time computed)"
+   }
+  },
+  "W": {
+   "main": {
+    "shape": "line",
+    "est": 0.01,
+    "note": "cast 0.013, speed None, range 450, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Kennen": {
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.79,
+    "note": "cast 0.175 + range 1050/speed 1700 (time to reach max range)"
+   }
+  },
+  "P": {
+   "main": {
+    "shape": "passive",
+    "est": null,
+    "note": "cast None, speed None, range None, radius None (no travel time computed)"
+   }
+  }
+ },
+ "Varus": {
+  "E": {
+   "main": {
+    "shape": "circle",
+    "est": 0.24,
+    "note": "cast 0.2419, speed None, range 925, radius 300 (no travel time computed)"
+   }
+  },
+  "Q": {
+   "main": {
+    "shape": "line",
+    "est": 0.84,
+    "note": "cast 0 + range 1595/speed 1900 (time to reach max range)"
+   }
+  }
+ }
+}

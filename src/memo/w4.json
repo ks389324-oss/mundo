@@ -1,0 +1,406 @@
+{
+ "Anivia": {
+  "plan": {
+   "rule": "Qを横に避け、外した時だけ近づいて削ります",
+   "pos": "Qの氷塊を見て横に歩ける距離を保ち、吹雪（R）が出たら中心から400より外に立ちます",
+   "pas": "パッシブがある時はQのスタンを防げるので少し強気にCSを取ります。無い時はQを避けてから動きます",
+   "go": [
+    "Qを外した→近づいてQ→AA→Eで削り、Qが戻る前に下がります"
+   ],
+   "back": [
+    "吹雪（R）が出た→中心から400より外へ出て、外からQだけ投げます",
+    "卵になった→味方がいなければ深追いしません"
+   ],
+   "later": "Lv6以降は吹雪でミニオンを処理されるので、吹雪の外から取れるCSだけ取ります"
+  },
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "react": "見て避けられる",
+    "how": "氷塊はゆっくり（速度950）飛ぶ幅220の弾です。投げたのを見てから横へ歩きます。端まで飛ぶと自動で爆発します",
+    "hit": "スタンはパッシブで1回防げます。無い時はEが2倍になるので、解けたらすぐ下がります",
+    "t": "ショート",
+    "then": "Qの待ち時間中に近づき、Q→AA→Eで削ってすぐ下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "吹雪は置いた瞬間から効きます。広がると半径400になるので、中心から400より外へすぐ歩き出ます",
+    "hit": "中にいるとスロウが続き、Eが2倍になります。CSより脱出を先にします",
+    "t": "下がる",
+    "then": "吹雪の外からQだけ投げます。CSは吹雪の外から取れる分だけ取ります"
+   }
+  ]
+ },
+ "Quinn": {
+  "plan": {
+   "rule": "追いかけず、Eの直後にミニオンの後ろからQだけ当てます",
+   "pos": "ミニオンの後ろに立ち、鷹の印が付いたらクインから525（通常攻撃の射程）より遠くへ下がります",
+   "pas": null,
+   "go": [
+    "Eで跳ねてきた直後→Eの待ち時間中に、ミニオンの後ろからQを当てます"
+   ],
+   "back": [
+    "鷹の印が付いた→一歩下がり、525の外でCSを取ります",
+    "クインが逃げていく→追いかけず、CSに戻ります"
+   ],
+   "later": "Lv6以降はRで他レーンへ行くので、見えなくなったら味方に知らせます"
+  },
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "react": "避けられない",
+    "how": "対象指定（射程600）の跳びつきです。当てた後クインは525後ろへ跳ねるので、追いかけません",
+    "hit": "当たると少し押し戻され、50%のスロウ（1.5秒で弱まる）を受けます。追わずにその場で止まります",
+    "t": "ショート",
+    "then": "Eの待ち時間中に、近づかずミニオンの後ろからQだけ当てます"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "react": "見て避けられる",
+    "how": "自分に鷹の印が付いたのを見たら、クインから525（通常攻撃の射程）より遠くへ一歩下がります",
+    "hit": "追加ダメージを受けても追いかけず、射程の外へ下がってCSに戻ります",
+    "t": "下がる",
+    "then": "射程の外でCSを取り、Qが当たる時だけミニオンの後ろから投げます"
+   }
+  ]
+ },
+ "Shen": {
+  "plan": {
+   "rule": "Eを外させてから、Q→AA→Eで短く削ります",
+   "pos": "霊剣とシェンを結ぶ直線から横にずれ、Eの射程（600）の端ではシェンの正面に立ちません",
+   "pas": "パッシブがある時はEの挑発を防げるので少し強気にCSを取ります。無い時は挑発されたら先にWを押します",
+   "go": [
+    "Eを外した→Q→AA→Eで削ってすぐ下がります",
+    "結界（W）が消えた→AA→E→AAで殴ります",
+    "RでTOPを離れた→ミニオンを押してタワーを削ります"
+   ],
+   "back": [
+    "結界（W）の中にいる→Eを温存し、Qで戦います",
+    "霊剣とシェンを結ぶ線の上にいる→横にずれてから殴ります"
+   ],
+   "later": "Lv6以降、RでTOPを離れたらミニオンを押してタワーを削ります"
+  },
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "react": "読みで避ける",
+    "how": "予備動作なしの直線ダッシュ（最大600）です。正面に立たず、ダッシュの線から横にずれた位置に立ち続けます",
+    "hit": "挑発（1.5秒）はパッシブで1回防げます。無い時は先にWを押して耐えます",
+    "t": "ショート",
+    "then": "Eを外したら、Q→AA→Eで削ってすぐ下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "react": "読みで避ける",
+    "how": "霊剣は地面からシェンへ一直線に戻ります。霊剣とシェンを結ぶ線から横にずれて立ちます",
+    "hit": "通り道で当たると、強化攻撃3回（8秒以内）が来ます。長く殴り合わず下がります",
+    "t": "ショート",
+    "then": "結界（W）中はEを温存し、結界が消えたらAA→E→AAで殴ります"
+   }
+  ]
+ },
+ "Nasus": {
+  "plan": {
+   "rule": "Lv1〜5はQで削り続け、スタック稼ぎを邪魔します",
+   "pos": "Lv1〜5はムンドのQ（1050）が届く距離に立ち、ナサスがミニオンを叩きに来る瞬間を狙います",
+   "pas": null,
+   "go": [
+    "Qでミニオンを取りに来た→その瞬間にこちらのQを合わせます",
+    "Lv1〜5で寄ってきた→AA→E→AAで殴って下がります"
+   ],
+   "back": [
+    "Wのスロウを受けた→殴り合いを続けず離れます",
+    "R（巨大化）を使った→終了まで戦いません"
+   ],
+   "later": "Lv6以降は五分です。HPに余裕がない時はWの射程（700）に入らず、受けたら離れます"
+  },
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "react": "避けられない",
+    "how": "対象指定（射程700）のスロウで避けられず、パッシブでも防げません。HPに余裕がない時は700以内に入りません",
+    "hit": "スロウは5秒続き、時間とともに強くなります。受けたら殴り合いを切り上げて下がります",
+    "t": "下がる",
+    "then": "Wを受けたら殴り合いを続けず離れます。短く削るだけにします"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "Qは射程175の強化攻撃です。ナサスがQでミニオンを叩きに前へ出る瞬間を見て、こちらのQを投げます",
+    "hit": null,
+    "t": "ショート",
+    "then": "その瞬間にQを合わせ、寄られたらAA→E→AAで殴って下がります"
+   }
+  ]
+ },
+ "Mordekaiser": {
+  "plan": {
+   "rule": "ミニオンの近くで戦い、Eを外させてから短く削ります",
+   "pos": "ミニオンの近くに立ち、Eの射程（700）の端でモルデカイザーの正面から横にずれます",
+   "pas": "パッシブがある時はEの引き寄せを防げるので少し強気にCSを取ります。無い時は700の端で誘って避けます",
+   "go": [
+    "Eを外した→Q→AA→Eで削ってすぐ下がります"
+   ],
+   "back": [
+    "周りにミニオンがいない→Qが強くなるので戦いません",
+    "体の周りに黒い渦（P）→近接距離から離れます"
+   ],
+   "later": "Lv6以降、R（死の国）に入れられたら自分のRで耐え、時間切れを待ちます"
+  },
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "react": "読みで避ける",
+    "how": "Eは自分に向けた直線（幅200）です。避ける方向は横。射程700の端に立って誘い、撃たれる前に一歩下がります",
+    "hit": "引き寄せはパッシブで1回防げます。無い時はミニオンの近くへ戻り、1対1のQを避けます",
+    "t": "ショート",
+    "then": "Eを外した直後にQ→AA→Eで削り、すぐ下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "react": "避けられない",
+    "how": "対象指定（射程650）で避けられません。異空間からは7秒間出られないので、入れられたら自分のRを使います",
+    "hit": "焦ってQを外さず、殴り返しながら時間切れまで耐えます",
+    "t": "ロング",
+    "then": "異空間から戻ったら、ミニオンの近くに戻って戦います"
+   }
+  ]
+ },
+ "Gnar": {
+  "plan": {
+   "rule": "怒りゲージを見て、小型に戻った直後に殴ります",
+   "pos": "ブーメランの行きと帰りの軌道から外れ、壁を背にしない位置に立ちます",
+   "pas": "パッシブはメガナー（巨大化）時のWのスタンを防げますが、有無にかかわらず巨大化中は戦いません",
+   "go": [
+    "巨大化が解けて小型に戻った→Q→AA→Eで殴ります",
+    "ブーメランを投げた直後→拾われる前にQを当てます"
+   ],
+   "back": [
+    "怒りゲージが黄色〜赤→近づかず、CSとQだけにします",
+    "巨大化した→475より離れ、壁から遠い方へ下がります"
+   ],
+   "later": "Lv6以降は巨大化中のRに備え、壁際に立たないことを徹底します"
+  },
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "メガナーの周囲475に入ると避けられません。475より離れ、後ろ590以内に壁がある場所に立ちません",
+    "hit": "壁にぶつからなければスタンせず、スロウ（45%）だけです。そのまま壁から離れます",
+    "t": "下がる",
+    "then": "巨大化中は戦わず、小型に戻ったらQ→AA→Eで殴ります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "react": "見て避けられる",
+    "how": "細い（幅110）ブーメランです。投げる動作を見て横へ歩きます。遠いほど避けやすく、帰りはナーへ戻る線上に立ちません",
+    "hit": "怒りが溜まるので、ゲージが黄色以上なら近づかずCSとQだけにします",
+    "t": "ショート",
+    "then": "拾われる前にQを当てます。怒りゲージが赤なら近づきません"
+   }
+  ]
+ },
+ "Wukong": {
+  "plan": {
+   "rule": "Eを使わせてから、Q→AA→Eで短く削ります",
+   "pos": "ミニオンの後ろからQで削り、Eで寄られたら近くで短く殴り返します",
+   "pas": "パッシブがある時はRの1回目のノックアップを防げます。2回目は防げないので、防いだらすぐ離れます",
+   "go": [
+    "Eで突進してきた→Q→AA→Eで削って下がります"
+   ],
+   "back": [
+    "AA→E→AAを当て終えた→長引くとPで硬くなるので下がります",
+    "Wで分身を出した→分身を殴らず本体を見ます"
+   ],
+   "later": "Lv6以降はRの1回目を受けたらすぐ離れ、Rが終わってから殴ります"
+  },
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "回転（半径315）は予備動作なしです。1回目はパッシブで防ぎ、すぐ反対へ歩いて315の外へ出ます",
+    "hit": "2回目はパッシブで防げません。回転中のウーコンは20%速いので、早めに離れます",
+    "t": "下がる",
+    "then": "1回目を防いだらすぐ離れ、Rが終わってから殴ります"
+   },
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "react": "避けられない",
+    "how": "対象指定（射程650）の突進で避けられません。突進されたらその場で殴り返す準備をします",
+    "hit": "突進後はウーコンが近くにいるので、Q→AA→Eで短く返して下がります",
+    "t": "ショート",
+    "then": "Eを使った直後にQ→AA→Eで削って下がります"
+   }
+  ]
+ },
+ "Pantheon": {
+  "plan": {
+   "rule": "Lv1〜8は耐え、Lv9以降に攻めへ切り替えます",
+   "pos": "序盤は槍の向きから横にずれ、体力バー下のゲージが満タンの時はWの射程（600）に入りません",
+   "pas": "パッシブがある時はWのスタンを防げるので、防いだら殴り返します。無い時は近づきすぎません",
+   "go": [
+    "E（盾）が終わった→Qを当てて下がります",
+    "Wのスタンをパッシブで防いだ→AA→E→AAで殴り返します"
+   ],
+   "back": [
+    "体力バー下のゲージが満タン→強化スキルが来るので600以内に入りません",
+    "盾（E）を構えている→正面からQを投げません"
+   ],
+   "later": "Lv9以降は主要スキルを使わせた後なら、長めに殴り合えます"
+  },
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "react": "避けられない",
+    "how": "対象指定（射程600）の跳びかかりで避けられません。ゲージ満タンの時は600以内に入りません",
+    "hit": "スタン（1秒）はパッシブで1回防げます。防いだらAA→E→AAで殴り返します",
+    "t": "ショート",
+    "then": "殴り返したらすぐ下がり、長い殴り合いはLv9以降にします"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "react": "見て避けられる",
+    "how": "槍を構えて溜める姿勢が合図です。溜めている間に槍の向きから横へ歩き続けます。ミニオンの後ろでも半分当たります",
+    "hit": "HPが20%を切ると追加ダメージが増えるので、HPが少ない時は槍の射程（1200）の外へ下がります",
+    "t": "ショート",
+    "then": "槍を外させたら、盾（E）が終わっている時にこちらのQを当てて下がります"
+   }
+  ]
+ },
+ "Cho'Gath": {
+  "plan": {
+   "rule": "Qの予兆を避け、外した時に殴ります",
+   "pos": "Qの予兆を見て歩ける距離を保ち、Wの扇（正面650）には入りません",
+   "pas": "パッシブがある時はQのノックアップを防げるので少し強気にCSを取ります。無い時はQを外させてから寄ります",
+   "go": [
+    "Qを外した→近づいてAA→E→AAで殴り、下がります"
+   ],
+   "back": [
+    "Wの扇に入った→沈黙を受けるので650より外へ下がります",
+    "自分のHPが少ない→Rの確定ダメージがあるので近づきません"
+   ],
+   "later": "Lv6以降はHPが少ないとRで倒されやすいので、早めに下がります"
+  },
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "react": "見て避けられる",
+    "how": "地面に出る予兆（半径125の円）を見たら、円の外へ歩きます。噴き出すまで約1.1秒（目安）あります",
+    "hit": "ノックアップはパッシブで1回防げます。無い時はWとRが続くので、HPが少なければすぐ下がります",
+    "t": "ショート",
+    "then": "Qの待ち時間（6秒）中に近づき、AA→E→AAで殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "react": "読みで避ける",
+    "how": "正面への扇（射程650・60度）です。パッシブで防げないため、Qを外させるまでは650より外に立ちます",
+    "hit": "沈黙（1.6〜2秒）中はWもRも使えません。すぐ650の外へ歩いて下がります",
+    "t": "下がる",
+    "then": "沈黙が解けるまで殴り合わず、範囲外でQが戻るのを待ちます"
+   }
+  ]
+ },
+ "Renekton": {
+  "plan": {
+   "rule": "怒りゲージが少ない時だけ、Q→AA→Eで短く削ります",
+   "pos": "序盤は自陣タワー手前で待ち、ミニオンの集まる場所で戦いません。怒り50以上の時は625（E＋Wの届く距離・目安）より離れます",
+   "pas": "パッシブはWのスタンを1回防げますが、怒りが50以上の時は有無にかかわらず近づきません",
+   "go": [
+    "怒りゲージが少ない→Q→AA→Eで削ってすぐ下がります",
+    "Eを2回とも使い終えた→Qを当てます"
+   ],
+   "back": [
+    "怒りゲージが半分以上→トレードせず、CSとQだけにします"
+   ],
+   "later": "コア2個以降は攻めに切り替え、最初の連続技を耐えて長めに殴り合えます"
+  },
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "射程175の強化攻撃で、近づかれたら避けられません。怒り50以上の時はE（450）＋W（175）の625より離れます（目安）",
+    "hit": "スタンはパッシブで1回防げます。防げない時は解けたらすぐタワー側へ下がります",
+    "t": "下がる",
+    "then": "怒りが50以上の時はCSとQだけにし、怒りが少ない時を待ちます"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "react": "避けられない",
+    "how": "1段目（450）が何かに当たると4秒以内に2段目が使えます。2段目で抜ける方向を予測して立ちます",
+    "hit": "2段目で抜けた先を見て、そこへQを投げます",
+    "t": "ショート",
+    "then": "2回とも使い終えたらQを当て、怒りが少なければAA→Eで削ります"
+   }
+  ]
+ },
+ "Varus": {
+  "plan": {
+   "rule": "Eを使わせてから、範囲の外を回って近づきます",
+   "pos": "ミニオンの後ろに立ち、矢の雨（E）の範囲（半径300）の外で機会を待ちます",
+   "pas": "パッシブがある時はRの拘束を1回防げます。無い時はRの触手を横に動いて避けます",
+   "go": [
+    "Eを使った直後→範囲の外を回って近づき、AA→Eで殴ります",
+    "Rを使った後（Lv6以降）→近づいて殴り合います"
+   ],
+   "back": [
+    "矢の雨（E）が出た→すぐ範囲から出て、重傷中は殴り合いません",
+    "通常攻撃を2回受けた→3回目の前に離れます"
+   ],
+   "later": "Lv6以降はRを使わせた後が、近づいて殴り合う機会です"
+  },
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "react": "読みで避ける",
+    "how": "撃ってから0.5秒で落ちます。射程925内では来る前提で立ち、範囲（半径300）が出たら外へすぐ出ます。地面は4秒残ります",
+    "hit": "スロウと重傷（回復阻害）が付きます。重傷中は殴り合わず、CSとQだけにします",
+    "t": "ショート",
+    "then": "Eの直後は範囲の外を回って近づき、AA→Eで殴ります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "react": "見て避けられる",
+    "how": "弓が光って溜め始めたら合図です。溜め中のヴァルスは遅いので、矢の向きから横へ歩き続けます",
+    "hit": "ミニオンの後ろならダメージが減ります。枯死が溜まっている時は距離を取ります",
+    "t": "ショート",
+    "then": "ミニオンの後ろからQを当てます。近づくのはEを使った後にします"
+   }
+  ]
+ },
+ "_ev": {
+  "Anivia": "data2 Q g (range1100,w220,spd950,cast0.25), react_calc Q 1.41s -> see-and-dodge. Wiki https://wiki.leagueoflegends.com/en-us/Anivia: Q auto-detonates at max range, stun 1.1-1.5s, detonation r225; R cast none, radius 200->400 over 1.5s (so R react=unavoidable on placement, walk >400 from centre). E unit 600.",
+  "Quinn": "Wiki https://wiki.leagueoflegends.com/en-us/Quinn: E unit-targeted 600, slow 50% decaying over 1.5s, target knocked back a very short distance, Quinn leaps 525 back; AA 525 (ar.json). Uncertain: whether Mundo passive is consumed by E's tiny knockback - not stated, left out. P mark react='見て避けられる' is my judgement (mark is visible).",
+  "Shen": "Wiki https://wiki.leagueoflegends.com/en-us/Shen: E no cast time, range 300-600, speed 800+100%MS (~0.5s at max range, no windup -> classified 読みで避ける, borderline), taunt 1.5s; Q blade returns in straight line to Shen, slow 2s when moving away, next 3 attacks within 8s empowered; W r350.",
+  "Nasus": "Wiki https://wiki.leagueoflegends.com/en-us/Nasus: Q +50 range (125+50=175), W range 700 cast 0.25, slow grows over 5s (max 47-95%). Passive cannot block slow (brief). Q react='避けられない' since it is an empowered unit-target attack; it is a positioning/timing item.",
+  "Mordekaiser": "Wiki https://wiki.leagueoflegends.com/en-us/Mordekaiser: E cast 0.25, width 200, range 700, pulls 250 after 0.5s, pull linked to Airborne (passive blocks). react_calc 0.48 -> 読みで避ける (matches user's own example). R unit 650, cast 0.5, banish 7s, arena impassable.",
+  "Gnar": "Wiki https://wiki.leagueoflegends.com/en-us/Template:Data_Gnar/GNAR! : cast 0.25, radius 475, knockback up to 590, stun 1.25-1.75s on terrain, otherwise 45% slow. Mini Q (wiki Gnar page): cast 0.25, range 1125, width 110, speed 2500, returns toward Gnar based on movement. react_calc Q 0.7s -> 見て避けられる (thin, but closer range is harder; noted 遠いほど避けやすい). Mega W cast 0.6 stun 1.25s. Did not claim passive blocks R knockback though brief rule implies it.",
+  "Wukong": "Wiki https://wiki.leagueoflegends.com/en-us/Wukong: R cast none, radius 315, knock-up 0.6s once per enemy per cast, spin up to 2s, +20% MS, recast within 8s (wiki inconsistent on 0.5s vs 1s recast delay - not stated). E unit-targeted 650.",
+  "Pantheon": "Wiki https://wiki.leagueoflegends.com/en-us/Pantheon: Q hold threshold 0.35s then cast 0.2, range 1200, speed 2700, width 110-120, hurl damage -50% beyond first target; classified 見て避けられる because the charge stance is a visible windup (>=0.55s before release) - borderline. HP<20% bonus damage from data2 c. W unit 600, stun 1s. E 1.5s, blocks from braced direction.",
+  "Cho'Gath": "Wiki https://wiki.leagueoflegends.com/en-us/Cho%27Gath: Q cast 0.5 + 0.627s eruption delay (~1.1s), radius 125, knock-up 1s; W cast 0.5, range 650, 60deg, silence 1.6-2s -> classified 読みで避ける (0.5s, close-range cone hard to exit; borderline). R range 175. QCD 6 from data2.",
+  "Renekton": "Wiki https://wiki.leagueoflegends.com/en-us/Renekton: W empowered attack 175 range, empowered stun 0.75s; E dash 450, speed 760+MS, passes through units, recast within 4s if first hits. '625 = E450+W175' is my composite estimate, labelled 目安. E react 避けられない (fast dash through units).",
+  "Varus": "Wiki https://wiki.leagueoflegends.com/en-us/Varus: E cast 0.2419, arrows land after 0.5s, radius 300, field 4s, slow 30-50%; GW duration not stated. Q width 140, speed 1900, range 895-1595 (notes 825-1525 conflict), 20% self-slow while charging. R cast 0.2419, 1370, w240, spd1500, root 2s. E classified 読みで避ける (react_calc 0.24 cast-only; with 0.5s landing it may be dodgeable on sight - unsure whether enemies see the indicator)."
+ }
+}

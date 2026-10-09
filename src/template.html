@@ -125,12 +125,14 @@ select.sort{border:1px solid var(--line);background:var(--surface);border-radius
 .pl ul{margin:0;padding:0;list-style:none;display:grid;gap:1px}
 .dz{display:grid;gap:6px}
 .dz .ds{display:grid;grid-template-columns:34px 1fr;gap:3px 9px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--def);border-radius:8px;padding:7px 10px}
-.dz .ds .ki{grid-row:span 3;position:relative;width:34px;height:34px}
+.dz .ds > :not(.ki){grid-column:2}
+.dz .ds .ki{grid-row:1 / span 4;grid-column:1;position:relative;width:34px;height:34px}
 .dz .ds .ki img{width:34px;height:34px;border-radius:6px;display:block}
 .dz .ds .ki i{position:absolute;right:-4px;bottom:-4px;font-style:normal;font-weight:800;font-size:11px;background:var(--ink);color:var(--surface);border-radius:4px;padding:0 4px;line-height:1.4}
 .dz .dh{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:13px;font-weight:700;color:var(--ink)}
 .dz .dg{font-size:11px;font-weight:700;padding:0 7px;border-radius:999px;background:var(--def);color:#fff;white-space:nowrap}
-.dz .dg.g-位置{background:#b7791f}.dz .dg.g-受ける{background:#6b7280}
+.dz .dg.r-見て避けられる{background:#16a34a}.dz .dg.r-読みで避ける{background:#b7791f}.dz .dg.r-避けられない{background:#6b7280}
+.dz .dhit b{font-size:11px;font-weight:700;color:#fff;background:#6b7280;border-radius:4px;padding:0 5px;margin-right:5px}
 .dz .dh .vid{font-size:11px;padding:1px 7px}
 .dz .dw,.dz .dt{margin:0;font-size:12.5px;line-height:1.5;color:var(--ink-2)}
 .dz .dt b{font-size:11.5px;padding:0 7px;border-radius:999px;border:1px solid currentColor;margin-right:5px;white-space:nowrap}
@@ -694,6 +696,7 @@ const closeBtn = `<button class="iconbtn" type="button" data-close aria-label="�
 
 const tradeHTML = c => (c.trade&&c.trade.length) ? `<div class="trade" aria-label="トレードの長さ">${c.trade.map(x=>`<div class="tr"><span class="tt t-${esc(x.t)}">${esc(x.t)}</span><span><span class="tw">${esc(x.when)}：</span>${esc(x.why)}</span></div>`).join('')}</div>` : '';
 
+const REACT = {'見て避けられる':'見てから避けられる','読みで避ける':'見てからは無理→読みで避ける','避けられない':'避けられない→貰う前提'};
 const DODGE = {'よける':'歩いて避ける','位置':'立ち位置で防ぐ','受ける':'避けられない→受ける'};
 const reachOf = g => { if (!g) return null; const r = num(g.range), rad = num(g.radius);
   return ({line:r, cone:r, unit:r, circle:r ? r + (rad||0) : null, dash:r ? r + (rad||0) : null, self:rad})[g.shape] || null; };
@@ -703,7 +706,7 @@ function rulerHTML(c){
   const seen = new Set();
   (c.danger.sk||[]).forEach(s => { if (seen.has(s.k)) return; seen.add(s.k); const sk = c.skills[s.k];
     const forms = [[sk.gl||'', sk.g]].concat(sk.alt ? [[sk.alt.label, sk.alt.g]] : []);
-    forms.forEach(([lb,g]) => { const v = reachOf(g); if (v) rows.push({lab:`${s.k}${lb ? '（' + lb + '）' : ''}`, img:icon(c.slug,s.k), v, cls:'e'}); });
+    forms.forEach(([lb,g]) => { const v = reachOf(g); if (v) rows.push({lab:`${s.k}${lb ? '（' + lb + '）' : ''}`, img:icon(c.slug,s.k), v, cls:'e', r:s.k==='R'}); });
   });
   if (c.ar) rows.push({lab:'相手の通常攻撃', img:'', v:c.ar, cls:'a'});
   rows.push({lab:'ムンド 通常攻撃', img:'', v:D.mundoAR||125, cls:'m2'});
@@ -711,12 +714,12 @@ function rulerHTML(c){
   const MAX = 1400, W = 380, x0 = 112, L = W - x0 - 34, rh = 14, H = rows.length * rh + 15;
   const X = v => x0 + L * Math.min(v, MAX) / MAX;
   const col = {m:'#7c3aed', e:'#dc2626', a:'#9ca3af', m2:'#c4b5fd'};
-  const eMax = Math.max(c.ar||0, ...rows.filter(r=>r.cls==='e').map(r=>r.v));
+  const eMax = Math.max(c.ar||0, ...rows.filter(r=>r.cls==='e'&&!r.r).map(r=>r.v));
   const q = D.mundo.Q.g.range, safe = eMax < q;
   let s = safe ? `<rect x="${X(eMax)}" y="2" width="${X(q)-X(eMax)}" height="${rows.length*rh}" fill="#16a34a" opacity=".12"/><text x="${(X(eMax)+X(q))/2}" y="${rows.length*rh+13}" font-size="10" text-anchor="middle" fill="#16a34a" font-weight="700">ここからQ</text>` : '';
   rows.forEach((r,i) => { const y = 4 + i*rh;
     s += `${r.img ? `<image href="${r.img}" x="0" y="${y-1}" width="11" height="11"/>` : ''}<text x="${r.img ? 16 : 0}" y="${y+9}" font-size="10.5" fill="currentColor">${esc(r.lab.length > 13 ? r.lab.slice(0,12) + '…' : r.lab)}</text><rect x="${x0}" y="${y+2}" width="${Math.max(2, X(r.v)-x0)}" height="8" rx="2" fill="${col[r.cls]}"/><text x="${X(r.v)+3}" y="${y+9}" font-size="10.5" fill="currentColor">${Math.round(r.v)}${r.v > MAX ? '+' : ''}</text>`; });
-  const note = safe ? `緑の帯＝相手の警戒スキルが届かず、ムンドのQ（射程${q}）だけが届く距離です。` : `警戒スキルの射程がムンドのQ（${q}）以上あります。距離ではなくミニオンの陰と横移動で防ぎます。`;
+  const note = safe ? `緑の帯＝相手の警戒スキル（Rを除く）が届かず、ムンドのQ（射程${q}）だけが届く距離です。` : `警戒スキルの射程がムンドのQ（${q}）以上あるため、距離だけでは防げません。上の避け方に従います。`;
   return `<div class="ruler"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="射程の比較">${s}</svg><p>距離感（射程の比較、Wiki値）：${note}</p></div>`;
 }
 const planHTML = c => { const p = c.mplan; if (!p) return '';
@@ -733,8 +736,9 @@ const dangerHTML = c => { const z = c.danger; if (!z || !z.sk) return '';
   return `<section class="o-dz"><p class="sec-label">警戒スキルと避け方（避けたら→次の動き）</p><div class="dz">
   ${z.sk.map(s => { const nm = c.snames ? c.snames[s.k] : '';
     return `<div class="ds"><span class="ki">${icon(c.slug,s.k) ? `<img src="${icon(c.slug,s.k)}" alt="">` : ''}<i>${s.k}</i></span>
-    <div class="dh"><span>${s.k}${nm ? '：' + esc(nm) : ''}</span><span class="dg g-${esc(s.dodge)}">${DODGE[s.dodge]||esc(s.dodge)}</span><a class="vid" href="${videoURL(c,s.k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${s.k}" data-t="${esc(c.jp)} ${s.k}${nm ? '：' + esc(nm) : ''}">▶ 動画</a></div>
+    <div class="dh"><span>${s.k}${nm ? '：' + esc(nm) : ''}</span><span class="dg r-${esc(s.react||"")}">${esc(REACT[s.react]||DODGE[s.dodge]||s.dodge)}</span><a class="vid" href="${videoURL(c,s.k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${s.k}" data-t="${esc(c.jp)} ${s.k}${nm ? '：' + esc(nm) : ''}">▶ 動画</a></div>
     <p class="dw">${esc(s.how)}</p>
+    ${s.hit ? `<p class="dw dhit"><b>当たったら</b>${esc(s.hit)}</p>` : ''}
     <p class="dt"><b class="t-${esc(s.t)}">→ ${esc(s.t)}</b>${esc(s.then)}</p></div>`; }).join('')}
   ${rulerHTML(c)}</div></section>`; };
 function openChamp(slug, push){
@@ -758,13 +762,9 @@ function openChamp(slug, push){
       </div>
     </div>
     ${planHTML(c)}
+    ${dangerHTML(c)}
     ${dmgLine(c)}
     ${gwHTML(c)}${buyHTML(c)}
-    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div>${tradeHTML(c)}</section>
-    ${dangerHTML(c)}
-    <section class="o-win"><p class="sec-label">ムンドの勝ち筋</p>
-      <p class="win">${esc(c.win||'')}</p>
-    </section>
    </div>
    <div class="fv-col">
     ${csHTML(c)}
@@ -772,13 +772,17 @@ function openChamp(slug, push){
     <section class="o-strip"><p class="sec-label">相手のスキルとCD（押すと詳細へ）</p>${stripHTML(c, k => icon(c.slug,k))}</section>
    </div>
    <div class="fv-col">
+   </div>
+  </div>
+    <p class="dhead">ここから詳細</p>
     <section class="o-plays"><p class="sec-label">レーン戦の早見表（こう来たら、こうする）</p>
       <div class="goals">${(c.goal||[]).map(x=>`<span>狙い：${esc(x)}</span>`).join('')}</div>
       <ol class="plays">${(c.plays||[]).map(([a,b,k])=>`<li class="play ${k}"><span class="if">こうなったら：<b>${esc(a)}</b></span><span class="then"><span class="tg">${PLAY_TAG[k]}</span><span>${esc(b)}</span></span></li>`).join('')}</ol>
     </section>
-   </div>
-  </div>
-    <p class="dhead">ここから詳細</p>
+    <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div>${tradeHTML(c)}</section>
+    <section class="o-win"><p class="sec-label">ムンドの勝ち筋</p>
+      <p class="win">${esc(c.win||'')}</p>
+    </section>
     <section class="o-kz"><p class="sec-label">対面の構図</p>
       <div class="cards one">
         <div class="card"><h3>主力</h3><p>${esc(c.core)}</p></div>
