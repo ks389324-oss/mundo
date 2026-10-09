@@ -1,0 +1,224 @@
+{
+ "Tryndamere": {
+  "pos": "怒りゲージを見て、満タン近い時はミニオンの後ろからQだけ当てます",
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "発動すると5秒間HPが一定以下に減りません。殴るのをやめて距離を取ります",
+    "t": "下がる",
+    "then": "R終了直後にQを当て、近づけたらEで追撃します。R使用後はムンドが有利です"
+   },
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "how": "回転しながら入ってきたら、Wを押してダメージを受け止めます",
+    "t": "ショート",
+    "then": "W再発動で回復します。怒りゲージが少なければAA→E→AAで短く殴ります"
+   }
+  ]
+ },
+ "Gwen": {
+  "pos": "ミニオンの後ろからQで削り、グウェンとの長い殴り合いは避けます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "ハサミの中心（グウェンの正面）は確定ダメージです。少し横にずれて立ちます",
+    "t": "ショート",
+    "then": "霧（W）とEを使い終えていれば、Q→AA→Eで短く殴ってすぐ下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "霧が出たら外からの攻撃は当たりません。Qを投げずに射程外へ下がります",
+    "t": "下がる",
+    "then": "霧が消えたらWの待ち時間中です。Qを当て、届けばAA→Eで短く殴ります"
+   }
+  ]
+ },
+ "Trundle": {
+  "pos": "凍った地面（W）の外に立ち、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "対象指定のため歩いて避けられません。受けたら殴り返さず離れます",
+    "t": "下がる",
+    "then": "防御を奪われた状態です。効果が切れるまで待ち、Rの待ち時間中に戦います"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "凍った地面の上ではトランドルの攻撃速度と回復が上がります。地面から出ます",
+    "t": "ショート",
+    "then": "地面の外で、Rが待ち時間中ならQ→AA→Eで短く殴って下がります"
+   }
+  ]
+ },
+ "Teemo": {
+  "pos": "ミニオンの後ろからQを当て続け、逃げるティーモは追いません",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "対象指定で避けられません。盲目中はAAとEが外れるため殴りません",
+    "t": "ショート",
+    "then": "盲目中はQで削ります。盲目が切れたら、Qの待ち時間中にAA→Eで殴ります"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "見えないキノコです。逃げるティーモを追わず、茂みの入口などを避けます",
+    "t": "下がる",
+    "then": "深追いをやめてレーンに戻り、ミニオンの後ろからQで削り直します"
+   }
+  ]
+ },
+ "Vayne": {
+  "pos": "壁から離れてレーン中央寄りに立ち、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "後ろに壁があるとスタンします。壁を背にしません。パッシブで1回は防げます",
+    "t": "ショート",
+    "then": "Eの待ち時間中にQを当て、届けばAA→Eで短く殴ります。印2つで離れます"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "3回目の攻撃で確定ダメージです。自分の体の青い印が2つ溜まったら離れます",
+    "t": "下がる",
+    "then": "3発目を受けずに距離を取り、ミニオンの後ろからQを当てます"
+   }
+  ]
+ },
+ "Akali": {
+  "pos": "ミニオンの後ろに立ち、煙幕（W）を使った後にQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "手裏剣は最初に当たった敵で止まります。ミニオンの後ろに立ち、当たらないようにします",
+    "t": "ショート",
+    "then": "Eの待ち時間中にQを当てます。煙幕も使った後ならAA→Eで短く殴ります"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "2段目は減ったHPが多いほど大ダメージです。HPが半分を切ったら射程から離れます",
+    "t": "下がる",
+    "then": "HPを回復してからレーンに戻ります。煙幕の待ち時間中にQで削ります"
+   }
+  ]
+ },
+ "Sett": {
+  "pos": "自分のミニオンと同じ側に立ち、セトを挟んで反対側に回らないようにします",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "よける",
+    "how": "闘魂ゲージ（体力バー下の白いゲージ）が満タンなら、正面中央から横にずれます",
+    "t": "ショート",
+    "then": "W直後は闘魂が空です。AA→E→AAで殴って下がります"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "前と後ろに1体ずつ敵がいるとスタンします。味方ミニオンも数に入るため、ミニオンと自分でセトを挟みません",
+    "t": "ショート",
+    "then": "Eを外させたら、闘魂が満タンでないのを見てAA→E→AAで短く殴ります"
+   }
+  ]
+ },
+ "K'Sante": {
+  "pos": "溜め（W）中のカサンテの正面に立たず、Qで削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "3回目は長い直線の衝撃波です。横に避けます。引き寄せはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "3回目を外させたら、Q→AA→Eで短く殴って下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "対象指定です。パッシブが使える状態なら、拘束と蹴り飛ばしを防げます",
+    "t": "ショート",
+    "then": "R後の攻撃型の形態はHPと防御が下がります。WとRで耐えて殴り返し短く切り上げます"
+   }
+  ]
+ },
+ "Urgot": {
+  "pos": "ミニオンの後ろからQで削り、E（突進）の正面に立ち続けません",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "予備動作のある突進です。横に避けます。スタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを外させたら接近手段がありません。Q→AA→Eで短く殴って下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "よける",
+    "how": "構えてから直線に撃つ銛です。横に避け、刺さったら最大HPの25%を切る前に自分のRを使います",
+    "t": "下がる",
+    "then": "離れて処刑ラインに入らないようにします。パッシブがあれば処刑を防げます"
+   }
+  ]
+ },
+ "Riven": {
+  "pos": "パッシブが待ち時間中は下がり、ミニオンの後ろからQだけ当てます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "3回目の跳び上がり（ノックバック）はパッシブで1回防げます。防げない時は下がります",
+    "t": "ショート",
+    "then": "防いだらAA→E→AAで殴り返して下がります。Wのスタンはまだ残っています"
+   },
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "how": "周囲へのスタンです。パッシブはQ3とWの片方しか防げないため、パッシブを使った直後は離れます",
+    "t": "ショート",
+    "then": "QとWを使い切らせたら、AA→E→AAで殴り返します"
+   }
+  ]
+ },
+ "Yasuo": {
+  "pos": "風の壁（W）が消えたらQを当て、竜巻の直線上に立ちません",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "ヤスオの周りに風がまとわり付いたら竜巻の合図です。横に避けるかパッシブで防ぎます",
+    "t": "ショート",
+    "then": "竜巻を外させるか防いだらRにつながりません。AA→E→AAで殴り返します"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "風の壁はムンドのQを防ぎます。壁が立っている間はQを投げずに待ちます",
+    "t": "ショート",
+    "then": "壁を使った後は待ち時間が長いです。Qを当て、届けばAA→E→AAで殴ります"
+   }
+  ]
+ },
+ "_log": {
+  "Tryndamere": "ok",
+  "Gwen": "ok",
+  "Trundle": "ok (R unit-targeted per data2 shape=unit → 受ける correct; W kept since go/win hinge on frozen ground)",
+  "Teemo": "ok",
+  "Vayne": "E.then: softened unsupported 'Qを当てて詰め' inference to data2/trade-consistent 'Q, then AA→E if in reach' short trade.",
+  "Akali": "ok (wiki: E hits/marks 'first enemy hit' → minion in front absorbs it; data2 E.c confirms. Recast-to-minion not claimed)",
+  "Sett": "Rewrote pos and E.how: wiki Facebreaker affects 'Enemies' (not champions only) and stuns if >=1 enemy on each side (front/back along the line), so Mundo's own minions count; made the instruction explicit (don't sandwich Sett between your minion and yourself). Note: data2 E.c wording 'セトとミニオンの間に立たない' is geometrically misleading (standing between Sett and your minion puts both on one side = no stun); consider fixing data2.",
+  "K'Sante": "ok",
+  "Urgot": "R.dodge 受ける→よける: wiki Fear Beyond Death is direction-targeted skillshot with 0.5s cast hitting first enemy champion; added dodge instruction. E (cast 0.45s, stun on champion) ok.",
+  "Riven": "W.how: clarified ambiguous '使った直後' to 'パッシブを使った直後'. Q 受ける kept (melee dash AoE, not practically walkable; handled by passive). Wiki: Q3 knockback is airborne=immobilizing, W stun 0.75s; both blocked by Mundo P.",
+  "Yasuo": "ok"
+ }
+}

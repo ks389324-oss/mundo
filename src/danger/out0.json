@@ -1,0 +1,224 @@
+{
+ "Sylas": {
+  "pos": "ミニオンの後ろに立ち、Qの届く距離から削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "常にミニオンの後ろに立ち、2段目の鎖をミニオンに当てさせます。ノックアップはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eの待ち時間中は寄られません。Qを当て、届けばAA→E→AAで短く殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "how": "対象指定のため避けられません。飛びかかりに合わせてWを押して受けます",
+    "t": "ショート",
+    "then": "サイラスに当てたままWを再発動して回復します。HPが半分を切っていたら追わずに下がります"
+   }
+  ]
+ },
+ "Zaahen": {
+  "pos": "Wの直線上に立たず、ゲージが白い時だけ近づいて殴ります",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "よける",
+    "how": "薙刀を構える予備動作（0.5秒）を見たら横へ動きます。ミニオンを貫通するので陰では防げません",
+    "t": "ショート",
+    "then": "Wを外させたらQを当て、届けばAA→E→AAで殴って下がります"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "体力バー下のゲージが赤い時は、倒せそうでも離れます。赤の時は致命傷を受けても復活します",
+    "t": "下がる",
+    "then": "5秒以上殴らせずにゲージを減らし、白くなってからQ→AA→Eで短く殴ります"
+   }
+  ]
+ },
+ "Yone": {
+  "pos": "ミニオンの後ろでQの届く距離を保ち、Eがある間は殴り合いません",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "Qを2回当てると竜巻の範囲表示が出ます。近づかず、真後ろではなく横か斜めに避けます",
+    "t": "ショート",
+    "then": "竜巻を避けた（パッシブで防いだ）ら、AA→E→AAで殴り返します"
+   },
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "how": "E中に受けたダメージの一部は、ヨネが体に戻る時にもう一度入ります。E中はWを押して受けます",
+    "t": "ショート",
+    "then": "戻った後はEの待ち時間中です。Q→近づいてAA→Eで殴ります"
+   }
+  ]
+ },
+ "Fiora": {
+  "pos": "Wを使わせるまではQを投げず、急所の側を向けずに立ちます",
+  "sk": [
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "急所の印（光る印）が出ている側をフィオラに向けないよう、立ち位置を少しずつ回します",
+    "t": "ショート",
+    "then": "W（受け流し）を使った直後に、Q→AA→E→すぐ下がる、の短トレードをします"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "E発動を見たら、2発目（必ずクリティカル）を受ける前に一度下がります",
+    "t": "下がる",
+    "then": "2発目を空振りさせたら殴り合わず、Wを使わせてから短く殴ります"
+   }
+  ]
+ },
+ "Yorick": {
+  "pos": "グールと乙女がいない時だけ近づき、普段はQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "霧の塊を横に動いて避けます。CSを取る瞬間やタワー下に押された時に狙われやすいです",
+    "t": "ショート",
+    "then": "Eを外させたら待ち時間中です。Q→近づいてAA→Eで殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "霧に当たったら、檻を置かれる前にすぐ距離を取ります。閉じ込められたら檻を殴って出ます",
+    "t": "下がる",
+    "then": "檻から出たらグールから離れ、グールが消えてから殴ります"
+   }
+  ]
+ },
+ "Olaf": {
+  "pos": "斧の直線上に立たず、序盤は殴り合わずにQで削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "斧は直線に飛ぶため、横に動いて避けます。当たるとスロウを受けます",
+    "t": "下がる",
+    "then": "斧が拾えない位置に落ちたら、Qの待ち時間中にQを当てて距離を保ちます"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "W（攻撃速度上昇とシールド）の発動を見たら、一度下がって殴り合いを避けます",
+    "t": "下がる",
+    "then": "W中は近づかず、終わってから拾えない斧の時にQで削ります"
+   }
+  ]
+ },
+ "Garen": {
+  "pos": "Qの届く距離を保ち、Qを当て続けてガレンの自動回復を止めます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "Qで走ってきたら、沈黙される前にWを押します。沈黙はパッシブで防げません",
+    "t": "ショート",
+    "then": "Qを使った直後はAA→Eで殴り、回転（E）が始まったら下がります"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "回転中は近接距離に留まらず、すぐ離れます",
+    "t": "下がる",
+    "then": "離れてQを投げ、ガレンの自動回復を止めます"
+   }
+  ]
+ },
+ "Kayn": {
+  "pos": "変身前にQの届く距離から削り、ミニオンを押します",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "よける",
+    "how": "鎌を構える予備動作を見たら横に避けます。青に変身した後は予備動作がないので注意します",
+    "t": "ショート",
+    "then": "Wを外させたら、待ち時間中にQを当てて削ります"
+   },
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "Qは予備動作のないダッシュのため避けにくいです。寄られたら殴り返します",
+    "t": "ショート",
+    "then": "Qで寄ってきたらAA→E→AAで殴り、変身前に削ります"
+   }
+  ]
+ },
+ "Gragas": {
+  "pos": "ミニオンの後ろで、ミニオンから少し離れて立ちます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "ミニオンに当たっても周囲にスタンが入るため、ミニオンのすぐ後ろには立ちません。スタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを外させたら、Q→AA→Eの短トレードをして下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "置かれた酒樽の円からすぐ出ます。時間が経つほどダメージとスロウが強くなります",
+    "t": "ショート",
+    "then": "円の外に出てから、Eを使った後ならQ→AA→Eで短く殴ります"
+   }
+  ]
+ },
+ "Poppy": {
+  "pos": "壁を背にせず、壁から離れた位置で戦います",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "壁を背にしないことが最重要です。壁にぶつかるとスタンしますが、パッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを使った直後に、Q→AA→Eで殴って下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "地面を叩かれたら、その場所から一歩出て、少し遅れて来る爆発を避けます",
+    "t": "ショート",
+    "then": "一歩出てから、Eを使った後ならQ→AA→Eで殴って下がります"
+   }
+  ]
+ },
+ "Heimerdinger": {
+  "pos": "砲台の射程の外に立ち、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "着弾地点の中心を避けます。範囲内はスロウ、中心付近はスタンです。スタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを外させたら、砲台を壊してから本体にQを当てます"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "砲台の射程内で戦いません。砲台はWや通常攻撃で壊せます",
+    "t": "下がる",
+    "then": "砲台が壊れるか、本体が砲台の射程外に出たらQ→AA→Eで殴ります"
+   }
+  ]
+ },
+ "_ev": {
+  "Sylas": "data2 skills.E.c/W.c, pun, go, trade.json (避ける w/ E, ショート after E), plays. Passive-blocks-knockup per data2.E.c, consistent with wiki Immobilize (airborne is immobilizing). https://wiki.leagueoflegends.com/en-us/Dr._Mundo (passive: immunity to next hostile immobilizing effect) + https://wiki.leagueoflegends.com/en-us/Immobilize (immobilizing = airborne, forced action, root, sleep, stasis, stun, suppression; silence/slow NOT included)",
+  "Zaahen": "data2 skills.W.d/c (0.5s windup, pierces minions), P.d/c (gauge colors, revive), pun, plays (薙刀を構える), trade.json. No extra wiki fetch needed.",
+  "Yone": "data2 skills.Q.c (range indicator for Q3), E.c (W to absorb), pun, plays, trade.json (避ける early with E, ショート on E CD). https://wiki.leagueoflegends.com/en-us/Dr._Mundo (passive: immunity to next hostile immobilizing effect) + https://wiki.leagueoflegends.com/en-us/Immobilize (immobilizing = airborne, forced action, root, sleep, stasis, stun, suppression; silence/slow NOT included)",
+  "Fiora": "data2 P.d/c, E.c, W.c, pun, plays, trade.json. Chose P+E as sk (W cannot be 'dodged' by Mundo; W gating put in pos/then). No extra wiki fetch.",
+  "Yorick": "data2 E.c, W.c, trap, go, pun, plays, trade.json. No extra wiki fetch.",
+  "Olaf": "data2 Q.c, W.c, go, pun, plays, trade.json (avoid early) -> t=下がる for both (Q poke only, no AA trade). No extra wiki fetch.",
+  "Garen": "data2 Q.c (silence, press W first), E.c, P.c, pun, plays, trade.json (ショート all phases). 'Silence not blocked by Mundo passive' verified: https://wiki.leagueoflegends.com/en-us/Dr._Mundo (passive: immunity to next hostile immobilizing effect) + https://wiki.leagueoflegends.com/en-us/Immobilize (immobilizing = airborne, forced action, root, sleep, stasis, stun, suppression; silence/slow NOT included)",
+  "Kayn": "data2 W.c, Q.c, pun, plays, trade.json. Wiki https://wiki.leagueoflegends.com/en-us/Kayn: Q cast time none (dash 350 then swing); W cast time 0.55s in base form, Shadow Assassin W has no cast time (shadow performs it); Rhaast W knocks up.",
+  "Gragas": "data2 E.c (stun around impact point even on minion, stand a bit away), Q.d/c, pun, plays, trade.json. Passive-blocks-stun per data2 + https://wiki.leagueoflegends.com/en-us/Dr._Mundo (passive: immunity to next hostile immobilizing effect) + https://wiki.leagueoflegends.com/en-us/Immobilize (immobilizing = airborne, forced action, root, sleep, stasis, stun, suppression; silence/slow NOT included)",
+  "Poppy": "data2 E.c, Q.c, pun, plays, trade.json. Passive-blocks-stun per data2 + https://wiki.leagueoflegends.com/en-us/Dr._Mundo (passive: immunity to next hostile immobilizing effect) + https://wiki.leagueoflegends.com/en-us/Immobilize (immobilizing = airborne, forced action, root, sleep, stasis, stun, suppression; silence/slow NOT included)",
+  "Heimerdinger": "data2 E.d/c, Q.c, W.c, go, pun, plays, trade.json."
+ }
+}

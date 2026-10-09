@@ -1,0 +1,217 @@
+{
+ "Ambessa": {
+  "pos": "序盤は殴り合わず、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "1段目は扇の先端を避けます。当たったら2段目の直線から横に外れるか、ミニオンの後ろへ入ります",
+    "t": "ショート",
+    "then": "Qを当てて下がります。QとEを使い終えていれば、AA→E→AAで殴って離れます"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "直線上で最も遠い敵が狙われ、味方の後ろにいても届きます。拘束はパッシブで防げ、なければWで受けます",
+    "t": "下がる",
+    "then": "受けた後は殴り返さず下がります。パッシブがない時は前に出すぎず、HPが少なければタワー下へ戻ります"
+   }
+  ]
+ },
+ "Aatrox": {
+  "pos": "Qの先端が届く中途半端な距離を避け、ミニオンの後ろに立ちます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "地面の黄色い部分が大ダメージの場所です。1・2段目は内側か射程外へ、3段目は円の外へ出ます",
+    "t": "ショート",
+    "then": "3段目まで使い切ったら、Q→AA→E→AAで殴り、Qが戻る前に下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "鎖は最初に当たった敵で止まるため、味方ミニオンの後ろに立ちます",
+    "t": "下がる",
+    "then": "Qがある間は殴り合いません。鎖に当たったらWを押し、引き戻し後のQの先端を避けます"
+   }
+  ]
+ },
+ "Illaoi": {
+  "pos": "常に味方ミニオンの後ろに立ち、触手の生えた壁際から離れます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "手を伸ばす構えを見たらミニオンの後ろへ。ミニオンを倒された直後は特に注意します",
+    "t": "ショート",
+    "then": "外させたらQ→AA→Eで、触手のない位置で短く殴り、Eが戻る前に離れます"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "跳び上がって叩きつけるのを見たら、すぐ範囲の外へ下がります",
+    "t": "下がる",
+    "then": "R終了（8秒）まで戦いません。Rが終わり待ち時間に入ったら、ジャングラーを呼んで攻めます"
+   }
+  ]
+ },
+ "Irelia": {
+  "pos": "自陣タワー手前でウェーブを止め（フリーズ）、足場のミニオンを減らします",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "1本目の刃が置かれたら、2本目との間の線に入らないよう動きます。スタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "外させたらAA→E→AAで殴り、長引かせずに下がります"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "イレリアの周りを刃が回っている時は最大の状態です。近づかず距離を取ります",
+    "t": "下がる",
+    "then": "刃が消えるまで待ち、消えたらQ→近づいて短く殴ります"
+   }
+  ]
+ },
+ "Zed": {
+  "pos": "本体と影の両方の直線上に立たず、HP差で押します",
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "対象指定で避けられません。刻印が付いたら、爆発の直前にWを押して受けます",
+    "t": "ロング",
+    "then": "再発動で受けたダメージを回復に回し、Rを使い終えたゼドを殴り返します"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "本体と影の両方の直線上に立たず、手裏剣の向きから横へずれます",
+    "t": "ショート",
+    "then": "影（W）を使い終えた後は逃げられないので、Qを当ててAA→Eで削ります"
+   }
+  ]
+ },
+ "Volibear": {
+  "pos": "Lv1〜6は殴り合わず、Qの届く距離から削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "走ってきたらパッシブの有無を確認し、なければ下がります。スタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "スタンを空振りさせた／防いだら、AA→E→AAで殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "1回目の引っかきを受けたら、2回目（回復付き）を受ける前に離れます",
+    "t": "下がる",
+    "then": "2回目を受けずに距離を取り、Qの待ち時間中にもう一度仕掛けます"
+   }
+  ]
+ },
+ "Gangplank": {
+  "pos": "樽の近くに立たず、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "樽の近くに立たないことが最重要です。近くの樽は自分で殴って壊します",
+    "t": "ショート",
+    "then": "近くに樽がない時は近づいてAA→Eで殴ります。樽を置かれたら離れます"
+   }
+  ]
+ },
+ "Vladimir": {
+  "pos": "Lv1〜6はQの届く距離から削り、ミニオンを押し込みます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "対象指定で避けられません。Qが光っている（強化）時は回復が大きいので長く戦いません",
+    "t": "ショート",
+    "then": "血の池（W）の待ち時間中にQ→AA→Eで殴り、強化Qが来る前に切り上げます"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "疫病（範囲の印）がかかったら、爆発の直前にWを押して受けます",
+    "t": "ショート",
+    "then": "再発動で受けたダメージを回復に回します。血の池（W）を使い終えていれば、Q→AA→Eで短く殴ります"
+   }
+  ]
+ },
+ "Malphite": {
+  "pos": "Qの届く距離を保ち、近接距離には長居しません",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "対象指定で避けられません。受けたらQを投げ返し、マルファイトの岩の盾を剥がします",
+    "t": "ショート",
+    "then": "盾が剥がれたら近づいてAA→Eで殴り、殴ったらQの距離に戻ります"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "止まれない突進のノックアップ（打ち上げ）は、パッシブで1回防げます",
+    "t": "下がる",
+    "then": "R後は味方が来ることが多いので、殴り返さず下がります。パッシブがない時は前に出すぎません"
+   }
+  ]
+ },
+ "Darius": {
+  "pos": "Eの引き寄せが届く距離に長居せず、遠くからQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "引き寄せの届く距離に立ちません。引き寄せはパッシブで1回防げます",
+    "t": "下がる",
+    "then": "外させても序盤は殴り返さず、Qで削って離れます"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "振りかぶりが見えたら、密着するか射程外へ出ます。中途半端な距離が最も危険です",
+    "t": "ショート",
+    "then": "コア1個以降は、空振りした直後にAA→E→AAで殴ります。出血が溜まる前に離れます"
+   }
+  ]
+ },
+ "Kennen": {
+  "pos": "ミニオンの後ろに立ち、Qの削り合いをします",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "直線の手裏剣なので、ミニオンの後ろに立ちます。印が2つの時は特に注意します",
+    "t": "ショート",
+    "then": "外させたらQで削り返します。Eを使った後なら近づいてAA→Eで殴ります"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "印が2つ付いたら、3つ目を受ける前に距離を取ります。スタンはパッシブで1回防げます",
+    "t": "下がる",
+    "then": "印は追加されなければ6秒で消えます。ケネンがEを使った後に近づいて殴ります"
+   }
+  ]
+ },
+ "_log": {
+  "Ambessa": "R how: added data2 fact (targets farthest enemy in the line, reaches behind minions); passive blocks suppression per data2 R.c + wiki (suppression = immobilizing). R then: old text was a precondition, not an after-action; now 'don't hit back, back off' (trade 避ける during skill chain, plays P-used/low-HP -> tower). Could not verify via wiki whether R can be walked out of during its 0.7s cast, so kept 受ける and no dodge claim.",
+  "Aatrox": "Q how: '黄色い部分が当たる場所' implied only yellow hits; the whole area hits, yellow is the sweet spot (data2 Q.d).",
+  "Illaoi": "R then: 'R使用後' was ambiguous (could read as during R); clarified to after R ends / on cooldown (data2 go, plays).",
+  "Irelia": "ok",
+  "Zed": "ok",
+  "Volibear": "ok",
+  "Gangplank": "ok (1 skill is allowed by brief; Q is unit-targeted poke, not flagged as danger in data2/trade). Wiki: enemy basic attacks deal 1 dmg to kegs (3 hp decaying to 1) and defuse them -> '自分で殴って壊します' correct.",
+  "Vladimir": "Q then / R then: 'W' was ambiguous with Mundo's own W; now '血の池（W）'. R then rewritten to the data2 go/pun condition (Vlad W used -> Q→AA→E short). Wiki: R is location-targeted, no cast time, bursts after 4s -> 受ける + W just before burst is correct.",
+  "Malphite": "Q then: Q already thrown in how, so start from AA→E (data2 pun/trade). R then: old text was not an after-action; now back off because R is used with allies (data2 plan). 下がる kept: R is a gank/all-in tool, not a trade window, so no contradiction with trade.json. Passive vs R verified: wiki Types_of_Crowd_Control lists Airborne as immobilizing; Mundo passive blocks next immobilizing effect.",
+  "Darius": "ok",
+  "Kennen": "ok. Wiki verified: marks last 6s, refreshed on new application ('追加されなければ6秒で消えます' correct); 3 marks = 1.25s stun (stun = immobilizing, passive blocks); Q damages first enemy hit, so minions block it."
+ }
+}

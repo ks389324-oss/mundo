@@ -1,0 +1,224 @@
+{
+ "Warwick": {
+  "pos": "ミニオンの後ろからQで削り、HPが半分前後になったら帰還を考えます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "E発動を見たら殴るのをやめ、遠吠え（恐怖）の範囲外へ先に離れます。パッシブが溜まっていれば恐怖を防げます",
+    "t": "ショート",
+    "then": "遠吠えが終わったら、Q→近づいてAA→E→すぐ下がる、の短いトレードをします"
+   },
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "対象を指定する噛みつきのため歩いて避けにくいです。張り付かれたらフラッシュは使わず、Wを押して耐えます",
+    "t": "ショート",
+    "then": "Qの待ち時間中にこちらのQを当てて削ります。長引くと回復されるため追撃はしません"
+   }
+  ]
+ },
+ "Kled": {
+  "pos": "騎乗中は近づきすぎず、縄を横に避けられる距離からQで削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "縄はミニオンを貫通するため横に動いて避けます。繋がれたら、すぐクレッドから離れる方向へ歩いて切ります",
+    "t": "ショート",
+    "then": "縄を外させたらQで削り、近づいてきたらAA→E→AAで殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "how": "4連撃が始まったら、Wを押して受けるか、一歩下がって4発目を当てさせないようにします",
+    "t": "下がる",
+    "then": "騎乗中のオールイン（全力の戦闘）には付き合わず、タワー方向へ下がります"
+   }
+  ]
+ },
+ "Camille": {
+  "pos": "壁から離れたレーン中央寄りに立ち、Qの届く距離から削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "壁から離れて立ちます。壁にフックを掛けたら跳躍先から離れます。パッシブが溜まっていればスタンを防げます",
+    "t": "ショート",
+    "then": "Eを使わせたら、待ち時間中にAA→E→AAで殴り、Qで追撃して下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "強化攻撃の1回目を受けたら、すぐ一歩下がって距離を取り、2回目（確定ダメージ）を空振りさせます",
+    "t": "下がる",
+    "then": "Eが残っている間は近づかず、距離を取ったままQを投げて削ります"
+   }
+  ]
+ },
+ "Rumble": {
+  "pos": "ミニオンの後ろに立ち、火炎放射の届かない距離からQで削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "火炎は向いた方向に出続けます。正面に立たず、Q中は射程外へ下がって終わるのを待ちます",
+    "t": "下がる",
+    "then": "火炎が終わるまで下がり、その後Qで削ります。熱ゲージが危険域なら殴りに行きません"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "銛は直線の飛び道具のため、ミニオンの後ろに立って防ぎます。当たるとスロウされ、火炎から逃げにくくなります",
+    "t": "ショート",
+    "then": "銛を外させたらQを当てます。オーバーヒート（煙）中なら近づいてAA→E→AAで殴ります"
+   }
+  ]
+ },
+ "Ornn": {
+  "pos": "柱と壁から離れて立ち、Qを当ててCS差を付けます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "壁際や柱の近くに立たないことが一番の対策です。ノックアップはパッシブが溜まっていれば防げます",
+    "t": "ショート",
+    "then": "Eを使わせたら、Q→AA→E→AAで短く削って下がります。キルよりCS差を優先します"
+   },
+   {
+    "k": "W",
+    "dodge": "よける",
+    "how": "前進しながら吐く炎で、最大HP割合のダメージのためムンドには痛い技です。炎の正面から横にずれます",
+    "t": "下がる",
+    "then": "Eが残っている間は殴り返さず、柱から離れてCSとQに徹します"
+   }
+  ]
+ },
+ "Kayle": {
+  "pos": "Lv1〜5はミニオンを押し、タワー下のケイルをQで削り続けます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "剣から直線の剣波が飛んできます。当たるとスロウと防御低下を受けるため、横に動いて避けます",
+    "t": "ショート",
+    "then": "Lv1〜5はCSを取りに近づいてきたところにQ→AA→E→AAで殴ります"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "Rの無敵中は倒せません。無敵の後に周囲へ炎の剣が落ちるため、効果が切れるまで距離を取ります",
+    "t": "下がる",
+    "then": "無敵が切れるまで離れ、切れてからQを当てて追撃します"
+   }
+  ]
+ },
+ "Sion": {
+  "pos": "サイオンとミニオンの直線上を避け、Qを当て続けてCS差を付けます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "斧を振りかぶると地面に範囲が表示されます。振り下ろしまで時間があるため、範囲の横へ出て避けます",
+    "t": "ショート",
+    "then": "溜めを避けたら近づいてAA→E→AAで殴り、Wのシールドが爆発する前に離れます"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "ミニオンに当たると吹き飛んだミニオンが後ろに飛ぶため、サイオンとの直線上のミニオンの後ろに立ちません",
+    "t": "ショート",
+    "then": "Eを外させたら、待ち時間中にQを当てて削ります"
+   }
+  ]
+ },
+ "Jax": {
+  "pos": "ジャックスのEを見るまでは近づかず、ミニオンの後ろからQで削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "武器を回転させたらE中で、AAは当たりません。殴らずに終了時のスタン範囲から出ます（パッシブで防げます）",
+    "t": "ショート",
+    "then": "Eを使い終えたら、待ち時間中にAA→E→AAで殴り、Qで追撃して下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "受ける",
+    "how": "対象への跳びかかりのため歩いて避けられません。ワードやミニオンにも跳べるため、逃げる時は早めに下がります",
+    "t": "下がる",
+    "then": "序盤は付き合わずに下がり、ジャックスがEを使い終えてから殴ります"
+   }
+  ]
+ },
+ "Jayce": {
+  "pos": "ミニオンの後ろで、ミニオンから少し離れて立ち、序盤はCSを優先します",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "ゲート（E）が置かれたら強化弾の合図です。爆発に巻き込まれないよう、ミニオンから少し離れて立ちます",
+    "t": "ショート",
+    "then": "ゲート＋弾を外させたらQを当てて削ります。序盤は近づいて殴りには行きません"
+   },
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "how": "ハンマー形態の吹き飛ばしは対象指定（相手を選ぶ技）で最大HP割合ダメージです。寄られたらWで受けます",
+    "t": "ショート",
+    "then": "近くに残っていればAA→E→AAで殴り返します。形態切替で離されたら長く追いません"
+   }
+  ]
+ },
+ "Singed": {
+  "pos": "追いかけず、シンジドが自分から近づいてきた時だけ殴ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "シンジドの向こう側に敵タワーや接着剤（W）がある時は近づきません。投げはパッシブが溜まっていれば防げます",
+    "t": "ショート",
+    "then": "近づいてきたところにQ→AA→E→AAで殴り、逃げたら追いかけません"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "通った後に残る毒の跡（緑色の煙）を踏まないように歩きます",
+    "t": "下がる",
+    "then": "逃げるシンジドは毒の跡を踏むため追わず、下がってCSを取ります"
+   }
+  ]
+ },
+ "Tahm Kench": {
+  "pos": "ミニオンの後ろに立ち、自分の印が2つになったら一度下がります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "舌は直線の飛び道具のため、ミニオンの後ろに立ちます。印3つで当たるとスタンです（パッシブがあれば防げます）",
+    "t": "ショート",
+    "then": "Eのシールドが切れた後、Q→AA→E→AAで短く殴り、印が2つになる前に下がります"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "体力バー付近の印が2つになったら、3つ目の前に下がります。3つでQのスタンとRの飲み込みが来ます",
+    "t": "下がる",
+    "then": "距離を取ってQで削り、Eのシールドが切れたところで再び短く殴ります"
+   }
+  ]
+ },
+ "_ev": {
+  "Warwick": "data2 Warwick: E.d/E.c (fear, passive blocks fear, leave howl range), Q.d/Q.c + g.shape=unit, W.c (half HP), go, pun[0..1], plays (Q→W, no flash). trade: ショート all phases. Mundo passive vs fear verified at wiki Dr._Mundo + Types_of_Crowd_Control (Flee is immobilizing). No visual cue for E written (not in data).",
+  "Kled": "data2 Kled: Q.c (penetrates minions, sidestep, walk away to break), Q.g range 800 < Mundo Q 1050 (data2.mundo), W.c, go/pun, plays (W: Wを押すか一歩下がる; all-in→下がる). trade: ショート.",
+  "Camille": "data2 Camille: E.c (stay off walls, passive blocks stun), Q.c (step back for 2nd true dmg), pun, plays. trade: 避ける while E up / ショート after E -> Q entry uses 下がる + Q poke only.",
+  "Rumble": "data2 Rumble: Q.c (stand out of range, wait), Q range 600 < Mundo Q 1050, P (heat gauge, overheat), E.c (minion cover), pun. trade: 避ける at danger heat / ショート on overheat.",
+  "Ornn": "data2 Ornn: E.c (walls/pillars, passive blocks knockup), W.d/W.c (max-HP dmg, sidestep), go, win, trade (avoid while E up).",
+  "Kayle": "data2 Kayle: Q.d/Q.c, R.d/R.c, go/win/pun, trade (Lv1-5 ショート, Lv11+ 避ける). Q range 900 < Mundo Q 1050.",
+  "Sion": "data2 Sion: Q.d/Q.c (indicator, sidestep), E.d/E.c (minion knocked into you), W.c (explode), pun, trade (ショート, leave before W explodes).",
+  "Jax": "data2 Jax: E.d/E.c (spinning weapon, dodges AA, stun, passive blocks), Q.d/Q.c (targeted leap incl. wards/minions), stance 守り early, go/pun. trade: ショート.",
+  "Jayce": "data2 Jayce: Q.c/E.c (gate = empowered shot, explosion radius, stand away from minions), pun (hammer: W then AA→E), trade (early 避ける, later ショート, don't chase). Fetched https://wiki.leagueoflegends.com/en-us/Jayce: Thundering Blow is unit-targeted, max-HP magic dmg, knockback 600 (hence 'if still close').",
+  "Singed": "data2 Singed: E.c (tower/glue behind, passive blocks fling), E.g.shape=unit, Q.c (green trail), pun/plays (don't chase). trade: ショート when he approaches.",
+  "Tahm Kench": "data2 Tahm Kench: P.c (marks near HP bar, leave at 2), Q.d/Q.c (minion cover, stun at 3, passive blocks), R.d, go (after E shield), pun. trade: ショート, leave at 2 marks."
+ }
+}

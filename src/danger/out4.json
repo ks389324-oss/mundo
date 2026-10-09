@@ -1,0 +1,224 @@
+{
+ "Anivia": {
+  "pos": "Qの氷塊を横に避けられる距離を保ち、吹雪の外から削ります",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "ゆっくり飛ぶ氷の塊を見て、横に歩いて避けます。当たってもスタンはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Qの待ち時間中に近づき、Q→AA→Eで削ってすぐ下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "吹雪の中に居続けず、すぐ外へ出ます。中にいるとスロウとEの2倍ダメージを受けます",
+    "t": "下がる",
+    "then": "吹雪の外からQだけ投げます。CSは吹雪の外から取れる分だけ取ります"
+   }
+  ]
+ },
+ "Quinn": {
+  "pos": "ミニオンの後ろに立ち、クインのQをミニオンに当てさせます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "how": "対象指定の跳びつきのため避けられません。跳ね返って離れるので追いかけません",
+    "t": "ショート",
+    "then": "Eの待ち時間中に、ミニオンの後ろからQを当てます。深追いはしません"
+   },
+   {
+    "k": "P",
+    "dodge": "位置",
+    "how": "鷹の印が付いたら、一歩下がってクインの通常攻撃の射程から出ます",
+    "t": "下がる",
+    "then": "射程の外でCSを取り、Qが当たる時だけミニオンの後ろから投げます"
+   }
+  ]
+ },
+ "Shen": {
+  "pos": "霊剣とシェンを結ぶ線の上に立たず、ずれた位置から短く削ります",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "一直線のダッシュで挑発してきます。正面に立たず横に動きます。当たってもパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを外したら、Q→AA→Eで削ってすぐ下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "地面の霊剣とシェンを結ぶ直線上に立たないようにします。通り道に立つと強化攻撃が重くなります",
+    "t": "ショート",
+    "then": "結界（W）中はEを温存し、結界が消えたらAA→E→AAで殴ります"
+   }
+  ]
+ },
+ "Nasus": {
+  "pos": "Lv1〜5はQの届く距離に立ち、ナサスのCSに合わせて削ります",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "how": "対象指定のスロウで避けられず、パッシブでも防げません。Lv6以降はHPに余裕がない時は近づきません",
+    "t": "下がる",
+    "then": "Wを受けたら殴り合いを続けず離れます。短く削るだけにします"
+   },
+   {
+    "k": "Q",
+    "dodge": "位置",
+    "how": "ナサスがQでミニオンを倒しに近づく瞬間を見ます。寄られすぎない距離を保ちます",
+    "t": "ショート",
+    "then": "その瞬間にQを合わせ、寄られたらAA→E→AAで殴って下がります"
+   }
+  ]
+ },
+ "Mordekaiser": {
+  "pos": "ミニオンの近くに立ち、1対1でQを受けない位置で戦います",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "よける",
+    "how": "手を伸ばす予備動作を見て、横に避けます。当たっても引き寄せはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Eを外した直後にQ→AA→Eで削り、すぐ下がります"
+   },
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "対象指定のため避けられません。異空間に入れられたら自分のRを使って耐えます",
+    "t": "ロング",
+    "then": "焦ってQを外さず、殴り返しながら時間切れまで耐えます"
+   }
+  ]
+ },
+ "Gnar": {
+  "pos": "怒りゲージが黄色〜赤の時は離れ、白い時にQで削ります",
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "位置",
+    "how": "巨大化したナーの近くで壁を背にしません。壁にぶつかるとスタン、ぶつからなければスロウです",
+    "t": "下がる",
+    "then": "巨大化中は戦わず、小型に戻ったらQ→AA→Eで殴ります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "ブーメランは行きと帰りの両方で当たります。両方の軌道から外れて立ちます",
+    "t": "ショート",
+    "then": "拾われる前にQを当てます。怒りゲージが赤なら近づきません"
+   }
+  ]
+ },
+ "Wukong": {
+  "pos": "ミニオンの後ろからQで削り、Eで寄られたら短く殴り返します",
+  "sk": [
+   {
+    "k": "R",
+    "dodge": "受ける",
+    "how": "周囲を回転して打ち上げます。1回目はパッシブで防げますが2回目は防げません",
+    "t": "下がる",
+    "then": "1回目を防いだらすぐ離れ、Rが終わってから殴ります"
+   },
+   {
+    "k": "E",
+    "dodge": "受ける",
+    "how": "対象指定の突進のため避けられません。分身（W）ではなく本体を見て受けます",
+    "t": "ショート",
+    "then": "Eを使った直後にQ→AA→Eで削って下がります"
+   }
+  ]
+ },
+ "Pantheon": {
+  "pos": "序盤は槍の向きから横にずれ、ゲージ満タンの時は近づきません",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "受ける",
+    "how": "対象指定で避けられません。スタンはパッシブで1回防げます。体力バー下のゲージ満タン時は近づきません",
+    "t": "ショート",
+    "then": "パッシブで防いだら、AA→E→AAで殴り返してすぐ下がります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "槍投げはミニオンの後ろでも半分当たります。槍の向きから横にずれて避けます",
+    "t": "ショート",
+    "then": "盾（E）を構えていない時にQを当てて下がります"
+   }
+  ]
+ },
+ "Cho'Gath": {
+  "pos": "Qの予兆を横に避けられる距離を保ち、Qが外れたら近づきます",
+  "sk": [
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "地面に出る予兆を見て横へ出ます。当たってもノックアップはパッシブで1回防げます",
+    "t": "ショート",
+    "then": "Qの待ち時間中に近づき、AA→E→AAで殴って下がります"
+   },
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "正面への扇状の叫びで沈黙（スキル使用不可）します。パッシブで防げないため扇の外へ出ます",
+    "t": "下がる",
+    "then": "沈黙中はWもRも使えないため、すぐ範囲外へ下がります"
+   }
+  ]
+ },
+ "Renekton": {
+  "pos": "序盤は自陣タワー手前で待ち、怒りが少ない時だけ近づきます",
+  "sk": [
+   {
+    "k": "W",
+    "dodge": "位置",
+    "how": "近づかれると次の攻撃でスタンします。怒りゲージが半分以上の時は距離を取ります。パッシブで1回防げます",
+    "t": "下がる",
+    "then": "怒りが50以上の時はCSとQだけにし、怒りが少ない時を待ちます"
+   },
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "E1段目で入り、2段目で抜けてきます。抜ける方向を予測して立ちます",
+    "t": "ショート",
+    "then": "2回とも使い終えたらQを当て、怒りが少なければAA→Eで削ります"
+   }
+  ]
+ },
+ "Varus": {
+  "pos": "ミニオンの後ろに立ち、矢の雨の範囲の外から近づく機会を待ちます",
+  "sk": [
+   {
+    "k": "E",
+    "dodge": "位置",
+    "how": "地面に矢の雨の範囲が出たら、すぐ外へ出ます。中にいるとスロウと重傷（回復阻害）を受けます",
+    "t": "ショート",
+    "then": "Eの直後は範囲の外を回って近づき、AA→Eで殴ります"
+   },
+   {
+    "k": "Q",
+    "dodge": "よける",
+    "how": "溜め中は弓が光り、足が遅くなります。横に動くか、ミニオンの後ろに立ちます",
+    "t": "ショート",
+    "then": "ミニオンの後ろからQを当てます。近づくのはEを使った後にします"
+   }
+  ]
+ },
+ "_ev": {
+  "Anivia": "data2: Q d/c (slow, sidestep, passive blocks stun), R c, E d, go/pun, trade.json (ショート after Q whiff; 避ける in R). Wiki fetched: https://wiki.leagueoflegends.com/en-us/Anivia (Q auto-detonates at max range, stun on recast; R slows + Iced, E doubled vs Iced). Did NOT claim minions block Q (wiki unclear on pass-through). https://wiki.leagueoflegends.com/en-us/Dr._Mundo; https://wiki.leagueoflegends.com/en-us/Types_of_Crowd_Control (immobilizing = airborne/stun/root/taunt etc; slow & silence are not)",
+  "Quinn": "data2: Q c (blocked by minions), E d/c, P c (step back when marked), go/pun, trade.json 避ける all lane. Wiki https://wiki.leagueoflegends.com/en-us/Quinn: E unit-targeted, Q stops on first enemy hit. t=ショート for E means Q-only poke per data2 go; uncertain whether ショート vs 下がる better given trade.json 避ける.",
+  "Shen": "data2: E d/c (taunt, passive blocks), Q c (blade line), W c (blocks E), go/pun, trade.json ショート. Wiki https://wiki.leagueoflegends.com/en-us/Shen: E no cast time, 300-600 range dash taunts champions passed through; Q enhanced if blade hits champion; W blocks basic attacks. Taunt = immobilizing per Types_of_Crowd_Control. https://wiki.leagueoflegends.com/en-us/Dr._Mundo; https://wiki.leagueoflegends.com/en-us/Types_of_Crowd_Control (immobilizing = airborne/stun/root/taunt etc; slow & silence are not)",
+  "Nasus": "data2: W d/c (slow not blocked by passive), Q d/c, go/pun, trade.json ショート Lv1-5 & Lv6+ (leave after W). Slow not immobilizing confirmed on Types_of_Crowd_Control. No extra mechanics.",
+  "Mordekaiser": "data2: E d/c (windup, passive blocks pull), R d/c, Q trap (isolation), go/pun, trade.json ショート after E / ロング inside R. Wiki https://wiki.leagueoflegends.com/en-us/Mordekaiser: E 0.25 cast + 0.5s delay then pull (Airborne keyword); R unit-targeted; Q isolation if one enemy hit.",
+  "Gnar": "data2: R d/c (wall), Q c (out & back), P (rage bar), go/pun, trade.json. Wiki https://wiki.leagueoflegends.com/en-us/Gnar (rage bar white <60, yellow >=60, red 100; Q return hits) and https://wiki.leagueoflegends.com/en-us/Template:Data_Gnar/GNAR! (terrain collision -> stun, otherwise slow). Did not state whether Mundo passive blocks GNAR! knockback.",
+  "Wukong": "data2: R c (1st knock-up blocked by passive, 2nd not), E d/c, W c, go/pun, trade.json ショート. Wiki https://wiki.leagueoflegends.com/en-us/Wukong: E unit-targeted dash; R recast after 1s within 8s, fresh knock-up.",
+  "Pantheon": "data2: W c (targeted, passive blocks stun), P c (gauge full), Q c (half dmg behind minion), E c, pun/plays, trade.json ショート Lv1-8. Wiki https://wiki.leagueoflegends.com/en-us/Pantheon: W unit leap stun 1s; Q 50% to targets beyond first; passive counter under health bar lights up at max. Q 'then' (hit Q when E not up) is a mild extrapolation of plays (E終わった→Q).",
+  "Cho'Gath": "data2: Q d/c, W d/c (silence: no W/R), go/pun, trade.json ショート. Silence not immobilizing per https://wiki.leagueoflegends.com/en-us/Types_of_Crowd_Control + Dr._Mundo page (passive blocks immobilizing only) -> 'パッシブで防げない'.",
+  "Renekton": "data2: P c (fury gauge), W c (passive blocks stun), E c, go/pun, trade.json (避ける >=50 fury, ショート low fury). Wiki https://wiki.leagueoflegends.com/en-us/Renekton: W next attack stuns 0.75s / empowered 1.5s; Dice requires Slice to hit. Fury decay not claimed.",
+  "Varus": "data2: E d/c (slow + grievous), Q c (bow glows, slow, minions reduce dmg), go/pun, plays, trade.json ショート after E. Wiki https://wiki.leagueoflegends.com/en-us/Varus: Q channel slows Varus 20%, dmg reduced 0-67% by enemies hit; E slow + Grievous Wounds; R root 2s."
+ }
+}
