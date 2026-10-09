@@ -1,0 +1,103 @@
+{
+"Tryndamere": {
+  "rule": "Q（回復）で怒りが0になった直後だけ短く殴ります",
+  "pos": "怒りゲージが満タン近い時はミニオンの後ろに立ち、Qだけ当てます",
+  "pas": null,
+  "go": ["Qで回復した（怒りが0）→AA→E→AAで短く殴ります", "Rが終わった→Qを当て、届けばEで追撃します"],
+  "back": ["Rが発動した→5秒間は殴らず距離を取ります", "Wで叫ばれた→真後ろに逃げず横へ動きます"],
+  "later": "物理防御が揃えば、Rを使わせた後は長く殴り合います"
+},
+"Gwen": {
+  "rule": "霧（W）とEを使わせてから短く殴ります",
+  "pos": "ミニオンの後ろに立ち、グウェンの正面（ハサミの中心）から少し横にずれます",
+  "pas": null,
+  "go": ["霧（W）が消えた→待ち時間中にQを当てます", "WとEを使い終えた→Q→AA→Eで殴り、すぐ下がります"],
+  "back": ["霧（W）が出た→Qを投げず、4秒間は射程外へ下がります", "Eで寄ってきた→Wで受け、再発動で回復して下がります"],
+  "later": null
+},
+"Trundle": {
+  "rule": "Rが待ち時間中で、凍った地面の外の時だけ殴ります",
+  "pos": "凍った地面（W）の外に立ち、ミニオンの後ろからQで削ります",
+  "pas": null,
+  "go": ["Rが待ち時間中で地面の外→Q→AA→Eで短く殴ります"],
+  "back": ["Rを受けた→殴り返さず離れ、効果切れを待ちます", "Qで噛まれた→一度離れて効果を切らします"],
+  "later": "Lv6以降は、トランドルのRの待ち時間中だけ戦います"
+},
+"Teemo": {
+  "rule": "Qの削り合いでHP差を作り、逃げるティーモは追いません",
+  "pos": "ミニオンの後ろに立ち、ティーモが茂みに入ったら距離を取ります",
+  "pas": null,
+  "go": ["Q（盲目）を使った後→待ち時間中にAA→Eで殴ります", "CSを取りに近づいてきた→Qを当てます"],
+  "back": ["盲目を受けた→殴らず、Qで削ることに切り替えます", "逃げていく→キノコがあるので追いません"],
+  "later": "Lv6以降は、茂みの入口などキノコのありそうな場所を避けます"
+},
+"Vayne": {
+  "rule": "序盤はミニオンの後ろからQを当て続けます",
+  "pos": "壁から離れたレーン中央寄りに立ち、ミニオンの後ろからQで削ります",
+  "pas": "パッシブがある時はEの壁スタンを1回防げます。無い時は壁を背にしません",
+  "go": ["Lv1〜6→ミニオンの後ろからQを当て続けます", "Eが待ち時間中→Qを当て、届けばAA→Eで殴ります"],
+  "back": ["自分に青い印が2つ→3発目を受ける前に離れます", "Rで透明になった→殴り合わず、透明が切れたらQ"],
+  "later": "Lv6以降はR中に殴り合わず、ステラックの篭手等で対抗します"
+},
+"Akali": {
+  "rule": "煙幕（W）を使わせてからQで削ります",
+  "pos": "手裏剣（E）が当たらないよう、ミニオンの後ろに立ちます",
+  "pas": null,
+  "go": ["煙幕（W）を使った後→Qを当て、AA→Eで短く殴ります", "輪の外から強化攻撃で来た→Wで受けてAA→Eで返します"],
+  "back": ["煙幕の中にいる→殴らず、消えるまで待ちます", "自分のHPが半分以下→Rの射程（675）から離れます"],
+  "later": "Lv6以降は、HPを半分以上に保つことを優先します"
+},
+"Sett": {
+  "rule": "W（強撃）で闘魂が空になった直後だけ短く殴ります",
+  "pos": "Eの射程（450）の端に立ち、ミニオンと自分でセトを挟みません",
+  "pas": "パッシブがある時はEの引き寄せとスタンを防げます。無い時はEの射程の外に立ちます",
+  "go": ["Wを撃った直後（闘魂が空）→AA→E→AAで殴ります", "Eを外させた→AA→E→AAで短く殴って下がります"],
+  "back": ["Qで走ってきた→殴り合わずに下がります", "闘魂ゲージが満タン→正面中央から横にずれます"],
+  "later": "コア1個以降は五分です。闘魂が空の時に短く殴るのは同じです"
+},
+"K'Sante": {
+  "rule": "Qの3回目を避けてから短く殴ります",
+  "pos": "Wを溜めている時は正面に立たず、ミニオンの後ろからQで削ります",
+  "pas": "パッシブがある時はQ3の引き寄せとRを防げます。無い時はQ3の直線とWの正面を避けます",
+  "go": ["Q3回目を外した→Q→AA→Eで短く殴ります"],
+  "back": ["Wを溜めている→正面から外れます", "印（P）が付いた→通常攻撃を受ける前に一歩下がります"],
+  "later": "Lv6以降、R後の攻撃型の形態にはWとRで耐えて殴り返します"
+},
+"Urgot": {
+  "rule": "E（突進）を外させてから短く殴ります",
+  "pos": "ミニオンの後ろに立ち、Eの正面（射程450）に立ち続けません",
+  "pas": "パッシブがある時はEのスタンとRの処刑を防げます。無い時はEを横に避けることを優先します",
+  "go": ["Eを外した→Q→AA→Eで短く殴って下がります"],
+  "back": ["Wの連射が始まった→近くに居続けず離れます", "銛（R）が刺さった→HP25%を切る前に自分のRを使います"],
+  "later": "Lv6以降は、HPを最大HPの25%より上に保ちます"
+},
+"Riven": {
+  "rule": "パッシブが使える時だけトレードに応じます",
+  "pos": "パッシブが待ち時間中は下がり、ミニオンの後ろからQだけ当てます",
+  "pas": "パッシブがある時はQ3かWの片方を防げるので短く殴ります。無い時はQだけ当てます",
+  "go": ["Eを使った直後→Qを当て、届けばAA→Eで殴ります", "Q3かWをパッシブで防いだ→AA→E→AAで返して下がります"],
+  "back": ["パッシブが待ち時間中→連続攻撃を受けないよう下がります", "自分のHPが半分以下→Rの剣風が届く所から離れます"],
+  "later": "コア2個以降は攻め時です。QとWを使わせて長く殴り合います"
+},
+"Yasuo": {
+  "rule": "風の壁（W）を使わせてからQを当てます",
+  "pos": "竜巻（Q3回目）の直線上に立たず、自陣側でミニオンを少なく保ちます",
+  "pas": "パッシブがある時は竜巻を防げばRにつながりません。無い時は風の合図で横に避けます",
+  "go": ["風の壁（W）を使った後→Qを当てます", "竜巻を防いだ・外させた→AA→E→AAで殴り返します"],
+  "back": ["風の壁が立っている→Qを投げず、消えるまで待ちます", "ミニオンが多い→Eで飛び回られるので追いません"],
+  "later": "Lv6以降、パッシブが無い時は竜巻の直線に特に立ちません"
+},
+"_ev": {
+  "Tryndamere": "rule/go/back from data2 go/pun, trade (short pre-R, avoid during R, long after R+armor), danger, plays. No immobilizing CC (W is slow) so pas null. later from trade ロング row.",
+  "Gwen": "data2 W/E/Q notes, trade, danger, plays. Only slow (R) -> pas null. Stance only defines 守り until Spirit Visage, nothing about after -> later null.",
+  "Trundle": "data2, trade, danger, plays. Wiki https://wiki.leagueoflegends.com/en-us/Trundle: E Pillar of Ice knocks back (airborne) + slows, so passive could block the knockback, but pillar terrain/slow still matter; judged not an important blockable CC -> pas null (uncertain).",
+  "Teemo": "data2, trade, danger, plays. Blind is not blocked by passive -> null. later: R mushrooms (Lv6) per data2 R note.",
+  "Vayne": "data2 E note + danger say passive blocks wall stun once. Wiki Dr._Mundo: passive also covers additional immobilizing effects from the same cast. later from stance/win (Stridebreaker).",
+  "Akali": "data2, trade, danger, plays. Wiki https://wiki.leagueoflegends.com/en-us/Akali: no stun/root/knock effects (only Q slow) -> pas null. R range 675 from data2 g.range.",
+  "Sett": "E range 450 from data2. Wiki https://wiki.leagueoflegends.com/en-us/Sett: E pulls both sides and stuns if both sides hit; R suppresses. Wiki Dr._Mundo: passive blocks additional immobilizing effects from the same cast instance -> pull+stun both prevented. later from stance (五分 after core 1) + trade.",
+  "K'Sante": "data2 Q/R notes + danger state passive blocks Q3 pull and R; W stun is immobilizing. later from data2 R note/trade.",
+  "Urgot": "E range 450 from data2. data2 E/R notes: passive blocks E stun and R execution suppression. 25% from data2/trade.",
+  "Riven": "stance phases (守り/五分/攻め), trade, danger: passive blocks only one of Q3/W. R has no range in data2, so no number.",
+  "Yasuo": "data2 Q/R notes: blocking Q3 knock-up prevents R. danger/plays. later is a restatement for Lv6 (R unlocks); low uncertainty."
+}
+}

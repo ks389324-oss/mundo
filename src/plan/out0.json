@@ -1,0 +1,163 @@
+{
+ "Sylas": {
+  "rule": "E（飛びつき）を使わせた後だけ、短く殴って下がります",
+  "pos": "ミニオンの後ろに立ち、E2段目の鎖（射程950）をミニオンに当てさせます",
+  "pas": "パッシブがあればEのノックアップを1回防げます。無い時はミニオンの後ろを徹底します",
+  "go": [
+   "鎖がミニオンに当たった／外れた→Q、届けばAA→E→AA",
+   "Eの待ち時間中→ミニオンの後ろからQを当てて削ります"
+  ],
+  "back": [
+   "スキル直後（強化攻撃あり）→一歩下がって空振りさせます",
+   "自分のHPが半分以下→瀕死のサイラスでも追いません"
+  ],
+  "later": "Lv6以降、サイラスがRを持つ間はRを使った全力戦闘を避けます"
+ },
+ "Zaahen": {
+  "rule": "ゲージが白い時だけ短く殴り、赤い時は離れます",
+  "pos": "Wの直線（射程850）上に立たず、ゲージが白い時だけ近づきます",
+  "pas": "パッシブがあればWのスタンとQのノックアップを1回防げます。無い時はWの直線を特に避けます",
+  "go": [
+   "Wを横に避けた→Qを当て、AA→E→AAで殴って下がります",
+   "復活を使わせた→数分は有利なので積極的に殴ります"
+  ],
+  "back": [
+   "ゲージが赤い→倒せそうでも離れ、5秒以上殴らせません",
+   "Qの強化状態→近接距離に入りません"
+  ],
+  "later": "Lv6以降はRの着地点の範囲表示を見たら、すぐ外へ出ます"
+ },
+ "Yone": {
+  "rule": "Eがある間は殴らず、Eの待ち時間中だけ短く殴ります",
+  "pos": "ミニオンの後ろでQの届く距離を保ち、Eがある間は近づきません",
+  "pas": "パッシブがあればQ3回目（竜巻）のノックアップを1回防げます。無い時は竜巻表示中に近づきません",
+  "go": [
+   "Eで体に戻った→待ち時間中です。Q→AA→Eで殴ります",
+   "竜巻を避けた／防いだ→AA→E→AAで殴り返します"
+  ],
+  "back": [
+   "竜巻の範囲表示が出た→近づかず、横か斜めに避けます",
+   "序盤でEがある→殴り合わず、CSとQに徹します"
+  ],
+  "later": "Lv6以降はRの直線上に立たず、Lv11以降は五分に戦えます"
+ },
+ "Fiora": {
+  "rule": "Wを使わせてから、急所を隠して短く殴ります",
+  "pos": "Q（射程400）の範囲では、急所の印の側を向けないよう立ち位置を回します",
+  "pas": null,
+  "go": [
+   "W（受け流し）を使った直後→Q→AA→E→すぐ下がります"
+  ],
+  "back": [
+   "W（構え）中→Qを投げずに待ちます",
+   "Eの1発目を受けた→2発目のクリティカル前に下がります"
+  ],
+  "later": "R中はWで受けつつ距離を取ります。コア2個以降は五分です"
+ },
+ "Yorick": {
+  "rule": "グールと乙女がいない時だけ、短く殴ります",
+  "pos": "E（霧、射程700）を横に避けられる距離を保ち、普段はQで削ります",
+  "pas": null,
+  "go": [
+   "グールがいない／霧を外した→Q→AA→Eで殴って下がります",
+   "タワー下でグールと殴ってきた→QとEで反撃します"
+  ],
+  "back": [
+   "霧（E）に当たった→檻を置かれる前に距離を取ります",
+   "檻に閉じ込められた→ヨリックではなく檻を殴って出ます"
+  ],
+  "later": "Lv6以降、乙女がいる間はタワー下で守り、ジャングラーを呼びます"
+ },
+ "Olaf": {
+  "rule": "序盤は殴り合わず、拾えない斧の時だけQで削ります",
+  "pos": "斧の直線（射程1000）から外れ、AAで殴りに行かない距離に立ちます",
+  "pas": null,
+  "go": [
+   "斧を外し、拾えない位置に落ちた→Qを当てて削ります"
+  ],
+  "back": [
+   "W（攻撃速度上昇）を使った→殴り合わず一度下がります",
+   "自分のHPが少ない→オラフが瀕死でも追いません"
+  ],
+  "later": "Lv9以降は五分です。R中は早めに距離を取ります"
+ },
+ "Garen": {
+  "rule": "Qを当て続けて、ガレンの自動回復を止めます",
+  "pos": "Qの届く距離を保ち、E（回転、半径325）の近接距離に留まりません",
+  "pas": null,
+  "go": [
+   "回復しようと離れた→Qを当てて回復を止めます",
+   "Qを使った直後→AA→Eで殴り、回転したら下がります"
+  ],
+  "back": [
+   "Qで走ってきた→沈黙（スキル使用不可）の前にWを押します",
+   "Eで回転を始めた→すぐ離れてQを投げます"
+  ],
+  "later": "Lv6以降はHPが大きく減る前にRを使い、処刑を防ぎます"
+ },
+ "Kayn": {
+  "rule": "変身前にQで削り続け、変身を遅らせます",
+  "pos": "Q（ダッシュ、射程350）で寄られない距離に立ち、ムンドのQで削ります",
+  "pas": "赤ケインのWのノックアップは、パッシブがあれば1回防げます。変身前のWはスロウだけです",
+  "go": [
+   "Qで寄ってきた→AA→E→AAで殴ります",
+   "Wを横に避けた→待ち時間中にQを当てます"
+  ],
+  "back": [
+   "壁の中に入った（E）→深追いしません"
+  ],
+  "later": "青に変身するとWの射程が900に伸びるので、横へ避けます"
+ },
+ "Gragas": {
+  "rule": "Eを外させた時だけ、短く殴って下がります",
+  "pos": "ミニオンの後ろで、ミニオンから少し離れて立ちます（E射程600）",
+  "pas": "パッシブがあればEのスタンを1回防げます。無い時はミニオンのすぐ後ろに特に立ちません",
+  "go": [
+   "Eがミニオンに当たった／外れた→Q→AA→Eで殴ります"
+  ],
+  "back": [
+   "酒樽（Q）が置かれた→円からすぐ出ます",
+   "Wを使った直後→硬いので殴り合いません"
+  ],
+  "later": "Lv6以降はR（大樽）で敵側へ吹き飛ばされない位置に立ちます"
+ },
+ "Poppy": {
+  "rule": "壁を背にせず、Eを使わせてから短く殴ります",
+  "pos": "壁を背にせず、壁から離れた位置に立ちます（Eの突進は射程475）",
+  "pas": "パッシブがあればEの壁スタンを1回防げます。無い時は壁際に特に近づきません",
+  "go": [
+   "Eの突進を使った直後→Q→AA→Eで殴って下がります"
+  ],
+  "back": [
+   "壁のそばにいる→殴り合わず、壁から離れます",
+   "Qで地面を叩かれた→一歩出て、遅れて来る爆発を避けます"
+  ],
+  "later": "Lv6以降はRの溜め中、ポッピーの正面に立ちません"
+ },
+ "Heimerdinger": {
+  "rule": "砲台を先に壊してから、本体を狙います",
+  "pos": "砲台の射程の外に立ち、ミニオンの後ろからQで削ります",
+  "pas": "パッシブがあればEの中心のスタンを1回防げます。無い時は砲台の近くに特に入りません",
+  "go": [
+   "砲台が壊れた／本体が砲台の外→Q→AA→Eで殴ります",
+   "Eを外した→砲台を壊してから本体にQを当てます"
+  ],
+  "back": [
+   "砲台の射程内→戦わず、Wや通常攻撃で砲台を壊します"
+  ],
+  "later": "Lv6以降はR発動を見たら、すぐ距離を取ります"
+ },
+ "_ev": {
+  "Sylas": "rule/pos/go/back from data2 pun/go/trap, trade, danger, plays; E2 range 950 from data2 alt.g.range; passive vs E knock-up stated in data2/danger; later from data2 R.c.",
+  "Zaahen": "From danger/trade/plays/data2; W range 850 data2; W stun + Q knock-up blockable per data2; later from data2 R.c. 'Revive' placed in go per plays.",
+  "Yone": "From trade/danger/plays/data2; Q3 knock-up blockable per data2; later = R line (data2) + stance Lv11 五分.",
+  "Fiora": "Q range 400 data2; pas null: Fiora W stuns only when parrying immobilizing CC (data2 says Mundo gets slowed), no other immobilize. later from R.c + stance.",
+  "Yorick": "E range 700 data2. pas null: wiki https://wiki.leagueoflegends.com/en-us/Yorick — W ring is impassable terrain (brief knock-aside only if hit by wall edge), E is slow; passive doesn't help vs the cage, so omitted.",
+  "Olaf": "Q range 1000 data2; pas null (Q slow, R self-buff only). later = stance Lv9 + R.c.",
+  "Garen": "E radius 325 data2; pas null (Q silence not blockable per danger). later from data2 R.c.",
+  "Kayn": "Q range 350, blue W 900 from data2; red W knock-up per data2. Uncertain: whether 'base W slow only' fully; data2 states knock-up only in red form.",
+  "Gragas": "E range 600 data2; E stun blockable per data2/danger. later from data2 R.c (knockback toward tower/allies).",
+  "Poppy": "E range 475 data2; wall stun blockable per data2. later from R.c.",
+  "Heimerdinger": "Turret attack range not stated in data2 (Q 350 is placement), so no number. E stun blockable per data2. later from R.c."
+ }
+}

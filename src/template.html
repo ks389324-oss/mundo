@@ -117,6 +117,12 @@ select.sort{border:1px solid var(--line);background:var(--surface);border-radius
 .trade .tt.t-ロング{color:var(--atk)}
 .trade .tt.t-避ける{color:var(--def)}
 .trade .tw{font-weight:700;color:var(--ink)}
+.pl{background:var(--surface);border:2px solid var(--accent);border-radius:10px;padding:9px 12px;display:grid;gap:5px}
+.pl .rule{margin:0;font-size:15px;font-weight:800;line-height:1.5;color:var(--ink)}
+.pl .pr{display:grid;grid-template-columns:62px 1fr;gap:6px;align-items:baseline;font-size:12.5px;line-height:1.5;color:var(--ink-2)}
+.pl .pr b{font-size:11px;font-weight:700;text-align:center;border-radius:999px;padding:0 6px;white-space:nowrap;background:var(--line);color:var(--ink)}
+.pl .pr.go b{background:#16a34a;color:#fff}.pl .pr.bk b{background:var(--def);color:#fff}.pl .pr.ps b{background:#7c3aed;color:#fff}
+.pl ul{margin:0;padding:0;list-style:none;display:grid;gap:1px}
 .dz{display:grid;gap:6px}
 .dz .ds{display:grid;grid-template-columns:34px 1fr;gap:3px 9px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--def);border-radius:8px;padding:7px 10px}
 .dz .ds .ki{grid-row:span 3;position:relative;width:34px;height:34px}
@@ -713,9 +719,18 @@ function rulerHTML(c){
   const note = safe ? `緑の帯＝相手の警戒スキルが届かず、ムンドのQ（射程${q}）だけが届く距離です。` : `警戒スキルの射程がムンドのQ（${q}）以上あります。距離ではなくミニオンの陰と横移動で防ぎます。`;
   return `<div class="ruler"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="射程の比較">${s}</svg><p>距離感（射程の比較、Wiki値）：${note}</p></div>`;
 }
+const planHTML = c => { const p = c.mplan; if (!p) return '';
+  const li = a => `<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+  return `<section class="o-plan"><p class="sec-label">この対面の方針（これを徹底）</p><div class="pl">
+  <p class="rule">${esc(p.rule)}</p>
+  <div class="pr"><b>立ち位置</b><span>${esc(p.pos)}</span></div>
+  ${p.pas ? `<div class="pr ps"><b>パッシブ</b><span>${esc(p.pas)}</span></div>` : ''}
+  <div class="pr go"><b>入る</b>${li(p.go)}</div>
+  <div class="pr bk"><b>引く</b>${li(p.back)}</div>
+  ${p.later ? `<div class="pr"><b>Lv6/コア後</b><span>${esc(p.later)}</span></div>` : ''}
+  </div></section>`; };
 const dangerHTML = c => { const z = c.danger; if (!z || !z.sk) return '';
   return `<section class="o-dz"><p class="sec-label">警戒スキルと避け方（避けたら→次の動き）</p><div class="dz">
-  <p class="pos">立ち位置：${esc(z.pos)}</p>
   ${z.sk.map(s => { const nm = c.snames ? c.snames[s.k] : '';
     return `<div class="ds"><span class="ki">${icon(c.slug,s.k) ? `<img src="${icon(c.slug,s.k)}" alt="">` : ''}<i>${s.k}</i></span>
     <div class="dh"><span>${s.k}${nm ? '：' + esc(nm) : ''}</span><span class="dg g-${esc(s.dodge)}">${DODGE[s.dodge]||esc(s.dodge)}</span><a class="vid" href="${videoURL(c,s.k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${s.k}" data-t="${esc(c.jp)} ${s.k}${nm ? '：' + esc(nm) : ''}">▶ 動画</a></div>
@@ -742,6 +757,7 @@ function openChamp(slug, push){
         <div class="stats"><span>ムンド勝率</span><span class="wr">${c.wr.toFixed(1)}%</span><span>${c.games.toLocaleString()}試合</span><span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
       </div>
     </div>
+    ${planHTML(c)}
     ${dmgLine(c)}
     ${gwHTML(c)}${buyHTML(c)}
     <section class="o-flow"><p class="sec-label">対応方針</p><div class="flow">${flow}</div>${tradeHTML(c)}</section>

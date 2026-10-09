@@ -1,0 +1,162 @@
+{
+ "Anivia": {
+  "rule": "Qを横に避け、外した時だけ近づいて削ります",
+  "pos": "Qの氷塊を横に避けられる距離を保ち、吹雪（R）の外に立ちます",
+  "pas": "パッシブがある時はQのスタンを防げるので少し強気にCSを取ります。無い時はQを避けてから動きます",
+  "go": [
+   "Qを外した→近づいてQ→AA→Eで削り、すぐ下がります"
+  ],
+  "back": [
+   "吹雪（R）が出た→すぐ外へ出て、外からQだけ投げます",
+   "卵になった→味方がいなければ深追いしません"
+  ],
+  "later": "Lv6以降は吹雪でミニオンを処理されるので、外から取れるCSだけ取ります"
+ },
+ "Quinn": {
+  "rule": "追いかけず、Eの直後にミニオンの後ろからQだけ当てます",
+  "pos": "ミニオンの後ろに立ち、鷹の印が付いたらクインの射程（525）の外へ下がります",
+  "pas": null,
+  "go": [
+   "Eで跳ねてきた直後→ミニオンの後ろからQを当てます"
+  ],
+  "back": [
+   "鷹の印が付いた→一歩下がり、射程の外でCSを取ります",
+   "クインが逃げていく→追いかけず、CSに戻ります"
+  ],
+  "later": "Lv6以降はRで他レーンへ行くので、見えなくなったら味方に知らせます"
+ },
+ "Shen": {
+  "rule": "Eを外させてから、Q→AA→Eで短く削ります",
+  "pos": "霊剣とシェンを結ぶ線の上に立たず、Eの正面からずれて立ちます",
+  "pas": "パッシブがある時はEの挑発を防げるので少し強気にCSを取ります。無い時は挑発されたら先にWを押します",
+  "go": [
+   "Eを外した→Q→AA→Eで削ってすぐ下がります",
+   "結界（W）が消えた→AA→E→AAで殴ります"
+  ],
+  "back": [
+   "結界（W）の中にいる→Eを温存し、Qで戦います",
+   "霊剣の通り道にいる→横にずれてから殴ります"
+  ],
+  "later": "Lv6以降、RでTOPを離れたらミニオンを押してタワーを削ります"
+ },
+ "Nasus": {
+  "rule": "Lv1〜5はQで削り続け、スタック稼ぎを邪魔します",
+  "pos": "Lv1〜5はQの届く距離に立ち、ナサスがCSに来る瞬間を狙います",
+  "pas": null,
+  "go": [
+   "Qでミニオンを取りに来た→その瞬間にこちらのQを合わせます",
+   "Lv1〜5で寄ってきた→AA→E→AAで殴って下がります"
+  ],
+  "back": [
+   "Wのスロウを受けた→殴り合いを続けず離れます",
+   "R（巨大化）を使った→終了まで戦いません"
+  ],
+  "later": "Lv6以降は五分です。Wのスロウを受けたら離れ、短く削るだけにします"
+ },
+ "Mordekaiser": {
+  "rule": "ミニオンの近くで戦い、Eを外させてから短く削ります",
+  "pos": "ミニオンの近くに立ち、E（引き寄せ）の正面から横にずれます",
+  "pas": "パッシブがある時はEの引き寄せを防げるので少し強気にCSを取ります。無い時はEの予備動作を見て避けます",
+  "go": [
+   "Eを外した→Q→AA→Eで削ってすぐ下がります"
+  ],
+  "back": [
+   "周りにミニオンがいない→Qが強くなるので戦いません",
+   "体の周りに黒い渦（P）→近接距離から離れます"
+  ],
+  "later": "Lv6以降、R（死の国）に入れられたら自分のRで耐え、時間切れを待ちます"
+ },
+ "Gnar": {
+  "rule": "怒りゲージを見て、小型に戻った直後に殴ります",
+  "pos": "ブーメランの行きと帰りの軌道から外れ、壁を背にしない位置に立ちます",
+  "pas": "パッシブはメガナー（巨大化）時のWのスタンを防げますが、有無にかかわらず巨大化中は戦いません",
+  "go": [
+   "巨大化が解けて小型に戻った→Q→AA→Eで殴ります",
+   "ブーメランを投げた直後→拾われる前にQを当てます"
+  ],
+  "back": [
+   "怒りゲージが黄色〜赤→近づかず、CSとQだけにします",
+   "巨大化した→壁を背にせず下がります"
+  ],
+  "later": "Lv6以降は巨大化中のRに備え、壁際に立たないことを徹底します"
+ },
+ "Wukong": {
+  "rule": "Eを使わせてから、Q→AA→Eで短く削ります",
+  "pos": "ミニオンの後ろからQで削り、Eで寄られたら近くで短く殴り返します",
+  "pas": "パッシブがある時はRの1回目のノックアップを防げます。2回目は防げないので、防いだらすぐ離れます",
+  "go": [
+   "Eで突進してきた→Q→AA→Eで削って下がります"
+  ],
+  "back": [
+   "殴り合いが長引きそう→Pで硬くなるので下がります",
+   "Wで分身を出した→分身を殴らず本体を見ます"
+  ],
+  "later": "Lv6以降はRの1回目を受けたらすぐ離れ、Rが終わってから殴ります"
+ },
+ "Pantheon": {
+  "rule": "Lv1〜8は耐え、Lv9以降に攻めへ切り替えます",
+  "pos": "序盤は槍の向きから横にずれ、ゲージ満タンの時は近づきません",
+  "pas": "パッシブがある時はWのスタンを防げるので、防いだら殴り返します。無い時は近づきすぎません",
+  "go": [
+   "E（盾）が終わった→Qを当てて下がります",
+   "Wのスタンをパッシブで防いだ→AA→E→AAで殴り返します"
+  ],
+  "back": [
+   "体力バー下のゲージが満タン→強化スキルが来るので近づきません",
+   "盾（E）を構えている→正面からQを投げません"
+  ],
+  "later": "Lv9以降は主要スキルを使わせた後なら、長めに殴り合えます"
+ },
+ "Cho'Gath": {
+  "rule": "Qの予兆を横に避け、外した時に殴ります",
+  "pos": "Qの予兆を横に避けられる距離を保ち、Wの扇の正面に立ちません",
+  "pas": "パッシブがある時はQのノックアップを防げるので少し強気にCSを取ります。無い時はQを外させてから寄ります",
+  "go": [
+   "Qを外した→近づいてAA→E→AAで殴り、下がります"
+  ],
+  "back": [
+   "Wの扇に入った→沈黙を受けるのですぐ範囲外へ下がります",
+   "自分のHPが少ない→Rの確定ダメージがあるので近づきません"
+  ],
+  "later": "Lv6以降はHPが少ないとRで倒されやすいので、早めに下がります"
+ },
+ "Renekton": {
+  "rule": "怒りゲージが少ない時だけ、Q→AA→Eで短く削ります",
+  "pos": "序盤は自陣タワー手前で待ち、ミニオンの集まる場所で戦いません",
+  "pas": "パッシブはWのスタンを1回防げますが、怒りが50以上の時は有無にかかわらず近づきません",
+  "go": [
+   "怒りゲージが少ない→Q→AA→Eで削ってすぐ下がります",
+   "Eを2回とも使い終えた→Qを当てます"
+  ],
+  "back": [
+   "怒りゲージが半分以上→トレードせず、CSとQだけにします"
+  ],
+  "later": "コア2個以降は攻めに切り替え、最初の連続技を耐えて長めに殴り合えます"
+ },
+ "Varus": {
+  "rule": "Eを使わせてから、範囲の外を回って近づきます",
+  "pos": "ミニオンの後ろに立ち、矢の雨（E）の範囲の外で機会を待ちます",
+  "pas": "パッシブがある時はRの拘束を1回防げます。無い時はRの触手を横に動いて避けます",
+  "go": [
+   "Eを使った直後→範囲の外を回って近づき、AA→Eで殴ります"
+  ],
+  "back": [
+   "矢の雨（E）が出た→すぐ範囲から出て、CSとQだけにします",
+   "通常攻撃を2回受けた→3回目の前に離れます"
+  ],
+  "later": "Lv6以降はRを使わせた後が、近づいて殴り合う機会です"
+ },
+ "_ev": {
+  "Anivia": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Quinn": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo. pas=null: E (Vault) is only a very short knockback + slow per https://wiki.leagueoflegends.com/en-us/Quinn ; not treated as an important immobilize. pos range 525 from ar.json.",
+  "Shen": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Nasus": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo. pas=null: no immobilize (W slow not blockable, stated in data2).",
+  "Mordekaiser": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Gnar": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo. Wallop stun verified https://wiki.leagueoflegends.com/en-us/Gnar ; R knockback/passive interaction NOT claimed (wiki page fetch did not describe R CC).",
+  "Wukong": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Pantheon": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Cho'Gath": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo",
+  "Renekton": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo. Uncertain: Renekton gets 50 fury threshold from data2; passive block of W stun from data2.",
+  "Varus": "Built from data2 (stance/skills/go/win/pun), trade.json, danger.json, plays.json, ar.json. Mundo passive rules: https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+ }
+}
