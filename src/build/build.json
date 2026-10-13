@@ -1,0 +1,2000 @@
+{
+ "sylas": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/sylas/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1191,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 772,
+   "share": 65,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 466,
+   "share": 39,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 116,
+   "share": 10,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 214
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 15
+  }
+ },
+ "warwick": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/warwick/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 479,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 140,
+   "share": 29,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 196,
+   "share": 41,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 235,
+   "share": 49,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 54,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 54
+    }
+   ]
+  }
+ },
+ "tryndamere": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/tryndamere/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 454,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 164,
+   "share": 36,
+   "diff": false
+  },
+  "first": null,
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 162,
+   "share": 36,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 26
+  }
+ },
+ "ambessa": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/ambessa/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 531,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 190,
+   "share": 36,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 250,
+   "share": 47,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 235,
+   "share": 44,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 16
+  }
+ },
+ "anivia": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/anivia/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 409,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 263,
+   "share": 64,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 186,
+   "share": 45,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 57,
+   "share": 14,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 86
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 3
+  }
+ },
+ "zaahen": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/zaahen/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 479,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 301,
+   "share": 63,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 211,
+   "share": 44,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 238,
+   "share": 50,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 19
+  }
+ },
+ "kled": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/kled/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 284,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 90,
+   "share": 32,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 155,
+   "share": 55,
+   "diff": false
+  },
+  "boots": null,
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 2
+  }
+ },
+ "gwen": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/gwen/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 889,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 354,
+   "share": 40,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 408,
+   "share": 46,
+   "diff": false
+  },
+  "boots": {
+   "name": "プレート スチールキャップ",
+   "games": 103,
+   "share": 12,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 183
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 0
+  }
+ },
+ "aatrox": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/aatrox/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1191,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 370,
+   "share": 31,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 654,
+   "share": 55,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 562,
+   "share": 47,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 57,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 45
+    },
+    {
+     "slot": 6,
+     "games": 12
+    }
+   ]
+  }
+ },
+ "quinn": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/quinn/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 243,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 155,
+   "share": 64,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 110,
+   "share": 45,
+   "diff": false
+  },
+  "boots": null,
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 3
+  }
+ },
+ "yone": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/yone/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1622,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 961,
+   "share": 59,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 661,
+   "share": 41,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 546,
+   "share": 34,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 3,
+    "name": "終わりなき絶望",
+    "games": 50
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 95,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 72
+    },
+    {
+     "slot": 6,
+     "games": 23
+    }
+   ]
+  }
+ },
+ "camille": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/camille/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 584,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 201,
+   "share": 34,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 250,
+   "share": 43,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 300,
+   "share": 51,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 36,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 22
+    },
+    {
+     "slot": 6,
+     "games": 14
+    }
+   ]
+  }
+ },
+ "trundle": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/trundle/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 381,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 121,
+   "share": 32,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 161,
+   "share": 42,
+   "diff": false
+  },
+  "boots": null,
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 5
+  }
+ },
+ "illaoi": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/illaoi/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 404,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 107,
+   "share": 26,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 188,
+   "share": 47,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 192,
+   "share": 48,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 0
+  }
+ },
+ "shen": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/shen/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 755,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 401,
+   "share": 53,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 457,
+   "share": 61,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 73,
+   "share": 10,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 21
+  }
+ },
+ "fiora": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/fiora/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 627,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 455,
+   "share": 73,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 316,
+   "share": 50,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 264,
+   "share": 42,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 36,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 36
+    }
+   ]
+  }
+ },
+ "rumble": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/rumble/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 226,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 53,
+   "share": 23,
+   "diff": false
+  },
+  "first": null,
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 134,
+   "share": 59,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 5
+  }
+ },
+ "teemo": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/teemo/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 764,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 617,
+   "share": 81,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 218,
+   "share": 29,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 456,
+   "share": 60,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 0
+  }
+ },
+ "irelia": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/irelia/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 582,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 243,
+   "share": 42,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 326,
+   "share": 56,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 171,
+   "share": 29,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 31,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 31
+    }
+   ]
+  }
+ },
+ "nasus": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/nasus/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 930,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 539,
+   "share": 58,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 617,
+   "share": 66,
+   "diff": false
+  },
+  "boots": {
+   "name": "プレート スチールキャップ",
+   "games": 189,
+   "share": 20,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 17
+  }
+ },
+ "yorick": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/yorick/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 449,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 125,
+   "share": 28,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 222,
+   "share": 49,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 245,
+   "share": 55,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 20
+  }
+ },
+ "ornn": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/ornn/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 783,
+  "start": null,
+  "first": {
+   "name": "心の鋼",
+   "games": 447,
+   "share": 57,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 94,
+   "share": 12,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 11
+  }
+ },
+ "vayne": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/vayne/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 632,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 410,
+   "share": 65,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 329,
+   "share": 52,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 322,
+   "share": 51,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 22
+  }
+ },
+ "zed": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/zed/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1559,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 994,
+   "share": 64,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 811,
+   "share": 52,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 785,
+   "share": 50,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "デッド マン プレート",
+    "games": 59
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 11
+  }
+ },
+ "mordekaiser": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/mordekaiser/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1105,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 366,
+   "share": 33,
+   "diff": false
+  },
+  "first": null,
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 218,
+   "share": 20,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 77,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 46
+    },
+    {
+     "slot": 5,
+     "games": 31
+    }
+   ]
+  }
+ },
+ "olaf": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/olaf/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 347,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 118,
+   "share": 34,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 191,
+   "share": 55,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 192,
+   "share": 55,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 1
+  }
+ },
+ "kayle": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/kayle/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 386,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 108,
+   "share": 28,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 156,
+   "share": 40,
+   "diff": false
+  },
+  "boots": null,
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 97
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 16
+  }
+ },
+ "akali": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/akali/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1102,
+  "start": null,
+  "first": {
+   "name": "心の鋼",
+   "games": 569,
+   "share": 52,
+   "diff": false
+  },
+  "boots": {
+   "name": "プレート スチールキャップ",
+   "games": 333,
+   "share": 30,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "ランデュイン オーメン",
+    "games": 65
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 63,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 51
+    },
+    {
+     "slot": 6,
+     "games": 12
+    }
+   ]
+  }
+ },
+ "volibear": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/volibear/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 938,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 347,
+   "share": 37,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 512,
+   "share": 55,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 135,
+   "share": 14,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 190
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 75,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 53
+    },
+    {
+     "slot": 6,
+     "games": 22
+    }
+   ]
+  }
+ },
+ "gnar": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/gnar/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 584,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 104,
+   "share": 18,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 292,
+   "share": 50,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 307,
+   "share": 53,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 102
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 17
+  }
+ },
+ "garen": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/garen/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 956,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 308,
+   "share": 32,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 432,
+   "share": 45,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 501,
+   "share": 52,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 45,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 45
+    }
+   ]
+  }
+ },
+ "sion": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/sion/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 494,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 177,
+   "share": 36,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 169,
+   "share": 34,
+   "diff": false
+  },
+  "boots": null,
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 95
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 18
+  }
+ },
+ "sett": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/sett/build/",
+  "patch": "16.18",
+  "rank": "EMERALD+",
+  "games": 1681,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 1092,
+   "share": 65,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 760,
+   "share": 45,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 777,
+   "share": 46,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "終わりなき絶望",
+    "games": 64
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 63,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 63
+    }
+   ]
+  }
+ },
+ "gangplank": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/gangplank/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1084,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 218,
+   "share": 20,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 573,
+   "share": 53,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 606,
+   "share": 56,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 46,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 46
+    }
+   ]
+  }
+ },
+ "wukong": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/wukong/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1392,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 428,
+   "share": 31,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 682,
+   "share": 49,
+   "diff": false
+  },
+  "boots": null,
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 251
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 60,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 60
+    }
+   ]
+  }
+ },
+ "kayn": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/kayn/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1290,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 365,
+   "share": 28,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 638,
+   "share": 49,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 687,
+   "share": 53,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 3,
+    "name": "スピリット ビサージュ",
+    "games": 56
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 15
+  }
+ },
+ "jax": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/jax/build/",
+  "patch": "16.18",
+  "rank": "EMERALD+",
+  "games": 2113,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 829,
+   "share": 39,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 872,
+   "share": 41,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 1054,
+   "share": 50,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 410
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 86,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 86
+    }
+   ]
+  }
+ },
+ "ksante": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/ksante/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 509,
+  "start": null,
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 190,
+   "share": 37,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 295,
+   "share": 58,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 92
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 20
+  }
+ },
+ "vladimir": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/vladimir/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 815,
+  "start": null,
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 372,
+   "share": 46,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 443,
+   "share": 54,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 9
+  }
+ },
+ "pantheon": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/pantheon/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 632,
+  "start": null,
+  "first": {
+   "name": "心の鋼",
+   "games": 355,
+   "share": 56,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 306,
+   "share": 48,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 125
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 8
+  }
+ },
+ "gragas": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/gragas/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 578,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 364,
+   "share": 63,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 284,
+   "share": 49,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 348,
+   "share": 60,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 3,
+    "name": "スピリット ビサージュ",
+    "games": 72
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 47,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 19
+    },
+    {
+     "slot": 5,
+     "games": 21
+    },
+    {
+     "slot": 6,
+     "games": 7
+    }
+   ]
+  }
+ },
+ "jayce": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/jayce/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 890,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 224,
+   "share": 25,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 488,
+   "share": 55,
+   "diff": false
+  },
+  "boots": null,
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 181
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 32,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 23
+    },
+    {
+     "slot": 6,
+     "games": 9
+    }
+   ]
+  }
+ },
+ "urgot": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/urgot/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 466,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 135,
+   "share": 29,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 230,
+   "share": 49,
+   "diff": false
+  },
+  "boots": null,
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 45,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 25
+    },
+    {
+     "slot": 5,
+     "games": 15
+    },
+    {
+     "slot": 6,
+     "games": 5
+    }
+   ]
+  }
+ },
+ "malphite": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/malphite/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1993,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 540,
+   "share": 27,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 1239,
+   "share": 62,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 1198,
+   "share": 60,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 4,
+    "name": "スピリット ビサージュ",
+    "games": 428
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 19
+  }
+ },
+ "chogath": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/chogath/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1348,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 878,
+   "share": 65,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 676,
+   "share": 50,
+   "diff": false
+  },
+  "boots": {
+   "name": "マーキュリー ブーツ",
+   "games": 168,
+   "share": 12,
+   "diff": true
+  },
+  "early": [
+   {
+    "slot": 3,
+    "name": "スピリット ビサージュ",
+    "games": 76
+   }
+  ],
+  "gwbuy": {
+   "name": null,
+   "games": 14
+  }
+ },
+ "poppy": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/poppy/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 279,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 178,
+   "share": 64,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 131,
+   "share": 47,
+   "diff": false
+  },
+  "boots": {
+   "name": "プレート スチールキャップ",
+   "games": 80,
+   "share": 29,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 12
+  }
+ },
+ "singed": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/singed/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 477,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 163,
+   "share": 34,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 258,
+   "share": 54,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 348,
+   "share": 73,
+   "diff": false
+  },
+  "early": [
+   {
+    "slot": 3,
+    "name": "スピリット ビサージュ",
+    "games": 53
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 4,
+   "when": "中盤（4個目）",
+   "games": 31,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 17
+    },
+    {
+     "slot": 5,
+     "games": 14
+    }
+   ]
+  }
+ },
+ "riven": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/riven/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 334,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 184,
+   "share": 55,
+   "diff": true
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 139,
+   "share": 42,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 154,
+   "share": 46,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 18
+  }
+ },
+ "darius": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/darius/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1637,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 1116,
+   "share": 68,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 776,
+   "share": 47,
+   "diff": false
+  },
+  "boots": null,
+  "early": [
+   {
+    "slot": 4,
+    "name": "デッド マン プレート",
+    "games": 54
+   }
+  ],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 88,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 71
+    },
+    {
+     "slot": 6,
+     "games": 17
+    }
+   ]
+  }
+ },
+ "renekton": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/renekton/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1204,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 512,
+   "share": 43,
+   "diff": false
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 668,
+   "share": 55,
+   "diff": false
+  },
+  "boots": null,
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 17
+  }
+ },
+ "heimerdinger": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/heimerdinger/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 238,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 184,
+   "share": 77,
+   "diff": true
+  },
+  "first": null,
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 123,
+   "share": 52,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 4
+  }
+ },
+ "tahmkench": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/tahmkench/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 469,
+  "start": {
+   "items": [
+    "ドラン ヘルム",
+    "体力ポーション"
+   ],
+   "games": 136,
+   "share": 29,
+   "diff": false
+  },
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 208,
+   "share": 44,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 251,
+   "share": 54,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 14
+  }
+ },
+ "yasuo": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/yasuo/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 1457,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 999,
+   "share": 69,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 752,
+   "share": 52,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 704,
+   "share": 48,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 55,
+   "slots": [
+    {
+     "slot": 5,
+     "games": 55
+    }
+   ]
+  }
+ },
+ "kennen": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/kennen/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 473,
+  "start": {
+   "items": [
+    "ドラン シールド",
+    "体力ポーション"
+   ],
+   "games": 345,
+   "share": 73,
+   "diff": true
+  },
+  "first": {
+   "name": "心の鋼",
+   "games": 174,
+   "share": 37,
+   "diff": false
+  },
+  "boots": {
+   "name": "プレート スチールキャップ",
+   "games": 74,
+   "share": 16,
+   "diff": true
+  },
+  "early": [],
+  "gwbuy": {
+   "name": "ソーンメイル",
+   "slot": 5,
+   "when": "装備が揃う頃（5〜6個目）",
+   "games": 35,
+   "slots": [
+    {
+     "slot": 4,
+     "games": 17
+    },
+    {
+     "slot": 5,
+     "games": 18
+    }
+   ]
+  }
+ },
+ "varus": {
+  "url": "https://lolalytics.com/ja/lol/drmundo/vs/varus/build/",
+  "patch": "16.20",
+  "rank": "EMERALD+",
+  "games": 522,
+  "start": null,
+  "first": {
+   "name": "ワーモグ アーマー",
+   "games": 227,
+   "share": 43,
+   "diff": false
+  },
+  "boots": {
+   "name": "スイフトネス ブーツ",
+   "games": 266,
+   "share": 51,
+   "diff": false
+  },
+  "early": [],
+  "gwbuy": {
+   "name": null,
+   "games": 4
+  }
+ }
+}

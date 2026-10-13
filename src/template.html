@@ -300,6 +300,19 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
 .gwm{font-size:10px;font-weight:700;color:#fff;background:#c62828;border-radius:3px;padding:0 4px;vertical-align:2px}
 .buy{display:flex;gap:8px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-left:4px solid #2563eb;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.55}
 .buy b{flex:none;color:#fff;background:#2563eb;border-radius:4px;padding:1px 7px;font-size:12px}
+.bld{background:var(--surface);border:1px solid var(--line);border-left:4px solid #0f766e;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.5}
+.bld-h{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px}
+.bld-h b{flex:none;color:#fff;background:#0f766e;border-radius:4px;padding:1px 7px;font-size:12px}
+.bld-h small{color:var(--muted,#666);font-size:11px}
+.bld ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.bld li{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.bld li .k{flex:none;min-width:4.6em;font-size:12px;color:var(--muted,#666)}
+.bld li img{width:20px;height:20px;border-radius:3px;vertical-align:middle}
+.bld li .n{font-weight:600}
+.bld .df{color:#fff;background:#d97706;border-radius:4px;padding:0 5px;font-size:11px;font-weight:700}
+.bld .sm{font-size:11px;color:var(--muted,#666)}
+.bld .gwl .n{color:#c62828}
+.bld .ft{margin-top:4px;font-size:11px;color:var(--muted,#666)}
 .gw{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;background:#fdecec;border:1px solid #d33;border-radius:8px;padding:6px 10px;font-size:13px;line-height:1.5;color:#111}
 .gw b{flex:none;color:#fff;background:#c62828;border-radius:4px;padding:1px 7px;font-size:12px}
 .gw small{color:#555}
@@ -319,6 +332,7 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center;color:var(--in
   .fv .cards.one,.fv .two.one{order:8}
   .fv .o-plays,.fv .o-vs{order:9}
   .fv .buy{order:10}
+  .fv .bld{order:10}
   .fv .o-kz{order:11}
   .fv .hero .badge,.fv .hero img{width:52px;height:52px}
   .fv .hero h2{font-size:20px}
@@ -435,6 +449,21 @@ const TIER_SHORT = {hard:'苦手',even:'互角',fav:'有利',fav2:'大きく有�
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const csCD = cd => { if (!cd || !/^[\d.\s\/]+$/.test(cd)) return ''; const a = cd.split('/').map(s=>s.trim()).filter(Boolean); const last = a[a.length-1]; if (a.length > 1 && +last === 0) return 'CD ' + a[0] + '秒→最大で常時ON'; return 'CD ' + (a.length > 1 && a[0] !== last ? a[0] + '→' + last : a[0]) + '秒'; };
+const IIC = n => (D.itemIcons && D.itemIcons[n]) ? `<img src="${D.itemIcons[n]}" alt="" loading="lazy">` : '';
+const itm = n => `${IIC(n)}<span class="n">${esc(n)}</span>`;
+const DF = '<span class="df">いつもと違う</span>';
+const bldHTML = c => { const b = c.bld; if (!b) return '';
+  const nod = '<span class="sm">データ不足（いつも通りでOK）</span>';
+  const st = b.start ? `${b.start.items.map(itm).join(' ＋ ')}${b.start.diff ? DF : ''}<span class="sm">（この対面の${b.start.share}%）</span>` : nod;
+  const fi = b.first ? `${itm(b.first.name)}${b.first.diff ? DF : ''}<span class="sm">（${b.first.share}%）</span>` : nod;
+  const bo = b.boots ? `${itm(b.boots.name)}${b.boots.diff ? DF : ''}<span class="sm">（${b.boots.share}%）</span>` : nod;
+  const ea = b.early.length ? `<li><span class="k">早めに</span>${b.early.map(x => `${itm(x.name)}<span class="sm">（${x.slot}個目に多い・${x.games}試合）</span>`).join(' ')}${DF}</li>` : '';
+  const g = b.gwbuy;
+  const gw = g.name ? `<li class="gwl"><span class="k">重傷</span>${itm(g.name)}<span>→ ${esc(g.when)}</span><span class="sm">（${g.slots.map(x => x.slot + '個目' + x.games + '試合').join('・')}）</span></li>`
+    : `<li class="gwl"><span class="k">重傷</span><span class="sm">データ上はほとんど買われていません${c.gw ? '（回復の多い相手ですが、急がなくてよいという結果です）' : ''}</span></li>`;
+  return `<div class="bld"><div class="bld-h"><b>データ上の買い方</b><small>LoLalytics エメラルド以上・パッチ${esc(b.patch)}・${b.games.toLocaleString()}試合</small></div><ul>
+<li><span class="k">初期</span>${st}</li><li><span class="k">1つ目</span>${fi}</li><li><span class="k">ブーツ</span>${bo}</li>${ea}${gw}</ul>
+<p class="ft">いつも＝ドラン ヘルム／心の鋼かワーモグ アーマー／スイフトネス ブーツ。％はこの対面でその物を買った試合の割合です。重傷の数はソーンメイル完成の数で、素材のブランブル ベストを途中で持つかはこのデータでは分かりません。<a href="${esc(b.url)}" target="_blank" rel="noopener">元データ ↗</a></p></div>`; };
 const buyHTML = c => c.buy ? `<div class="buy"><b>対策アイテム</b><span>${esc(c.buy)}</span></div>` : '';
 const gwHTML = c => c.gw ? `<div class="gw"><b>重傷${c.gw.lv === '必須級' ? '必須級' : '推奨'}</b><span>${esc(c.gw.why)}</span><small>（重傷＝回復量を減らす効果。ムンドならブランブル ベストなどで付けられます）</small></div>` : '';
 const scaleHTML = c => { const s = c.sc; if (!s) return '';
@@ -784,7 +813,7 @@ function openChamp(slug, push){
     ${planHTML(c)}
     ${dangerHTML(c)}
     ${dmgLine(c)}
-    ${gwHTML(c)}${buyHTML(c)}
+    ${gwHTML(c)}${bldHTML(c)}${buyHTML(c)}
    </div>
    <div class="fv-col">
     ${csHTML(c)}

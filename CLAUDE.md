@@ -23,6 +23,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/danger/danger.json`：警戒スキル（1〜2個）・避け方・避けた後のショート／ロング／下がる、立ち位置の一言（ムンド版のみ。手順は `src/briefs/danger_BRIEF.md` → `danger_AUDITOR.md`）。`src/danger/ar.json` は通常攻撃の射程（Data Dragon）で、射程比較の図に使います
 - `src/plan/plan.json`：「この対面の方針」カード（徹底する方針・立ち位置・パッシブ有無・入る／引く合図・Lv6/コア後。ムンド版のみ、対面画面の一番上に表示。手順は `src/briefs/plan_BRIEF.md` → `plan_AUDITOR.md`）。テンプレート側の項目名は `mplan`（data2 の `plan` と別物）。カード上部の「我慢／五分／攻めの対面」は data2 の `stance` から、「立つ場所」の短い一言は `src/plan/spot.json`（`pos` の要約。`pos` にない事実は足さない）から作ります
 - 上の `danger.json` と `plan.json` は2026年10月に「そのまま実行できるメモ」へ書き直し済み（書く役→初心者役→点検役の3段階。手順は `src/briefs/memo_BRIEF.md` と `memo_ROLES.md`、計算した着弾時間は `src/danger/react_calc.json`）。警戒スキルには react（見て避けられる／読みで避ける／避けられない）と hit（当たった時の対応）があります
+- `src/build/`：「データ上の買い方」欄（ムンド版のみ）。`raw.json` は LoLalytics の対面別ページ（https://lolalytics.com/ja/lol/drmundo/vs/<slug>/build/ 、エメラルド以上）から取った初期アイテム・コア・4〜6個目の数字（取得手順は `src/briefs/build_BRIEF.md`、別担当が14体を照合済み）。`python3 build/derive.py` で `build.json`（いつもと違う物・重傷アイテムを何個目に買うか）と `icons.json` を作ります。試合数50未満の項目は「データ不足」、いつもと違うブーツは対面の1割以上で買われている時だけ出します。ページはどのビルド（最多／最高勝率）を表示しているか明記していないため、％と試合数を必ず併記します
 - `src/links.py`：外部リンクのURL規則
 
 ## 更新のしかた
