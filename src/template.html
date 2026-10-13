@@ -122,6 +122,17 @@ select.sort{border:1px solid var(--line);background:var(--surface);border-radius
 .pl .pr{display:grid;grid-template-columns:62px 1fr;gap:6px;align-items:baseline;font-size:12.5px;line-height:1.5;color:var(--ink-2)}
 .pl .pr b{font-size:11px;font-weight:700;text-align:center;border-radius:999px;padding:0 6px;white-space:nowrap;background:var(--line);color:var(--ink)}
 .pl .pr.go b{background:#16a34a;color:#fff}.pl .pr.bk b{background:var(--def);color:#fff}.pl .pr.ps b{background:#7c3aed;color:#fff}
+.pl .ptype{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;background:var(--cs);border-left:5px solid var(--c);border-radius:6px;padding:6px 10px}
+.pl .ptype .pt{font-size:17px;font-weight:800;color:var(--c)}
+.pl .ptype .ps2{font-size:13px;font-weight:700;color:var(--ink)}
+.pl .pflow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:12px;color:var(--ink-2)}
+.pl .pflow span{display:inline-flex;gap:5px;align-items:baseline;background:var(--cs);border-radius:999px;padding:1px 9px}
+.pl .pflow span b{color:var(--c)}.pl .pflow i{font-style:normal;color:var(--ink-3)}
+.pl .pkey{display:grid;grid-template-columns:76px 1fr;gap:8px;align-items:baseline}
+.pl .pkey .pk-l{font-size:11.5px;font-weight:800;text-align:center;border-radius:6px;padding:2px 4px;background:var(--ink);color:var(--surface)}
+.pl .pkey.pk-r .pk-l{background:var(--accent);color:#fff}
+.pl .pkey b{font-size:15px;font-weight:800;line-height:1.45;color:var(--ink)}
+.pl .pmore{margin:2px 0 -2px;font-size:11px;font-weight:700;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:5px}
 .pl ul{margin:0;padding:0;list-style:none;display:grid;gap:1px}
 .dz{display:grid;gap:6px}
 .dz .ds{display:grid;grid-template-columns:34px 1fr;gap:3px 9px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--def);border-radius:8px;padding:7px 10px}
@@ -442,6 +453,8 @@ const scaleHTML = c => { const s = c.sc; if (!s) return '';
 const DMG_L = {AD:'AD', AP:'AP', '混AD':'混合', '混AP':'混合'};
 const dmgTitle = d => `LoLalyticsの実戦データ：物理${d.p}%・魔法${d.m}%・確定${d.t}%`;
 const dmgTag = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_L[c.dmg.c]}</span>` : '';
+const DMG_LL = {AD:'AD（物理）', AP:'AP（魔法）', '混AD':'混合・AD寄り', '混AP':'混合・AP寄り'};
+const dmgTagL = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_LL[c.dmg.c]}</span>` : '';
 const dmgLine = c => { const d = c.dmg; if (!d) return '';
   const tip = d.c === 'AD' ? '物理防御（アーマー）の装備が効きます' : d.c === 'AP' ? '魔法防御（MR）の装備が効きます' : `物理と魔法の両方。${d.c === '混AD' ? '物理がやや多め' : '魔法がやや多め'}なので、両方の防御を考えます`;
   return `<div class="dml">${dmgTag(c)}<span><b>ダメージ</b> 物理${d.p}%・魔法${d.m}%・確定${d.t}%</span><small>→ ${tip}${d.t >= 20 ? '（確定ダメージは防御で減りません）' : ''}</small></div>`; };
@@ -722,10 +735,17 @@ function rulerHTML(c){
   const note = safe ? `緑の帯＝相手の警戒スキル（Rを除く）が届かず、ムンドのQ（射程${q}）だけが届く距離です。` : `警戒スキルの射程がムンドのQ（${q}）以上あるため、距離だけでは防げません。上の避け方に従います。`;
   return `<div class="ruler"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="射程の比較">${s}</svg><p>距離感（射程の比較、Wiki値）：${note}</p></div>`;
 }
+const PTYPE = {'守り':['我慢の対面','レーンは負けなければ合格。CSを優先します'],'五分':['五分の対面','合図を見てから動きます'],'攻め':['攻めの対面','自分から差を付けにいきます']};
 const planHTML = c => { const p = c.mplan; if (!p) return '';
   const li = a => `<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
-  return `<section class="o-plan"><p class="sec-label">この対面の方針（これを徹底）</p><div class="pl">
-  <p class="rule">${esc(p.rule)}</p>
+  const f = c.stance[0].s, ty = PTYPE[f] || [f,''];
+  const flow = c.stance.map((s,k)=>`${k?'<i aria-hidden="true">→</i>':''}<span class="st-${s.s}"><b>${s.s}</b>${esc(s.when)}</span>`).join('');
+  return `<section class="o-plan"><p class="sec-label">この対面の方針（これだけ徹底）</p><div class="pl">
+  <div class="ptype st-${f}"><span class="pt">${ty[0]}</span><span class="ps2">${ty[1]}</span></div>
+  <div class="pflow">${flow}</div>
+  <div class="pkey"><span class="pk-l">立つ場所</span><b>${esc(p.spot||'')}</b></div>
+  <div class="pkey pk-r"><span class="pk-l">頑張ること</span><b>${esc(p.rule)}</b></div>
+  <p class="pmore">詳しく</p>
   <div class="pr"><b>立ち位置</b><span>${esc(p.pos)}</span></div>
   ${p.pas ? `<div class="pr ps"><b>パッシブ</b><span>${esc(p.pas)}</span></div>` : ''}
   <div class="pr go"><b>入る</b>${li(p.go)}</div>
@@ -749,14 +769,14 @@ function openChamp(slug, push){
   const flow = c.stance.map((s,k)=>`${k?'<span class="arr" aria-hidden="true">→</span>':''}<div class="step st-${s.s}"><strong>${s.s}</strong><small>${esc(s.when)}</small></div>`).join('');
   const skills = ['P','Q','W','E','R'].map(k => skillRow(k, c.skills[k], c)).join('');
   const html = `
-  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${esc(c.jp)}（${esc(c.en)}）</span></div>
+  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${dmgTagL(c)} ${esc(c.jp)}（${esc(c.en)}）</span></div>
   <div class="sheet-body">
   <div class="fv">
    <div class="fv-col">
     <div class="hero st-${st}">
       <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
       <div>
-        <h2>${esc(c.jp)}</h2>
+        <h2>${esc(c.jp)} ${dmgTagL(c)}</h2>
         <div class="en">${esc(c.en)}</div>
         <div class="stats"><span>ムンド勝率</span><span class="wr">${c.wr.toFixed(1)}%</span><span>${c.games.toLocaleString()}試合</span><span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
       </div>

@@ -415,6 +415,8 @@ const scaleHTML = c => { const s = c.sc; if (!s) return '';
 const DMG_L = {AD:'AD', AP:'AP', '混AD':'混合', '混AP':'混合'};
 const dmgTitle = d => `LoLalyticsの実戦データ：物理${d.p}%・魔法${d.m}%・確定${d.t}%`;
 const dmgTag = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_L[c.dmg.c]}</span>` : '';
+const DMG_LL = {AD:'AD（物理）', AP:'AP（魔法）', '混AD':'混合・AD寄り', '混AP':'混合・AP寄り'};
+const dmgTagL = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_LL[c.dmg.c]}</span>` : '';
 const dmgLine = c => { const d = c.dmg; if (!d) return '';
   const tip = d.c === 'AD' ? '物理防御（アーマー）の装備が効きます' : d.c === 'AP' ? '魔法防御（MR）の装備が効きます' : `物理と魔法の両方。${d.c === '混AD' ? '物理がやや多め' : '魔法がやや多め'}なので、両方の防御を考えます`;
   return `<div class="dml">${dmgTag(c)}<span><b>ダメージ</b> 物理${d.p}%・魔法${d.m}%・確定${d.t}%</span><small>→ ${tip}${d.t >= 20 ? '（確定ダメージは防御で減りません）' : ''}</small></div>`; };
@@ -674,14 +676,14 @@ function openChamp(slug, push){
   const flow = c.stance.map((s,k)=>`${k?'<span class="arr" aria-hidden="true">→</span>':''}<div class="step st-${s.s}"><strong>${s.s}</strong><small>${esc(s.when)}</small></div>`).join('');
   const skills = ['P','Q','W','E','R'].map(k => skillRow(k, c.skills[k], c)).join('');
   const html = `
-  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${esc(c.jp)}（${esc(c.en)}）</span></div>
+  <div class="sheet-bar">${closeBtn}<span class="t" id="sheetTitle">${dmgTagL(c)} ${esc(c.jp)}（${esc(c.en)}）</span></div>
   <div class="sheet-body">
   <div class="fv">
    <div class="fv-col">
     <div class="hero st-${st}">
       <span class="badge" aria-hidden="true">${icon(c.slug,"c") ? `<img src="${icon(c.slug,"c")}" alt="" loading="lazy">` : esc(mono(c))}</span>
       <div>
-        <h2>${esc(c.jp)}</h2>
+        <h2>${esc(c.jp)} ${dmgTagL(c)}</h2>
         <div class="en">${esc(c.en)}</div>
         <div class="stats"><span>ナサス勝率</span><span class="wr">${WRT(c)}</span>${c.games ? `<span>${c.games.toLocaleString()}試合</span>` : ''}<span class="tag">${TIER_SHORT[c.tier]}</span>${c.few ? '<span class="tag">少数データ</span>' : ''}</div>
       </div>

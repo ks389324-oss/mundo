@@ -313,6 +313,8 @@ const scaleHTML = c => { const s = c.sc; if (!s) return '';
 const DMG_L = {AD:'AD', AP:'AP', '混AD':'混合', '混AP':'混合'};
 const dmgTitle = d => `LoLalyticsの実戦データ：物理${d.p}%・魔法${d.m}%・確定${d.t}%`;
 const dmgTag = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_L[c.dmg.c]}</span>` : '';
+const DMG_LL = {AD:'AD（物理）', AP:'AP（魔法）', '混AD':'混合・AD寄り', '混AP':'混合・AP寄り'};
+const dmgTagL = c => c.dmg ? `<span class="dm dm-${c.dmg.c.replace('混','x')}" title="${dmgTitle(c.dmg)}">${DMG_LL[c.dmg.c]}</span>` : '';
 const dmgLine = c => { const d = c.dmg; if (!d) return '';
   const tip = d.c === 'AD' ? '物理防御（アーマー）の装備が効きます' : d.c === 'AP' ? '魔法防御（MR）の装備が効きます' : `物理と魔法の両方。${d.c === '混AD' ? '物理がやや多め' : '魔法がやや多め'}なので、両方の防御を考えます`;
   return `<div class="dml">${dmgTag(c)}<span><b>ダメージ</b> 物理${d.p}%・魔法${d.m}%・確定${d.t}%</span><small>→ ${tip}${d.t >= 20 ? '（確定ダメージは防御で減りません）' : ''}</small></div>`; };
@@ -367,11 +369,11 @@ function openChamp(id){
     return `<div class="sk"><span class="key">${img(c.id,k) ? `<img src="${img(c.id,k)}" alt="">` : ''}<i>${k}</i></span><div>
       <div class="skh"><span class="sn">${esc(s.n)}</span>${s.cd ? `<span class="cd"><small>CD</small>${esc(cdText(s.cd))}</span>` : ''}<a class="vid" href="${video(c,k)}" target="_blank" rel="noopener" data-g="${c.key4}" data-k="${k}" data-t="${esc(c.name)} ${k}：${esc(s.n)}">▶ 実際の動画</a>${cc}</div>
       <p>${esc(s.what)}</p>${s.means ? `<p class="means"><b>つまり</b>${esc(s.means)}</p>` : ''}${s.tip ? `<p class="tip"><b>対応</b>${esc(s.tip)}</p>` : ''}</div></div>`; }).join('');
-  open(`<div class="bar">${X}<span class="t" id="sheetTitle">${esc(c.name)}</span></div>
+  open(`<div class="bar">${X}<span class="t" id="sheetTitle">${dmgTagL(c)} ${esc(c.name)}</span></div>
   <div class="body">
   <div class="fv">
    <div class="fv-col">
-    <div class="hero"><img src="${img(c.id,'c')}" alt=""><div><h2>${esc(c.name)}</h2><div class="ttl">${esc(c.title)}</div>
+    <div class="hero"><img src="${img(c.id,'c')}" alt=""><div><h2>${esc(c.name)} ${dmgTagL(c)}</h2><div class="ttl">${esc(c.title)}</div>
       <div class="pills">${c.lanes.map(l => `<span class="pill l">${l}</span>`).join('')}<span class="pill">${esc(c.type)}</span></div></div></div>
     ${dmgLine(c)}
     ${gwHTML(c)}${buyHTML(c)}
