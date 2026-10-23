@@ -1,0 +1,202 @@
+{
+ "runes": {
+  "Grasp of the Undying": {
+   "jp": "不死者の握撃",
+   "effect": "Entering combat generates 1 stack/sec for 3s (refreshes in combat), up to 4. At max stacks, next basic attack on an enemy champion within 5s consumes them: bonus magic damage = 3.5% max HP (ranged 1.4%), heals 1.3% max HP (ranged 0.52%), permanently +5 bonus health (ranged +2). No listed cooldown.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Grasp_of_the_Undying"
+  },
+  "Aftershock": {
+   "jp": "アフターショック",
+   "effect": "Immobilizing an enemy champion grants 45 bonus armor and MR (+75% of bonus armor/MR) for 2.5s, each capped at 80-150 (by level). Then a shockwave deals 25-120 (by level) + 8% bonus health magic damage in 350 radius. Cooldown 20s. Not triggered on displacement-immune targets.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Aftershock"
+  },
+  "Guardian": {
+   "jp": "ガーディアン",
+   "effect": "Guard allies within 350 units (or 3s via unit-targeted abilities). If you or a Guarded ally would take 50-178.53 (by level) damage within 2.5s or lethal damage, both gain a shield of 40-162.94 (by level) +20% AP +6% bonus health for 2s. Cooldown 75-35.88s (by level), only when shield triggers.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Guardian"
+  },
+  "Demolish": {
+   "jp": "打ちこわし",
+   "effect": "Basic attacks on a turret stack up to 3; third stack consumes them for bonus physical damage 85 + 28% max health (ranged 50 + 20%). Cooldown 30s. Same turret cannot be triggered more than once every 3s. Stacks do not expire.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Demolish"
+  },
+  "Font of Life": {
+   "jp": "生命の泉",
+   "effect": "Slowing or immobilizing an enemy champion heals you and the nearest, most wounded allied champion within 1000 units for 10-54.71 (melee) / 7-38.29 (ranged), based on level. Cooldown 20s. No nearby ally required.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Font_of_Life"
+  },
+  "Shield Bash": {
+   "jp": "シールドバッシュ",
+   "effect": "Whenever you gain a shield, your next attack against an enemy champion deals 5-32.94 (by level) +2.5% bonus health +15% shield amount bonus adaptive damage on-hit. Empowerment lasts up to 2s after the shield expires. One attack per shield. No listed cooldown.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Shield_Bash"
+  },
+  "Conditioning": {
+   "jp": "心身調整",
+   "effect": "After 12 minutes, gain 8 bonus armor and 8 bonus magic resistance, and total armor and magic resistance are increased by 3%.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Conditioning"
+  },
+  "Second Wind": {
+   "jp": "息継ぎ",
+   "effect": "After taking damage from an enemy champion, regenerate 4% of missing health over 10 seconds, refreshing on subsequent damage. Does not trigger on damage reduced to 0, dealt to shields, or absorbed by invulnerability.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Second_Wind"
+  },
+  "Bone Plating": {
+   "jp": "ボーンアーマー",
+   "effect": "After taking damage from an enemy champion, for 1.5s the next 3 spells or attacks from that champion deal 30-63.53 (by level) less damage (also true damage). Triggering hit not reduced. Cooldown 55s, starts after duration even if unused.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Bone_Plating"
+  },
+  "Overgrowth": {
+   "jp": "超成長",
+   "effect": "Every 8 monsters or enemy minions dying within 1400 range permanently grants a stack (+3 bonus health each, unlimited). At 15 stacks (120 units), base and bonus health increased by 3.5%.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Overgrowth"
+  },
+  "Revitalize": {
+   "jp": "生気付与",
+   "effect": "Grants 5% heal and shield power. Outgoing healing/shielding +10% on targets below 40% max health. Incoming healing/shielding and self-healing/shielding +10% while you are below 40% max health.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Revitalize"
+  },
+  "Unflinching": {
+   "jp": "気迫",
+   "effect": "While afflicted by crowd control from enemy champions, gain 10 bonus armor and 10 bonus magic resistance, lingering 2 seconds after the impairment ends. Kinematics and disruption do not trigger it.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Unflinching"
+  },
+  "Hextech Flashtraption": {
+   "jp": "ヘクステックフラッシュネイター",
+   "effect": "While Flash has over 2s cooldown remaining, it is replaced by Hexflash: channel up to 2s (movement speed 0), then blink 200-400 units (by channel time) and gain 50% movement speed for 0.25s. Cooldown 20s; releasing before 1s or entering champion combat puts it on 10s cooldown.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Hextech_Flashtraption"
+  },
+  "Magical Footwear": {
+   "jp": "魔法の靴",
+   "effect": "After 12 minutes (reduced 45s per champion takedown), receive free Slightly Magical Boots granting +10 bonus movement speed. Cannot buy Boots or Tier-2 boots before obtaining them.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Magical_Footwear"
+  },
+  "Cash Back": {
+   "jp": "キャッシュバック",
+   "effect": "Upon purchasing a Legendary item, refunded 7.5% of its total gold cost. Selling or undoing cancels the refund.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Cash_Back"
+  },
+  "Triple Tonic": {
+   "jp": "トリプル トニック",
+   "effect": "Gain an Elixir at level 3 (Elixir of Avarice), level 6 (Elixir of Force) and level 9 (Elixir of Skill).",
+   "url": "https://wiki.leagueoflegends.com/en-us/Triple_Tonic"
+  },
+  "Time Warp Tonic": {
+   "jp": "タイムワープトニック",
+   "effect": "Consuming a Health Potion or Refillable Potion additionally heals 40% of its total health restoration.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Time_Warp_Tonic"
+  },
+  "Biscuit Delivery": {
+   "jp": "ビスケットデリバリー",
+   "effect": "Receive a Total Biscuit of Everlasting Will at 2:00, 4:00 and 6:00. Consuming (or selling) one permanently grants +30 maximum health (bonus health, does not raise current health).",
+   "url": "https://wiki.leagueoflegends.com/en-us/Biscuit_Delivery"
+  },
+  "Cosmic Insight": {
+   "jp": "宇宙の英知",
+   "effect": "Gain 18 summoner spell haste and 10 item haste.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Cosmic_Insight"
+  },
+  "Approach Velocity": {
+   "jp": "疾駆",
+   "effect": "Gain 7.5% bonus movement speed while facing visible enemy champions that are immobilized, grounded or slowed within 1000 range. Doubled to 15% (no range cap or vision needed) toward champions whose movement you impaired.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Approach_Velocity"
+  },
+  "Jack of All Trades": {
+   "jp": "なんでも屋",
+   "effect": "1 Jack stack per unique stat type from items; each stack grants 1 ability haste. At 5 stacks: +4.8 AD or 8 AP (adaptive). At 10 stacks: additional +7.2 AD or 12 AP (total 12 AD or 20 AP).",
+   "url": "https://wiki.leagueoflegends.com/en-us/Jack_of_All_Trades"
+  }
+ },
+ "shards": {
+  "rows": [
+   {
+    "row": "Offense",
+    "options": [
+     "Adaptive Force: 5.4 AD or 9 AP",
+     "Attack Speed: 10%",
+     "Ability Haste: 8"
+    ]
+   },
+   {
+    "row": "Flex",
+    "options": [
+     "Adaptive Force: 5.4 AD or 9 AP",
+     "Movement Speed: 2.5%",
+     "Health Scaling: 10-200 bonus health (by level)"
+    ]
+   },
+   {
+    "row": "Defense",
+    "options": [
+     "Health: 65",
+     "Tenacity and Slow Resist: 15%",
+     "Health Scaling: 10-200 bonus health (by level)"
+    ]
+   }
+  ],
+  "url": "https://wiki.leagueoflegends.com/en-us/Rune_(League_of_Legends)"
+ },
+ "boots": {
+  "Boots": {
+   "jp": "ブーツ",
+   "cost": 300,
+   "effect": "+25 movement speed. No passive.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Boots"
+  },
+  "Boots of Swiftness": {
+   "jp": "スイフトネス ブーツ",
+   "cost": 1000,
+   "effect": "+55 movement speed. Passive: 25% slow resist. Recipe: Boots + 700g.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Boots_of_Swiftness"
+  },
+  "Plated Steelcaps": {
+   "jp": "プレート スチールキャップ",
+   "cost": 1200,
+   "effect": "+25 armor, +45 movement speed. Passive Plating: reduces incoming basic attack damage by 10% (not turret attacks). Recipe: Boots + Cloth Armor + 600g.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Plated_Steelcaps"
+  },
+  "Mercury's Treads": {
+   "jp": "マーキュリー ブーツ",
+   "cost": 1250,
+   "effect": "+20 magic resistance, +45 movement speed, +30% tenacity. Recipe: Boots + Null-Magic Mantle + 550g.",
+   "url": "https://wiki.leagueoflegends.com/en-us/Mercury%27s_Treads"
+  }
+ },
+ "_jp_names": "Data Dragon ja_JP runesReforged.json（InFinity54/LoL_DDragon latest）。トリプル トニックのみLoLalytics日本語表記",
+ "minions": {
+  "melee": {
+   "gold": 20,
+   "xp": "62（1人の時。周りの敵チャンピオンと分け合う）"
+  },
+  "caster": {
+   "gold": 14,
+   "xp": "31（同上）"
+  },
+  "siege": {
+   "gold": "50＋90秒ごとに1増える",
+   "xp": "75（同上）"
+  },
+  "wave": "1ウェーブ＝近接3・後衛3。大砲は3ウェーブ目（1:30）から、14:00までは3ウェーブに1回。30秒ごと（14:00から25秒ごと）",
+  "xp_rule": "倒れたミニオンから1500以内にいる敵チャンピオン全員に経験値が分配される（ラストヒット不要）",
+  "url": [
+   "https://wiki.leagueoflegends.com/en-us/Melee_minion",
+   "https://wiki.leagueoflegends.com/en-us/Caster_minion",
+   "https://wiki.leagueoflegends.com/en-us/Siege_minion",
+   "https://wiki.leagueoflegends.com/en-us/Minion_(League_of_Legends)"
+  ]
+ },
+ "items_ja": {
+  "詰め替えポーション": 150,
+  "体力ポーション": 50,
+  "コントロール ワード": 75,
+  "ブーツ": 300,
+  "クロース アーマー": 300,
+  "ルビー クリスタル": 400,
+  "ヌルマジック マント": 400,
+  "ブランブル ベスト": 800,
+  "ジャイアント ベルト": 900,
+  "スイフトネス ブーツ": 1000,
+  "プレート スチールキャップ": 1200,
+  "マーキュリー ブーツ": 1250,
+  "_src": "Data Dragon ja_JP item.json 16.19.1（26.20で価格変更なし）"
+ }
+}

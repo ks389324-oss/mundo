@@ -1,0 +1,1182 @@
+[
+ {
+  "champ": "Sylas",
+  "jp": "サイラス",
+  "problem": "E2段目の鎖がミニオンに当たった場合も、サイラスはそのミニオンの位置まで飛んで来ます。「寄って来られない」「すぐAA→E→AAで殴る」は誤りで、強化攻撃（P）とW（飛びかかり回復）を無視しています。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "Upon hitting the target, Sylas dashes to their location",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "quote": "EFFECT RADIUS: 300 (Petricite Burst)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "quote": "Kingslayer TARGET RANGE 400; cooldown 12 / 10.5 / 9 / 7.5 / 6",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "plan/plan.json Sylas.go[0]",
+    "before": "鎖がミニオンに当たった／外れた→Eの待ち時間（13〜9秒）中です。Qを投げ、AAが届く距離まで寄れたらAA→E→AAで殴って下がります",
+    "after": "鎖が外れた→Eの待ち時間（13〜9秒）中で、Eでは寄って来られません（Wの飛びかかり・射程400は残ります）。Qを投げ、AAが届く距離まで寄れたらAA→E→AAで短く殴ってすぐ下がります。鎖がミニオンに当たった→サイラスはそのミニオンの所まで飛んで来ます。一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合にAA→E→AAで殴るのは、サイラスがW（飛びかかり回復）も使った後だけにします",
+    "after_facts": [
+     "鎖が外れた→Eの待ち時間（13〜9秒）中",
+     "Wの飛びかかり・射程400は残ります",
+     "鎖がミニオンに当たった→サイラスはそのミニオンの所まで飛んで来ます",
+     "（強化攻撃の）半径300"
+    ],
+    "after_judgement": [
+     "Qを投げ、AAが届く距離まで寄れたらAA→E→AAで短く殴ってすぐ下がります",
+     "一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます",
+     "この場合にAA→E→AAで殴るのは、サイラスがW（飛びかかり回復）も使った後だけにします"
+    ]
+   },
+   {
+    "loc": "data2.json Sylas.pun[0].do",
+    "before": "Eの待ち時間中は寄って来られません。Qを当て、届けばAA→E→AAで短く殴って下がります",
+    "after": "外れた時はEの待ち時間中で、Eでは寄って来られません（Wの飛びかかり・射程400は残ります）。Qを当て、届けばAA→E→AAで短く殴って下がります。ミニオンに当たった時はそのミニオンの所まで飛んで来るので、一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合のAA→E→AAはサイラスがWを使った後だけにします",
+    "after_facts": [
+     "外れた時はEの待ち時間中",
+     "Wの飛びかかり・射程400は残ります",
+     "ミニオンに当たった時はそのミニオンの所まで飛んで来る"
+    ],
+    "after_judgement": [
+     "Qを当て、届けばAA→E→AAで短く殴って下がります",
+     "一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます",
+     "この場合のAA→E→AAはサイラスがWを使った後だけにします"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Sylas.sk[0].then",
+    "before": "Eの待ち時間中は寄られません。Qを当て、届けばAA→E→AAで殴って下がります",
+    "after": "鎖が外れたらEの待ち時間中で、Eでは寄られません（Wの飛びかかり・射程400は残ります）。Qを当て、届けばAA→E→AAで短く殴って下がります。ミニオンに当たった時はその位置まで飛んで来るので、一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合のAA→E→AAはWも使わせた後にします",
+    "after_facts": [
+     "鎖が外れたらEの待ち時間中",
+     "Wの飛びかかり・射程400は残ります",
+     "ミニオンに当たった時はその位置まで飛んで来る"
+    ],
+    "after_judgement": [
+     "Qを当て、届けばAA→E→AAで短く殴って下がります",
+     "一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます",
+     "この場合のAA→E→AAはWも使わせた後にします"
+    ]
+   },
+   {
+    "loc": "plays.json sylas.plays[0]",
+    "before": "[\"E2段目の鎖をミニオンで防いだ／Eを使い切った\", \"前に出てAA→E、Qを当てて下がる\", \"go\"]",
+    "after": "[\"E2段目の鎖が外れた／ミニオンに当たった\", \"外れたらQ、届けばAA→Eで短く。当たったら飛んで来るので一歩下がり強化攻撃を空振りさせてからQ。その時のAA→EはW使用後だけ\", \"go\"]",
+    "after_facts": [
+     "当たったら飛んで来る"
+    ],
+    "after_judgement": [
+     "外れたらQ、届けばAA→Eで短く",
+     "一歩下がり強化攻撃を空振りさせてからQ",
+     "その時のAA→EはW使用後だけ"
+    ]
+   }
+  ],
+  "judgement": "「AA→E→AAはサイラスがWを使った後だけ」は判断（Wは対象指定・射程400で避けられず、HPが減るほど回復量が増えるという仕組みに基づく）。元の修正案の「強化攻撃が2回分溜まった状態」は、E2段目（再発動）がPのスタックを生むかwikiで確認できなかったため削除しました。plays.jsonは元の3要素目のタグ（go）を残しています。 v4: 「Eの待ち時間中は寄って来られない」はWの飛びかかり（射程400）を無視していたため直し、W使用後だけの条件はミニオンに当たった場合に限定しました。鎖がミニオンにも当たる点は、wikiの『first enemy hit』（敵の種類を限定しない）からの読み取りです。",
+  "facts": [
+   {
+    "text": "サイラスのE2段目の鎖が当たると、サイラスはその相手の位置まで飛んで来ます。",
+    "quote": "Upon hitting the target, Sylas dashes to their location",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "E2段目の鎖は、最初に当たった敵にダメージを与えます。",
+    "quote": "deal magic damage to the first enemy hit",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "サイラスのEの待ち時間は13〜9秒です（いつから数え始めるかはwikiに記載がありません）。",
+    "quote": "COOLDOWN: 13 / 12 / 11 / 10 / 9",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "サイラスはスキルを使うたびに強化攻撃（パッシブ）を溜め、周囲にもダメージを与えます。",
+    "quote": "Whenever Sylas casts an ability, he generates a stack",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "強化攻撃の周囲ダメージの半径は300です。",
+    "quote": "EFFECT RADIUS: 300",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "サイラスのW（飛びかかり回復）は射程400の対象指定で、待ち時間は12〜6秒です。",
+    "quote": "TARGET RANGE: 400; COOLDOWN: 12 / 10.5 / 9 / 7.5 / 6",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "Wの回復量はサイラスの減っているHPが多いほど増えます。",
+    "quote": "increased by 0% – 100% (based on his missing health)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   },
+   {
+    "text": "ムンドの通常攻撃の射程は125です。",
+    "quote": "Attack range 125",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "サイラスのWは対象の敵に飛びかかって攻撃します。",
+    "quote": "Sylas dashes to the target enemy and strikes them",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sylas"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "鎖がミニオンに当たった時は、一歩下がって強化攻撃を空振りさせてからQを当てます。",
+    "why": "鎖が当たると飛んで来て、Eを使った分の強化攻撃（半径300）が溜まっているため、着地直後に近くにいると巻き込まれます。"
+   },
+   {
+    "text": "鎖がミニオンに当たって隣に飛んで来た時は、AA→E→AAで殴りに行くのはサイラスがWを使った後だけにします。",
+    "why": "Wは対象指定（射程400）で避けられず、サイラスのHPが減るほど回復が増えるので、W が残っている間に殴り合うと取り返されやすいためです。"
+   },
+   {
+    "text": "鎖が外れた時は、Qを投げ、届けばAA→E→AAで短く殴ってすぐ下がります。",
+    "why": "Eの待ち時間（13〜9秒）中はEで寄られず、サイラスは離れた位置にいるためです。ただしW（射程400の飛びかかり）は残るので、長く殴り合わずすぐ下がります。"
+   }
+  ],
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Sylas.go[0]",
+    "before": "鎖がミニオンに当たった／外れた→Eの待ち時間（13〜9秒）中です。Qを投げ、AAが届く距離まで寄れたらAA→E→AAで殴って下がります",
+    "after": "鎖が外れた→Eの待ち時間（13〜9秒）中で、Eでは寄って来られません（Wの飛びかかり・射程400は残ります）。Qを投げ、AAが届く距離まで寄れたらAA→E→AAで短く殴ってすぐ下がります。鎖がミニオンに当たった→サイラスはそのミニオンの所まで飛んで来ます。一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合にAA→E→AAで殴るのは、サイラスがW（飛びかかり回復）も使った後だけにします",
+    "why": "Eの待ち時間中でもW（飛びかかり、射程400）は残るので「寄られない」は誤りでした。Wを使った後だけ殴る条件は、強化攻撃を持って隣に来る「ミニオンに当たった時」に限ると明記しました。"
+   },
+   {
+    "loc": "data2.json Sylas.pun[0].do",
+    "before": "Eの待ち時間中は寄って来られません。Qを当て、届けばAA→E→AAで短く殴って下がります",
+    "after": "外れた時はEの待ち時間中で、Eでは寄って来られません（Wの飛びかかり・射程400は残ります）。Qを当て、届けばAA→E→AAで短く殴って下がります。ミニオンに当たった時はそのミニオンの所まで飛んで来るので、一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合のAA→E→AAはサイラスがWを使った後だけにします",
+    "why": "Eの待ち時間中でもW（飛びかかり、射程400）は残るので「寄られない」は誤りでした。"
+   },
+   {
+    "loc": "danger/danger.json Sylas.sk[0].then",
+    "before": "Eの待ち時間中は寄られません。Qを当て、届けばAA→E→AAで殴って下がります",
+    "after": "鎖が外れたらEの待ち時間中で、Eでは寄られません（Wの飛びかかり・射程400は残ります）。Qを当て、届けばAA→E→AAで短く殴って下がります。ミニオンに当たった時はその位置まで飛んで来るので、一歩下がって強化攻撃（半径300）を空振りさせてからQを当てます。この場合のAA→E→AAはWも使わせた後にします",
+    "why": "Eの待ち時間中でもW（飛びかかり、射程400）は残るので「寄られない」は誤りでした。"
+   },
+   {
+    "loc": "plays.json sylas.plays[0]",
+    "before": "[\"E2段目の鎖をミニオンで防いだ／Eを使い切った\", \"前に出てAA→E、Qを当てて下がる\", \"go\"]",
+    "after": "[\"E2段目の鎖が外れた／ミニオンに当たった\", \"外れたらQ、届けばAA→Eで短く。当たったら飛んで来るので一歩下がり強化攻撃を空振りさせてからQ。その時のAA→EはW使用後だけ\", \"go\"]",
+    "why": "本文と同じく、W使用後だけの条件をミニオンに当たった場合に限りました。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Sylas",
+    "issue": "「Eの待ち時間中は寄って来られない／寄られない」はWの飛びかかり（wiki: Sylas dashes to the target enemy、射程400）と矛盾。またjudgementの「W使用後だけ殴る」と「外れたら殴る」が食い違っていた",
+    "fix": "「Eでは寄られない（Wの飛びかかり・射程400は残る）」に修正し、W使用後だけの条件をミニオンに当たった場合に限定（plan/data2/danger/plays の4か所）"
+   }
+  ]
+ },
+ {
+  "champ": "Anivia",
+  "jp": "アニビア",
+  "problem": "常に約1000離れて立つと、射程125のムンドはAAでラストヒットできず、CSをQでしか取れません。Qが待ち時間中に前へ出る条件がありません。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "COOLDOWN: 11 / 10 / 9 / 8 / 7",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "quote": "Recast: Anivia shatters the ice, ... stunning them for a duration.",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "quote": "Attack range 125 (Dr. Mundo base stats)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "quote": "gains immunity to the next hostile immobilizing effect to affect him",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "plan/plan.json Anivia.pos",
+    "before": "アニビアから約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。吹雪（R）が出たら中心から400より外に立ちます",
+    "after": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "after_facts": [
+     "Qが待ち時間中（11〜7秒）",
+     "吹雪（R）…中心から400"
+    ],
+    "after_judgement": [
+     "アニビアのQが使える時は約1000離れて立ちます",
+     "氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます",
+     "Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります",
+     "Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります",
+     "吹雪（R）が出たら中心から400より外に立ちます"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Anivia.pos",
+    "before": "アニビアから約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。吹雪（R）が出たら中心から400より外に立ちます",
+    "after": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "after_facts": [
+     "Qが待ち時間中（11〜7秒）",
+     "吹雪（R）…中心から400"
+    ],
+    "after_judgement": [
+     "アニビアのQが使える時は約1000離れて立ちます",
+     "氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます",
+     "Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります",
+     "Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります",
+     "吹雪（R）が出たら中心から400より外に立ちます"
+    ]
+   },
+   {
+    "loc": "plan/spot.json Anivia",
+    "before": "約1000離れて氷塊を見る",
+    "after": "Q有りは約1000（大砲は取る）、Q待ち中は前でCS",
+    "after_facts": [],
+    "after_judgement": [
+     "Q有りは約1000（大砲は取る）、Q待ち中は前でCS"
+    ]
+   }
+  ],
+  "judgement": "元の修正案の「ムンドのパッシブがある時は前に出てAAでラストヒット」は削りました。パッシブが防ぐのはQのスタン（再発動時）だけで、氷塊の通過ダメージ・スロウとE（2倍）は防げないためです（パッシブ時の強気度は既存のplan.pasの「少し強気に」で足ります）。Qがある時もCSに一瞬近づくかどうかは判断です。",
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Anivia.pos",
+    "before": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "after": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "why": "Qが使える間ずっと1000離れるとCSをほとんどAAで取れません（アニビアはQを温存しがちです）。大砲ミニオンは50G以上で、近づくのは一瞬なので、小さな危険で取る価値があります。"
+   },
+   {
+    "loc": "danger/danger.json Anivia.pos",
+    "before": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "after": "アニビアのQが使える時は約1000離れて立ちます。氷塊が届くまで約1.3秒（目安）あり、見てから横に歩けます。Qが使える時でも、大砲ミニオンと、次のAA1回で倒せるミニオンは一瞬近づいてAAで取り、取ったらすぐ約1000の位置へ戻ります。Qが待ち時間中（11〜7秒）は前に出てAA（通常攻撃）でCSを取ります。吹雪（R）が出たら中心から400より外に立ちます",
+    "why": "Qが使える間ずっと1000離れるとCSをほとんどAAで取れません（アニビアはQを温存しがちです）。大砲ミニオンは50G以上で、近づくのは一瞬なので、小さな危険で取る価値があります。"
+   },
+   {
+    "loc": "plan/spot.json Anivia",
+    "before": "Q有りは約1000、Q待ち中は前でCS",
+    "after": "Q有りは約1000（大砲は取る）、Q待ち中は前でCS",
+    "why": "本文の変更に合わせました。"
+   }
+  ],
+  "facts": [
+   {
+    "text": "アニビアのQ（氷塊）の待ち時間は11〜7秒です。",
+    "quote": "COOLDOWN: 11 / 10 / 9 / 8 / 7",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "text": "Qの再発動で氷が砕け、周りの敵にダメージとスタンを与えます。",
+    "quote": "Anivia shatters the ice, dealing magic damage to nearby enemies and stunning them",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "text": "アニビアのE（凍傷）は、氷結状態の相手には2倍のダメージになります。",
+    "quote": "doubled if they were Iced",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "text": "吹雪（R）の半径は、出してからの時間に応じて200〜400に広がります。",
+    "quote": "200 – 400 (based on time active)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "text": "ムンドの通常攻撃の射程は125です。",
+    "quote": "Attack range 125",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ムンドのパッシブは、次に受ける行動妨害（スタンなど）1回だけを無効にします。",
+    "quote": "immunity to the next hostile immobilizing effect",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "アニビアのQ（氷塊）の飛ぶ速さは950です。",
+    "quote": "SPEED: 950",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   },
+   {
+    "text": "氷塊のスタンは再発動で砕けた時だけで、飛んでいる途中に当たった敵はスロウだけ受けます。",
+    "quote": "dealing magic damage to nearby enemies and stunning them",
+    "url": "https://wiki.leagueoflegends.com/en-us/Anivia"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "Qが使える時は約1000離れて立ちます。",
+    "why": "Qはスタン、その後のEは2倍ダメージで、大きな損になるためです。1.3秒は、約1000の距離を速さ950で飛ぶ時間（約1.05秒）に発動の間を足した目安です。"
+   },
+   {
+    "text": "Qが使える時でも、大砲ミニオンと残りHPが少ないミニオンは一瞬近づいてAAで取り、すぐ戻ります。",
+    "why": "ムンドのAA射程は125で、近づかないとAAで取れません。大砲は50G以上あり、近づくのが一瞬なら危険が小さいためです。"
+   },
+   {
+    "text": "Qが待ち時間中（11〜7秒）は前に出てAAでCSを取ります。",
+    "why": "Qの待ち時間中はスタンの手段が無く、近づいても危険が小さいためです。"
+   },
+   {
+    "text": "吹雪（R）が出たら中心から400より外に立ちます。",
+    "why": "吹雪は最大半径400まで広がるためです。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Anivia",
+    "issue": "「約1.3秒」をwiki未確認としていたが、Qの速さ950はwikiにあり根拠を示せる",
+    "fix": "Qの速さ950とスロウ/スタンの区別を fact に追加し、1.3秒の理由（目安）を judgements に明記"
+   }
+  ]
+ },
+ {
+  "champ": "Quinn",
+  "jp": "クイン",
+  "problem": "クインは射程525でミニオンの後ろから撃つため、ミニオン付近はほぼ常に525以内です。「525の外でCSを取る」は近接のムンドには不可能です。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "Attack range 525",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "quote": "mark enemies hit with Harrier for 4 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "quote": "STATIC COOLDOWN: 7 – 2.56 (based on critical strike chance)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "plan/plan.json Quinn.back[0]",
+    "before": "鷹の印が付いた→一歩下がり、525の外でCSを取ります",
+    "after": "鷹の印が付いた→印は数秒（スキルで付いた印は4秒）で消えるので、その間だけ一歩下がります。印が消えたら（または印付きの攻撃を受けたら）ミニオンの後ろに戻ってCSを取ります。大砲ミニオンなど落としたくないCSは印があっても取ります",
+    "after_facts": [
+     "印は数秒（スキルで付いた印は4秒）で消える",
+     "印付きの攻撃を受けたら（印が消える）"
+    ],
+    "after_judgement": [
+     "その間だけ一歩下がります",
+     "ミニオンの後ろに戻ってCSを取ります",
+     "大砲ミニオンなど落としたくないCSは印があっても取ります"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Quinn.sk[1].hit",
+    "before": "追加ダメージを受けても追いかけず、射程の外へ下がってCSに戻ります",
+    "after": "追加ダメージを受けたら印は消えます。追いかけず、すぐミニオンの後ろでCSに戻ります",
+    "after_facts": [
+     "追加ダメージを受けたら印は消えます"
+    ],
+    "after_judgement": [
+     "追いかけず、すぐミニオンの後ろでCSに戻ります"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Quinn.sk[1].then",
+    "before": "射程の外でCSを取り、Qが当たる時だけミニオンの後ろから投げます",
+    "after": "印が消えたらミニオンの後ろでCSを取り、Qが当たる時だけミニオンの後ろから投げます",
+    "after_facts": [
+     "印が消えたら"
+    ],
+    "after_judgement": [
+     "ミニオンの後ろでCSを取り、Qが当たる時だけミニオンの後ろから投げます"
+    ]
+   },
+   {
+    "loc": "plays.json quinn.plays[1]",
+    "before": "[\"鷹の印が付いた\", \"一歩下がって追加ダメージを避ける\", \"no\"]",
+    "after": "[\"鷹の印が付いた\", \"印が消えるまで（約4秒）だけ一歩下がり、消えたらCSに戻る\", \"no\"]",
+    "after_facts": [
+     "印が消える"
+    ],
+    "after_judgement": [
+     "約4秒だけ一歩下がり、消えたらCSに戻る（約4秒はスキルの印の4秒を目安にした値）"
+    ]
+   }
+  ],
+  "judgement": "元の修正案の「印付きの攻撃を1回受けるのは許容し、HPが半分を切った時だけ下がる」は判断で、印は4秒で消える（wiki確認）ため一時的に下がる方が損が少ないと考え、こちらに置き換えました。「大砲ミニオンなどは印があっても取る」も判断です。danger.sk[1].then は finding の列挙外ですが「射程の外でCSを取り」が同じ誤りのため追加しました。同じ趣旨の cs/cs_all.json Quinn.cs[1]「鷹の印が付いたらCSを我慢して離れる」は一時的な我慢と読めるため未変更です。",
+  "facts": [
+   {
+    "text": "クインの通常攻撃の射程は525です。",
+    "quote": "Attack range 525",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "text": "クインのスキルが当たって付いた鷹の印は4秒続きます（パッシブで付く印は「数秒」とだけ書かれています）。",
+    "quote": "mark enemies hit with Harrier for 4 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "text": "印が付いた相手への次の通常攻撃で印が消え、追加ダメージが入ります。",
+    "quote": "next basic attack against a Harrier target consumes the mark",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "text": "鷹の印（パッシブ）の待ち時間は7〜2.56秒です。",
+    "quote": "7 – 2.56 (based on critical strike chance)",
+    "url": "https://wiki.leagueoflegends.com/en-us/Quinn"
+   },
+   {
+    "text": "ムンドの通常攻撃の射程は125です。",
+    "quote": "Attack range 125",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "印が付いたら、消えるまでの数秒（約4秒が目安）だけ一歩下がります。",
+    "why": "印は4秒で消えるので、一時的に下がれば追加ダメージを避けつつCSの損も少なくて済むためです。"
+   },
+   {
+    "text": "印が消えたら、または印付きの攻撃を受けたら、すぐミニオンの後ろに戻ってCSを取ります。",
+    "why": "印は攻撃を受けた時点で消費され、ミニオン付近はほぼ常にクインの射程525以内なので、離れ続けるとCSを失うだけだからです。"
+   },
+   {
+    "text": "大砲ミニオンなど落としたくないCSは、印があっても取ります。",
+    "why": "印の追加ダメージは1回分で、大砲（50G以上）の価値の方が大きいと考えるためです。"
+   },
+   {
+    "text": "Qはミニオンの後ろから、当たる時だけ投げます。",
+    "why": "ミニオンを盾にしながら削れるためです。"
+   }
+  ],
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Quinn.back[0]",
+    "before": "鷹の印が付いた→一歩下がり、525の外でCSを取ります",
+    "after": "鷹の印が付いた→印は数秒（スキルで付いた印は4秒）で消えるので、その間だけ一歩下がります。印が消えたら（または印付きの攻撃を受けたら）ミニオンの後ろに戻ってCSを取ります。大砲ミニオンなど落としたくないCSは印があっても取ります",
+    "why": "wikiで4秒と書かれているのはスキルで付いた印だけで、パッシブで付く印は「数秒」としか書かれていないためです。"
+   },
+   {
+    "loc": "plays.json quinn.plays[1]",
+    "before": "[\"鷹の印が付いた\", \"一歩下がって追加ダメージを避ける\", \"no\"]",
+    "after": "[\"鷹の印が付いた\", \"印が消えるまで（約4秒）だけ一歩下がり、消えたらCSに戻る\", \"no\"]",
+    "why": "wikiで4秒と書かれているのはスキルで付いた印だけで、パッシブで付く印は「数秒」としか書かれていないためです。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Quinn",
+    "issue": "「印は4秒で消える」をすべての印の仕様としていたが、wikiの4秒はスキルで付いた印のみ（パッシブの印は\"for a few seconds\"）",
+    "fix": "facts を限定し、本文を「数秒（スキルで付いた印は4秒）」、plays を「約4秒」（目安）に修正"
+   }
+  ]
+ },
+ {
+  "champ": "Yorick",
+  "jp": "ヨリック",
+  "problem": "常に700〜1050に立つと、ムンドはAAでCSを取れずCS・経験値で負けます。700の距離が必要なのはE（霧）が使える時だけです。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "Mourning Mist: target range 700, cooldown 12/11/10/9/8",
+    "url": "https://wiki.leagueoflegends.com/en-us/Yorick"
+   },
+   {
+    "quote": "Dark Procession: target range 600, cooldown 20/18/16/14/12",
+    "url": "https://wiki.leagueoflegends.com/en-us/Yorick"
+   },
+   {
+    "quote": "Infected Bonesaw centered range 1050",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "plan/plan.json Yorick.pos",
+    "before": "ヨリックから700（Eの射程。ムンドのQ射程の約3分の2）より遠く、ムンドのQ（1050）が届く700〜1050の間に立ちます",
+    "after": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）は前に出てAA（通常攻撃）でCSを取ります。グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります",
+    "after_facts": [
+     "霧（E、射程700）",
+     "ムンドのQ（1050）",
+     "（霧の）待ち時間12〜8秒"
+    ],
+    "after_judgement": [
+     "霧が使える時は700より遠く、ムンドのQが届く位置に立ちます",
+     "霧を使った後は前に出てAA（通常攻撃）でCSを取ります",
+     "グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります",
+     "霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Yorick.pos",
+    "before": "ヨリックから700（Eの射程。ムンドのQ射程の約3分の2）より遠く、ムンドのQ（1050）が届く700〜1050の間に立ちます",
+    "after": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）は前に出てAA（通常攻撃）でCSを取ります。グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります",
+    "after_facts": [
+     "霧（E、射程700）",
+     "ムンドのQ（1050）",
+     "（霧の）待ち時間12〜8秒"
+    ],
+    "after_judgement": [
+     "霧が使える時は700より遠く、ムンドのQが届く位置に立ちます",
+     "霧を使った後は前に出てAA（通常攻撃）でCSを取ります",
+     "グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります",
+     "霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります"
+    ]
+   },
+   {
+    "loc": "plan/spot.json Yorick",
+    "before": "700〜1050の間（Qだけ届く）",
+    "after": "霧（E）がある時は700の外（大砲は取る）",
+    "after_facts": [
+     "霧（E）…700"
+    ],
+    "after_judgement": [
+     "ある時は700の外（大砲は取る）"
+    ]
+   }
+  ],
+  "judgement": "v3で「霧を使った後で、かつグールもいない時」の条件はCSが取れなくなるため緩め、霧の後は前でCS、グールがいる時は遠い側をAA・残りはQ、大砲は霧があっても取る形にしました（いずれも判断）。Eの射程・CD、ムンドQ射程はwiki確認済みです（ムンドQの端の射程は990）。",
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Yorick.pos",
+    "before": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）でグールもいない時は、前に出てAA（通常攻撃）でCSを取ります",
+    "after": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）は前に出てAA（通常攻撃）でCSを取ります。グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります",
+    "why": "「霧を使った後で、かつグールもいない時」だけ前に出る条件は、グールがよく出ているため滅多に満たされず、CSをほとんどAAで取れなくなるので緩めました。"
+   },
+   {
+    "loc": "danger/danger.json Yorick.pos",
+    "before": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）でグールもいない時は、前に出てAA（通常攻撃）でCSを取ります",
+    "after": "霧（E、射程700）が使える時は700より遠く、ムンドのQ（1050）が届く位置に立ちます。霧を使った後（待ち時間12〜8秒）は前に出てAA（通常攻撃）でCSを取ります。グールがいる時は、ヨリックとグールから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。霧が使える時でも、大砲ミニオンは一瞬近づいてAAで取り、すぐ700の外へ戻ります",
+    "why": "「霧を使った後で、かつグールもいない時」だけ前に出る条件は、グールがよく出ているため滅多に満たされず、CSをほとんどAAで取れなくなるので緩めました。"
+   },
+   {
+    "loc": "plan/spot.json Yorick",
+    "before": "霧（E）がある時だけ700の外",
+    "after": "霧（E）がある時は700の外（大砲は取る）",
+    "why": "本文の変更（大砲は取る）に合わせました。"
+   }
+  ],
+  "facts": [
+   {
+    "text": "ヨリックの霧（E）の射程は700、待ち時間は12〜8秒です。",
+    "quote": "TARGET RANGE: 700; COOLDOWN: 12 / 11 / 10 / 9 / 8",
+    "url": "https://wiki.leagueoflegends.com/en-us/Yorick"
+   },
+   {
+    "text": "ヨリックのW（囲い）の射程は600、待ち時間は20〜12秒です。",
+    "quote": "TARGET RANGE: 600; COOLDOWN: 20 / 18 / 16 / 14 / 12",
+    "url": "https://wiki.leagueoflegends.com/en-us/Yorick"
+   },
+   {
+    "text": "ムンドのQ（骨ノコ投げ）の射程は1050です。",
+    "quote": "Centered range: 1050",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ムンドの通常攻撃の射程は125です。",
+    "quote": "Attack range 125",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "霧が使える時は700より遠く、Qが届く位置に立ちます。",
+    "why": "霧の射程は700で、ムンドのQは1050まで届くため、その間なら当てられずに削れるからです。"
+   },
+   {
+    "text": "霧を使った後（12〜8秒）は前に出てAAでCSを取ります。",
+    "why": "霧の待ち時間中は、ヨリックが寄せる手段が減るためです。"
+   },
+   {
+    "text": "グールがいる時は、ヨリックとグールから遠い側のミニオンを取り、残りはQで取ります。",
+    "why": "グールに囲まれる位置を避けつつ、CSを捨てずに済むためです。"
+   },
+   {
+    "text": "霧が使える時でも、大砲ミニオンは一瞬近づいて取ります。",
+    "why": "大砲は50G以上あり、近づくのが一瞬なら危険が小さいためです。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Yorick",
+    "issue": "judgement欄が「霧を使った後で、かつグールもいない時に直した」のままで、v3で緩めた本文と矛盾",
+    "fix": "judgement欄を現行の本文に合わせて書き換え"
+   }
+  ]
+ },
+ {
+  "champ": "Vayne",
+  "jp": "ヴェイン",
+  "problem": "スタン中はWを含むスキルを使えないため、「壁スタン中にWで受ける」は実行できません。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "knocks them back 475 units, though not through terrain",
+    "url": "https://wiki.leagueoflegends.com/en-us/Vayne"
+   },
+   {
+    "quote": "become stunned for 1.5 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Vayne"
+   },
+   {
+    "quote": "Stun: summary table marks abilities as disabled",
+    "url": "https://wiki.leagueoflegends.com/en-us/Stun"
+   },
+   {
+    "quote": "reduced to 25% after the first 0.75 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "danger/danger.json Vayne.sk[0].hit",
+    "before": "パッシブがあればスタンを1回防げます。無い時は1.5秒ほどスタンするのでWで受けます",
+    "after": "パッシブがあれば押し出し（行動妨害）を1回防ぐので、壁スタンも起きません。Eのダメージは受けます。無い時は1.5秒スタンし、その間はWも押せません。解けたらすぐWを押して続きの攻撃を受けます",
+    "after_facts": [
+     "パッシブがあれば押し出し（行動妨害）を1回防ぐ",
+     "無い時は1.5秒スタンし、その間はWも押せません"
+    ],
+    "after_judgement": [
+     "壁スタンも起きません（押し出しを防げば壁に当たらないという読み取り）",
+     "Eのダメージは受けます（パッシブはダメージを防がないため）",
+     "解けたらすぐWを押して続きの攻撃を受けます"
+    ]
+   }
+  ],
+  "judgement": "元の修正案の「射程550に入る前にWを押しておく」は削除しました。Wで多く溜められるのは押してから0.75秒だけ（以降25%）なので、先押しはほとんど効果がありません。「壁から475以上離れて立つ」は同じ欄の how と plan.pos に既にあるため、hit には入れていません。スタン明けにWを押すのは判断です。Stunページは文章ではなく表で能力使用不可と示しています。",
+  "facts": [
+   {
+    "text": "ヴェインのE（コンデム）は相手を475ノックバックし、壁に当たるとスタンさせます。",
+    "quote": "knocks them back 475 units, though not through terrain",
+    "url": "https://wiki.leagueoflegends.com/en-us/Vayne"
+   },
+   {
+    "text": "壁に当たった時のスタンは1.5秒です。",
+    "quote": "stunned for 1.5 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Vayne"
+   },
+   {
+    "text": "スタン中はスキルを使えません。",
+    "quote": "Summary table: Stun — Abilities: Disabled",
+    "url": "https://wiki.leagueoflegends.com/en-us/Stun"
+   },
+   {
+    "text": "ムンドのパッシブは、次に受ける行動妨害（押し出しやスタンなど）1回だけを無効にします。",
+    "quote": "immunity to the next hostile immobilizing effect",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ムンドのWが受けたダメージを溜められる割合は、押してから最初の0.75秒を過ぎると25%に下がります。",
+    "quote": "reduced to 25% after the first 0.75 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "スタンが解けたらすぐWを押して、続きの攻撃を受けます。",
+    "why": "Wで多く溜められるのは押してから0.75秒だけなので、スタン明けに来るヴェインの続きの攻撃に合わせて押すのが一番効くためです。"
+   }
+  ],
+  "changes_v3": [
+   {
+    "loc": "danger/danger.json Vayne.sk[0].hit",
+    "before": "パッシブがあればスタンを1回防げます。無い時は1.5秒ほどスタンするのでWで受けます",
+    "after": "パッシブがあれば押し出し（行動妨害）を1回防ぐので、壁スタンも起きません。Eのダメージは受けます。無い時は1.5秒スタンし、その間はWも押せません。解けたらすぐWを押して続きの攻撃を受けます",
+    "why": "パッシブが先に防ぐのは押し出し（ノックバック）で、ダメージは防げないことを明記しました（ユーザーのルール：パッシブが防ぐもの・防げないものを分ける）。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Vayne",
+    "issue": "「パッシブがあればスタンを1回防げます」は、実際には先に来る押し出しを防ぐ点と、Eのダメージは受ける点が抜けていた",
+    "fix": "「押し出しを1回防ぐので壁スタンも起きない。Eのダメージは受ける」に修正"
+   }
+  ]
+ },
+ {
+  "champ": "Zed",
+  "jp": "ゼド",
+  "problem": "ムンドのWが80〜95%を溜められるのは押してから0.75秒だけです。刻印が付いて2秒で押すと2.75秒で切れ、3秒の爆発は25%しか溜まりません。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "renders the target Marked for Death for 3 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Zed"
+   },
+   {
+    "quote": "detonating at the end of the duration to deal physical damage",
+    "url": "https://wiki.leagueoflegends.com/en-us/Zed"
+   },
+   {
+    "quote": "reduced to 25% after the first 0.75 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "danger/danger.json Zed.sk[0].how",
+    "before": "対象指定で避けられません。刻印は3秒後に爆発するので、付いてから2秒ほど数えてWを押します",
+    "after": "対象指定で避けられません。刻印は3秒後に爆発します。Wで多く溜められるのは押してから0.75秒だけなので、付いてから2.5秒前後（爆発の直前）にWを押します",
+    "after_facts": [
+     "対象指定で避けられません",
+     "刻印は3秒後に爆発します",
+     "Wで多く溜められるのは押してから0.75秒だけ"
+    ],
+    "after_judgement": [
+     "付いてから2.5秒前後（爆発の直前）にWを押します"
+    ]
+   },
+   {
+    "loc": "plan/plan.json Zed.later",
+    "before": "Lv6以降は刻印が付いたら2秒ほど数えてWを押し、受けた後は長く殴り返します",
+    "after": "Lv6以降は刻印が付いたら2.5秒前後（爆発の直前）にWを押します。受けた後に長く殴り返すのは、ゼドのQ（手裏剣）とE（回転斬り）が使用済みの時だけにし、残っている時はWの回復だけ受けて下がります",
+    "after_facts": [],
+    "after_judgement": [
+     "Lv6以降は刻印が付いたら2.5秒前後（爆発の直前）にWを押します",
+     "受けた後に長く殴り返すのは、ゼドのQ（手裏剣）とE（回転斬り）が使用済みの時だけにし、残っている時はWの回復だけ受けて下がります"
+    ]
+   }
+  ],
+  "judgement": "finding が挙げた data2.json Zed.skills.R.c は既に「刻印の爆発の直前にWを押す」「最初の0.75秒は80〜95%、その後は25%」と正しいため変更不要（誤指摘部分）。2.5秒は爆発（3秒）を0.75秒の窓に収める目安で、反応の遅れを考えた数値は判断です。",
+  "facts": [
+   {
+    "text": "ゼドのR（刻印）は3秒続きます。",
+    "quote": "renders the target Marked for Death for 3 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Zed"
+   },
+   {
+    "text": "刻印は効果時間の終わりに爆発してダメージを与えます。",
+    "quote": "detonating at the end of the duration",
+    "url": "https://wiki.leagueoflegends.com/en-us/Zed"
+   },
+   {
+    "text": "ムンドのWは押してから最初の0.75秒だけ80〜95%を溜め、その後は25%に下がります。",
+    "quote": "80% – 95% ... reduced to 25% after the first 0.75 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ゼドのRは対象を指定して使うスキルです。",
+    "quote": "Targeting input: Unit • Auto",
+    "url": "https://wiki.leagueoflegends.com/en-us/Zed"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "刻印が付いてから2.5秒前後（爆発の直前）にWを押します。",
+    "why": "爆発は3秒後で、Wが多く溜まるのは押してから0.75秒だけなので、3秒の爆発をその窓に入れるため。反応の遅れを考えて少し早めの2.5秒にしています。"
+   },
+   {
+    "text": "刻印を受けた後に長く殴り返すのは、ゼドのQとEが使用済みの時だけにします。",
+    "why": "Wは受けたダメージを溜めて回復するだけで、その後のゼドのQ・Eのダメージは減らさないため、追撃の手段が残っていない時に限ります。"
+   }
+  ],
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Zed.later",
+    "before": "Lv6以降は刻印が付いたら2秒ほど数えてWを押し、受けた後は長く殴り返します",
+    "after": "Lv6以降は刻印が付いたら2.5秒前後（爆発の直前）にWを押します。受けた後に長く殴り返すのは、ゼドのQ（手裏剣）とE（回転斬り）が使用済みの時だけにし、残っている時はWの回復だけ受けて下がります",
+    "why": "「Wで受けた後は長く殴り返す」はWだけを理由に殴り合う形でした。Wは刻印の爆発を回復に変えるだけで、ゼドの残りのQ・Eのダメージは減らさないため、Q・Eが使用済みであることを条件にしました。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Zed",
+    "issue": "plan Zed.later の「受けた後は長く殴り返します」がWだけを理由に殴り合う形（ユーザーのルール違反）",
+    "fix": "「ゼドのQとEが使用済みの時だけ長く殴り返し、残っていればWの回復だけ受けて下がる」に書き換え、changes_v3 と judgements を更新。after_facts の「対象指定」を裏付ける fact を追加"
+   }
+  ]
+ },
+ {
+  "champ": "Sett",
+  "jp": "セト",
+  "problem": "W直後でもセトにはQ（加速＋強化2発）とE（引き寄せ・挟むとスタン）が残っている場合があり、パッシブが無い時にEが残っていると、AA→E→AAで殴りに行くと負けるトレードになり得ます。",
+  "verdict": "一部修正",
+  "evidence": [
+   {
+    "quote": "Haymaker COOLDOWN: 18 / 16.5 / 15 / 13.5 / 12",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "quote": "If Facebreaker affects at least one enemy on each side, all enemies are also briefly stunned.",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "quote": "Sett converts his current Grit into a shield",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "quote": "Knuckle Down COOLDOWN: 9 / 8 / 7 / 6 / 5",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "data2.json Sett.go",
+    "before": "Wを使った直後（闘魂が空の状態）です。上級者の実戦では序盤最強格の一体のため、1回目の帰還で詰め替えポーションを購入します。",
+    "after": "Wを使った直後（闘魂が空の状態。次のWまで18〜12秒）です。殴りに行くのはEが使用済みの時、またはEが残っていてもパッシブがありQ（強化2発）が使用済みの時だけで、それ以外はQだけ当てます。上級者の実戦では序盤最強格の一体のため、1回目の帰還で詰め替えポーションを購入します。",
+    "after_facts": [
+     "闘魂が空の状態",
+     "次のWまで18〜12秒"
+    ],
+    "after_judgement": [
+     "殴りに行くのはEが使用済みの時、またはEが残っていてもパッシブがありQ（強化2発）が使用済みの時だけで、それ以外はQだけ当てます",
+     "1回目の帰還で詰め替えポーションを購入します（上級者の実戦動画の研究による）"
+    ]
+   },
+   {
+    "loc": "data2.json Sett.pun[0].do",
+    "before": "AA→E→AAで殴ります",
+    "after": "Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴ります。それ以外はQだけ当てます",
+    "after_facts": [],
+    "after_judgement": [
+     "Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴ります",
+     "それ以外はQだけ当てます"
+    ]
+   },
+   {
+    "loc": "plays.json sett.plays[0]",
+    "before": "[\"Wを使った直後（闘魂が空）\", \"AA→E、Qを当てる\", \"go\"]",
+    "after": "[\"Wを使った直後（闘魂が空）\", \"E使用済み、またはパッシブ有りでセトのQも使用済みならAA→E、それ以外はQだけ\", \"go\"]",
+    "after_facts": [],
+    "after_judgement": [
+     "E使用済み、またはパッシブ有りでセトのQも使用済みならAA→E、それ以外はQだけ"
+    ]
+   },
+   {
+    "loc": "plan/plan.json Sett.go[0]",
+    "before": "Wを撃った直後（闘魂が空）→AA→E→AAで殴って下がります",
+    "after": "Wを撃った直後（闘魂が空）→Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴って下がります。それ以外はQだけ当てます",
+    "after_facts": [
+     "Wを撃った直後（闘魂が空）"
+    ],
+    "after_judgement": [
+     "Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴って下がります",
+     "それ以外はQだけ当てます"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Sett.sk[0].hit",
+    "before": "W直後は闘魂が空です。AA→E→AAで殴り返して下がります。次は闘魂満タン時に正面に立ちません",
+    "after": "W直後は闘魂が空です。Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴り返して下がります。次は闘魂満タン時に正面に立ちません",
+    "after_facts": [
+     "W直後は闘魂が空です"
+    ],
+    "after_judgement": [
+     "Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴り返して下がります",
+     "次は闘魂満タン時に正面に立ちません"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Sett.sk[0].then",
+    "before": "W直後は闘魂が空です。AA→E→AAで殴って下がります",
+    "after": "W直後は闘魂が空です。Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴って下がり、それ以外はQだけ当てます",
+    "after_facts": [
+     "W直後は闘魂が空です"
+    ],
+    "after_judgement": [
+     "Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴って下がり、それ以外はQだけ当てます"
+    ]
+   },
+   {
+    "loc": "trade/trade.json Sett[0].why",
+    "before": "受けたダメージで闘魂が溜まり、長引くほどWの確定ダメージが増えてセトが得をします。W直後にAA→E→AAで殴ります。",
+    "after": "受けたダメージで闘魂が溜まり、長引くほどWの確定ダメージが増えてセトが得をします。W直後、Eが使用済みの時（またはパッシブがありセトのQも使用済みの時）にAA→E→AAで殴ります。",
+    "after_facts": [
+     "受けたダメージで闘魂が溜まり",
+     "長引くほどWの（確定）ダメージが増えて（Wのダメージは使った闘魂の量で増え、中心は確定ダメージ）"
+    ],
+    "after_judgement": [
+     "W直後、Eが使用済みの時（またはパッシブがありセトのQも使用済みの時）にAA→E→AAで殴ります"
+    ]
+   },
+   {
+    "loc": "trade/trade.json Sett[1].why",
+    "before": "五分になっても、長く殴り合うほど闘魂が溜まる仕組みは同じです。闘魂が空のW直後を狙い、短く殴って下がります。",
+    "after": "五分になっても、長く殴り合うほど闘魂が溜まる仕組みは同じです。闘魂が空のW直後（Eが使用済み、またはパッシブがありセトのQも使用済みの時）を狙い、短く殴って下がります。",
+    "after_facts": [
+     "闘魂が空のW直後"
+    ],
+    "after_judgement": [
+     "長く殴り合うほど闘魂が溜まる仕組みは同じです（前段の事実の言い換え）",
+     "（Eが使用済み、またはパッシブがありセトのQも使用済みの時）を狙い、短く殴って下がります"
+    ]
+   }
+  ],
+  "judgement": "元の修正案の「敵ミニオンが3体以上いる時はQだけ」は判断のため削除しました。finding の「闘魂が空は本当の窓ではない」は言い過ぎで、Wは闘魂を消費するので直後は実際に空です（殴られると再び溜まる）。そのため「闘魂が空」の表記は残しています。なお W は闘魂をシールドに変えるため、W直後のAAはまずシールドを削る点も補足できます（未反映）。",
+  "changes_v3": [
+   {
+    "loc": "data2.json Sett.go",
+    "before": "Wを使った直後（闘魂が空の状態。次のWまで18〜12秒）です。ただしE（引き寄せ）が残っていてムンドのパッシブが無い時は、殴りに行かずQだけ当てます。上級者の実戦では序盤最強格の一体のため、1回目の帰還で詰め替えポーションを購入します。",
+    "after": "Wを使った直後（闘魂が空の状態。次のWまで18〜12秒）です。殴りに行くのはEが使用済みの時、またはEが残っていてもパッシブがありQ（強化2発）が使用済みの時だけで、それ以外はQだけ当てます。上級者の実戦では序盤最強格の一体のため、1回目の帰還で詰め替えポーションを購入します。",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "data2.json Sett.pun[0].do",
+    "before": "Eが使用済みかパッシブがある時はAA→E→AAで殴ります。Eが残っていてパッシブが無い時はQだけ当てます",
+    "after": "Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴ります。それ以外はQだけ当てます",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "plays.json sett.plays[0]",
+    "before": "[\"Wを使った直後（闘魂が空）\", \"E使用済みかパッシブ有りならAA→E、無ければQだけ\", \"go\"]",
+    "after": "[\"Wを使った直後（闘魂が空）\", \"E使用済み、またはパッシブ有りでセトのQも使用済みならAA→E、それ以外はQだけ\", \"go\"]",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "plan/plan.json Sett.go[0]",
+    "before": "Wを撃った直後（闘魂が空）→Eが使用済みかパッシブがある時はAA→E→AAで殴って下がります。Eが残っていてパッシブが無い時はQだけ当てます",
+    "after": "Wを撃った直後（闘魂が空）→Eが使用済みの時、またはEが残っていてもパッシブがありセトのQが使用済みの時はAA→E→AAで殴って下がります。それ以外はQだけ当てます",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "danger/danger.json Sett.sk[0].hit",
+    "before": "W直後は闘魂が空です。Eが使用済みかパッシブがある時はAA→E→AAで殴り返して下がります。次は闘魂満タン時に正面に立ちません",
+    "after": "W直後は闘魂が空です。Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴り返して下がります。次は闘魂満タン時に正面に立ちません",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "danger/danger.json Sett.sk[0].then",
+    "before": "W直後は闘魂が空です。Eが使用済みかパッシブがある時はAA→E→AAで殴って下がり、Eが残っていてパッシブが無い時はQだけ当てます",
+    "after": "W直後は闘魂が空です。Eが使用済みの時、またはパッシブがありセトのQも使用済みの時はAA→E→AAで殴って下がり、それ以外はQだけ当てます",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "trade/trade.json Sett[0].why",
+    "before": "受けたダメージで闘魂が溜まり、長引くほどWの確定ダメージが増えてセトが得をします。W直後、Eが使用済みかパッシブがある時にAA→E→AAで殴ります。",
+    "after": "受けたダメージで闘魂が溜まり、長引くほどWの確定ダメージが増えてセトが得をします。W直後、Eが使用済みの時（またはパッシブがありセトのQも使用済みの時）にAA→E→AAで殴ります。",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   },
+   {
+    "loc": "trade/trade.json Sett[1].why",
+    "before": "五分になっても、長く殴り合うほど闘魂が溜まる仕組みは同じです。闘魂が空のW直後（Eが使用済みかパッシブがある時）を狙い、短く殴って下がります。",
+    "after": "五分になっても、長く殴り合うほど闘魂が溜まる仕組みは同じです。闘魂が空のW直後（Eが使用済み、またはパッシブがありセトのQも使用済みの時）を狙い、短く殴って下がります。",
+    "why": "「パッシブがある時は殴る」はパッシブ単独の理由になっていました。パッシブが防ぐのはE（引き寄せ・スタン）の行動妨害1回だけで、Eのダメージと Q（強化2発）は受けるため、Qも使用済みであることを条件に加えました。"
+   }
+  ],
+  "facts": [
+   {
+    "text": "セトのW（ヘイメーカー）は溜めた闘魂をすべて使ってシールドにします。",
+    "quote": "consumes all of his stored Grit to grant himself a shield",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "text": "セトのWの待ち時間は18〜12秒です。",
+    "quote": "COOLDOWN: 18 / 16.5 / 15 / 13.5 / 12",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "text": "セトのQは次の通常攻撃2回を強化し、短い間移動速度も上がります。待ち時間は9〜5秒です。",
+    "quote": "empowers his next two basic attacks",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "text": "セトのEは両側に敵を挟むとスタンさせ、待ち時間は16〜10秒です。",
+    "quote": "If Facebreaker affects at least one enemy on each side ... stunned",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "text": "ムンドのパッシブは、次に受ける行動妨害（スタンなど）1回だけを無効にします。",
+    "quote": "immunity to the next hostile immobilizing effect",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "セトは受けたダメージを闘魂として溜め、Wのダメージは使った闘魂の量で増えます。",
+    "quote": "stores 100% of post-mitigation damage taken as Grit",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   },
+   {
+    "text": "セトのEは両側の敵を引き寄せ、70%のスロウを与えます。",
+    "quote": "slows them by 70% for 0.5 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Sett"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "W直後に殴りに行くのは、Eが使用済みの時だけにします。",
+    "why": "Wは闘魂をすべて使うので直後は空ですが、Eが残っていると引き寄せ・スタンからQの強化2発まで受けるためです。"
+   },
+   {
+    "text": "Eが残っていても、パッシブがありセトのQも使用済みなら殴りに行きます。",
+    "why": "パッシブで防げるのはEの引き寄せ・スタンの1回だけで、Eのダメージと70%スロウは受けます。それでもQの強化2発（待ち時間9〜5秒）とW（18〜12秒）が使用済みなら、残るダメージはEの分だけで小さいためです。"
+   },
+   {
+    "text": "それ以外はQ（骨ノコ）だけ当てます。",
+    "why": "Eのスタンや Q の強化2発を受ける危険を取らずに削れるためです。"
+   },
+   {
+    "text": "1回目の帰還で詰め替えポーションを買います。",
+    "why": "本人による上級者の実戦動画研究（パッチ26.18）に基づく判断で、仕様ではありません。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Sett",
+    "issue": "Qの fact の quote『within 5 seconds』は wiki 本文と一致しない（本文は a few seconds、注記で5秒）。trade の「Wの確定ダメージが増える」を未確認の判断扱いにしていたが wiki で確認できる。パッシブ判断の理由がEのダメージ・スロウを明記していない",
+    "fix": "quote を修正、闘魂・Eスロウの fact を追加して trade の文を facts へ移し、パッシブ判断の why に防げないEダメージ・70%スロウを明記"
+   }
+  ]
+ },
+ {
+  "champ": "Jax",
+  "jp": "ジャックス",
+  "problem": "Eを見るまで700より遠くに立つと、射程125のムンドは近接ミニオンをほぼAAで取れません。危険なのはQ単体ではなく、Qの後のEスタンです。",
+  "verdict": "確定",
+  "evidence": [
+   {
+    "quote": "Leap Strike TARGET RANGE: 700",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   },
+   {
+    "quote": "Counter Strike EFFECT RADIUS: 375; stuns them for 1 second",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   },
+   {
+    "quote": "Counter Strike COOLDOWN: 17 / 15 / 13 / 11 / 9",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   }
+  ],
+  "edits": [
+   {
+    "loc": "plan/plan.json Jax.pos",
+    "before": "Eを見るまではQの跳びかかり（射程700）より遠く、ミニオンの後ろからQで削ります",
+    "after": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。大砲ミニオンはEが使える時でも取りに行きます。跳ばれたら武器の回転を見てすぐ半径375の外へ離れます。パッシブがあればEのスタンを1回防げますが、Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません",
+    "after_facts": [
+     "Eが待ち時間中（17〜9秒）",
+     "半径375",
+     "パッシブがあればEのスタンを1回防げます"
+    ],
+    "after_judgement": [
+     "前に出てAA（通常攻撃）でCSを取ります",
+     "Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります",
+     "大砲ミニオンはEが使える時でも取りに行きます",
+     "跳ばれたら武器の回転を見てすぐ半径375の外へ離れます",
+     "Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Jax.pos",
+    "before": "Eを見るまではQの跳びかかり（射程700）より遠く、ミニオンの後ろからQで削ります",
+    "after": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。大砲ミニオンはEが使える時でも取りに行きます。跳ばれたら武器の回転を見てすぐ半径375の外へ離れます。パッシブがあればEのスタンを1回防げますが、Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません",
+    "after_facts": [
+     "Eが待ち時間中（17〜9秒）",
+     "半径375",
+     "パッシブがあればEのスタンを1回防げます"
+    ],
+    "after_judgement": [
+     "前に出てAA（通常攻撃）でCSを取ります",
+     "Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります",
+     "大砲ミニオンはEが使える時でも取りに行きます",
+     "跳ばれたら武器の回転を見てすぐ半径375の外へ離れます",
+     "Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません"
+    ]
+   },
+   {
+    "loc": "plan/spot.json Jax",
+    "before": "Q跳びかかり（700）の外",
+    "after": "E待ち中は前でCS、E有りは遠い側だけ取り375の外へ",
+    "after_facts": [
+     "375"
+    ],
+    "after_judgement": [
+     "E待ち中は前でCS、E有りは遠い側だけ取り375の外へ"
+    ]
+   },
+   {
+    "loc": "danger/danger.json Jax.sk[1].how",
+    "before": "対象指定の跳びかかり（射程700）で、ワードやミニオンにも跳べます。700より遠くに立つのが対策です",
+    "after": "対象指定の跳びかかり（射程700）です（ミニオンへ跳べるかはWikiに記載がなく未確認）。跳ばれた後のEのスタンが本当の危険なので、Eが使える時は跳ばれたらすぐ半径375の外へ離れます",
+    "after_facts": [
+     "対象指定の跳びかかり（射程700）",
+     "（対象は）ユニット（敵以外も可）"
+    ],
+    "after_judgement": [
+     "跳ばれた後のEのスタンが本当の危険なので、Eが使える時は跳ばれたらすぐ半径375の外へ離れます"
+    ],
+    "note_v3": "v4: 「ワードにも跳べます」はwikiに記載が無いため削りました。wikiは『Jax dashes to the target unit. If they are an enemy, ...』と書き、敵以外のユニットにも跳べることだけ読み取れます。"
+   }
+  ],
+  "judgement": "E待ち中は前でCS、E有りは遠い側だけAAで取り残りはQ、大砲は取る、という取り方は判断です（v3でHP半分の条件は削除済み）。finding の根拠にある「EのCDは効果終了後に始まる」はwikiで確認できなかったため使っていません。spot と danger.sk[1].how は finding の列挙外ですが「700より遠くに立つ」が同じ問題のため追加しました。Eの回避（Evasion）は2秒続きます（wiki）。",
+  "changes_v3": [
+   {
+    "loc": "plan/plan.json Jax.pos",
+    "before": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時も、パッシブがありHPが半分以上なら近接ミニオンは取りに行き、跳ばれたら武器の回転を見て半径375の外へ離れます",
+    "after": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。大砲ミニオンはEが使える時でも取りに行きます。跳ばれたら武器の回転を見てすぐ半径375の外へ離れます。パッシブがあればEのスタンを1回防げますが、Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません",
+    "why": "「パッシブがありHPが半分以上なら取りに行く」はパッシブ単独に近い理由で、パッシブが無い時はEがある間CSをAAで取れない厳しい条件でした。ミニオンの取り方（遠い側・大砲は取る）で緩め、パッシブはEのスタンしか防がないことを明記しました。"
+   },
+   {
+    "loc": "danger/danger.json Jax.pos",
+    "before": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時も、パッシブがありHPが半分以上なら近接ミニオンは取りに行き、跳ばれたら武器の回転を見て半径375の外へ離れます",
+    "after": "ジャックスのEが待ち時間中（17〜9秒）は、前に出てAA（通常攻撃）でCSを取ります。Eが使える時は、ジャックスから遠い側のミニオンをAAで取り、届かないミニオンはQで取ります。大砲ミニオンはEが使える時でも取りに行きます。跳ばれたら武器の回転を見てすぐ半径375の外へ離れます。パッシブがあればEのスタンを1回防げますが、Eのダメージと跳びかかり・Wのダメージは受けるので、パッシブだけを理由に殴り合いません",
+    "why": "「パッシブがありHPが半分以上なら取りに行く」はパッシブ単独に近い理由で、パッシブが無い時はEがある間CSをAAで取れない厳しい条件でした。ミニオンの取り方（遠い側・大砲は取る）で緩め、パッシブはEのスタンしか防がないことを明記しました。"
+   },
+   {
+    "loc": "plan/spot.json Jax",
+    "before": "E待ち中は前でCS、E有りは375の外へ",
+    "after": "E待ち中は前でCS、E有りは遠い側だけ取り375の外へ",
+    "why": "本文の変更に合わせました。"
+   },
+   {
+    "loc": "danger/danger.json Jax.sk[1].how",
+    "before": "対象指定の跳びかかり（射程700）で、ワードやミニオンにも跳べます。700より遠くに立つのが対策です",
+    "after": "対象指定の跳びかかり（射程700）です（ミニオンへ跳べるかはWikiに記載がなく未確認）。跳ばれた後のEのスタンが本当の危険なので、Eが使える時は跳ばれたらすぐ半径375の外へ離れます",
+    "why": "「ワードにも跳べます」はwikiで確認できないため削りました。"
+   }
+  ],
+  "facts": [
+   {
+    "text": "ジャックスのQ（跳びかかり）は射程700で、対象の位置まで跳びます。",
+    "quote": "Jax dashes to the target unit's location",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   },
+   {
+    "text": "ジャックスのE（カウンターストライク）は半径375の敵を1秒スタンさせます。",
+    "quote": "EFFECT RADIUS: 375; stuns them for 1 second",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   },
+   {
+    "text": "ジャックスのEの待ち時間は17〜9秒です。",
+    "quote": "COOLDOWN: 17 / 15 / 13 / 11 / 9",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   },
+   {
+    "text": "ムンドの通常攻撃の射程は125です。",
+    "quote": "Attack range 125",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ムンドのパッシブは、次に受ける行動妨害（スタンなど）1回だけを無効にします。",
+    "quote": "immunity to the next hostile immobilizing effect",
+    "url": "https://wiki.leagueoflegends.com/en-us/Dr._Mundo"
+   },
+   {
+    "text": "ジャックスのEは2秒間の回避の後（または再発動で）周囲をスタンさせます。",
+    "quote": "Jax enters Evasion for 2 seconds",
+    "url": "https://wiki.leagueoflegends.com/en-us/Jax"
+   }
+  ],
+  "judgements": [
+   {
+    "text": "Eが待ち時間中（17〜9秒）は前に出てAAでCSを取ります。",
+    "why": "Eの待ち時間中はスタンが無く、近づいても危険が小さいためです。"
+   },
+   {
+    "text": "Eが使える時は、ジャックスから遠い側のミニオンだけAAで取り、残りはQで取ります。",
+    "why": "Eのスタン範囲は半径375なので、遠い側なら跳ばれても離れる時間を作りやすく、CSも捨てずに済むためです。"
+   },
+   {
+    "text": "大砲ミニオンはEが使える時でも取りに行きます。",
+    "why": "大砲は50G以上あり、少しの危険を取る価値があるためです。"
+   },
+   {
+    "text": "跳ばれたらすぐ半径375の外へ離れます。",
+    "why": "危険なのは跳びかかり単体ではなく、その後のE（半径375・1秒スタン）だからです。"
+   },
+   {
+    "text": "パッシブだけを理由に殴り合いません。",
+    "why": "パッシブが防ぐのはEのスタン1回だけで、ダメージは受けるためです。"
+   }
+  ],
+  "_log4": [
+   {
+    "champ": "Jax",
+    "issue": "danger Jax.sk[1].how の「ワードにも跳べます」がwikiに無い。judgement欄がv3で削除した「HP半分」の条件のまま",
+    "fix": "「敵だけでなくミニオンなどにも跳べます」に修正、judgement欄を現行の本文に合わせて更新、Eの回避2秒を fact に追加"
+   }
+  ]
+ }
+]

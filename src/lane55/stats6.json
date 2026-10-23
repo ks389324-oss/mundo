@@ -1,0 +1,1011 @@
+{
+ "garen": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/garen/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 50.8,
+   "games": 2197,
+   "keystone": "不死者の握撃",
+   "keystone_note": "extractor: listed first under primary runes, not explicitly labeled; rune list appears to show all options so selection uncertain",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 62.12,
+     "games": 66
+    },
+    {
+     "label": "unknown",
+     "wr": 50.73,
+     "games": 2129
+    }
+   ],
+   "rune_pages_note": "page does not label pages; by games the 2129 page is likely most common, 66 page likely highest wr (inferred)",
+   "spells": {
+    "items": [
+     "ゴースト",
+     "イグナイト"
+    ],
+    "wr": 65.45,
+    "games": 55
+   },
+   "start": {
+    "items": [
+     "ドラン シールド",
+     "体力ポーション"
+    ],
+    "wr": 51.45,
+    "games": 1347
+   },
+   "core": [
+    {
+     "name": "心の鋼",
+     "wr": 51.04,
+     "games": 1111,
+     "boots": false
+    },
+    {
+     "name": "スイフトネス ブーツ",
+     "wr": 53.33,
+     "games": 1170,
+     "boots": true
+    },
+    {
+     "name": "ワーモグ アーマー",
+     "wr": 55.92,
+     "games": 692,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 65.67,
+     "games": 402
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 63.25,
+     "games": 117
+    }
+   ],
+   "item5": [
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 69.01,
+     "games": 71
+    },
+    {
+     "name": "ランデュイン オーメン",
+     "wr": 66.67,
+     "games": 102
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 65.96,
+     "games": 94
+    }
+   ],
+   "item6": [
+    {
+     "name": "ランデュイン オーメン",
+     "wr": 75,
+     "games": 16
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 66.67,
+     "games": 21
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 61.11,
+     "games": 18
+    }
+   ]
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=garen",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 80.72,
+     "games": 1608,
+     "wr": 49.5
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 15.36,
+     "games": 306,
+     "wr": 44.44
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 1.41,
+     "games": 28,
+     "wr": 53.57
+    }
+   ],
+   "note": "Minor runes not distinguishable (all icons listed per row). Matchup filter not confirmed in visible UI (URL param present only). Row-level 不滅+天啓 variants: 58.46%/940/49.26%; 12.31%/198/49.49%; 3.42%/55/52.73%; 3.23%/52/42.31%; 3.05%/49/65.31%."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=garen",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 56.86,
+     "games": 1016,
+     "wr": 50.98
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 38.28,
+     "games": 684,
+     "wr": 49.12
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 4.81,
+     "games": 86,
+     "wr": 44.19
+    },
+    {
+     "name": "ソーサラー シューズ",
+     "pick": 0.06,
+     "games": 1,
+     "wr": 0.0
+    }
+   ],
+   "note": "Matchup filter inferred from URL param; no visible ガレン label on page."
+  }
+ },
+ "darius": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/darius/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 54.69,
+   "games": 3752,
+   "keystone": "不死者の握撃",
+   "keystone_note": "first primary rune listed, not explicitly labeled",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 66.42,
+     "games": 134
+    },
+    {
+     "label": "unknown",
+     "wr": 55.1,
+     "games": 3579
+    }
+   ],
+   "rune_pages_note": "'Highest Win Build'/'Most Common Build' headings exist but not attachable to pages in fetched text",
+   "spells": {
+    "items": [
+     "フラッシュ",
+     "イグナイト"
+    ],
+    "wr": 57.69,
+    "games": 156
+   },
+   "start": {
+    "items": [
+     "ドラン シールド",
+     "体力ポーション"
+    ],
+    "wr": 54.99,
+    "games": 2464
+   },
+   "core": [
+    {
+     "name": "ワーモグ アーマー",
+     "wr": 55.43,
+     "games": 1905,
+     "boots": false
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "wr": 59.06,
+     "games": 127,
+     "boots": true
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 65.69,
+     "games": 102,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "デッド マン プレート",
+     "wr": 69.72,
+     "games": 142
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 63.41,
+     "games": 82
+    }
+   ],
+   "item5": [
+    {
+     "name": "デッド マン プレート",
+     "wr": 73.13,
+     "games": 67
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 69.19,
+     "games": 185
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 64.89,
+     "games": 225
+    }
+   ],
+   "item6": [
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 73.81,
+     "games": 42
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 71.43,
+     "games": 35
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 68.09,
+     "games": 47
+    }
+   ]
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=darius",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 81.97,
+     "games": 2801,
+     "wr": 53.48
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 12.58,
+     "games": 430,
+     "wr": 48.6
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 3.25,
+     "games": 111,
+     "wr": 48.65
+    }
+   ],
+   "note": "Minor runes not distinguishable. Matchup filter from URL param only, not labeled in UI. Row-level 不滅+天啓 variants: 62.08%/1739/52.56%; 15.28%/428/55.37%; 4.18%/117/58.12%; 2.21%/62/66.13%; 2.03%/57/61.40%."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=darius",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 65.34,
+     "games": 2036,
+     "wr": 56.04
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 31.13,
+     "games": 970,
+     "wr": 47.94
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 3.47,
+     "games": 108,
+     "wr": 54.63
+    },
+    {
+     "name": "グラトナス ブーツ",
+     "pick": 0.06,
+     "games": 2,
+     "wr": 0.0
+    }
+   ],
+   "note": "Matchup filter inferred from URL param; selected value not shown in UI."
+  }
+ },
+ "mordekaiser": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/mordekaiser/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 49.74,
+   "games": 2336,
+   "keystone": "不死者の握撃",
+   "keystone_note": "first primary rune listed, not explicitly labeled",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 57.69,
+     "games": 130
+    },
+    {
+     "label": "unknown",
+     "wr": 49.89,
+     "games": 2237
+    }
+   ],
+   "rune_pages_note": "not labeled in fetched text",
+   "spells": {
+    "items": [
+     "フラッシュ",
+     "イグナイト"
+    ],
+    "wr": 61.9,
+    "games": 84
+   },
+   "start": {
+    "items": [
+     "ドラン ヘルム",
+     "体力ポーション"
+    ],
+    "wr": 51.79,
+    "games": 809
+   },
+   "core": [
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 52.63,
+     "games": 76,
+     "boots": false
+    },
+    {
+     "name": "スイフトネス ブーツ",
+     "wr": 51.76,
+     "games": 1391,
+     "boots": true
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 62.26,
+     "games": 53,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 62.5,
+     "games": 32
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 57.89,
+     "games": 57
+    }
+   ],
+   "item5": [
+    {
+     "name": "ソーンメイル",
+     "wr": 65.28,
+     "games": 72
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 61.54,
+     "games": 26
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 61.43,
+     "games": 70
+    }
+   ],
+   "item6": [
+    {
+     "name": "変幻自在のジャック＝ショー",
+     "wr": 77.78,
+     "games": 9
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 66.67,
+     "games": 6
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 59.09,
+     "games": 22
+    }
+   ]
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=mordekaiser",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 78.04,
+     "games": 1681,
+     "wr": 48.42
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 16.53,
+     "games": 356,
+     "wr": 43.26
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 2.6,
+     "games": 56,
+     "wr": 41.07
+    }
+   ],
+   "note": "Minor runes not distinguishable. Matchup filter from URL param only, not shown in UI."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=mordekaiser",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 64.96,
+     "games": 1229,
+     "wr": 49.47
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 23.63,
+     "games": 447,
+     "wr": 45.41
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 11.26,
+     "games": 213,
+     "wr": 47.42
+    },
+    {
+     "name": "バーサーカー ブーツ",
+     "pick": 0.11,
+     "games": 2,
+     "wr": 50.0
+    },
+    {
+     "name": "アイオニア ブーツ",
+     "pick": 0.05,
+     "games": 1,
+     "wr": 100.0
+    }
+   ],
+   "note": "Matchup filter inferred from URL param; UI shows only 'vs.カウンター' with no selected opponent."
+  }
+ },
+ "aatrox": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/aatrox/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 48.35,
+   "games": 2629,
+   "keystone": "不死者の握撃",
+   "keystone_note": "first primary rune listed, not explicitly labeled",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 60.44,
+     "games": 182
+    },
+    {
+     "label": "unknown",
+     "wr": 48.46,
+     "games": 2464
+    }
+   ],
+   "rune_pages_note": "not labeled; extractor said rune/spell figures matched by placement",
+   "spells": {
+    "items": [
+     "フラッシュ",
+     "イグナイト"
+    ],
+    "wr": 53.62,
+    "games": 138
+   },
+   "start": {
+    "items": [
+     "ドラン ヘルム",
+     "体力ポーション"
+    ],
+    "wr": 48.98,
+    "games": 833
+   },
+   "core": [
+    {
+     "name": "心の鋼",
+     "wr": 50.14,
+     "games": 1412,
+     "boots": false
+    },
+    {
+     "name": "スイフトネス ブーツ",
+     "wr": 53.85,
+     "games": 1259,
+     "boots": true
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 55.75,
+     "games": 113,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 63.43,
+     "games": 268
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 58.21,
+     "games": 67
+    }
+   ],
+   "item5": [
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 73.08,
+     "games": 52
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 65.31,
+     "games": 98
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 63.16,
+     "games": 19
+    }
+   ],
+   "item6": [
+    {
+     "name": "ランデュイン オーメン",
+     "wr": 80,
+     "games": 10
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 68.18,
+     "games": 22
+    },
+    {
+     "name": "変幻自在のジャック＝ショー",
+     "wr": 66.67,
+     "games": 6
+    }
+   ]
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=aatrox",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 76.73,
+     "games": 1863,
+     "wr": 46.97
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 15.86,
+     "games": 385,
+     "wr": 42.08
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 4.08,
+     "games": 99,
+     "wr": 47.47
+    }
+   ],
+   "note": "Minor runes not distinguishable. Matchup filter from URL param only, not confirmed in UI. Row-level 不滅+天啓 variants: 58.02%/1081/44.68%; 11.86%/221/47.96%; 6.71%/125/52.00%; 2.15%/40/50.00%; 2.04%/38/50.00%."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=aatrox",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 53.2,
+     "games": 1088,
+     "wr": 51.65
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 41.66,
+     "games": 852,
+     "wr": 45.66
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 5.04,
+     "games": 103,
+     "wr": 46.6
+    },
+    {
+     "name": "アイオニア ブーツ",
+     "pick": 0.1,
+     "games": 2,
+     "wr": 50.0
+    }
+   ],
+   "note": "Matchup filter inferred from URL param; UI shows only 'vs.カウンター'."
+  }
+ },
+ "ornn": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/ornn/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 50.96,
+   "games": 783,
+   "keystone": "不死者の握撃",
+   "keystone_note": "first primary rune listed",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 50.91,
+     "games": 768
+    }
+   ],
+   "rune_pages_note": "Only one rune page figure clearly attached (50.91%/768). An unattributed 53.92%/102 also appears; second page not reliably identified. 59.57%/47 is skill order.",
+   "spells": {
+    "items": [
+     "フラッシュ",
+     "ゴースト"
+    ],
+    "wr": 60,
+    "games": 80
+   },
+   "start": {
+    "items": [
+     "ドラン シールド"
+    ],
+    "wr": 61.11,
+    "games": 18
+   },
+   "core": [
+    {
+     "name": "心の鋼",
+     "wr": 52.13,
+     "games": 447,
+     "boots": false
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "wr": 54.26,
+     "games": 94,
+     "boots": true
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 61.11,
+     "games": 18,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "終わりなき絶望",
+     "wr": 77.27,
+     "games": 22
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 72.22,
+     "games": 18
+    }
+   ],
+   "item5": [
+    {
+     "name": "終わりなき絶望",
+     "wr": 72.73,
+     "games": 11
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 72.73,
+     "games": 11
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 68.42,
+     "games": 38
+    }
+   ],
+   "item6": [
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 77.78,
+     "games": 9
+    },
+    {
+     "name": "ランデュイン オーメン",
+     "wr": 75,
+     "games": 4
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 66.67,
+     "games": 3
+    }
+   ],
+   "note": "Low sample matchup. Start (ドラン シールド only, 61.11%/18) and core item 3 (タイタン ハイドラ 61.11%/18) share identical figures in both fetches — possible parse artifact; treat start with caution."
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=ornn",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 82.04,
+     "games": 1306,
+     "wr": 49.69
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 15.33,
+     "games": 244,
+     "wr": 43.03
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 1.19,
+     "games": 19,
+     "wr": 36.84
+    }
+   ],
+   "note": "Minor runes not distinguishable. Matchup filter from URL param only. Row-level variants: 62.10%/811/49.08%; 13.71%/179/49.72%; 4.06%/53/49.06%; 2.76%/36/41.67%; 1.99%/26/57.69%."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=ornn",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 64.11,
+     "games": 895,
+     "wr": 50.95
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 22.49,
+     "games": 314,
+     "wr": 43.95
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 13.25,
+     "games": 185,
+     "wr": 47.57
+    },
+    {
+     "name": "バーサーカー ブーツ",
+     "pick": 0.07,
+     "games": 1,
+     "wr": 0.0
+    },
+    {
+     "name": "グラトナス ブーツ",
+     "pick": 0.07,
+     "games": 1,
+     "wr": 100.0
+    }
+   ],
+   "note": "Matchup filter inferred from URL param; dropdown shows no selected value."
+  }
+ },
+ "sett": {
+  "lolalytics": {
+   "url": "https://lolalytics.com/ja/lol/drmundo/vs/sett/build/",
+   "patch": "16.20",
+   "rank": "EMERALD+",
+   "wr": 50.05,
+   "games": 2148,
+   "keystone": "不死者の握撃",
+   "keystone_note": "first primary rune listed, not explicitly labeled",
+   "rune_pages": [
+    {
+     "label": "unknown",
+     "wr": 57.89,
+     "games": 57
+    },
+    {
+     "label": "unknown",
+     "wr": 49.86,
+     "games": 2080
+    }
+   ],
+   "rune_pages_note": "not labeled in fetched text",
+   "spells": {
+    "items": [
+     "フラッシュ",
+     "イグナイト"
+    ],
+    "wr": 55.45,
+    "games": 101
+   },
+   "start": {
+    "items": [
+     "ドラン シールド",
+     "体力ポーション"
+    ],
+    "wr": 51.11,
+    "games": 1352
+   },
+   "core": [
+    {
+     "name": "ワーモグ アーマー",
+     "wr": 51.05,
+     "games": 954,
+     "boots": false
+    },
+    {
+     "name": "スイフトネス ブーツ",
+     "wr": 54.55,
+     "games": 1065,
+     "boots": true
+    },
+    {
+     "name": "終わりなき絶望",
+     "wr": 56.38,
+     "games": 94,
+     "boots": false
+    }
+   ],
+   "item4": [
+    {
+     "name": "ソーンメイル",
+     "wr": 63.28,
+     "games": 128
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 60.86,
+     "games": 465
+    }
+   ],
+   "item5": [
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 66.67,
+     "games": 69
+    },
+    {
+     "name": "覇王のブラッドメイル",
+     "wr": 65.77,
+     "games": 111
+    },
+    {
+     "name": "スピリット ビサージュ",
+     "wr": 58.2,
+     "games": 122
+    }
+   ],
+   "item6": [
+    {
+     "name": "ランデュイン オーメン",
+     "wr": 65.22,
+     "games": 23
+    },
+    {
+     "name": "ソーンメイル",
+     "wr": 57.69,
+     "games": 26
+    },
+    {
+     "name": "タイタン ハイドラ",
+     "wr": 56.52,
+     "games": 23
+    }
+   ]
+  },
+  "opgg_runes": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/runes/top?target_champion=sett",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "trees": [
+    {
+     "primary": "不滅",
+     "secondary": "天啓",
+     "pick": 77.59,
+     "games": 1492,
+     "wr": 48.06
+    },
+    {
+     "primary": "不滅",
+     "secondary": "栄華",
+     "pick": 18.56,
+     "games": 357,
+     "wr": 44.54
+    },
+    {
+     "primary": "栄華",
+     "secondary": "天啓",
+     "pick": 1.82,
+     "games": 35,
+     "wr": 45.71
+    }
+   ],
+   "note": "Minor runes not distinguishable. Matchup filter from URL param only. Row-level (trees not stated): 59.72%/891/45.01%; 12.94%/193/50.78%; 3.02%/45/57.78%; 2.95%/44/59.09%; 2.68%/40/57.50%."
+  },
+  "opgg_boots": {
+   "url": "https://op.gg/ja/lol/champions/drmundo/items/top?target_champion=sett",
+   "patch": "16.20",
+   "tier": "エメラルド +",
+   "boots": [
+    {
+     "name": "スイフトネス ブーツ",
+     "pick": 53.27,
+     "games": 905,
+     "wr": 51.27
+    },
+    {
+     "name": "プレート スチールキャップ",
+     "pick": 42.32,
+     "games": 719,
+     "wr": 45.06
+    },
+    {
+     "name": "マーキュリー ブーツ",
+     "pick": 4.3,
+     "games": 73,
+     "wr": 47.95
+    },
+    {
+     "name": "グラトナス ブーツ",
+     "pick": 0.12,
+     "games": 2,
+     "wr": 50.0
+    }
+   ],
+   "note": "Matchup filter not confirmed in UI (URL param only); numbers differ from other opponents, suggesting the filter is in effect."
+  }
+ }
+}

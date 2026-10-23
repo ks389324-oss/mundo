@@ -5,7 +5,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 ## 公開ページ
 | ページ | URL | 公開ファイル | 元データ |
 |---|---|---|---|
-| ムンドTOP対面帳（55体） | https://ks389324-oss.github.io/mundo/ | `index.html` | `src/data2.json`, `src/plays.json` |
+| ムンドTOP対面帳（55体） | https://ks389324-oss.github.io/mundo/ | `index.html` | `src/lane55/cards/*.json`（2026-10-23から。旧版の元データ `src/data2.json` 等は残してあります） |
 | ジャックスTOP対面帳（55体） | /mundo/jax/ | `jax/index.html` | `src/jax/jax_final.json`, `src/jax/wr.json` |
 | チョ＝ガスTOP対面帳（55体） | /mundo/cho/ | `cho/index.html` | `src/cho/cho_final.json`, `src/cho/wr.json` |
 | ナサスTOP対面帳（55体） | /mundo/nasus/ | `nasus/index.html` | `src/nasus/nasus_final.json`, `src/nasus/wr.json` |
@@ -25,6 +25,13 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - 上の `danger.json` と `plan.json` は2026年10月に「そのまま実行できるメモ」へ書き直し済み（書く役→初心者役→点検役の3段階。手順は `src/briefs/memo_BRIEF.md` と `memo_ROLES.md`、計算した着弾時間は `src/danger/react_calc.json`）。警戒スキルには react（見て避けられる／読みで避ける／避けられない）と hit（当たった時の対応）があります
 - `src/build/`：「データ上の買い方」欄（ムンド版のみ）。`raw.json` は LoLalytics の対面別ページ（https://lolalytics.com/ja/lol/drmundo/vs/<slug>/build/ 、エメラルド以上）から取った初期アイテム・コア・4〜6個目の数字（取得手順は `src/briefs/build_BRIEF.md`、別担当が14体を照合済み）。`python3 build/derive.py` で `build.json`（いつもと違う物・重傷アイテムを何個目に買うか）と `icons.json` を作ります。試合数50未満の項目は「データ不足」、いつもと違うブーツは対面の1割以上で買われている時だけ出します。ページはどのビルド（最多／最高勝率）を表示しているか明記していないため、％と試合数を必ず併記します
 - `src/links.py`：外部リンクのURL規則
+
+## ムンドTOP対面帳（全55体版・2026年10月23日公開）
+- 元データ：`src/lane55/cards/<slug>.json`（55体。立つ／CSに出る／下がる／CS／殴る／ルーン／買い物、3つの立ち位置、パッシブで防げる・防げない、未確認の点、重大な修正の記録）。`src/lane55/high8.json` は重大8件の修正前後、`stats6.json` は優先6体の統計、`facts.json` はWikiで確認したルーン・ブーツ・ミニオン・価格。
+- 作り方：`python3 lane55/render.py` が `src/mundo-codex.html` を作り、`build_all.sh` → `deploy.py` で `index.html` に入ります（旧 `build.py` は使っていません）。見た目は `src/lane55/template.html`。
+- 書く時の固定ルール：`src/lane55/RULES.md`。検査：`python3 lane55/check.py`（スキーマ、まとめ42字以内、魔法の靴とブーツの矛盾、詰め替えポーションの対象、禁止語）。
+- 統計は集計パッチを必ず表示します（勝率26.19、買い物欄26.20。最新パッチの統計ではない旨も表示）。スキル値は26.21の公式パッチノートで照合済み。
+- 公開前の旧版は `backup/2026-10-23/index.html`（/mundo/backup/2026-10-23/）と、gitタグ `backup-before-lane55-20261023` に残しています。
 
 ## 更新のしかた
 1. `src/` の JSON（内容）またはテンプレート（見た目。`src/template*.html`, `src/gen/template_all.html`, `src/items/template_items.html`）を編集します。
