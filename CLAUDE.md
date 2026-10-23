@@ -31,7 +31,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - 作り方：`python3 lane55/render.py` が `src/mundo-codex.html` を作り、`build_all.sh` → `deploy.py` で `index.html` に入ります（旧 `build.py` は使っていません）。見た目は `src/lane55/template.html`。
 - 書く時の固定ルール：`src/lane55/RULES.md`。検査：`python3 lane55/check.py`（スキーマ、まとめ42字以内、魔法の靴とブーツの矛盾、詰め替えポーションの対象、禁止語）。
 - 統計は集計パッチを必ず表示します（勝率26.19、買い物欄26.20。最新パッチの統計ではない旨も表示）。スキル値は26.21の公式パッチノートで照合済み。
-- 公開前の旧版は `backup/2026-10-23/index.html`（/mundo/backup/2026-10-23/）と、gitタグ `backup-before-lane55-20261023` に残しています。
+- 公開前の旧版は `backup/2026-10-23/index.html`（/mundo/backup/2026-10-23/）と、更新前のコミット `f36d13d` に残しています。
 
 ## 更新のしかた
 1. `src/` の JSON（内容）またはテンプレート（見た目。`src/template*.html`, `src/gen/template_all.html`, `src/items/template_items.html`）を編集します。
