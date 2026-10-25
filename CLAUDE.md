@@ -5,7 +5,7 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 ## 公開ページ
 | ページ | URL | 公開ファイル | 元データ |
 |---|---|---|---|
-| ムンドTOP対面帳（55体） | https://ks389324-oss.github.io/mundo/ | `index.html` | `src/lane55/cards/*.json`（2026-10-23から。旧版の元データ `src/data2.json` 等は残してあります） |
+| ムンドTOP対面帳（55体） | https://ks389324-oss.github.io/mundo/ | `index.html` | `src/mundo-audited/index.html`（2026-10-25から。監査済みのHTML全文。旧生成元は履歴として保持） |
 | ジャックスTOP対面帳（55体） | /mundo/jax/ | `jax/index.html` | `src/jax/jax_final.json`, `src/jax/wr.json` |
 | チョ＝ガスTOP対面帳（55体） | /mundo/cho/ | `cho/index.html` | `src/cho/cho_final.json`, `src/cho/wr.json` |
 | ナサスTOP対面帳（55体） | /mundo/nasus/ | `nasus/index.html` | `src/nasus/nasus_final.json`, `src/nasus/wr.json` |
@@ -26,7 +26,15 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - `src/build/`：「データ上の買い方」欄（ムンド版のみ）。`raw.json` は LoLalytics の対面別ページ（https://lolalytics.com/ja/lol/drmundo/vs/<slug>/build/ 、エメラルド以上）から取った初期アイテム・コア・4〜6個目の数字（取得手順は `src/briefs/build_BRIEF.md`、別担当が14体を照合済み）。`python3 build/derive.py` で `build.json`（いつもと違う物・重傷アイテムを何個目に買うか）と `icons.json` を作ります。試合数50未満の項目は「データ不足」、いつもと違うブーツは対面の1割以上で買われている時だけ出します。ページはどのビルド（最多／最高勝率）を表示しているか明記していないため、％と試合数を必ず併記します
 - `src/links.py`：外部リンクのURL規則
 
-## ムンドTOP対面帳（全55体版・2026年10月23日公開）
+## ムンドTOP対面帳（監査済み全文・2026年10月25日更新）
+- 現在の生成元は `src/mundo-audited/index.html` です。`src/deploy.py` がバイト単位でそのままルートの `index.html` へコピーします。本文断片ではなく、`<!DOCTYPE html>`、`<head>`、`<body>` を含む完成HTMLです。
+- `src/build_all.sh` では旧 `lane55/render.py` を実行しません。旧JSON・旧テンプレートを編集／再生成しても、現在のムンド公開版へ自動では反映されません。旧生成物を公開版に戻さないでください。
+- ムンドの修正は監査済みHTMLへ反映し、PC・スマホと検索・対面切替・URLハッシュ・詳細開閉を確認してから `cd src && sh build_all.sh` で反映します。他5サイトも従来どおりビルド・反映します。`deploy.py` の単独実行には他5サイトのビルド済み断片が必要です（これらはGit管理対象ではありません）。
+- 今回の内容は全55対面とムンドの仕様説明、全55対面のP/Q/W/E/R早見欄を対象としています。既存の検証記録では55対面×1920/375/390pxの表示と主要操作を確認しましたが、全数値・全特殊相互作用の実ゲーム検証を意味しません。
+- 仕様・パッチはRiot公式情報を一次資料とし、League of Legends Wikiを補助資料に使います。基礎CDと実際の残りCD、再発動とチャージ回復を区別し、公式資料同士の不一致や確認できない値は未確認と明示します。未確認の特殊相互作用を行動案の前提にしません。
+- `all/`、`jax/`、`cho/`、`nasus/`、`items/` の公開HTMLと生成元は今回の5ファイル更新には含めません。
+
+## 旧ムンド生成経路（2026年10月23日版・履歴参照用）
 - 元データ：`src/lane55/cards/<slug>.json`（55体。立つ／CSに出る／下がる／CS／殴る／ルーン／買い物、3つの立ち位置、パッシブで防げる・防げない、未確認の点、重大な修正の記録）。`src/lane55/high8.json` は重大8件の修正前後、`stats6.json` は優先6体の統計、`facts.json` はWikiで確認したルーン・ブーツ・ミニオン・価格。
 - 作り方：`python3 lane55/render.py` が `src/mundo-codex.html` を作り、`build_all.sh` → `deploy.py` で `index.html` に入ります（旧 `build.py` は使っていません）。見た目は `src/lane55/template.html`。
 - 書く時の固定ルール：`src/lane55/RULES.md`。検査：`python3 lane55/check.py`（スキーマ、まとめ42字以内、魔法の靴とブーツの矛盾、詰め替えポーションの対象、禁止語）。
@@ -34,14 +42,14 @@ GitHub Pages で公開しているLoL攻略ページ群です。どのClaudeの�
 - 公開前の旧版は `backup/2026-10-23/index.html`（/mundo/backup/2026-10-23/）と、更新前のコミット `f36d13d` に残しています。
 
 ## 更新のしかた
-1. `src/` の JSON（内容）またはテンプレート（見た目。`src/template*.html`, `src/gen/template_all.html`, `src/items/template_items.html`）を編集します。
-2. `cd src && sh build_all.sh` を実行します。5ページを作り直し、公開用の `index.html` に反映します（`<head>` 部分は既存のものを残します）。
+1. ムンドは上記の `src/mundo-audited/index.html` を編集します。他サイトは従来の `src/` の JSON（内容）またはテンプレート（見た目。`src/template*.html`, `src/gen/template_all.html`, `src/items/template_items.html`）を編集します。
+2. `cd src && sh build_all.sh` を実行します。ムンドは監査済みHTML全文をコピーし、他5ページは従来どおり生成・反映します（他5ページの `<head>` 部分は既存のものを残します）。
 3. コミットして `git push origin HEAD:main` します。1〜数分で GitHub Pages に反映されます。
 
 画面の確認は Playwright（Chromium）でPC幅（1920×920）とスマホ幅（390×700）の両方を見ます。PCは「最初の画面（.fv）」が920px以内に収まること、スマホは横にはみ出さないことを確かめます。
 
 ## 内容を書く時のルール（利用者の強い要望）
-- **間違ったことは書かない。** スキルの仕様・数値・相互作用は、必ず公式Wiki（https://wiki.leagueoflegends.com/en-us/ ）で確認してから書きます。確認できないことは書きません。
+- **間違ったことは書かない。** スキルの仕様・数値・相互作用は、Riot公式情報を一次資料とし、League of Legends Wiki（https://wiki.leagueoflegends.com/en-us/ ）を補助資料として照合します。確認できない数値や相互作用は断定せず、未確認と明示し、行動案の前提にはしません。
 - **書いた担当と別の担当が照合します。** 新しい対面帳や大きな追加では、執筆とは別の照合を必ず行います。手順書の雛形は `src/briefs/` にあります（`*_WRITER.md` → `*_AUDITOR.md`）。
 - 利用者がYouTube動画や他のAIの文章を持ってきた場合は、1つずつWikiで照合し、古い・誤っている部分を直してから入れます（`src/briefs/vid_BRIEF.md`）。
 - 文章は初心者向けで、です・ます調にします。専門用語には初出で（ ）の説明を付けます。
